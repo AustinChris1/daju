@@ -1,0 +1,289 @@
+{
+  "as_of": "2026-09-21",
+  "sources_note": "Section text was checked against official copies: Nigeria Labour Act Cap L1 LFN 2004 (mykeels/nigerian-laws transcription of the LFN); Kenya Employment Act 2007 (NCLR Revised Edition 2012 copy on ILO NATLEX, because new.kenyalaw.org returns HTTP 403 to automated fetches); Uganda Employment Act 2006 and Contracts Act 2010 (ULII/Laws.Africa PDFs); Ghana Labour Act 2003 Act 651 (GIPC, FAO and ILO copies) and 1992 Constitution (Audit Service copy). Case law was checked on nicnadr.gov.ng (Nigeria). Where a court text could not be fetched the entry is marked partial or none.",
+  "clauses": {
+    "probation": {
+      "label": "Probation",
+      "NG": {
+        "act": "Labour Act, Cap L1 LFN 2004",
+        "section": null,
+        "url": "https://raw.githubusercontent.com/mykeels/nigerian-laws/master/2004/labour-act-cap-l1-lfn-2004.md",
+        "quote": null,
+        "plain": "Nigeria's Labour Act sets no maximum probation period and has no probation section at all; probation is whatever your contract says, but any work you do must be paid in legal tender (s. 1(1)), so 'unpaid probation' has no basis in the Act.",
+        "confidence": "partial",
+        "note": "Full-text search of Cap L1 found no probation provision. Only s. 7(1) (written statement of terms within three months) and s. 1 (wages payable in legal tender) bear on it."
+      },
+      "KE": {
+        "act": "Employment Act, 2007 (No. 11 of 2007), Cap 226",
+        "section": "s. 42(2)-(3)",
+        "url": "https://new.kenyalaw.org/akn/ke/act/2007/11/eng@2024-04-26",
+        "quote": "A probationary period shall not be more than six months but it may be extended for a further period of not more than six months with the agreement of the employee. (3) No employer shall employ an employee under a probationary contract for more than the aggregate period provided under subsection (2).",
+        "plain": "Probation is capped at six months, extendable once to twelve months only if you agree; it is a paid contract of service and nothing in the Act allows unpaid probation.",
+        "confidence": "verified",
+        "note": "Wording verified on the NCLR Revised Edition 2012 copy (ILO NATLEX, https://natlex.ilo.org/dyn/natlex2/natlex2/files/download/77502/KEN77502%202012.pdf); s. 42 was not touched by the 2021 amendment."
+      },
+      "UG": {
+        "act": "Employment Act, 2006 (Act 6 of 2006)",
+        "section": "s. 67(2)-(3)",
+        "url": "https://ulii.org/akn/ug/act/2006/6/eng@2023-12-31",
+        "quote": "The maximum length of a probationary period is six months, but it may be extended for a further period of not more than six months with the agreement of the employee. (3) An employer shall not employ an employee under a probationary contract on more than one occasion.",
+        "plain": "Probation is capped at six months, extendable once to twelve months only with your consent, and an employer may only put you on probation once; wages are still due in legal tender (s. 41).",
+        "confidence": "verified",
+        "note": "Verified on the ULII PDF (https://media.ulii.org/files/legislation/akn-ug-act-2006-6-eng-2006-06-08.pdf)."
+      },
+      "GH": {
+        "act": "Labour Act, 2003 (Act 651)",
+        "section": null,
+        "url": "https://www.gipc.gov.gh/wp-content/uploads/2023/05/LABOUR-ACT-2003-ACT-651.pdf",
+        "quote": null,
+        "plain": "Ghana's Labour Act sets no maximum probation period; it only lets a collective agreement fix 'the period of probation and conditions of probation' (s. 98(d)) and excludes probationers from the unfair-termination part (s. 66(b)). Nothing in the Act permits unpaid probation.",
+        "confidence": "partial",
+        "note": "Full-text search of Act 651 (GIPC, FAO and ILO copies) found no probation cap. The Labour Regulations 2007 (LI 1833) were not relied on because the task asked for the Act."
+      }
+    },
+    "notice": {
+      "label": "Notice of termination",
+      "NG": {
+        "act": "Labour Act, Cap L1 LFN 2004",
+        "section": "s. 11(2)",
+        "url": "https://raw.githubusercontent.com/mykeels/nigerian-laws/master/2004/labour-act-cap-l1-lfn-2004.md",
+        "quote": "(a) one day, where the contract has continued for a period of three months or less; (b) one week, where the contract has continued for more than three months but less than two years; (c) two weeks, where the contract has continued for a period of two years but less than five years; and (d) one month, where the contract has continued for five years or more.",
+        "plain": "Statutory minimum notice is one week after three months' service, two weeks after two years and one month after five years; notice of a week or more must be in writing (s. 11(3)) and either side may pay in lieu (s. 11(6)).",
+        "confidence": "verified",
+        "note": "The Act sets floors by length of service, not by pay frequency; s. 11 applies to 'workers' as defined in s. 91, which excludes most managerial and professional staff."
+      },
+      "KE": {
+        "act": "Employment Act, 2007 (No. 11 of 2007), Cap 226",
+        "section": "s. 35(1)(c)",
+        "url": "https://new.kenyalaw.org/akn/ke/act/2007/11/eng@2024-04-26",
+        "quote": "where the contract is to pay wages or salary periodically at intervals of or exceeding one month, a contract terminable by either party at the end of the period of twenty-eight days next following the giving of notice in writing.",
+        "plain": "If you are paid monthly, either side must give at least 28 days' written notice; a contract may set a longer period but not a shorter one (s. 35(2)).",
+        "confidence": "verified",
+        "note": "Wording verified on the NCLR Revised Edition 2012 copy on ILO NATLEX."
+      },
+      "UG": {
+        "act": "Employment Act, 2006 (Act 6 of 2006)",
+        "section": "s. 58(3)-(4)",
+        "url": "https://ulii.org/akn/ug/act/2006/6/eng@2023-12-31",
+        "quote": "(a) not less than two weeks, where the employee has been employed for a period of more than six months but less than one year; (b) not less than one month, where the employee has been employed for a period of more than twelve months, but less than five years;",
+        "plain": "Minimum written notice is two weeks after six months' service, one month after a year, two months after five years and three months after ten; a monthly-paid employee always gets at least a full pay period (s. 58(4)), and any clause excluding this is void (s. 58(5)).",
+        "confidence": "verified",
+        "note": "s. 58(3)(c)-(d) continue: not less than two months for five to ten years' service, and not less than three months for ten years or more."
+      },
+      "GH": {
+        "act": "Labour Act, 2003 (Act 651)",
+        "section": "s. 17(1)",
+        "url": "https://www.gipc.gov.gh/wp-content/uploads/2023/05/LABOUR-ACT-2003-ACT-651.pdf",
+        "quote": "(a) in the case of a contract of three years or more, one month's notice or one month's pay in lieu of notice; (b) in the case of a contract of less than three years, two weeks' notice or two weeks' pay in lieu of notice; or (c) in the case of contract from week to week, seven days' notice.",
+        "plain": "Minimum notice is one month for contracts of three years or more, two weeks for shorter contracts and seven days for week-to-week work; pay in lieu is allowed and notice must be in writing (s. 17(3)).",
+        "confidence": "verified",
+        "note": "s. 17(1)(b) wording taken from the GIPC copy; the FAO and ILO copies carry a printing error ('notice or tow weeks' pay')."
+      }
+    },
+    "currency": {
+      "label": "Currency of wages",
+      "NG": {
+        "act": "Labour Act, Cap L1 LFN 2004",
+        "section": "s. 1(1) and 1(3)",
+        "url": "https://raw.githubusercontent.com/mykeels/nigerian-laws/master/2004/labour-act-cap-l1-lfn-2004.md",
+        "quote": "(a) the wages of a worker shall in all contracts be made payable in legal tender and not otherwise; and (b) if in any contract the whole or any part of the wages of a worker is made payable in any other manner the contract shall be illegal, null and void.",
+        "plain": "Wages must be payable in naira (legal tender); a contract that pays wages any other way is void, and payment by cheque or postal order needs your written consent (s. 1(3)). The Act gives no allowance for foreign-currency salaries.",
+        "confidence": "verified",
+        "note": "s. 1(3): 'wages payable in money shall be paid only in legal tender or, with the prior consent in writing of the worker concerned, by cheque or postal order'. No foreign-currency exception anywhere in the Act."
+      },
+      "KE": {
+        "act": "Employment Act, 2007 (No. 11 of 2007), Cap 226",
+        "section": "s. 17(1)",
+        "url": "https://new.kenyalaw.org/akn/ke/act/2007/11/eng@2024-04-26",
+        "quote": "an employer shall pay the entire amount of the wages earned by or payable to an employee in respect of work done by the employee in pursuance of a contract of service directly, in the currency of Kenya",
+        "plain": "Wages must be paid in Kenya shillings, in full and directly to you (cash, your bank account, or cheque); the Act gives no exception for foreign-currency pay.",
+        "confidence": "verified",
+        "note": "s. 17(1)(a)-(d) list the permitted methods: cash, a bank or building society account you designate, cheque or money order, or an authorised representative. No foreign-currency allowance."
+      },
+      "UG": {
+        "act": "Employment Act, 2006 (Act 6 of 2006)",
+        "section": "s. 41(1)-(2)",
+        "url": "https://ulii.org/akn/ug/act/2006/6/eng@2023-12-31",
+        "quote": "(1) Subject to subsection (2), wages shall be paid in legal tender to the employee entitled to payment. (2) Notwithstanding subsection (1), an employer may, with the prior written agreement of the employee, pay wages by bank cheque, postal order, money order or by direct payment to the employee's bank account.",
+        "plain": "Wages must be paid in Ugandan legal tender, directly to you; bank transfer or cheque only with your written agreement. There is no foreign-currency exception.",
+        "confidence": "verified",
+        "note": null
+      },
+      "GH": {
+        "act": "Labour Act, 2003 (Act 651)",
+        "section": "s. 67",
+        "url": "https://www.gipc.gov.gh/wp-content/uploads/2023/05/LABOUR-ACT-2003-ACT-651.pdf",
+        "quote": "every contract of employment shall stipulate that the whole of the salary, wages and allowances of the worker shall be made payable in legal tender in addition to any non-cash remuneration and accordingly, a contract of employment that contains provisions to the contrary is void.",
+        "plain": "Your contract must make all salary, wages and allowances payable in cedis (legal tender); a contract saying otherwise is void. The Act has no foreign-currency exception.",
+        "confidence": "verified",
+        "note": null
+      }
+    },
+    "certificates": {
+      "label": "Withholding original certificates",
+      "NG": {
+        "act": null,
+        "section": null,
+        "case": "Onah Chidiebere Nnamdi v Embassy Pharmaceutical and Chem. Ltd, NICN/JOS/20/2024 (National Industrial Court, Galadima J, 19 January 2026)",
+        "url": "https://www.nicnadr.gov.ng/judgement/judgement/judgement.php?id=10663",
+        "quote": "Retaining the claimant's original...certificates as security for an alleged debt has no support in Nigerian employment law.",
+        "plain": "No statute covers it, but the National Industrial Court has held an employer cannot keep your original certificates as security for anything, and ordered them returned within seven days.",
+        "confidence": "verified",
+        "note": "No statute; case law. Full-text search of the Labour Act found no provision on employee documents."
+      },
+      "KE": {
+        "act": null,
+        "section": null,
+        "case": null,
+        "url": null,
+        "quote": null,
+        "plain": "No Kenyan statute lets an employer keep your original certificates; the Employment Act only obliges the employer to give you a certificate of service when you leave (s. 51).",
+        "confidence": "none",
+        "note": "No statute; no judgment squarely on employer retention of original academic certificates could be fetched and verified (new.kenyalaw.org returns HTTP 403 to automated access)."
+      },
+      "UG": {
+        "act": null,
+        "section": null,
+        "case": "Tushabomwe v Equity Bank Ltd (Labour Dispute Claim 146 of 2014) [2017] UGIC 6 (21 April 2017)",
+        "url": "https://ulii.org/akn/ug/judgment/ugic/2017/6/eng@2017-04-21",
+        "quote": null,
+        "plain": "No Ugandan statute lets an employer hold your original certificates; the Act only requires a certificate of service on request when you leave (s. 61).",
+        "confidence": "partial",
+        "note": "No statute; case law. The Industrial Court case concerned a withheld certificate and terminal benefits after resignation, but the judgment text could not be fetched (ULII returns HTTP 403), so no holding is quoted."
+      },
+      "GH": {
+        "act": null,
+        "section": null,
+        "case": null,
+        "url": null,
+        "quote": null,
+        "plain": "Ghana's Labour Act says nothing about an employer keeping your certificates; there is no lawful basis for it in the Act.",
+        "confidence": "none",
+        "note": "No statute; full-text search of Act 651 found no provision on employee documents, and no Ghanaian judgment on the point was located."
+      }
+    },
+    "training_bond": {
+      "label": "Training bond",
+      "NG": {
+        "act": null,
+        "section": null,
+        "case": "Dangote Oil Refining Company Ltd v Abubakar Isah & 2 Ors, NICN/LA/256/2019 (National Industrial Court, Esowe J, 27 June 2023)",
+        "url": "https://nicnadr.gov.ng/judgement/details.php?id=8042",
+        "quote": "the Claimant has failed to plead and adduce evidence depicting the reasonableness behind its prohibition on the duration of service the 1st Defendant was to render.",
+        "plain": "A training bond is enforceable only if the employer proves the bonded period and the sum are reasonable; in Dangote v Isah a five-year bond failed on that test and the employee only had to repay the training cost actually proved (N2.3m, not the N15.7m claimed).",
+        "confidence": "verified",
+        "note": "No statute; case law. Contrast Overland Airways Ltd v Wasiu Durojaiye Hussain & Ors, NICN/LA/601/2018 (3 March 2026, https://nicnadr.gov.ng/judgement/judgement.php?id=10791): a five-year aviation bond upheld as reasonable given the employer's investment."
+      },
+      "KE": {
+        "act": null,
+        "section": null,
+        "case": "Tharaka Nithi County Government v Waweru (Cause E019 of 2023) [2024] KEELRC 1096 (KLR) (15 May 2024)",
+        "url": "https://new.kenyalaw.org/akn/ke/judgment/keelrc/2024/1096/eng@2024-05-15",
+        "quote": null,
+        "plain": "Kenyan courts enforce training bonds, but only for the training cost actually stated in the bond and reduced for the time you already served; a bond demanding more than that is unlikely to be enforced.",
+        "confidence": "partial",
+        "note": "No statute; case law. Bond upheld and limited to the Kshs 857,200 written in the bond, prorated for months served (Kshs 649,200 awarded). Judgment text not retrievable (Kenya Law 403); outcome taken from Kenya Law's index entry plus a secondary summary, so no verbatim quote."
+      },
+      "UG": {
+        "act": null,
+        "section": null,
+        "case": null,
+        "url": null,
+        "quote": null,
+        "plain": "Uganda has no statute on training bonds and no verified court ruling; ordinary contract law applies, and a bond that works as a restraint on taking other work is void unless the employer proves it reasonable (Contracts Act 2010, s. 21).",
+        "confidence": "none",
+        "note": "No statute; no Ugandan judgment on training bonds was located on ULII."
+      },
+      "GH": {
+        "act": null,
+        "section": null,
+        "case": null,
+        "url": null,
+        "quote": null,
+        "plain": "Ghana's Labour Act is silent on training bonds and no Ghanaian ruling was found; a bond is judged under ordinary contract law.",
+        "confidence": "none",
+        "note": "No statute; no Ghanaian judgment located (Ghanaian commentators note a dearth of case law on restrictive employment covenants)."
+      }
+    },
+    "non_compete": {
+      "label": "Post-employment non-compete",
+      "NG": {
+        "act": null,
+        "section": null,
+        "case": "iROKOtv.com Limited v Michael Ugwu, NICN/LA/169/2015 (National Industrial Court, Peters J, 12 November 2020)",
+        "url": "https://nicnadr.gov.ng/judgement/details.php?id=5335",
+        "quote": "Clauses 3(e) & 7 of Exh. JN2 is invalid and unenforceable being covenants in restraint of trade and against public policy.",
+        "plain": "Post-employment non-competes are void unless the employer shows they are reasonable between the parties and for the public; the National Industrial Court struck down iROKOtv's clause on that basis.",
+        "confidence": "verified",
+        "note": "No statute; case law. The Supreme Court authority is Koumoulis v Leventis Motors Ltd (1973), which upheld a one-year, fifty-mile restraint as reasonable; no official URL for it could be verified."
+      },
+      "KE": {
+        "act": "Contracts in Restraint of Trade Act, Cap 24",
+        "section": "s. 2",
+        "url": "http://kenyalaw.org/kl/fileadmin/pdfdownloads/Acts/ContractsinRestraintofTradeActCap24.PDF",
+        "quote": null,
+        "plain": "A non-compete is not automatically void in Kenya, but a court can declare it void if its length, area or scope is unreasonable for you or against the public interest.",
+        "confidence": "partial",
+        "note": "Statute exists and section number is correct, but every Kenya Law host (kenyalaw.org, kenyalaw.org:8181, new.kenyalaw.org) refused automated fetches, so the wording of s. 2 and its proviso is not quoted. Confirm on the official PDF before display."
+      },
+      "UG": {
+        "act": "Contracts Act, 2010 (Cap 284)",
+        "section": "s. 21(1)-(3)",
+        "url": "https://ulii.org/akn/ug/act/2010/7/eng@2010-05-28",
+        "quote": "An agreement which restrains a person from exercising a lawful profession, trade or business of any kind, is to that extent void, unless the restraint is reasonable in respect to the interests of the parties concerned and in respect to the interests of the public.",
+        "plain": "A non-compete is void to the extent it stops you working, unless the employer proves it is reasonable and no wider than needed to protect its own proprietary interest; the burden is on the employer (s. 21(3)).",
+        "confidence": "verified",
+        "note": "Verified on the ULII PDF (https://media.ulii.org/media/legislation/18541/source_file/c33f246eaf0ec990/2010-7.pdf)."
+      },
+      "GH": {
+        "act": null,
+        "section": null,
+        "case": null,
+        "url": null,
+        "quote": null,
+        "plain": "Ghana has no statute on non-competes and no reported Ghanaian ruling was found; courts apply the common-law rule that a restraint is void unless reasonable.",
+        "confidence": "none",
+        "note": "No statute; Act 651 is silent. Art. 24(1) of the 1992 Constitution ('Every person has the right to work under satisfactory, safe and healthy conditions') is the constitutional backdrop. No Ghanaian judgment located."
+      }
+    },
+    "forced_labour": {
+      "label": "Forced labour prohibition",
+      "NG": {
+        "act": "Constitution of the Federal Republic of Nigeria 1999, s. 34(1)(c); Labour Act, Cap L1 LFN 2004, s. 73(1)",
+        "section": "Constitution s. 34(1)(c); Labour Act s. 73(1)",
+        "url": "https://raw.githubusercontent.com/mykeels/nigerian-laws/master/2004/labour-act-cap-l1-lfn-2004.md",
+        "quote": "Any person who requires any other person, or permits any other person to be required, to perform forced labour contrary to section 31 (1) (c) of the Constitution of the Federal Republic of Nigeria shall be guilty of an offence",
+        "plain": "The Constitution says no person shall be required to perform forced or compulsory labour, and the Labour Act makes forcing anyone to work a criminal offence.",
+        "confidence": "verified",
+        "note": "Labour Act s. 73(1) verified on the LFN 2004 transcription (its cross-reference to 's. 31(1)(c)' is the 1979 Constitution numbering, now s. 34(1)(c)). Constitution s. 34(1)(c) text ('no person shall be required to perform forced or compulsory labour') cross-checked on two reproductions (lawglobalhub.com, antislaverylaw.ac.uk); no government host was fetchable."
+      },
+      "KE": {
+        "act": "Employment Act, 2007 (No. 11 of 2007), Cap 226; Constitution of Kenya 2010, Art. 30",
+        "section": "s. 4(1)",
+        "url": "https://new.kenyalaw.org/akn/ke/act/2007/11/eng@2024-04-26",
+        "quote": "No person shall use or assist any other person in recruiting, trafficking or using forced labour.",
+        "plain": "Recruiting, trafficking or using anyone for forced labour is prohibited, and the Constitution (Art. 30) separately bans slavery, servitude and forced labour.",
+        "confidence": "verified",
+        "note": "s. 4(1) verified on the NCLR 2012 copy on ILO NATLEX. Constitution Art. 30 was not fetched (Kenya Law 403) so it is cited but not quoted."
+      },
+      "UG": {
+        "act": "Employment Act, 2006 (Act 6 of 2006)",
+        "section": "s. 5(1)",
+        "url": "https://ulii.org/akn/ug/act/2006/6/eng@2023-12-31",
+        "quote": "No person shall use or assist any other person, in using forced or compulsory labour.",
+        "plain": "Using, or helping anyone use, forced or compulsory labour is prohibited.",
+        "confidence": "verified",
+        "note": null
+      },
+      "GH": {
+        "act": "Labour Act, 2003 (Act 651); Constitution of Ghana 1992, Art. 16",
+        "section": "s. 116(1)-(2)",
+        "url": "https://www.gipc.gov.gh/wp-content/uploads/2023/05/LABOUR-ACT-2003-ACT-651.pdf",
+        "quote": "(1) A person shall not be required to perform forced labour. (2) It is an offence for an employer to exact or cause to be exacted, or permit to be exacted, for his or her benefit forced labour from any worker.",
+        "plain": "No one can be made to perform forced labour, and an employer who extracts it commits an offence; the Constitution (Art. 16) also bans slavery, servitude and forced labour.",
+        "confidence": "verified",
+        "note": "Art. 16(1)-(2) verified on the Ghana Audit Service copy of the 1992 Constitution: '(1) No person shall be held in slavery or servitude. (2) No person shall be required to perform forced labour.'"
+      }
+    }
+  }
+}

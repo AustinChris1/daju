@@ -1,0 +1,47 @@
+{
+  "as_of": "2026-09-21",
+  "NG": [
+    { "org": "NAPTIP (National Agency for the Prohibition of Trafficking in Persons)", "channel": "phone", "value": "07030000203", "source_url": "https://naptip.gov.ng/contact-us/", "verified": true },
+    { "org": "NAPTIP toll-free", "channel": "phone", "value": "0800CALLNAPTIP (08002255627874)", "source_url": "https://naptip.gov.ng/contact-us/", "verified": true },
+    { "org": "NAPTIP short code", "channel": "phone", "value": "627", "source_url": "https://naptip.gov.ng/contact-us/", "verified": true },
+    { "org": "NAPTIP", "channel": "email", "value": "info@naptip.gov.ng", "source_url": "https://naptip.gov.ng/contact-us/", "verified": true },
+    { "org": "EFCC (Economic and Financial Crimes Commission) hotline", "channel": "phone", "value": "+234 809 332 2644", "source_url": "https://www.efcc.gov.ng/Complaints", "verified": false, "note": "Official page renders client-side; number appears in the search index of this page and in EFCC public notices but could not be read from the page HTML." },
+    { "org": "EFCC", "channel": "email", "value": "info@efcc.gov.ng", "source_url": "https://www.efcc.gov.ng/Complaints", "verified": false, "note": "Same limitation as the hotline." },
+    { "org": "EFCC Eagle Eye reporting app", "channel": "web", "value": "https://www.efccnigeria.org/efcc/records/eagle-eye-app", "source_url": "https://www.efccnigeria.org/efcc/news-and-information/news-release/6992-efcc-launches-app-for-online-reporting-of-economic-crimes", "verified": false, "note": "Page exists in the EFCC site index; content not machine-readable." },
+    { "org": "Federal Ministry of Labour and Employment", "channel": "phone", "value": "+(234) 805 138 3688", "source_url": "https://labour.gov.ng/national-electronic-labour-exchange-nelex/", "verified": true },
+    { "org": "Federal Ministry of Labour and Employment", "channel": "email", "value": "info@labour.gov.ng", "source_url": "https://labour.gov.ng/national-electronic-labour-exchange-nelex/", "verified": true },
+    { "org": "NELEX (National Electronic Labour Exchange)", "channel": "phone", "value": "+234 913 532 2942", "source_url": "https://nelex.gov.ng/contacts", "verified": true },
+    { "org": "NELEX (National Electronic Labour Exchange)", "channel": "email", "value": "info@nelexnigeria.com", "source_url": "https://labour.gov.ng/national-electronic-labour-exchange-nelex/", "verified": true }
+  ],
+  "KE": [
+    { "org": "DCI (Directorate of Criminal Investigations) anonymous toll-free line", "channel": "phone", "value": "0800 722 203", "source_url": "https://www.dci.go.ke/contact-us", "verified": true },
+    { "org": "DCI", "channel": "email", "value": "info@dci.go.ke", "source_url": "https://www.dci.go.ke/contact-us", "verified": true },
+    { "org": "Counter Trafficking in Persons Secretariat (Ministry of Labour and Social Protection)", "channel": "phone", "value": "0733721566", "source_url": "https://www.socialprotection.go.ke/sites/default/files/Downloads/Human-Trafficking-FAQs.pdf", "verified": true },
+    { "org": "Child Helpline (child trafficking)", "channel": "phone", "value": "116", "source_url": "https://www.socialprotection.go.ke/sites/default/files/Downloads/Human-Trafficking-FAQs.pdf", "verified": true },
+    { "org": "State Department for Diaspora Affairs 24-hour emergency hotline", "channel": "phone", "value": "+254 207 876 000", "source_url": "https://diaspora.go.ke/emergency", "verified": true },
+    { "org": "State Department for Diaspora Affairs consular assistance", "channel": "email", "value": "consular@diaspora.go.ke", "source_url": "https://diaspora.go.ke/emergency", "verified": true },
+    { "org": "State Department for Diaspora Affairs main office", "channel": "phone", "value": "+254 114 757 002", "source_url": "https://diaspora.go.ke/emergency", "verified": true },
+    { "org": "National Employment Authority (NEA)", "channel": "phone", "value": "+254 (020) 8610000", "source_url": "https://nea.go.ke/web/contact-us/", "verified": false, "note": "nea.go.ke returned HTTP 500 and an expired TLS certificate during checks; value taken from the search index of the official contact page." },
+    { "org": "National Employment Authority (NEA)", "channel": "email", "value": "info@nea.go.ke", "source_url": "https://nea.go.ke/web/contact-us/", "verified": false, "note": "Same limitation." }
+  ],
+  "UG": [
+    { "org": "Ministry of Gender, Labour and Social Development (External Employment Unit / EEMIS)", "channel": "phone", "value": "+256 414 347854", "source_url": "https://mglsd.go.ug/external-employment-mis/", "verified": true, "note": "Ministry switchboard; the page publishes no separate EEMIS helpdesk line." },
+    { "org": "EEMIS licensed-recruiter register", "channel": "web", "value": "https://eemis.mglsd.go.ug/", "source_url": "https://mglsd.go.ug/external-employment-mis/", "verified": false, "note": "Portal linked from the Ministry page; not fetched directly." },
+    { "org": "Coordination Office for Prevention of Trafficking in Persons (Ministry of Internal Affairs) toll-free", "channel": "phone", "value": "0800-199-004 / 0800-199-003", "source_url": "https://mia.go.ug/departments/trafficking-persons", "verified": true },
+    { "org": "Uganda Police Force emergency", "channel": "phone", "value": "999 / 112", "source_url": "https://upf.go.ug/national-emergence-toll-free-numbers-for-public-safety/", "verified": true },
+    { "org": "Uganda Police National Emergency Call Centre (toll-free)", "channel": "phone", "value": "0800199399", "source_url": "https://upf.go.ug/national-emergence-toll-free-numbers-for-public-safety/", "verified": true },
+    { "org": "Uganda Police Child and Family Protection helpline (toll-free)", "channel": "phone", "value": "0800199195", "source_url": "https://x.com/PoliceUg/status/1835625067910230101", "verified": true, "note": "Official Uganda Police Force account; line is for GBV and child protection, used for trafficking referrals." }
+  ],
+  "GH": [
+    { "org": "Ghana Police Service Anti-Human Trafficking Unit (AHTU)", "channel": "web", "value": "https://police.gov.gh/en/index.php/anti-human-trafficking-unit-ahtu/", "source_url": "https://police.gov.gh/en/index.php/anti-human-trafficking-unit-ahtu/", "verified": true, "note": "Unit page publishes no direct number; use Police HQ lines below." },
+    { "org": "Ghana Police Service headquarters", "channel": "phone", "value": "+233 302 773906 / +233 302 787373", "source_url": "https://police.gov.gh/en/index.php/contact-us/", "verified": true },
+    { "org": "Ghana Police Service", "channel": "email", "value": "hq.pro@police.gov.gh", "source_url": "https://police.gov.gh/en/index.php/contact-us/", "verified": true },
+    { "org": "Ghana Police emergency", "channel": "phone", "value": "191 / 18555", "source_url": "https://police.gov.gh/en/index.php/police-emergency-numbers/", "verified": false, "note": "Official page exists but the numbers are not machine-readable in its HTML." },
+    { "org": "Ministry of Gender, Children and Social Protection toll-free (human trafficking, GBV, child abuse)", "channel": "phone", "value": "0800 800 800 / 0800 0900 0900", "source_url": "https://www.myjoyonline.com/gender-ministry-resolves-70-of-complaints-received-through-citizens-engagement-service/", "verified": true, "note": "MyJoyOnline, 16 Sept 2026, quoting the Minister." },
+    { "org": "Ministry of Gender, Children and Social Protection (Human Trafficking Secretariat)", "channel": "phone", "value": "(+233) 0302 688181", "source_url": "https://www.mogcsp.gov.gh/human-trafficking-secretariat-ht/", "verified": true },
+    { "org": "Ministry of Gender, Children and Social Protection", "channel": "email", "value": "info@mogcsp.gov.gh", "source_url": "https://www.mogcsp.gov.gh/human-trafficking-secretariat-ht/", "verified": true },
+    { "org": "Ministry of Labour, Jobs and Employment (formerly Employment and Labour Relations) toll-free", "channel": "phone", "value": "0800 600 300 / 0800 600 400", "source_url": "https://www.melr.gov.gh/", "verified": true },
+    { "org": "Ghana Immigration Service", "channel": "phone", "value": "+233 302 224445", "source_url": "https://gis.gov.gh/contact/", "verified": true },
+    { "org": "Ghana Immigration Service", "channel": "email", "value": "info@immigration.gov.gh", "source_url": "https://gis.gov.gh/contact/", "verified": true }
+  ]
+}

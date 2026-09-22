@@ -1,0 +1,58 @@
+[
+  {
+    "id": "ke-thailand-warning",
+    "country": "KE",
+    "org": "Ministry of Foreign Affairs, Kenya (reported by The Standard)",
+    "date": "2022-11-16",
+    "url": "https://www.standardmedia.co.ke/national/article/2001460782/customer-care-jobs-in-thailand-avenue-to-commit-cybercrimes-government-warns",
+    "quote": "online job scammers trick Kenyans to apply for jobs, only for them to be taken to Myanmar where they are forced to commit cybercrimes."
+  },
+  {
+    "id": "ke-mfa-myanmar-cambodia",
+    "country": "KE",
+    "org": "Prime Cabinet Secretary and Cabinet Secretary for Foreign and Diaspora Affairs, Musalia Mudavadi (reported by The Eastleigh Voice)",
+    "date": "2026-05-07",
+    "url": "https://eastleighvoice.co.ke/news/346129/myanmar-at-centre-of-kenyas-labour-trafficking-crisis-over-750-rescued-since-2022",
+    "quote": "Fraudulent recruitment has increasingly shifted online, with job scams circulating through Facebook, Telegram, WhatsApp, TikTok and job websites."
+  },
+  {
+    "id": "ng-naptip-fake-overseas-jobs",
+    "country": "NG",
+    "org": "NAPTIP Director-General Binta Adamu-Bello (reported by Peoples Gazette)",
+    "date": "2026-07-23",
+    "url": "https://gazettengr.com/naptip-warns-social-media-fake-job-scams-fuelling-human-trafficking/",
+    "quote": "Ms Adamu-Bello urged Nigerians to verify overseas job offers, avoid unofficial recruitment channels, and promptly report suspicious activities to relevant authorities."
+  },
+  {
+    "id": "ug-mglsd-unlicensed-brokers",
+    "country": "UG",
+    "org": "Ministry of Gender, Labour and Social Development, State Minister Balaam Barugahara (reported by Daily Monitor)",
+    "date": "2026-04-09",
+    "url": "https://www.monitor.co.ug/uganda/news/national/govt-releases-list-of-licensed-firms-amid-labour-exploitation-5418522",
+    "quote": "Many young people are losing money to traffickers and fraudulent companies. Please stay alert. Always verify that the recruiter is licensed before engaging with them."
+  },
+  {
+    "id": "gh-ablakwa-certified-agencies",
+    "country": "GH",
+    "org": "Minister for Foreign Affairs Samuel Okudzeto Ablakwa, with the Ministry of Employment and Labour Relations (reported by GBC)",
+    "date": "2026-09-08",
+    "url": "https://www.gbcghanaonline.com/general/recruitment-ablakwa/2026/",
+    "quote": "If you are being recruited, please check if the recruiting agency is known to government."
+  },
+  {
+    "id": "gh-unlicensed-agencies-social-media",
+    "country": "GH",
+    "org": "Government of Ghana (Ablakwa, Ghana Immigration Service, EOCO; reported by GBC)",
+    "date": "2026-07-28",
+    "url": "https://www.gbcghanaonline.com/general/govt-warns-ghanaian/2026/",
+    "quote": "Many trafficking cases originate from unlicensed recruitment agencies and fake job advertisements circulated on social media."
+  },
+  {
+    "id": "alabuga-start",
+    "country": "ALL",
+    "org": "Africa Defense Forum, summarising the Associated Press investigation of 10 October 2024",
+    "date": "2025-01-28",
+    "url": "https://adf-magazine.com/2025/01/africans-trapped-working-in-russian-drone-factories/",
+    "quote": "A slick online marketing campaign called 'Alabuga Start' shared hundreds of recruiting videos targeting African women with the promise of a good-paying job and a free flight to Russia."
+  }
+]

@@ -1,0 +1,37 @@
+{
+  "generated": "2026-09-21",
+  "countries": [
+    {
+      "country": "NG",
+      "source": "NELEX, Federal Ministry of Labour and Employment",
+      "as_of": "2026-09-21",
+      "count": 1186,
+      "method": "html-pagination",
+      "notes": "Public list of registered private employment agencies (80 pages). Publishes name, email and a CAC-verified flag; no licence numbers, expiry dates or phone numbers. All listed entries are shown as active by the site."
+    },
+    {
+      "country": "KE",
+      "source": "NEA register of private recruitment agencies, via the State Department for Diaspora Affairs (diaspora.go.ke)",
+      "as_of": "2026-05-18",
+      "count": 1295,
+      "method": "api",
+      "notes": "The NEAIMS portal refused connections from outside Kenya; the diaspora.go.ke verification page loads the same NEA register as JSON, last updated 18 May 2026. Holds licence numbers, validity and email; 515 entries were valid at snapshot, the rest expired."
+    },
+    {
+      "country": "UG",
+      "source": "EEMIS, Ministry of Gender, Labour and Social Development",
+      "as_of": "2026-09-21",
+      "count": 195,
+      "method": "api",
+      "notes": "Licensed external recruitment companies only; the register lists currently licensed firms, so companies whose licences were revoked in April 2026 do not appear. Holds phone, email, address and licence validity dates."
+    },
+    {
+      "country": "GH",
+      "source": "GLMIS, Ministry of Employment and Labour Relations",
+      "as_of": "2026-09-21",
+      "count": 322,
+      "method": "html-pagination",
+      "notes": "Directory of employment agencies (government and private) with email and location. Carries no licence status; the Ministry announced a licensed-agency list on 8 September 2026 and this snapshot should be replaced by it when published."
+    }
+  ]
+}
