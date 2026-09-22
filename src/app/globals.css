@@ -208,6 +208,24 @@ button:disabled {
   transition: background-color 150ms var(--ease-out), color 150ms var(--ease-out);
 }
 
+/* Long-form pages: docs, privacy, terms. */
+.prose-daju h2 { font-size: 1.35rem; font-weight: 700; margin-top: 2.25rem; margin-bottom: 0.5rem; font-stretch: 92%; letter-spacing: -0.01em; }
+.prose-daju h3 { font-size: 1.05rem; font-weight: 700; margin-top: 1.5rem; margin-bottom: 0.4rem; }
+.prose-daju p { margin-top: 0.75rem; line-height: 1.7; }
+.prose-daju ul, .prose-daju ol { margin-top: 0.75rem; padding-left: 1.4rem; line-height: 1.7; }
+.prose-daju ul { list-style: disc; }
+.prose-daju ol { list-style: decimal; }
+.prose-daju li + li { margin-top: 0.3rem; }
+.prose-daju a { color: var(--stamp); }
+.prose-daju code { font-family: var(--font-mono); font-size: 0.9em; background: var(--paper-2); padding: 0.1em 0.35em; border-radius: 4px; }
+.prose-daju pre { margin-top: 1rem; overflow-x: auto; background: var(--paper-2); border-radius: 12px; padding: 1rem; font-size: 0.85rem; line-height: 1.6; }
+.prose-daju pre code { background: none; padding: 0; }
+.prose-daju table { margin-top: 1rem; width: 100%; border-collapse: collapse; font-size: 0.9rem; display: block; overflow-x: auto; }
+.prose-daju th, .prose-daju td { text-align: left; vertical-align: top; padding: 0.55rem 0.6rem; border-bottom: 1px solid var(--rule); }
+.prose-daju th { font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.05em; color: var(--toner-2); }
+.prose-daju strong { font-weight: 700; }
+.prose-daju blockquote { margin-top: 1rem; border-left: 3px solid var(--stamp); padding-left: 1rem; color: var(--toner-2); }
+
 /* Case slider: native scroll-snap, arrows only move the scroll position. */
 .slider {
   display: flex;

@@ -11,9 +11,8 @@ const TABS: { href: string; label: string; hint: string }[] = [
   { href: "/check", label: "Check", hint: "Paste an offer" },
   { href: "/registry", label: "Registers", hint: "Four countries, one search" },
   { href: "/employers", label: "Employers", hint: "Verified sender links" },
-  { href: "/report", label: "Report", hint: "Warn the next person" },
   { href: "/hotlines", label: "Hotlines", hint: "Who to call" },
-  { href: "/method", label: "Method", hint: "How a check is made" },
+  { href: "/docs", label: "Docs", hint: "How it works" },
 ];
 
 export function Nav() {
