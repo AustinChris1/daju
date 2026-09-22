@@ -67,6 +67,12 @@
   color-scheme: dark;
 }
 
+:root {
+  --ease-out: cubic-bezier(0.23, 1, 0.32, 1);
+  --ease-in-out: cubic-bezier(0.77, 0, 0.175, 1);
+  --ease-drawer: cubic-bezier(0.32, 0.72, 0, 1);
+}
+
 @theme inline {
   --color-paper: var(--paper);
   --color-paper-2: var(--paper-2);
@@ -184,8 +190,8 @@ a {
   animation: markin 0.32s cubic-bezier(0.16, 1, 0.3, 1) both;
 }
 @keyframes markin {
-  from { background-color: transparent; }
-  to { background-color: var(--mark); }
+  from { background-color: transparent; color: var(--toner); }
+  to { background-color: var(--mark); color: var(--mark-text); }
 }
 
 .stamp {
@@ -264,7 +270,112 @@ table.ledger th {
   font-weight: 700;
 }
 
+/* Mobile navigation sheet: hidden by translating its own height, shown with the drawer curve. */
+.menu-sheet {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 100%;
+  z-index: 35;
+  background: var(--paper);
+  border-bottom: 1px solid var(--rule);
+  box-shadow: var(--shadow);
+  transform: translateY(0);
+  transition: transform 380ms var(--ease-drawer), visibility 0s linear 0s;
+  visibility: visible;
+}
+.menu-sheet[data-closed] {
+  transform: translateY(-104%);
+  transition: transform 260ms var(--ease-drawer), visibility 0s linear 260ms;
+  visibility: hidden;
+}
+.menu-sheet:not([data-closed]) .menu-item {
+  opacity: 0;
+  transform: translateY(6px);
+  animation: menuin 260ms var(--ease-out) forwards;
+}
+@keyframes menuin {
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* Hero replay: the pasted message wipes in, register rows enter one by one. */
+.hero-paste {
+  clip-path: inset(0 0 100% 0);
+  transition: clip-path 500ms var(--ease-in-out);
+}
+.hero-paste[data-on] {
+  clip-path: inset(0 0 0 0);
+}
+.hero-row {
+  opacity: 0;
+  transform: translateY(6px);
+  animation: menuin 240ms var(--ease-out) forwards;
+}
+
+/* Scroll reveal: fires once from an IntersectionObserver. */
+.reveal {
+  clip-path: inset(0 0 100% 0);
+  opacity: 0;
+  transform: translateY(10px);
+  transition: clip-path 600ms var(--ease-in-out), opacity 400ms var(--ease-out), transform 600ms var(--ease-out);
+}
+.reveal[data-visible] {
+  clip-path: inset(0 0 0 0);
+  opacity: 1;
+  transform: translateY(0);
+}
+.reveal-line {
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 700ms var(--ease-in-out);
+}
+[data-visible] .reveal-line,
+.reveal-line[data-visible] {
+  transform: scaleX(1);
+}
+
+/* Duotone: photographs printed in toner with a stamp-ink wash, so they belong to the paper. */
+.duotone img {
+  filter: grayscale(1) contrast(1.05);
+}
+.duotone::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: var(--stamp);
+  mix-blend-mode: soft-light;
+  opacity: 0.55;
+  pointer-events: none;
+}
+
+/* Photo band parallax on browsers with scroll-driven animations; static elsewhere. */
+.parallax-img {
+  will-change: transform;
+}
+@supports (animation-timeline: view()) {
+  .parallax-img {
+    animation: parallax linear both;
+    animation-timeline: view();
+    animation-range: entry 0% exit 100%;
+  }
+}
+@keyframes parallax {
+  from { transform: translateY(-6%) scale(1.12); }
+  to { transform: translateY(6%) scale(1.12); }
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .lift { transition: transform 160ms var(--ease-out), box-shadow 160ms var(--ease-out); }
+  .lift:hover { transform: translateY(-2px); }
+}
+
 @media (prefers-reduced-motion: reduce) {
   .scanbar { animation: none; }
-  * { transition-duration: 0.01ms !important; animation-duration: 0.01ms !important; }
+  .reveal { clip-path: none; transform: none; transition: opacity 200ms ease; }
+  .reveal-line { transform: none; transition: none; }
+  .parallax-img { animation: none; }
+  .menu-sheet, .menu-sheet[data-closed] { transition: opacity 150ms ease; transform: none; }
+  .menu-sheet[data-closed] { opacity: 0; }
+  .menu-sheet:not([data-closed]) .menu-item { animation: none; opacity: 1; transform: none; }
+  * { animation-duration: 0.01ms !important; }
 }

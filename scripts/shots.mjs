@@ -22,8 +22,22 @@ for (const route of [...routes, ...extra]) {
     for (const scheme of ["light", "dark"]) {
       await page.setViewport(vp);
       await page.emulateMediaFeatures([{ name: "prefers-color-scheme", value: scheme }]);
-      await page.goto(base + route, { waitUntil: "networkidle0", timeout: 60000 });
-      await new Promise((r) => setTimeout(r, 900));
+      const [path, hash] = route.split("#");
+      await page.goto(base + path, { waitUntil: "networkidle0", timeout: 60000 });
+      if (hash === "menu") await page.click("button[aria-controls=mobile-menu]").catch(() => {});
+      if (hash === "bottom") await page.evaluate(() => window.scrollTo(0, document.body.scrollHeight));
+      // Scroll through the page so lazy images and scroll reveals fire, then return to the top.
+      if (hash !== "menu") {
+        await page.evaluate(async () => {
+          const step = Math.max(300, window.innerHeight * 0.7);
+          for (let y = 0; y < document.body.scrollHeight; y += step) {
+            window.scrollTo(0, y);
+            await new Promise((r) => setTimeout(r, 120));
+          }
+          window.scrollTo(0, 0);
+        });
+      }
+      await new Promise((r) => setTimeout(r, hash ? 1400 : 1200));
       const file = join(out, `${slug}--${sizeName}--${scheme}.png`);
       await page.screenshot({ path: file, fullPage: true });
       const overflow = await page.evaluate(() => document.documentElement.scrollWidth - document.documentElement.clientWidth);
