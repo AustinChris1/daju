@@ -258,6 +258,11 @@ export async function runCheck(input: CheckInput): Promise<Report> {
   const replies = staticReplies(draft, scenario);
   const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "http://localhost:3000";
   const report: Report = { ...draft, actions: { replies, hotlines: getHotlines(country), shareText: shareText(draft, `${siteUrl}/c/${id}`), replyScenario: scenario } };
-  await store.saveCheck({ id, created_at: report.createdAt, country, kind: x.kind, level: verdict.level, report });
+  try {
+    await store.saveCheck({ id, created_at: report.createdAt, country, kind: x.kind, level: verdict.level, report });
+  } catch (err) {
+    // A store outage must never block a check; the card link will simply not persist.
+    console.error("saveCheck failed", err instanceof Error ? err.message : err);
+  }
   return report;
 }
