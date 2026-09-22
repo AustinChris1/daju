@@ -1,12 +1,15 @@
+import Image from "next/image";
 import Link from "next/link";
+import { existsSync } from "node:fs";
+import { join } from "node:path";
 import { ArrowRight, FileCheck2, Landmark, ScanSearch, Send } from "lucide-react";
 import { BRAND } from "@/lib/brand";
 import { COUNTRIES, type Country } from "@/lib/countries";
 import { registryStats } from "@/lib/registry/load";
 import { allLureSources } from "@/lib/law";
-import { SAMPLES } from "@/lib/samples";
 import { HeroDemo } from "@/components/home/HeroDemo";
-import { PhotoBand } from "@/components/home/PhotoBand";
+import { PhotoBand, type Photo } from "@/components/home/PhotoBand";
+import { CaseSlider } from "@/components/home/CaseSlider";
 import { CountUp, Reveal } from "@/components/home/Reveal";
 import { Stamp } from "@/components/brand/Stamp";
 
@@ -18,150 +21,177 @@ const PROOF: { n: string; what: string; src: string; url: string }[] = [
 ];
 
 const STEPS = [
-  { icon: ScanSearch, t: "Reads the message", d: "Names, phone numbers, emails, domains, amounts, destinations and job titles, straight from what you pasted." },
-  { icon: Landmark, t: "Looks up the register", d: "All four countries at once. Name on file is not enough: the number and email in the message are compared to the record." },
-  { icon: FileCheck2, t: "Applies the published warnings", d: "Fee before work, Thailand customer-service, Alabuga, one-way tickets. Offer letters get six clauses checked against the labour Act, with the section." },
-  { icon: Send, t: "Hands you the reply", d: "English, Pidgin, Igbo, Yoruba, Hausa, Swahili, Luganda or Twi, plus the official hotline. Send it from the card." },
+  { icon: ScanSearch, t: "Reads the message", d: "Names, phone numbers, emails, domains, amounts, destinations and job titles, straight from what you pasted.", tone: "bg-mark text-mark-text" },
+  { icon: Landmark, t: "Looks up the register", d: "All four countries at once. Name on file is not enough: the number and email in the message are compared to the record.", tone: "bg-stamp text-paper" },
+  { icon: FileCheck2, t: "Applies the warnings", d: "Fee before work, Thailand customer-service, Alabuga, one-way tickets. Offer letters get six clauses checked against the labour Act.", tone: "bg-red text-paper" },
+  { icon: Send, t: "Hands you the reply", d: "English, Pidgin, Igbo, Yoruba, Hausa, Swahili, Luganda or Twi, plus the official hotline. Send it from the card.", tone: "bg-green text-paper" },
+];
+
+const PHOTOS: Photo[] = [
+  { src: "/images/lagos-phones.jpg", alt: "Two young people in Lagos reading a message on one phone", caption: "The offer arrives on WhatsApp. So does the check." },
+  { src: "/images/nairobi-crowd.jpg", alt: "A smiling man in a leather jacket among a group of people in Nairobi", caption: "Nairobi, Kampala, Accra, Lagos: one register search." },
+  { src: "/images/is-this-real.jpg", alt: "A woman holding up a phone and pointing at it", caption: "“Is this one real?” Find out in the next minute.", position: "35% center" },
 ];
 
 export default function Home() {
   const stats = registryStats();
   const total = stats.reduce((a, s) => a + s.count, 0);
   const sources = allLureSources();
+  const photos = PHOTOS.filter((p) => existsSync(join(process.cwd(), "public", p.src)));
 
   return (
     <div>
-      <section className="mx-auto max-w-5xl px-4 pb-12 pt-10 sm:pt-16">
-        <div className="grid gap-10 lg:grid-cols-[1.05fr_1fr] lg:items-center">
+      <section className="field-violet">
+        <div className="mx-auto grid max-w-6xl gap-10 px-4 pb-14 pt-10 sm:px-6 sm:pt-16 lg:grid-cols-[1.05fr_1fr] lg:items-center lg:pb-20">
           <div>
-            <p className="condensed text-[0.7rem] text-toner-2">{BRAND.meaning}</p>
-            <h1 className="display mt-3 text-[clamp(2.3rem,7vw,4.4rem)] leading-[0.96]">{BRAND.tagline}</h1>
-            <p className="mt-5 max-w-[50ch] text-lg leading-relaxed text-toner-2">
-              Paste a job ad, a recruiter&apos;s WhatsApp message or an offer letter. {BRAND.name} reads the name, number and email, looks them up in the licensed-agency registers of Nigeria, Kenya, Uganda and Ghana, and hands you the reply to send.
+            <p className="muted text-sm font-semibold">{BRAND.meaning}</p>
+            <h1 className="display mt-3 text-[clamp(2.5rem,7.5vw,5rem)] leading-[0.95]">
+              Is this sender <span className="mark rounded-md px-2">on file?</span>
+            </h1>
+            <p className="muted mt-6 max-w-[46ch] text-lg leading-relaxed">
+              Paste the job ad, the recruiter&apos;s WhatsApp or the offer letter. {BRAND.name} checks the name, number and email against the licensed-agency registers of Nigeria, Kenya, Uganda and Ghana, and hands you the reply to send.
             </p>
-            <div className="mt-7 flex flex-wrap items-center gap-3">
-              <Link href="/check" className="lift inline-flex items-center gap-2 bg-stamp px-5 py-3 text-sm font-bold tab text-paper no-underline hover:bg-stamp-hover">
+            <div className="mt-8 flex flex-wrap items-center gap-3">
+              <Link href="/check" className="lift inline-flex items-center gap-2 rounded-full bg-mark px-6 py-3.5 text-sm font-bold text-mark-text no-underline hover:brightness-95">
                 Check an offer <ArrowRight className="h-4 w-4" aria-hidden />
               </Link>
-              <Link href="/employers" className="lift inline-flex items-center gap-2 border border-toner px-5 py-3 text-sm font-bold tab text-toner no-underline hover:bg-paper-2">
+              <Link href="/employers" className="lift inline-flex items-center gap-2 rounded-full bg-paper/15 px-6 py-3.5 text-sm font-bold text-paper no-underline ring-1 ring-inset ring-paper/40 hover:bg-paper/25">
                 I&apos;m an employer
               </Link>
             </div>
-            <div className="mt-7 flex flex-wrap items-center gap-3 text-sm">
-              <span className="stamp text-stamp text-base">On file</span>
-              <span className="stamp text-red text-base">Stop</span>
-              <span className="text-toner-2">It never says safe.</span>
-            </div>
+            <p className="muted mt-8 text-sm">Free. No sign-up. It never says safe.</p>
           </div>
-          <div>
-            <HeroDemo />
-            <div className="mt-3 flex flex-wrap gap-2">
-              {SAMPLES.slice(0, 3).map((s) => (
-                <Link key={s.id} href={`/check?text=${encodeURIComponent(s.text)}&country=${s.country}`} className="rounded-xs border border-rule px-2.5 py-1 text-xs text-toner-2 no-underline hover:border-toner hover:text-toner">
-                  Run it: {s.label}
-                </Link>
-              ))}
+          <div className="relative">
+            <div className="relative aspect-4/3 overflow-hidden rounded-3xl bg-toner shadow-[0_30px_60px_-30px_rgba(0,0,0,0.6)]">
+              <Image src="/images/lagos-phones.jpg" alt="Two young people in Lagos reading a message on one phone" fill priority sizes="(min-width: 1024px) 45vw, 100vw" className="object-cover" />
+            </div>
+            <div className="relative -mt-16 ml-4 mr-0 sm:-mt-24 sm:ml-10 lg:-mt-28 lg:-mr-6">
+              <HeroDemo />
             </div>
           </div>
         </div>
       </section>
 
-      <section className="border-y border-rule bg-paper-2">
-        <div className="mx-auto max-w-5xl px-4 py-8">
-          <p className="condensed text-[0.7rem] text-toner-2">Registers on file, snapshot dates included</p>
-          <ul className="mt-4 grid gap-5 sm:grid-cols-4">
+      <section className="py-14">
+        <CaseSlider />
+      </section>
+
+      <section className="mx-auto max-w-6xl px-4 sm:px-6">
+        <div className="card overflow-hidden">
+          <div className="grid gap-px bg-rule/60 sm:grid-cols-4">
             {stats.map((s, i) => {
               const c = COUNTRIES[s.country as Country];
               return (
-                <Reveal as="li" key={s.country} delay={i * 70} className="border-l border-rule pl-3">
-                  <p className="font-mono text-3xl">
+                <Reveal as="div" key={s.country} delay={i * 70} className="bg-paper p-6">
+                  <p className="text-4xl font-extrabold tracking-tight text-stamp">
                     <CountUp value={s.count} />
                   </p>
-                  <p className="mt-1 text-sm font-semibold">
+                  <p className="mt-2 font-bold">
                     {c.flag} {c.registry.short}
                   </p>
-                  <p className="text-xs text-toner-2">
-                    {c.registry.what}. As of {s.as_of}.{s.active !== s.count ? ` ${s.active.toLocaleString()} active.` : ""}
+                  <p className="mt-1 text-sm text-toner-2">
+                    {c.registry.what}. Snapshot {s.as_of}.{s.active !== s.count ? ` ${s.active.toLocaleString()} active.` : ""}
                   </p>
                 </Reveal>
               );
             })}
-          </ul>
-          <p className="mt-4 text-xs text-toner-2">
-            {total.toLocaleString()} records, re-snapshotted by script, never scraped during a check. <Link href="/method" className="text-toner-2">Method and caveats</Link>.
-          </p>
+          </div>
         </div>
+        <p className="mt-3 text-sm text-toner-2">
+          {total.toLocaleString()} records on file, refreshed by script, never scraped during a check. <Link href="/method">Method and caveats</Link>.
+        </p>
       </section>
 
-      <section className="mx-auto max-w-5xl px-4 py-16">
+      <section className="mx-auto max-w-6xl px-4 py-20 sm:px-6">
         <Reveal>
-          <h2 className="display text-[clamp(1.6rem,3.5vw,2.3rem)]">What one check does</h2>
+          <h2 className="display text-[clamp(1.8rem,4vw,2.8rem)]">What one check does</h2>
         </Reveal>
-        <ol className="mt-8 grid gap-8 md:grid-cols-4">
+        <ol className="mt-8 grid gap-4 md:grid-cols-4">
           {STEPS.map((s, i) => (
-            <Reveal as="li" key={s.t} delay={i * 90}>
-              <div className="reveal-line h-px w-full bg-toner" />
-              <div className="mt-4 flex items-center gap-2">
-                <span className="font-mono text-sm text-toner-2">{i + 1}.</span>
-                <s.icon className="h-5 w-5 text-stamp" aria-hidden />
-              </div>
-              <h3 className="mt-3 font-semibold">{s.t}</h3>
-              <p className="mt-1 text-sm leading-relaxed text-toner-2">{s.d}</p>
+            <Reveal as="li" key={s.t} delay={i * 90} className="card p-6">
+              <span className={`inline-flex h-11 w-11 items-center justify-center rounded-2xl ${s.tone}`}>
+                <s.icon className="h-5 w-5" aria-hidden />
+              </span>
+              <h3 className="mt-5 text-lg font-bold">{s.t}</h3>
+              <p className="mt-2 text-sm leading-relaxed text-toner-2">{s.d}</p>
             </Reveal>
           ))}
         </ol>
       </section>
 
-      <PhotoBand />
+      <PhotoBand photos={photos} />
 
-      <section className="mx-auto grid max-w-5xl gap-10 px-4 py-16 lg:grid-cols-[1fr_1fr]">
-        <Reveal>
-          <h2 className="display text-[clamp(1.6rem,3.5vw,2.3rem)]">Employers: issue offers nobody can borrow</h2>
-          <p className="mt-4 max-w-[52ch] leading-relaxed text-toner-2">
-            Scammers reuse your company name with their own WhatsApp number. Prove you control your domain once, with one DNS record, and every offer you issue gets a link that shows the candidate a verified sender the moment they paste it into a check.
-          </p>
-          <ol className="mt-6 space-y-3 text-sm">
-            <li className="flex gap-3"><span className="font-mono text-toner-2">1.</span> Register your company domain. No account, one key.</li>
-            <li className="flex gap-3"><span className="font-mono text-toner-2">2.</span> Add the TXT record we give you. Verification is automatic.</li>
-            <li className="flex gap-3"><span className="font-mono text-toner-2">3.</span> Issue an offer link per candidate. Their check stamps it as verified.</li>
-          </ol>
-          <Link href="/employers" className="lift mt-6 inline-flex items-center gap-2 bg-stamp px-4 py-2.5 text-sm font-bold tab text-paper no-underline hover:bg-stamp-hover">
-            Verify my company <ArrowRight className="h-4 w-4" aria-hidden />
-          </Link>
-        </Reveal>
-        <Reveal delay={120} className="sheet p-6">
-          <p className="condensed text-[0.7rem] text-toner-2">What the candidate sees</p>
-          <div className="mt-4 flex items-start justify-between gap-4">
-            <div>
-              <p className="font-semibold">Verified sender, no lure signals found</p>
-              <p className="mt-1 text-sm text-toner-2">Sender verified: the company proved control of its domain by DNS record. A verified sender can still send a bad contract; read the clauses.</p>
+      <section className="mx-auto max-w-6xl px-4 pb-20 sm:px-6">
+        <div className="card overflow-hidden lg:grid lg:grid-cols-[1fr_1fr]">
+          <Reveal className="p-8 sm:p-10">
+            <p className="text-sm font-bold text-stamp">For employers and recruiters</p>
+            <h2 className="display mt-2 text-[clamp(1.8rem,4vw,2.6rem)]">Issue offers nobody can borrow</h2>
+            <p className="mt-4 max-w-[50ch] leading-relaxed text-toner-2">
+              Scammers reuse your company name with their own WhatsApp number. Prove you control your domain once, with one DNS record, and every offer link you issue shows the candidate a verified sender the moment they paste it into a check.
+            </p>
+            <ol className="mt-6 space-y-3 text-sm">
+              {["Register your company domain. No account, one key.", "Add the TXT record we give you. Verification is automatic.", "Issue an offer link per candidate. Their check stamps it as verified."].map((t, i) => (
+                <li key={t} className="flex gap-3">
+                  <span className="flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-stamp text-xs font-bold text-paper">{i + 1}</span>
+                  <span>{t}</span>
+                </li>
+              ))}
+            </ol>
+            <Link href="/employers" className="lift mt-7 inline-flex items-center gap-2 rounded-full bg-stamp px-6 py-3 text-sm font-bold text-paper no-underline hover:bg-stamp-hover">
+              Verify my company <ArrowRight className="h-4 w-4" aria-hidden />
+            </Link>
+          </Reveal>
+          <Reveal delay={120} className="field-violet flex flex-col justify-center p-8 sm:p-10">
+            <p className="muted text-xs font-bold uppercase tracking-wide">What the candidate sees</p>
+            <div className="sheet mt-4 p-5 text-toner">
+              <div className="flex items-start justify-between gap-4">
+                <div>
+                  <p className="font-bold">Verified sender, no lure signals found</p>
+                  <p className="mt-1 text-sm text-toner-2">The company proved control of its domain by DNS record. A verified sender can still send a bad contract; read the clauses.</p>
+                </div>
+                <Stamp level="on_file" size="sm" animate={false} />
+              </div>
             </div>
-            <Stamp level="on_file" size="sm" animate={false} />
-          </div>
-          <p className="mt-5 text-xs text-toner-2">Illustrative card. Real cards carry the check id, the snapshot dates and the verification date.</p>
-        </Reveal>
+            <p className="muted mt-4 text-xs">Illustrative card. Real cards carry the check id, the snapshot dates and the verification date.</p>
+          </Reveal>
+        </div>
       </section>
 
-      <section className="border-t border-rule">
-        <div className="mx-auto max-w-5xl px-4 py-16">
+      <section className="field-dark">
+        <div className="mx-auto max-w-6xl px-4 py-20 sm:px-6">
           <Reveal>
-            <h2 className="display text-[clamp(1.6rem,3.5vw,2.3rem)]">Why a check, and why now</h2>
+            <h2 className="display text-[clamp(1.8rem,4vw,2.8rem)]">Why a check, and why now</h2>
           </Reveal>
-          <ul className="mt-8 grid gap-6 sm:grid-cols-2">
+          <ul className="mt-10 grid gap-8 sm:grid-cols-2 lg:grid-cols-4">
             {PROOF.map((p, i) => (
               <Reveal as="li" key={p.n} delay={i * 80}>
-                <div className="reveal-line h-px w-full bg-toner" />
-                <p className="display mt-4 text-4xl">{/^\d+$/.test(p.n) ? <CountUp value={parseInt(p.n, 10)} /> : p.n}</p>
-                <p className="mt-2 max-w-[48ch] text-sm leading-relaxed">{p.what}</p>
-                <a href={p.url} target="_blank" rel="noreferrer" className="mt-1 inline-block text-xs text-toner-2">
+                <p className="text-5xl font-extrabold tracking-tight text-mark">{/^\d+$/.test(p.n) ? <CountUp value={parseInt(p.n, 10)} /> : p.n}</p>
+                <p className="mt-3 text-sm leading-relaxed text-[#f4f1ea]/85">{p.what}</p>
+                <a href={p.url} target="_blank" rel="noreferrer" className="mt-2 inline-block text-xs text-[#f4f1ea]/60">
                   {p.src}
                 </a>
               </Reveal>
             ))}
           </ul>
-          <p className="mt-8 max-w-[68ch] text-sm text-toner-2">
-            The lure rules in every check cite the official warning they come from. {sources.length} sources on file, quoted verbatim on the <Link href="/method" className="text-toner-2">method page</Link>.
+          <p className="mt-10 max-w-[68ch] text-sm text-[#f4f1ea]/70">
+            The lure rules in every check cite the official warning they come from. {sources.length} sources on file, quoted verbatim on the{" "}
+            <Link href="/method" className="text-[#f4f1ea]">
+              method page
+            </Link>
+            .
           </p>
+        </div>
+      </section>
+
+      <section className="mx-auto max-w-6xl px-4 py-20 sm:px-6">
+        <div className="card field-violet flex flex-col items-start gap-6 p-8 sm:flex-row sm:items-center sm:justify-between sm:p-12">
+          <div>
+            <h2 className="display text-[clamp(1.6rem,3.5vw,2.4rem)]">Before you reply, be sure.</h2>
+            <p className="muted mt-2 max-w-[48ch]">Dájú is Yoruba for certain. The check takes the time it takes to read the message.</p>
+          </div>
+          <Link href="/check" className="lift inline-flex items-center gap-2 rounded-full bg-mark px-6 py-3.5 text-sm font-bold text-mark-text no-underline hover:brightness-95">
+            Check an offer <ArrowRight className="h-4 w-4" aria-hidden />
+          </Link>
         </div>
       </section>
     </div>

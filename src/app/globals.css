@@ -129,6 +129,13 @@ a {
   text-decoration-thickness: 1px;
 }
 
+a, button, [role="button"], summary, select, label[for] {
+  cursor: pointer;
+}
+button:disabled {
+  cursor: not-allowed;
+}
+
 ::-webkit-scrollbar {
   width: 8px;
   height: 8px;
@@ -169,9 +176,53 @@ a {
 
 .sheet {
   background: var(--paper);
-  border: 1px solid var(--rule);
-  border-radius: 4px;
-  box-shadow: var(--shadow);
+  border-radius: 14px;
+  box-shadow: 0 1px 0 color-mix(in oklab, var(--toner) 8%, transparent), 0 18px 40px -24px rgba(18, 18, 18, 0.35);
+}
+
+.card {
+  background: var(--paper);
+  border-radius: 16px;
+  box-shadow: 0 1px 0 color-mix(in oklab, var(--toner) 6%, transparent), 0 20px 44px -28px rgba(18, 18, 18, 0.35);
+}
+
+.field-violet {
+  background: #4f2d8f;
+  color: #f4f1ea;
+}
+.field-violet .muted { color: rgba(244, 241, 234, 0.78); }
+.field-violet .sheet { color: #121212; background: #f7f6f2; }
+.field-violet .sheet .text-toner-2 { color: #55534e; }
+
+.field-dark {
+  background: #171528;
+  color: #f4f1ea;
+}
+
+.pill {
+  border-radius: 999px;
+  padding: 0.45rem 0.9rem;
+  font-weight: 700;
+  font-stretch: 85%;
+  letter-spacing: 0.02em;
+  transition: background-color 150ms var(--ease-out), color 150ms var(--ease-out);
+}
+
+/* Case slider: native scroll-snap, arrows only move the scroll position. */
+.slider {
+  display: flex;
+  gap: 1rem;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  scroll-padding-inline: 1rem;
+  padding-block: 0.5rem 1.25rem;
+  scrollbar-width: none;
+  -webkit-overflow-scrolling: touch;
+}
+.slider::-webkit-scrollbar { display: none; }
+.slider > * {
+  scroll-snap-align: start;
+  flex: 0 0 min(86vw, 22rem);
 }
 
 .rule-y > * + * {
@@ -278,8 +329,8 @@ table.ledger th {
   top: 100%;
   z-index: 35;
   background: var(--paper);
-  border-bottom: 1px solid var(--rule);
-  box-shadow: var(--shadow);
+  border-radius: 0 0 20px 20px;
+  box-shadow: 0 24px 48px -24px rgba(18, 18, 18, 0.45);
   transform: translateY(0);
   transition: transform 380ms var(--ease-drawer), visibility 0s linear 0s;
   visibility: visible;

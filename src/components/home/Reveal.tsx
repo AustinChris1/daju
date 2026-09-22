@@ -38,7 +38,8 @@ export function CountUp({ value, duration = 900, className = "" }: { value: numb
     if (!el) return;
     const reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
     const io = new IntersectionObserver((entries) => {
-      if (!entries.some((e) => e.isIntersecting)) return;
+      // Start when on screen, or once the reader has scrolled past it.
+      if (!entries.some((e) => e.isIntersecting || e.boundingClientRect.top < window.innerHeight)) return;
       io.disconnect();
       if (reduce) return setN(value);
       const start = performance.now();

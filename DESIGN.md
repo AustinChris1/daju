@@ -29,7 +29,7 @@ The tone seal: the two acute high-tone marks of dájú inside a double-ring stam
 - Highlighter: `--mark #FFF06A` / dark `#C9B93A` with toner text
 - Red ink (stop only): `--red #B3261E` / dark `#F28B82`; pencil amber (caution): `--amber #8A5A00` / dark `#E3B341`; grey stamp (not on file): toner-2
 
-Colour strategy: restrained. Paper and toner own the surface; violet is one action and one impression per screen; yellow appears only on evidence.
+Colour strategy (revised 2026-09-22 at the owner's request, the paper-and-rules version read as dry): committed. Deep violet (#4f2d8f) owns the hero, the employer panel and the closing band; the highlighter yellow is the primary action colour on violet and the accent on the dark proof band (#171528). Photographs run in full colour. Cards are rounded 14 to 16px with soft offset shadows; 1px rules stay only in ledgers and tables. Navigation is a pill row with a filled active pill, no underlines. Every clickable element shows the pointer cursor.
 
 ## Type
 
