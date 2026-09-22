@@ -123,7 +123,7 @@ export const LURE_RULES: Rule[] = [
   },
   {
     id: "young_domain",
-    severity: "high",
+    severity: "medium",
     title: "Website domain is less than 90 days old",
     detail: "Registered recently, which fits a throwaway campaign rather than an established employer.",
     sourceId: null,

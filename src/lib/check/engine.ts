@@ -113,7 +113,7 @@ function resolveIdentity(x: Extraction, preferred: Country) {
   return { queries, matches: matches.slice(0, 6), impersonation };
 }
 
-function verdictFor(r: Pick<Report, "lure" | "clauses" | "identity" | "country" | "extraction" | "registryAsOf" | "verifiedSender">): Report["verdict"] {
+function verdictFor(r: Pick<Report, "lure" | "clauses" | "identity" | "country" | "extraction" | "registryAsOf" | "verifiedSender" | "domains">): Report["verdict"] {
   const high = r.lure.filter((f) => f.severity === "high");
   const medium = r.lure.filter((f) => f.severity === "medium");
   const strong = r.identity.matches.find((m) => m.score >= 0.82);
@@ -170,10 +170,16 @@ function verdictFor(r: Pick<Report, "lure" | "clauses" | "identity" | "country" 
     headline = strong.contact === "mismatch" ? "Name on file, contact not on file" : "Name on file, contact could not be compared";
   } else {
     level = "unknown";
-    headline = r.extraction.kind === "offer_letter" ? "No lure signals, sender not on any register" : "Not on file, no lure signals found";
+    const established = r.domains.find((d) => !d.freeMail && d.ageDays !== null && d.ageDays >= 365);
+    if (established) {
+      const years = Math.floor(established.ageDays! / 365);
+      headline = `No warning signs; ${established.domain} has been registered for ${years} year${years === 1 ? "" : "s"}`;
+    } else {
+      headline = r.extraction.kind === "offer_letter" ? "No warning signs, sender not on any agency register" : "No warning signs, sender not on any agency register";
+    }
   }
 
-  if (level === "unknown") lines.push("Not on file is not proof of a scam: direct employers are not agencies and do not appear in agency registers. Verify the company another way before paying anything or sharing documents.");
+  if (level === "unknown") lines.push("Direct employers are not agencies and do not appear in agency registers, so not being on file is not a warning by itself. Verify the company another way before paying anything or sharing documents.");
   if (level === "on_file") lines.push("Still call the number on the register, not the number in the message, before you pay anything or travel.");
   return { level, headline, lines };
 }
