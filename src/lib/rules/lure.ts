@@ -29,6 +29,28 @@ function usdEquivalent(amount: number, currency: string): number {
 
 export const LURE_RULES: Rule[] = [
   {
+    id: "inactive_license",
+    severity: "high",
+    title: "Matched agency is not currently licensed",
+    detail: "The register lists this agency as inactive, expired or revoked. Uganda alone revoked 275 licences in April 2026.",
+    sourceId: "ug-mglsd-brokers",
+    test: ({ identity }) => {
+      const m = identity[0];
+      return m && m.score >= 0.8 && ["inactive", "expired", "revoked"].includes(m.status) ? `${m.name} · ${m.status}` : null;
+    },
+  },
+  {
+    id: "impersonation",
+    severity: "high",
+    title: "Name is on file, contact is not",
+    detail: "The organisation name matches a registered agency, but the phone number or email in this message is not the one on the register. Traffickers reuse licensed names with their own numbers.",
+    sourceId: "ug-mglsd-brokers",
+    test: ({ identity }) => {
+      const m = identity[0];
+      return m && m.contact === "mismatch" && m.score >= 0.8 ? `${m.name} · on-file contact differs` : null;
+    },
+  },
+  {
     id: "fee_before_job",
     severity: "high",
     title: "Money is asked before any work",
@@ -87,28 +109,6 @@ export const LURE_RULES: Rule[] = [
     detail: "Kenyan survivors described being told the ticket was return when it was one-way. Free travel is the hook that makes the fee feel small.",
     sourceId: "ke-thailand-warning",
     test: ({ x }) => x.signals.oneWay,
-  },
-  {
-    id: "impersonation",
-    severity: "high",
-    title: "Name is on file, contact is not",
-    detail: "The organisation name matches a registered agency, but the phone number or email in this message is not the one on the register. Traffickers reuse licensed names with their own numbers.",
-    sourceId: "ug-mglsd-brokers",
-    test: ({ identity }) => {
-      const m = identity.find((i) => i.contact === "mismatch" && i.score >= 0.8);
-      return m ? `${m.name} · on-file contact differs` : null;
-    },
-  },
-  {
-    id: "inactive_license",
-    severity: "high",
-    title: "Matched agency is not currently licensed",
-    detail: "The register lists this agency as inactive, expired or revoked. Uganda alone revoked 275 licences in April 2026.",
-    sourceId: "ug-mglsd-brokers",
-    test: ({ identity }) => {
-      const m = identity.find((i) => i.score >= 0.8 && ["inactive", "expired", "revoked"].includes(i.status));
-      return m ? `${m.name} · ${m.status}` : null;
-    },
   },
   {
     id: "lookalike_domain",

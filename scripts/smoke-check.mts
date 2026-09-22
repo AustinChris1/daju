@@ -3,6 +3,7 @@
 // Only pure modules are imported here; engine.ts and the store pull in "server-only", which throws outside Next.
 import { extractHeuristic } from "../src/lib/extract/heuristics";
 import { runLureRules } from "../src/lib/rules/lure";
+import { runClauseRules } from "../src/lib/rules/clauses";
 import { normPhone } from "../src/lib/registry/match";
 
 const CASES: { label: string; text: string }[] = [
@@ -65,3 +66,21 @@ for (const c of CASES) {
 
 console.log("\n=== normPhone sanity ===");
 for (const p of ["+254 712 345 678", "0803 000 0000", "0712345678", "+234 803 000 0000"]) console.log(`  ${p.padEnd(20)} -> ${normPhone(p)}`);
+
+
+// Clause audit on the Lagos bond letter: the path judges will ask about.
+{
+  const letter = `ZENITH CONSULT NIGERIA LTD
+OFFER OF EMPLOYMENT
+
+Dear Chinedu,
+
+We are pleased to offer you the position of Business Development Executive at a gross salary of N150,000 per month. Your probationary period shall be six (6) months, during which the first three months shall be unpaid training. You will be bonded for a period of 2 years; on resignation before the end of this period you shall pay the sum of N3,000,000 as liquidated damages. Your original certificates shall be submitted to HR and retained for the duration of the bond. The company may terminate this contract at any time without notice.
+
+Kindly confirm acceptance by replying to hr.zenithconsult@gmail.com.`;
+  const x = extractHeuristic(letter, { hint: "NG" });
+  const clauses = runClauseRules(x, "NG");
+  console.log("\n=== clause audit (NG offer letter) ===");
+  for (const c of clauses) console.log(`  ${c.severity.padEnd(6)} ${c.key.padEnd(14)} ${c.citation ? `${c.citation.act}, ${c.citation.section} [${c.citation.confidence}]` : "no citation"}`);
+  if (clauses.length < 3) { console.error("Expected at least 3 clause findings"); process.exit(1); }
+}

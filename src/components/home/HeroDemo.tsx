@@ -29,8 +29,8 @@ const SCENES: Scene[] = [
       { register: "contact", count: "on file +256 702 022 113", result: "message says 0756 000 111 · does not match", tone: "warn" },
     ],
     level: "stop",
-    headline: "Money is asked before any work",
-    line: "Name is on the Uganda register. The number in the message is not the one on file.",
+    headline: "Name is on file, contact is not",
+    line: "Moonlight is on the Uganda register. The number in the message is not the one on file, and a fee is asked before any work.",
   },
   {
     country: "🇳🇬 Nigeria",

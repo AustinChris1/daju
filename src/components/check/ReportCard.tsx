@@ -21,7 +21,7 @@ function contactLine(m: IdentityMatch): { text: string; tone: string } {
     case "mismatch":
       return { text: "Contact in the message is NOT the one on file", tone: "text-red" };
     case "none_on_file":
-      return { text: "Record has no comparable contact to check against", tone: "text-toner-2" };
+      return { text: m.onFile.phones.length === 0 && m.onFile.emails.length > 0 ? "This register lists no phone; only the email on file can be trusted" : "Record has no comparable contact to check against", tone: "text-amber" };
     default:
       return { text: "No contact in the message to compare", tone: "text-toner-2" };
   }

@@ -109,7 +109,7 @@ function resolveIdentity(x: Extraction, preferred: Country) {
     for (const h of hits) add(toMatch(h.country, h.entry, h.score, "name", x));
   }
   matches.sort((a, b) => b.score - a.score || (a.country === preferred ? -1 : 1));
-  const impersonation = matches.some((m) => m.score >= 0.8 && m.contact === "mismatch");
+  const impersonation = matches.length > 0 && matches[0].score >= 0.8 && matches[0].contact === "mismatch";
   return { queries, matches: matches.slice(0, 6), impersonation };
 }
 
@@ -130,7 +130,17 @@ function verdictFor(r: Pick<Report, "lure" | "clauses" | "identity" | "country" 
     lines.push(`"${strong.name}" is on the ${strong.country} register as ${strong.status} (snapshot ${r.registryAsOf[strong.country]}).`);
     if (c === "match") lines.push("The contact in this message matches the contact on file.");
     if (c === "mismatch") lines.push("The phone or email in this message is NOT the one on file.");
-    if (c === "none_on_file") lines.push("The register holds no contact details for this entry, so the contact could not be compared.");
+    if (c === "none_on_file") {
+      const onFile = [...strong.onFile.phones, ...strong.onFile.emails];
+      const inputHasPhoneOnly = r.extraction.phones.length > 0 && r.extraction.emails.length === 0;
+      if (inputHasPhoneOnly && strong.onFile.phones.length === 0 && onFile.length) {
+        lines.push(`The ${strong.country} register publishes no phone number for this agency, so the WhatsApp number in the message cannot be checked. On file: ${onFile.slice(0, 2).join(", ")}. Write to that address, or call the registry, not the number in the message.`);
+      } else if (onFile.length) {
+        lines.push(`The register holds ${onFile.slice(0, 2).join(", ")} for this entry, which the message does not use, so the contact could not be compared.`);
+      } else {
+        lines.push("The register holds no contact details for this entry, so the contact could not be compared.");
+      }
+    }
     if (c === "not_provided") lines.push("No phone, email or website was in the text, so nothing could be compared to the record.");
   } else if (r.identity.matches.length) {
     lines.push(`Closest register entry is "${r.identity.matches[0].name}" (${r.identity.matches[0].country}), a partial match only.`);

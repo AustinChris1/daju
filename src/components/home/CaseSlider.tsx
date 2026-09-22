@@ -13,6 +13,7 @@ const CASES: { id: string; level: VerdictLevel; headline: string; evidence: stri
   { id: "uganda-gulf", level: "stop", headline: "Name is on file, contact is not", evidence: "Moonlight Recruiting Agency Uganda Ltd · 0756 000 111", who: "Uganda Gulf housemaid job" },
   { id: "lagos-offer", level: "stop", headline: "Serious clause in this offer", evidence: "N3,000,000 as liquidated damages", who: "Lagos offer letter" },
   { id: "alabuga", level: "stop", headline: "Matches the Alabuga Start pattern", evidence: "Work and study, free flight ticket and hostel", who: "Russia programme ad" },
+  { id: "kenya-expired", level: "stop", headline: "Matched agency is not currently licensed", evidence: "Derimel Recruiting Agency Ltd · NEA licence expired", who: "Kenya agency, expired licence" },
   { id: "direct-employer", level: "on_file", headline: "On file, contact matches, no lure signals found", evidence: "careers@worknigeria.com", who: "Direct employer message" },
 ];
 
@@ -35,8 +36,8 @@ export function CaseSlider() {
     <div>
       <div className="mx-auto flex max-w-6xl items-end justify-between px-4 sm:px-6">
         <div>
-          <h2 className="display text-[clamp(1.6rem,3.5vw,2.3rem)]">Five messages, five stamps</h2>
-          <p className="mt-2 max-w-[52ch] text-toner-2">Composite examples built from the patterns in official warnings. Swipe, then run any of them yourself.</p>
+          <h2 className="display text-[clamp(1.6rem,3.5vw,2.3rem)]">Six messages, six stamps</h2>
+          <p className="mt-2 max-w-[52ch] text-toner-2">Composite examples built from the patterns in official warnings; three name real register entries so you can see a match, a mismatch and an expired licence. Swipe, then run any of them.</p>
         </div>
         <div className="hidden gap-2 sm:flex">
           <button type="button" onClick={() => scrollBy(-1)} aria-label="Previous" className="rounded-full bg-paper-2 p-3 text-toner hover:bg-stamp hover:text-paper">

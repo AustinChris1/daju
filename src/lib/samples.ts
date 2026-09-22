@@ -1,6 +1,7 @@
 import type { Country } from "@/lib/countries";
 
-// Composite examples built from the patterns in published warnings. Names and numbers are invented; nothing here is a real advert.
+// Composite examples built from the patterns in published warnings. Phone numbers and people are invented.
+// Three name real register entries on purpose (Moonlight, Worknigeria, Derimel) so a match, a mismatch and an expired licence can be shown against the actual snapshot.
 export const SAMPLES: { id: string; label: string; country: Country; text: string }[] = [
   {
     id: "thailand",
@@ -35,6 +36,12 @@ HR Manager`,
     label: "Russia work-and-study programme",
     country: "NG",
     text: `Alabuga Start programme in Russia for ladies aged 18 to 22! Work and study, free flight ticket and hostel, salary 700 USD monthly plus free Russian lessons. No experience required. Apply now via Telegram @alabugastart_africa. First 50 applicants only!`,
+  },
+  {
+    id: "kenya-expired",
+    label: "Kenya agency, expired licence",
+    country: "KE",
+    text: `Derimel Recruiting Agency Ltd is recruiting 40 cleaners and drivers for Qatar, salary QAR 1,400 monthly with accommodation. Licensed by NEA, reg RA/2025/02/11. Medical and visa processing Ksh 45,000 payable before the interview. Email info@derimelagency.co.ke or WhatsApp 0722 000 222.`,
   },
   {
     id: "direct-employer",
