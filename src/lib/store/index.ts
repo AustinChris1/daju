@@ -261,10 +261,22 @@ declare global {
   var __trueCopyStore: Store | undefined;
 }
 
+// Supports the Vercel Supabase integration with or without a custom variable prefix.
+function supabaseEnv(): { url?: string; key?: string } {
+  const p = process.env.SUPABASE_ENV_PREFIX?.trim();
+  const e = process.env;
+  const url = e.SUPABASE_URL || e.NEXT_PUBLIC_SUPABASE_URL || (p ? e[`${p}_URL`] || e[`${p}_SUPABASE_URL`] : undefined);
+  const key =
+    e.SUPABASE_SERVICE_ROLE_KEY ||
+    e.SUPABASE_ANON_KEY ||
+    e.NEXT_PUBLIC_SUPABASE_ANON_KEY ||
+    (p ? e[`${p}_SERVICE_ROLE_KEY`] || e[`${p}_SUPABASE_SERVICE_ROLE_KEY`] || e[`${p}_ANON_KEY`] || e[`${p}_SUPABASE_ANON_KEY`] : undefined);
+  return { url, key };
+}
+
 export function getStore(): Store {
   if (globalThis.__trueCopyStore) return globalThis.__trueCopyStore;
-  const url = process.env.SUPABASE_URL;
-  const key = process.env.SUPABASE_SERVICE_ROLE_KEY || process.env.SUPABASE_ANON_KEY;
+  const { url, key } = supabaseEnv();
   const store: Store = url && key ? new SupabaseStore(createClient(url, key, { auth: { persistSession: false } })) : new MemoryStore();
   globalThis.__trueCopyStore = store;
   return store;

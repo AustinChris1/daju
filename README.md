@@ -39,7 +39,14 @@ cp .env.example .env.local   # optional keys
 pnpm dev
 ```
 
-Optional: `ANTHROPIC_API_KEY` enables extraction refinement and reply translation; `SUPABASE_URL` and `SUPABASE_SERVICE_ROLE_KEY` (after running `supabase/schema.sql`) make cards, reports, employers and watches persistent. Without them the app runs fully on the rule engine with an in-memory store.
+Optional: `ANTHROPIC_API_KEY` enables extraction refinement and reply translation. For a persistent store, connect Supabase (the Vercel Supabase integration sets `SUPABASE_URL` and `SUPABASE_SERVICE_ROLE_KEY`; leave its variable prefix empty, or set `SUPABASE_ENV_PREFIX` to the prefix you chose), then create the tables once:
+
+```bash
+vercel env pull .env.local
+node scripts/db-init.mjs
+```
+
+Without a store the app runs fully on the rule engine and keeps cards in memory.
 
 ## API
 
