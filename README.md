@@ -39,7 +39,7 @@ cp .env.example .env.local   # optional keys
 pnpm dev
 ```
 
-Optional: `ANTHROPIC_API_KEY` enables extraction refinement and reply translation. For a persistent store, connect Supabase (the Vercel Supabase integration sets `SUPABASE_URL` and `SUPABASE_SERVICE_ROLE_KEY`; leave its variable prefix empty, or set `SUPABASE_ENV_PREFIX` to the prefix you chose), then create the tables once:
+Optional language model, either `ANTHROPIC_API_KEY` (Claude) or `LLM_PROVIDER=groq` with `GROQ_API_KEY` and a `GROQ_MODEL` id from Groq's model list. It only refines extraction and translates replies; the verdict comes from the rule engine either way. For a persistent store, connect Supabase (the Vercel Supabase integration sets `SUPABASE_URL` and `SUPABASE_SERVICE_ROLE_KEY`; leave its variable prefix empty, or set `SUPABASE_ENV_PREFIX` to the prefix you chose), then create the tables once:
 
 ```bash
 vercel env pull .env.local
