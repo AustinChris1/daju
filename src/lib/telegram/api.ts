@@ -6,8 +6,19 @@ export type Keyboard = InlineButton[][];
 
 export interface SendOptions {
   keyboard?: Keyboard;
+  // Persistent buttons under the text box; a message carries either this or an inline keyboard, never both.
+  menu?: string[][];
+  // Asks the client to reply to this message, so the answer arrives with reply_to_message set.
+  forceReply?: string;
   preview?: { url: string; large?: boolean } | false;
   replyTo?: number;
+}
+
+function replyMarkup(opts: SendOptions) {
+  if (opts.keyboard) return { inline_keyboard: opts.keyboard };
+  if (opts.menu) return { keyboard: opts.menu.map((row) => row.map((text) => ({ text }))), resize_keyboard: true, is_persistent: true, input_field_placeholder: "Paste a job message, or pick a button" };
+  if (opts.forceReply) return { force_reply: true, input_field_placeholder: opts.forceReply, selective: true };
+  return undefined;
 }
 
 interface TgResponse<T> {
@@ -62,10 +73,15 @@ export async function sendMessage(chatId: number | string, html: string, opts: S
     text: fit(html),
     parse_mode: "HTML",
     link_preview_options: previewOptions(opts.preview),
-    reply_markup: opts.keyboard ? { inline_keyboard: opts.keyboard } : undefined,
+    reply_markup: replyMarkup(opts),
     reply_parameters: opts.replyTo ? { message_id: opts.replyTo, allow_sending_without_reply: true } : undefined,
   });
   return r.ok && r.result ? r.result.message_id : null;
+}
+
+export async function deleteMessage(chatId: number | string, messageId: number): Promise<boolean> {
+  const r = await tg("deleteMessage", { chat_id: chatId, message_id: messageId });
+  return r.ok;
 }
 
 export async function editMessage(chatId: number | string, messageId: number, html: string, opts: SendOptions = {}): Promise<boolean> {

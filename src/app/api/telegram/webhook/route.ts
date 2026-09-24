@@ -4,8 +4,8 @@ import { searchByName } from "@/lib/registry/load";
 import { getStore, type ReportRow } from "@/lib/store";
 import { SAMPLES } from "@/lib/samples";
 import { isCountry } from "@/lib/countries";
-import { answerCallback, editMessage, sendMessage, typing } from "@/lib/telegram/api";
-import { busyHtml, cardHtml, cardKeyboard, cardUrl, countryKeyboard, esc, helpHtml, hotlinesHtml, langsKeyboard, registryHtml, replyHtml, startHtml } from "@/lib/telegram/html";
+import { answerCallback, deleteMessage, editMessage, sendMessage, typing } from "@/lib/telegram/api";
+import { busyHtml, cardHtml, cardKeyboard, cardUrl, countryKeyboard, esc, examplesKeyboard, helpHtml, hotlinesHtml, langsKeyboard, mainMenu, MENU, PROMPTS, registryHtml, replyHtml, startHtml, withDismiss } from "@/lib/telegram/html";
 import type { Report } from "@/lib/check/types";
 
 // Telegram webhook: messages become checks, buttons become follow-ups. Telegram retries on non-200, so
@@ -29,6 +29,11 @@ function site(): string {
   return (process.env.NEXT_PUBLIC_SITE_URL || "https://daju-bice.vercel.app").replace(/\/+$/, "");
 }
 
+// Short notices carry a Dismiss button so the chat stays clean.
+async function notice(chatId: number | string, html: string, keyboard = withDismiss()): Promise<void> {
+  await sendMessage(chatId, html, { keyboard });
+}
+
 // Runs a check and replaces the "searching" message with the card, image preview above the text.
 async function check(chatId: number | string, text: string, replyTo?: number): Promise<void> {
   await typing(chatId);
@@ -36,14 +41,19 @@ async function check(chatId: number | string, text: string, replyTo?: number): P
   try {
     const report = await runCheck({ text });
     const html = cardHtml(report);
-    const opts = { keyboard: cardKeyboard(report, site(), llmAvailable()), preview: { url: cardUrl(site(), report.id) } };
+    const opts = { keyboard: withDismiss(cardKeyboard(report, site(), llmAvailable())), preview: { url: cardUrl(site(), report.id) } };
     const edited = placeholder ? await editMessage(chatId, placeholder, html, opts) : false;
     if (!edited) await sendMessage(chatId, html, opts);
   } catch (err) {
     console.error("[telegram] check failed:", err instanceof Error ? err.message : err);
     const msg = "I could not finish that check. Try again in a moment, or use the website.";
-    if (!(placeholder && (await editMessage(chatId, placeholder, msg)))) await sendMessage(chatId, msg);
+    if (!(placeholder && (await editMessage(chatId, placeholder, msg, { keyboard: withDismiss() })))) await notice(chatId, msg);
   }
+}
+
+async function registrySearch(chatId: number | string, q: string): Promise<void> {
+  const { html, keyboard } = registryHtml(q, searchByName(q, { limit: 6, min: 0.5 }));
+  await sendMessage(chatId, html, { keyboard: withDismiss([...keyboard, [{ text: "Open the full search", url: `${site()}/registry?q=${encodeURIComponent(q)}` }]]) });
 }
 
 async function loadReport(id: string): Promise<Report | null> {
@@ -57,6 +67,11 @@ async function onCallback(cb: { id: string; data?: string; message?: { chat: { i
   if (!chatId) return answerCallback(cb.id);
   const [kind, a, b] = data.split(":");
 
+  if (kind === "del") {
+    const removed = cb.message ? await deleteMessage(chatId, cb.message.message_id) : false;
+    if (!removed && cb.message) await editMessage(chatId, cb.message.message_id, "<i>Dismissed.</i>");
+    return answerCallback(cb.id);
+  }
   if (kind === "sample") {
     const s = SAMPLES.find((x) => x.id === a);
     await answerCallback(cb.id, s ? "Running the example" : "Unknown example");
@@ -65,22 +80,18 @@ async function onCallback(cb: { id: string; data?: string; message?: { chat: { i
   }
   if (kind === "hotmenu") {
     await answerCallback(cb.id);
-    await sendMessage(chatId, "<b>☎️ Which country?</b>", { keyboard: countryKeyboard("hot") });
+    await notice(chatId, "<b>☎️ Which country?</b>", withDismiss(countryKeyboard("hot")));
     return;
   }
   if (kind === "hot" && isCountry(a)) {
     await answerCallback(cb.id);
-    await sendMessage(chatId, hotlinesHtml(a));
-    return;
-  }
-  if (kind === "how" && a === "registry") {
-    await answerCallback(cb.id);
-    await sendMessage(chatId, "Send <code>/registry</code> followed by the name, for example:\n<code>/registry moonlight recruiting</code>");
+    if (cb.message) await deleteMessage(chatId, cb.message.message_id);
+    await notice(chatId, hotlinesHtml(a));
     return;
   }
   if (kind === "langs") {
     await answerCallback(cb.id);
-    await sendMessage(chatId, "<b>🌍 Reply in which language?</b>\n<i>Machine translated from the English reply; read it before you send.</i>", { keyboard: langsKeyboard(a) });
+    await notice(chatId, "<b>🌍 Reply in which language?</b>\n<i>Machine translated from the English reply; read it before you send.</i>", withDismiss(langsKeyboard(a)));
     return;
   }
   if (kind === "rp") {
@@ -95,9 +106,9 @@ async function onCallback(cb: { id: string; data?: string; message?: { chat: { i
     } else {
       await answerCallback(cb.id);
     }
-    if (!text) return void (await sendMessage(chatId, "That language is not available right now. The English reply is on the card."));
+    if (!text) return void (await notice(chatId, "That language is not available right now. The English reply is on the card."));
     const { html, keyboard } = replyHtml(report, lang, text);
-    await sendMessage(chatId, html, { keyboard });
+    await sendMessage(chatId, html, { keyboard: withDismiss(keyboard) });
     return;
   }
   if (kind === "rep") {
@@ -112,7 +123,7 @@ async function onCallback(cb: { id: string; data?: string; message?: { chat: { i
       await store.addReport({ id: shortId(), created_at: new Date().toISOString(), kind: v.kind, value: v.value.toLowerCase(), country: report.country, note: "telegram", check_id: report.id });
     }
     await answerCallback(cb.id, values.length ? "Reported. Thank you." : "No phone or email to report.");
-    if (values.length) await sendMessage(chatId, `🚩 Reported ${values.map((v) => `<code>${esc(v.value)}</code>`).join(", ")}. The next person who checks ${values.length === 1 ? "it" : "them"} sees the count.`);
+    if (values.length) await notice(chatId, `🚩 Reported ${values.map((v) => `<code>${esc(v.value)}</code>`).join(", ")}. The next person who checks ${values.length === 1 ? "it" : "them"} sees the count.`);
     return;
   }
   await answerCallback(cb.id);
@@ -145,60 +156,85 @@ export async function POST(req: Request) {
   const text = typeof message.text === "string" ? message.text.trim() : "";
   const caption = typeof message.caption === "string" ? message.caption.trim() : "";
   const hasMedia = Boolean(message.photo || message.document || message.voice || message.video || message.sticker || message.audio);
+  const repliedTo = (message.reply_to_message as { text?: string } | undefined)?.text ?? "";
+
+  // Buttons under the text box arrive as plain text.
+  if (text === MENU.check) {
+    await sendMessage(chatId, PROMPTS.check, { forceReply: "Paste the job message" });
+    return ok();
+  }
+  if (text === MENU.examples) {
+    await sendMessage(chatId, "<b>▶ Pick a real case</b>\n<i>Three name real register entries, so you can see a match, a mismatch and an expired licence.</i>", { keyboard: examplesKeyboard() });
+    return ok();
+  }
+  if (text === MENU.registry) {
+    await sendMessage(chatId, PROMPTS.registry, { forceReply: "Agency or company name" });
+    return ok();
+  }
+  if (text === MENU.hotlines) {
+    await notice(chatId, "<b>☎️ Which country?</b>", withDismiss(countryKeyboard("hot")));
+    return ok();
+  }
+  if (text === MENU.help) {
+    const { html, keyboard } = helpHtml(site());
+    await notice(chatId, html, withDismiss(keyboard));
+    return ok();
+  }
+  // An answer to the register prompt is a search, not a check.
+  if (text && repliedTo === PROMPTS.registry) {
+    await registrySearch(chatId, text);
+    return ok();
+  }
 
   if (text.startsWith("/")) {
     const [cmdRaw, ...rest] = text.split(/\s+/);
     const cmd = cmdRaw.toLowerCase().replace(/@\w+$/, "");
     const arg = rest.join(" ").trim();
     if (cmd === "/start") {
-      const { html, keyboard } = startHtml();
-      await sendMessage(chatId, html, { keyboard });
+      await sendMessage(chatId, startHtml(), { menu: mainMenu() });
       return ok();
     }
     if (cmd === "/help") {
       const { html, keyboard } = helpHtml(site());
-      await sendMessage(chatId, html, { keyboard });
+      await notice(chatId, html, withDismiss(keyboard));
       return ok();
     }
     if (cmd === "/hotlines") {
-      await sendMessage(chatId, "<b>☎️ Which country?</b>", { keyboard: countryKeyboard("hot") });
+      await notice(chatId, "<b>☎️ Which country?</b>", withDismiss(countryKeyboard("hot")));
       return ok();
     }
     if (cmd === "/registry" || cmd === "/search") {
       if (arg.length < 3) {
-        await sendMessage(chatId, "Send the name after the command, for example:\n<code>/registry moonlight recruiting</code>");
+        await sendMessage(chatId, PROMPTS.registry, { forceReply: "Agency or company name" });
         return ok();
       }
-      const { html, keyboard } = registryHtml(arg, searchByName(arg, { limit: 6, min: 0.5 }));
-      await sendMessage(chatId, html, { keyboard: [...keyboard, [{ text: "Open the full search", url: `${site()}/registry?q=${encodeURIComponent(arg)}` }]] });
+      await registrySearch(chatId, arg);
       return ok();
     }
     if (cmd === "/check") {
       if (arg.length < 10) {
-        await sendMessage(chatId, "Paste the message after <code>/check</code>, or just send it on its own.");
+        await sendMessage(chatId, PROMPTS.check, { forceReply: "Paste the job message" });
         return ok();
       }
       await check(chatId, arg, messageId);
       return ok();
     }
-    await sendMessage(chatId, "I do not know that command. Paste a job message, or try /help.");
+    await notice(chatId, "I do not know that command. Paste a job message, or use the buttons below.");
     return ok();
   }
 
   if (hasMedia && !caption) {
-    await sendMessage(chatId, "I read text here. Paste the message, or drop the screenshot on the website: it is read on your phone and never uploaded.", {
-      keyboard: [[{ text: "🖼 Check a screenshot on the website", url: `${site()}/check` }]],
-    });
+    await notice(chatId, "I read text here. Paste the message, or drop the screenshot on the website: it is read on your phone and never uploaded.", withDismiss([[{ text: "🖼 Check a screenshot on the website", url: `${site()}/check` }]]));
     return ok();
   }
 
   const toCheck = text || caption;
   if (!toCheck) {
-    await sendMessage(chatId, "Paste or forward a job message, recruiter message or offer letter and I will check it.");
+    await notice(chatId, "Paste or forward a job message, recruiter message or offer letter and I will check it.");
     return ok();
   }
   if (toCheck.length < 12) {
-    await sendMessage(chatId, "That is too short to check. Forward the whole message, with the number and email exactly as they appear.");
+    await notice(chatId, "That is too short to check. Forward the whole message, with the number and email exactly as they appear.");
     return ok();
   }
 

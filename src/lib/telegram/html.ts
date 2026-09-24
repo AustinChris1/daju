@@ -140,23 +140,46 @@ export function registryHtml(q: string, hits: NameHit[]): { html: string; keyboa
   return { html: out.join("\n"), keyboard: [] };
 }
 
-export function startHtml(): { html: string; keyboard: Keyboard } {
-  return {
-    html: [
-      `<b>${esc(BRAND.display)}</b>  ·  <i>Yoruba: to be sure, to be certain</i>`,
-      "",
-      "Forward me a job ad, a recruiter's message or an offer letter. I check the name, number and email against the licensed-agency registers of 🇳🇬 Nigeria, 🇰🇪 Kenya, 🇺🇬 Uganda and 🇬🇭 Ghana, apply the official warning patterns, and hand you the reply to send.",
-      "",
-      "<b>Try one now</b> or just paste a message.",
-    ].join("\n"),
-    keyboard: [
-      ...SAMPLES.filter((s) => ["uganda-gulf", "thailand", "lagos-offer", "kenya-expired"].includes(s.id)).map((s) => [{ text: `▶ ${s.label}`, callback_data: `sample:${s.id}` }]),
-      [
-        { text: "🔎 Search a register", callback_data: "how:registry" },
-        { text: "☎️ Hotlines", callback_data: "hotmenu" },
-      ],
-    ],
-  };
+// The persistent keyboard under the text box. Labels double as commands when the user taps them.
+export const MENU = {
+  check: "📋 Check a message",
+  examples: "▶ Examples",
+  registry: "🔎 Search registers",
+  hotlines: "☎️ Hotlines",
+  help: "ℹ️ Help",
+} as const;
+
+export function mainMenu(): string[][] {
+  return [
+    [MENU.check, MENU.examples],
+    [MENU.registry, MENU.hotlines],
+    [MENU.help],
+  ];
+}
+
+export const DISMISS: InlineRow = [{ text: "✕ Dismiss", callback_data: "del" }];
+
+export function withDismiss(keyboard: Keyboard = []): Keyboard {
+  return [...keyboard, DISMISS];
+}
+
+export const PROMPTS = {
+  check: "Paste or forward the job message now. Include the number and email exactly as they appear.",
+  registry: "Which agency or company? Type the name as it appears in the message.",
+} as const;
+
+export function startHtml(): string {
+  return [
+    `<b>${esc(BRAND.display)}</b>  ·  <i>Yoruba: to be sure, to be certain</i>`,
+    "",
+    "Forward me a job ad, a recruiter's message or an offer letter. I check the name, number and email against the licensed-agency registers of 🇳🇬 Nigeria, 🇰🇪 Kenya, 🇺🇬 Uganda and 🇬🇭 Ghana, apply the official warning patterns, and hand you the reply to send.",
+    "",
+    `Paste a message any time, or use the buttons below. <b>${esc(MENU.examples)}</b> runs a real case.`,
+  ].join("\n");
+}
+
+export function examplesKeyboard(): Keyboard {
+  return withDismiss(SAMPLES.filter((s) => ["uganda-gulf", "thailand", "lagos-offer", "kenya-expired", "direct-employer"].includes(s.id)).map((s) => [{ text: `▶ ${s.label}`, callback_data: `sample:${s.id}` }]));
 }
 
 export function helpHtml(siteUrl: string): { html: string; keyboard: Keyboard } {
