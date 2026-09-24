@@ -59,6 +59,41 @@ Next.js 16, TypeScript, Tailwind v4, Supabase (Postgres), Vercel. The rule engin
 - `docs/data-and-limits.md`: sources, snapshot caveats, what Daju cannot know.
 - `docs/business-model.md`: who pays.
 
+## Telegram — Forward it to Daju
+
+Forward a recruiter outreach, job advert, or offer letter directly to the Daju Telegram bot to check it against the four government registers in seconds.
+
+### Setup
+
+1. Create a bot with [@BotFather](https://t.me/BotFather) on Telegram and copy the API token.
+   - Suggested description: `"Forward a suspicious job or recruiter message. Daju checks sender identity and evidence across recruitment records in Nigeria, Kenya, Uganda and Ghana."`
+2. In `.env.local` or your Vercel project environment, configure:
+   ```env
+   TELEGRAM_BOT_TOKEN=123456789:ABCdefGHIjklMNOpqrSTUvwxYZ
+   TELEGRAM_WEBHOOK_SECRET=your_random_secret_token
+   NEXT_PUBLIC_SITE_URL=https://your-domain.vercel.app
+   ```
+3. Register the webhook with Telegram:
+   ```bash
+   node scripts/telegram/set-webhook.mjs set https://your-domain.vercel.app/api/telegram/webhook
+   ```
+   To inspect webhook health:
+   ```bash
+   node scripts/telegram/set-webhook.mjs info
+   ```
+   To delete the webhook:
+   ```bash
+   node scripts/telegram/set-webhook.mjs delete
+   ```
+
+### Supported inputs
+
+- **Text messages & forwarded text:** Full message text is analyzed by the core engine.
+- **Captions:** Text attached as a caption to any forwarded message.
+- **Commands:** `/start` explains the tool, `/help` explains supported formats.
+
+*Note on attachments:* Images, screenshots, PDFs, and voice notes are intentionally unsupported in this release; the bot politely directs users to paste or forward the text. Client-side screenshot OCR is in development.
+
 ## Licence and credits
 
 Code: MIT. Register data belongs to the publishing ministries and is redistributed as dated snapshots for verification only. Photographs on the landing page are used under the Unsplash licence; credits in `public/images/CREDITS.md`.
