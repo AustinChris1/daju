@@ -59,7 +59,7 @@ Next.js 16, TypeScript, Tailwind v4, Supabase (Postgres), Vercel. The rule engin
 - `docs/data-and-limits.md`: sources, snapshot caveats, what Daju cannot know.
 - `docs/business-model.md`: who pays.
 
-## Telegram — Forward it to Daju
+## Telegram: forward it to Daju
 
 Forward a recruiter outreach, job advert, or offer letter directly to the Daju Telegram bot to check it against the four government registers in seconds.
 

@@ -58,6 +58,14 @@ export interface IdentityMatch {
   cacVerified: boolean | null;
 }
 
+export interface SiteIntel {
+  reachable: boolean;
+  status: number | null;
+  title: string | null;
+  mentionsName: boolean | null;
+  parked: boolean;
+}
+
 export interface DomainIntel {
   domain: string;
   registered: string | null;
@@ -65,6 +73,7 @@ export interface DomainIntel {
   mx: boolean | null;
   freeMail: boolean;
   lookalikeOf: { domain: string; name: string; country: Country } | null;
+  site: SiteIntel | null;
   error: string | null;
 }
 

@@ -50,6 +50,11 @@ export function formatCheckResult(report: Report, siteUrl: string): string {
     parts.push("", "Evidence:", ...bullets.map((b) => `• ${b}`));
   }
 
+  const reply = report.actions?.replies?.en;
+  if (reply) {
+    parts.push("", "Reply you can send:", reply);
+  }
+
   parts.push(
     "",
     "View full evidence card:",

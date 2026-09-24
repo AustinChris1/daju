@@ -9,6 +9,9 @@ import {
   formatUnsupportedMediaMessage,
 } from "@/lib/telegram/format";
 
+// A check can take a few seconds (domain lookups, optional model); give the function room on Vercel.
+export const maxDuration = 60;
+
 // In-memory sliding deduplication set for update_id.
 // Note: On serverless environments (Vercel), this cache is best-effort per lambda instance
 // and is not shared globally across concurrent instances or across cold restarts.

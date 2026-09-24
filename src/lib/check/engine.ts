@@ -171,9 +171,13 @@ function verdictFor(r: Pick<Report, "lure" | "clauses" | "identity" | "country" 
   } else {
     level = "unknown";
     const established = r.domains.find((d) => !d.freeMail && d.ageDays !== null && d.ageDays >= 365);
+    const live = r.domains.find((d) => !d.freeMail && d.site?.reachable && !d.site.parked);
     if (established) {
       const years = Math.floor(established.ageDays! / 365);
-      headline = `No warning signs; ${established.domain} has been registered for ${years} year${years === 1 ? "" : "s"}`;
+      const siteNote = live && live.domain === established.domain ? (live.site?.mentionsName ? ", and its website names the company" : ", and its website is live") : "";
+      headline = `No warning signs; ${established.domain} has been registered for ${years} year${years === 1 ? "" : "s"}${siteNote}`;
+    } else if (live) {
+      headline = `No warning signs; ${live.domain} has a live website${live.site?.mentionsName ? " that names the company" : ""}`;
     } else {
       headline = r.extraction.kind === "offer_letter" ? "No warning signs, sender not on any agency register" : "No warning signs, sender not on any agency register";
     }
@@ -226,7 +230,7 @@ export async function runCheck(input: CheckInput): Promise<Report> {
 
   const country: Country = hint ?? x.countryGuess ?? "NG";
   const identity = resolveIdentity(x, country);
-  const domains = await Promise.all(x.domains.slice(0, 5).map((d) => domainIntel(d)));
+  const domains = await Promise.all(x.domains.slice(0, 5).map((d) => domainIntel(d, x.orgCandidates)));
 
   let verifiedSender: Report["verifiedSender"] = null;
   const offerToken = input.offerToken ?? text.match(/\/o\/([A-Za-z0-9_-]{8,})/)?.[1] ?? null;

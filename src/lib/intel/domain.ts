@@ -1,13 +1,15 @@
 import "server-only";
 import dns from "node:dns/promises";
-import type { DomainIntel } from "@/lib/check/types";
-import { isFreeMail, levenshtein } from "@/lib/registry/match";
+import type { DomainIntel, SiteIntel } from "@/lib/check/types";
+import { coreName, isFreeMail, levenshtein } from "@/lib/registry/match";
 import { allDomains } from "@/lib/registry/load";
 
 const cache = new Map<string, { at: number; v: DomainIntel }>();
 const TTL = 6 * 60 * 60 * 1000;
 
-const SKIP = new Set(["wa.me", "api.whatsapp.com", "t.me", "telegram.me", "bit.ly", "tinyurl.com", "forms.gle", "docs.google.com", "linkedin.com", "facebook.com", "instagram.com", "x.com", "twitter.com", "tiktok.com", "jiji.ng", "jiji.co.ke", "jobberman.com", "brightermonday.co.ke", "myjobmag.com", "indeed.com", "glassdoor.com", "google.com", "youtube.com"]);
+const SKIP = new Set(["wa.me", "api.whatsapp.com", "t.me", "telegram.me", "bit.ly", "tinyurl.com", "forms.gle", "docs.google.com", "linkedin.com", "facebook.com", "instagram.com", "x.com", "twitter.com", "tiktok.com", "jiji.ng", "jiji.co.ke", "jobberman.com", "brightermonday.co.ke", "myjobmag.com", "indeed.com", "glassdoor.com", "google.com", "youtube.com", "lnkd.in", "bamboohr.com", "workable.com"]);
+
+const PARKED = /domain (?:is )?for sale|buy this domain|parked (?:free|domain)|this domain (?:has been|is) registered|coming soon|under construction|website is (?:currently )?unavailable|hugedomains|sedo\.com|godaddy\.com\/domainsearch|namecheap\.com\/domains/i;
 
 async function withTimeout<T>(p: Promise<T>, ms: number): Promise<T> {
   return await Promise.race([p, new Promise<T>((_, rej) => setTimeout(() => rej(new Error("timeout")), ms))]);
@@ -44,17 +46,53 @@ function lookalike(domain: string): DomainIntel["lookalikeOf"] {
   return null;
 }
 
-export async function domainIntel(domain: string): Promise<DomainIntel> {
+// Fetches the homepage once and answers: is there a real site, and does it name the organisation?
+async function siteIntel(domain: string, names: string[]): Promise<SiteIntel> {
+  const out: SiteIntel = { reachable: false, status: null, title: null, mentionsName: null, parked: false };
+  const ctrl = new AbortController();
+  const t = setTimeout(() => ctrl.abort(), 6000);
+  try {
+    let res: Response | null = null;
+    for (const url of [`https://${domain}/`, `https://www.${domain}/`, `http://${domain}/`]) {
+      try {
+        res = await fetch(url, { signal: ctrl.signal, redirect: "follow", headers: { "user-agent": "Mozilla/5.0 (compatible; DajuCheck/1.0)", accept: "text/html" } });
+        if (res.ok) break;
+      } catch {
+        res = null;
+      }
+    }
+    if (!res) return out;
+    out.status = res.status;
+    out.reachable = res.ok;
+    const html = (await res.text()).slice(0, 300_000);
+    const title = html.match(/<title[^>]*>([\s\S]*?)<\/title>/i)?.[1]?.replace(/\s+/g, " ").trim() ?? null;
+    out.title = title ? title.slice(0, 120) : null;
+    const text = html.replace(/<script[\s\S]*?<\/script>/gi, " ").replace(/<style[\s\S]*?<\/style>/gi, " ").replace(/<[^>]+>/g, " ").replace(/\s+/g, " ").toLowerCase();
+    out.parked = PARKED.test(text) || text.length < 200;
+    const compact = text.replace(/\s+/g, "");
+    const cores = names.map((n) => coreName(n)).filter((c) => c.length >= 4);
+    const root = domain.split(".")[0];
+    const candidates = [...cores, root.length >= 4 ? root : ""].filter(Boolean);
+    out.mentionsName = candidates.length ? candidates.some((c) => text.includes(c) || compact.includes(c.replace(/\s+/g, ""))) : null;
+    return out;
+  } catch {
+    return out;
+  } finally {
+    clearTimeout(t);
+  }
+}
+
+export async function domainIntel(domain: string, names: string[] = []): Promise<DomainIntel> {
   const d = domain.toLowerCase().replace(/^www\./, "");
   const hit = cache.get(d);
   if (hit && Date.now() - hit.at < TTL) return hit.v;
-  const out: DomainIntel = { domain: d, registered: null, ageDays: null, mx: null, freeMail: isFreeMail(d), lookalikeOf: null, error: null };
+  const out: DomainIntel = { domain: d, registered: null, ageDays: null, mx: null, freeMail: isFreeMail(d), lookalikeOf: null, site: null, error: null };
   if (SKIP.has(d) || out.freeMail) {
     cache.set(d, { at: Date.now(), v: out });
     return out;
   }
   out.lookalikeOf = lookalike(d);
-  const [reg, mx] = await Promise.allSettled([rdapRegistration(d), withTimeout(dns.resolveMx(d), 4000)]);
+  const [reg, mx, site] = await Promise.allSettled([rdapRegistration(d), withTimeout(dns.resolveMx(d), 4000), siteIntel(d, names)]);
   if (reg.status === "fulfilled" && reg.value) {
     out.registered = reg.value.slice(0, 10);
     const t = Date.parse(reg.value);
@@ -67,6 +105,7 @@ export async function domainIntel(domain: string): Promise<DomainIntel> {
     const code = (mx.reason as { code?: string } | undefined)?.code ?? "";
     out.mx = code === "ENOTFOUND" || code === "ENODATA" ? false : null;
   }
+  if (site.status === "fulfilled") out.site = site.value;
   cache.set(d, { at: Date.now(), v: out });
   return out;
 }

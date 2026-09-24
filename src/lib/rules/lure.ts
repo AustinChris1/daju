@@ -133,6 +133,18 @@ export const LURE_RULES: Rule[] = [
     },
   },
   {
+    id: "no_website",
+    severity: "medium",
+    title: "Company domain has no working website",
+    detail: "The email domain exists, but nothing answers at its web address, or the page is parked. A hiring company almost always has a site that names it.",
+    sourceId: null,
+    test: ({ domains }) => {
+      // A timeout is not evidence; only a parked page or an HTTP error counts.
+      const d = domains.find((i) => !i.freeMail && i.site && (i.site.parked || (i.site.status !== null && !i.site.reachable)));
+      return d ? `${d.domain} · ${d.site!.parked ? "parked page" : `HTTP ${d.site!.status}`}` : null;
+    },
+  },
+  {
     id: "freemail_hr",
     severity: "medium",
     title: "Corporate role, free email address",

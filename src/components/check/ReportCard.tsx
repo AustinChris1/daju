@@ -313,6 +313,7 @@ export function ReportCard({ report, animate = true, shareUrl }: { report: Repor
                 <th>Domain</th>
                 <th>Registered</th>
                 <th>Mail set up</th>
+                <th>Website</th>
                 <th>Note</th>
               </tr>
             </thead>
@@ -322,6 +323,10 @@ export function ReportCard({ report, animate = true, shareUrl }: { report: Repor
                   <td className="font-mono">{d.domain}</td>
                   <td>{d.freeMail ? "free mailbox" : d.registered ? `${d.registered}${d.ageDays !== null ? ` (${d.ageDays} days)` : ""}` : d.error ? "lookup unavailable" : "unknown"}</td>
                   <td>{d.freeMail ? "n/a" : d.mx === null ? "unknown" : d.mx ? "yes" : "no MX record"}</td>
+                  <td>
+                    {d.freeMail ? "n/a" : !d.site ? "not checked" : d.site.parked ? <span className="text-amber">parked</span> : d.site.reachable ? <span className="text-green">{d.site.mentionsName ? "live, names the company" : "live"}</span> : <span className="text-toner-2">could not reach</span>}
+                    {d.site?.title && <div className="max-w-[28ch] truncate text-xs text-toner-2" title={d.site.title}>{d.site.title}</div>}
+                  </td>
                   <td className="text-toner-2">{d.lookalikeOf ? `Looks like ${d.lookalikeOf.domain} (${d.lookalikeOf.name})` : d.freeMail ? "Anyone can open this mailbox" : ""}</td>
                 </tr>
               ))}

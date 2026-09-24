@@ -13,6 +13,8 @@ export async function sendTelegramMessage(opts: SendTelegramMessageOptions): Pro
   }
 
   const url = `https://api.telegram.org/bot${token}/sendMessage`;
+  // Telegram rejects messages over 4096 characters; keep the card link by trimming the middle.
+  const text = opts.text.length > 4000 ? opts.text.slice(0, 3200) + "\n[…]\n" + opts.text.slice(-700) : opts.text;
   const ctrl = new AbortController();
   const timer = setTimeout(() => ctrl.abort(), 10000);
 
@@ -23,7 +25,7 @@ export async function sendTelegramMessage(opts: SendTelegramMessageOptions): Pro
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({
         chat_id: opts.chatId,
-        text: opts.text,
+        text,
       }),
     });
 

@@ -174,6 +174,7 @@ console.log("=== Running Daju Telegram Regression & Offline Test Suite ===\n");
         mx: true,
         freeMail: false,
         lookalikeOf: null,
+      site: null,
         error: null,
       },
     ],
