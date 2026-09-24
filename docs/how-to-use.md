@@ -29,6 +29,8 @@ What the stamps mean:
 2. Add the TXT record shown to your DNS and press **Verify now**. Propagation can take minutes to hours.
 3. Once verified, issue an offer link per candidate. Put it in the offer email. When the candidate pastes it into a check, the card shows your company as a verified sender with the date.
 
+4. Post a role. It appears on **Jobs** with a verified badge, and the apply address must be on your domain, so a candidate can tell a real message about it from a borrowed one.
+
 Keep the manage key; it is the only way back into your console.
 
 ## If you build job boards or messaging tools

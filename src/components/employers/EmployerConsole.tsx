@@ -5,6 +5,7 @@ import { Copy, ShieldCheck } from "lucide-react";
 import { COUNTRIES, COUNTRY_CODES, type Country } from "@/lib/countries";
 import { Button, Input, Label, OfficialBox, Select, Sheet } from "@/components/ui";
 import { setStored, storageKey, useStoredValue } from "@/lib/useStored";
+import { JobPoster } from "./JobPoster";
 
 interface Employer {
   id: string;
@@ -260,6 +261,7 @@ export function EmployerConsole({ siteUrl }: { siteUrl: string }) {
           <p className="mt-4 max-w-[60ch] text-xs text-toner-2">Put the link in the offer email or letter. When the candidate pastes it into a check, the card shows your company as a verified sender. Opens are counted so you know it reached them.</p>
         </Sheet>
       )}
+      {emp.verified_at && <JobPoster manageKey={key} defaultCountry={emp.country} domain={emp.domain} />}
     </div>
   );
 }

@@ -14,11 +14,11 @@ Live: https://daju-bice.vercel.app · Repo: https://github.com/AustinChris1/daju
 - Optional model: Claude or Groq (`openai/gpt-oss-120b`) for extraction refinement and translations.
 - Real-ad test on nine WhatsApp-group posts: eight clean direct employers, one young domain flagged as Caution.
 - Forward it to Daju: Telegram bot adapter (`/api/telegram/webhook`), formatter, deduplication, and setup CLI. Needs a bot token in Vercel and the webhook registered.
+- Verified jobs board: domain-verified employers post roles from the console; `/jobs` lists them with the verified badge; the apply address must be on the verified domain.
 - Live website check: a check fetches the company homepage and reports live, parked or HTTP error, and whether the page names the company.
 
 ## Build queue (agreed order)
 
-2. **Verified jobs board.** Domain-verified employers can post a role; public `/jobs` lists only those, with the verified stamp and domain age. Reuses the offers table. Owner: Claude. ~3h.
 3. **Forward it to Daju (Phase 2 & 3).** Twilio WhatsApp sandbox for the video; Meta WhatsApp Business application started for after the hackathon.
 4. **Data that moves.** Scheduled weekly re-snapshot of the four registers with a committed diff; licence-watch emails when an entry changes. Owner: Claude. ~2h.
 5. **Radar page.** Live counts from the database: checks by country, stamps, reports, expired licences found. Owner: Claude. ~1h.

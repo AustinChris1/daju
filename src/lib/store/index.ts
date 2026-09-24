@@ -47,6 +47,23 @@ export interface OfferRow {
   views: number;
 }
 
+export interface JobRow {
+  id: string;
+  created_at: string;
+  employer_id: string;
+  title: string;
+  country: Country;
+  location: string;
+  mode: "onsite" | "hybrid" | "remote";
+  salary: string | null;
+  description: string;
+  apply_email: string;
+  public: boolean;
+  views: number;
+}
+
+export type JobWithEmployer = JobRow & { employer: Pick<EmployerRow, "id" | "company" | "domain" | "country" | "verified_at" | "method"> };
+
 export interface WatchRow {
   id: string;
   created_at: string;
@@ -83,6 +100,11 @@ export interface Store {
   getOffer(token: string): Promise<(OfferRow & { employer: EmployerRow }) | null>;
   listOffers(employerId: string): Promise<OfferRow[]>;
   bumpOfferViews(token: string): Promise<void>;
+  createJob(row: JobRow): Promise<void>;
+  listJobs(limit: number): Promise<JobWithEmployer[]>;
+  listEmployerJobs(employerId: string): Promise<JobRow[]>;
+  getJob(id: string): Promise<JobWithEmployer | null>;
+  setJobPublic(id: string, employerId: string, isPublic: boolean): Promise<void>;
   addWatch(row: WatchRow): Promise<void>;
   listWatches(email: string): Promise<WatchRow[]>;
   allWatches(): Promise<WatchRow[]>;
@@ -97,6 +119,7 @@ class MemoryStore implements Store {
   reports: ReportRow[] = [];
   employers = new Map<string, EmployerRow>();
   offers = new Map<string, OfferRow>();
+  jobs = new Map<string, JobRow>();
   watches: WatchRow[] = [];
 
   async saveCheck(row: CheckRow) {
@@ -156,6 +179,29 @@ class MemoryStore implements Store {
   async bumpOfferViews(token: string) {
     const o = this.offers.get(token);
     if (o) o.views++;
+  }
+  async createJob(row: JobRow) {
+    this.jobs.set(row.id, row);
+  }
+  private withEmployer(j: JobRow): JobWithEmployer | null {
+    const e = this.employers.get(j.employer_id);
+    return e ? { ...j, employer: { id: e.id, company: e.company, domain: e.domain, country: e.country, verified_at: e.verified_at, method: e.method } } : null;
+  }
+  async listJobs(limit: number) {
+    return [...this.jobs.values()].filter((j) => j.public).reverse().map((j) => this.withEmployer(j)).filter((j): j is JobWithEmployer => !!j && !!j.employer.verified_at).slice(0, limit);
+  }
+  async listEmployerJobs(employerId: string) {
+    return [...this.jobs.values()].filter((j) => j.employer_id === employerId).reverse();
+  }
+  async getJob(id: string) {
+    const j = this.jobs.get(id);
+    if (!j) return null;
+    j.views++;
+    return this.withEmployer(j);
+  }
+  async setJobPublic(id: string, employerId: string, isPublic: boolean) {
+    const j = this.jobs.get(id);
+    if (j && j.employer_id === employerId) j.public = isPublic;
   }
   async addWatch(row: WatchRow) {
     this.watches.push(row);
@@ -242,6 +288,27 @@ class SupabaseStore implements Store {
   }
   async bumpOfferViews(token: string) {
     await this.sb.rpc("tc_bump_offer_views", { p_token: token });
+  }
+  async createJob(row: JobRow) {
+    const { error } = await this.sb.from("tc_jobs").insert(row);
+    if (error) throw error;
+  }
+  async listJobs(limit: number) {
+    const { data } = await this.sb.from("tc_jobs").select("*, employer:tc_employers(id,company,domain,country,verified_at,method)").eq("public", true).order("created_at", { ascending: false }).limit(limit);
+    return ((data as JobWithEmployer[]) ?? []).filter((j) => j.employer?.verified_at);
+  }
+  async listEmployerJobs(employerId: string) {
+    const { data } = await this.sb.from("tc_jobs").select("*").eq("employer_id", employerId).order("created_at", { ascending: false });
+    return (data as JobRow[]) ?? [];
+  }
+  async getJob(id: string) {
+    const { data } = await this.sb.from("tc_jobs").select("*, employer:tc_employers(id,company,domain,country,verified_at,method)").eq("id", id).maybeSingle();
+    if (data) await this.sb.rpc("tc_bump_job_views", { p_id: id });
+    return (data as JobWithEmployer | null) ?? null;
+  }
+  async setJobPublic(id: string, employerId: string, isPublic: boolean) {
+    const { error } = await this.sb.from("tc_jobs").update({ public: isPublic }).eq("id", id).eq("employer_id", employerId);
+    if (error) throw error;
   }
   async addWatch(row: WatchRow) {
     const { error } = await this.sb.from("tc_watches").insert(row);

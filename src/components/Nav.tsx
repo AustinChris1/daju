@@ -10,6 +10,7 @@ import { ThemeToggle } from "@/components/ThemeToggle";
 const TABS: { href: string; label: string; hint: string }[] = [
   { href: "/check", label: "Check", hint: "Paste an offer" },
   { href: "/registry", label: "Registers", hint: "Four countries, one search" },
+  { href: "/jobs", label: "Jobs", hint: "Verified employers only" },
   { href: "/employers", label: "Employers", hint: "Verified sender links" },
   { href: "/hotlines", label: "Hotlines", hint: "Who to call" },
   { href: "/docs", label: "Docs", hint: "How it works" },

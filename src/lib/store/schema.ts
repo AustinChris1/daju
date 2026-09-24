@@ -61,4 +61,24 @@ create index if not exists tc_watches_email on tc_watches (email);
 create or replace function tc_bump_offer_views(p_token text) returns void language sql as $$
   update tc_offers set views = views + 1 where token = p_token;
 $$;
+
+create table if not exists tc_jobs (
+  id text primary key,
+  created_at timestamptz not null default now(),
+  employer_id text not null references tc_employers(id),
+  title text not null,
+  country text not null,
+  location text not null,
+  mode text not null,
+  salary text,
+  description text not null,
+  apply_email text not null,
+  public boolean not null default true,
+  views integer not null default 0
+);
+create index if not exists tc_jobs_public on tc_jobs (public, created_at desc);
+
+create or replace function tc_bump_job_views(p_id text) returns void language sql as $$
+  update tc_jobs set views = views + 1 where id = p_id;
+$$;
 `;

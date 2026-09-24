@@ -8,6 +8,7 @@ const COLUMNS: { title: string; links: { href: string; label: string; external?:
     links: [
       { href: "/check", label: "Check an offer" },
       { href: "/registry", label: "Registers" },
+      { href: "/jobs", label: "Verified jobs" },
       { href: "/employers", label: "For employers" },
       { href: "/report", label: "Report a contact" },
       { href: "/hotlines", label: "Hotlines" },
