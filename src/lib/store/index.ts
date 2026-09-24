@@ -81,6 +81,7 @@ export interface Stats {
   reports: number;
   employers: number;
   offers: number;
+  jobs: number;
 }
 
 export interface Store {
@@ -89,6 +90,7 @@ export interface Store {
   getCheck(id: string): Promise<CheckRow | null>;
   recentChecks(limit: number): Promise<Pick<CheckRow, "id" | "created_at" | "country" | "kind" | "level">[]>;
   stats(): Promise<Stats>;
+  recentLure(limit: number): Promise<string[][]>;
   addReport(row: ReportRow): Promise<void>;
   countReports(values: string[]): Promise<number>;
   recentReports(limit: number): Promise<ReportRow[]>;
@@ -108,6 +110,7 @@ export interface Store {
   addWatch(row: WatchRow): Promise<void>;
   listWatches(email: string): Promise<WatchRow[]>;
   allWatches(): Promise<WatchRow[]>;
+  updateWatchStatus(id: string, status: string): Promise<void>;
 }
 
 const emptyLevels = (): Record<VerdictLevel, number> => ({ stop: 0, caution: 0, on_file: 0, unknown: 0 });
@@ -139,7 +142,10 @@ class MemoryStore implements Store {
       byLevel[c.level]++;
       byCountry[c.country]++;
     }
-    return { checks: this.checks.size, byLevel, byCountry, reports: this.reports.length, employers: [...this.employers.values()].filter((e) => e.verified_at).length, offers: this.offers.size };
+    return { checks: this.checks.size, byLevel, byCountry, reports: this.reports.length, employers: [...this.employers.values()].filter((e) => e.verified_at).length, offers: this.offers.size, jobs: [...this.jobs.values()].filter((j) => j.public).length };
+  }
+  async recentLure(limit: number) {
+    return [...this.checks.values()].slice(-limit).reverse().map((c) => c.report.lure.map((l) => l.id));
   }
   async addReport(row: ReportRow) {
     this.reports.push(row);
@@ -212,6 +218,10 @@ class MemoryStore implements Store {
   async allWatches() {
     return this.watches;
   }
+  async updateWatchStatus(id: string, status: string) {
+    const w = this.watches.find((x) => x.id === id);
+    if (w) w.status_at_watch = status;
+  }
 }
 
 class SupabaseStore implements Store {
@@ -231,19 +241,24 @@ class SupabaseStore implements Store {
     return (data as CheckRow[]) ?? [];
   }
   async stats(): Promise<Stats> {
-    const [checks, levels, countries, reports, employers, offers] = await Promise.all([
+    const [checks, levels, countries, reports, employers, offers, jobs] = await Promise.all([
       this.sb.from("tc_checks").select("id", { count: "exact", head: true }),
       this.sb.from("tc_checks").select("level"),
       this.sb.from("tc_checks").select("country"),
       this.sb.from("tc_reports").select("id", { count: "exact", head: true }),
       this.sb.from("tc_employers").select("id", { count: "exact", head: true }).not("verified_at", "is", null),
       this.sb.from("tc_offers").select("id", { count: "exact", head: true }),
+      this.sb.from("tc_jobs").select("id", { count: "exact", head: true }).eq("public", true),
     ]);
     const byLevel = emptyLevels();
     for (const r of (levels.data ?? []) as { level: VerdictLevel }[]) byLevel[r.level]++;
     const byCountry = emptyCountries();
     for (const r of (countries.data ?? []) as { country: Country }[]) byCountry[r.country]++;
-    return { checks: checks.count ?? 0, byLevel, byCountry, reports: reports.count ?? 0, employers: employers.count ?? 0, offers: offers.count ?? 0 };
+    return { checks: checks.count ?? 0, byLevel, byCountry, reports: reports.count ?? 0, employers: employers.count ?? 0, offers: offers.count ?? 0, jobs: jobs.count ?? 0 };
+  }
+  async recentLure(limit: number) {
+    const { data } = await this.sb.from("tc_checks").select("lure:report->lure").order("created_at", { ascending: false }).limit(limit);
+    return ((data ?? []) as unknown as { lure: { id: string }[] | null }[]).map((r) => (r.lure ?? []).map((l) => l.id));
   }
   async addReport(row: ReportRow) {
     const { error } = await this.sb.from("tc_reports").insert(row);
@@ -322,6 +337,10 @@ class SupabaseStore implements Store {
     const { data } = await this.sb.from("tc_watches").select("*");
     return (data as WatchRow[]) ?? [];
   }
+  async updateWatchStatus(id: string, status: string) {
+    const { error } = await this.sb.from("tc_watches").update({ status_at_watch: status }).eq("id", id);
+    if (error) throw error;
+  }
 }
 
 declare global {
@@ -342,7 +361,7 @@ function supabaseEnv(): { url?: string; key?: string } {
 }
 
 // Bump when the Store interface grows, so a dev hot reload rebuilds the cached singleton.
-const STORE_VERSION = 2;
+const STORE_VERSION = 4;
 
 export function getStore(): Store {
   const cached = globalThis.__trueCopyStore as (Store & { __v?: number }) | undefined;

@@ -3,6 +3,7 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import { COUNTRIES, isCountry } from "@/lib/countries";
 import { getEntry, snapshot } from "@/lib/registry/load";
+import { changesFor, latestChanges } from "@/lib/registry/changes";
 import { OfficialBox } from "@/components/ui";
 import { WatchForm } from "@/components/registry/WatchForm";
 
@@ -20,6 +21,7 @@ export default async function EntryPage({ params }: PageProps<"/registry/[countr
   if (!e) notFound();
   const c = COUNTRIES[country];
   const snap = snapshot(country);
+  const moved = changesFor(country)?.status_changes.find((x) => x.id === e.id) ?? null;
   const prefill = encodeURIComponent(`${e.name}\n${[...e.emails, ...e.phones].join("\n")}`);
 
   return (
@@ -32,6 +34,11 @@ export default async function EntryPage({ params }: PageProps<"/registry/[countr
         Status on the register: <strong>{e.status}</strong>
         {e.valid_to && <span className="text-toner-2"> · valid to {e.valid_to}</span>}
       </p>
+      {moved && (
+        <p className="mt-2 inline-block border border-amber bg-amber-soft px-3 py-1.5 text-sm">
+          Changed on {latestChanges()?.date}: {moved.from} to {moved.to}.
+        </p>
+      )}
 
       <dl className="mt-6 grid gap-x-6 gap-y-3 text-sm sm:grid-cols-[10rem_1fr]">
         {e.license_no && (<><dt className="text-toner-2">Licence number</dt><dd className="font-mono">{e.license_no}</dd></>)}

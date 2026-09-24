@@ -16,11 +16,11 @@ Live: https://daju-bice.vercel.app · Repo: https://github.com/AustinChris1/daju
 - Forward it to Daju: Telegram bot adapter (`/api/telegram/webhook`), formatter, deduplication, and setup CLI. Needs a bot token in Vercel and the webhook registered.
 - Verified jobs board: domain-verified employers post roles from the console; `/jobs` lists them with the verified badge; the apply address must be on the verified domain.
 - Live website check: a check fetches the company homepage and reports live, parked or HTTP error, and whether the page names the company.
+- Data that moves: weekly GitHub Actions re-snapshot of all four registers with a committed diff (`data/registries/changes.json`), a "what moved" panel on the registers page, and licence-watch emails through a Vercel cron (`/api/watch/notify`, Resend). Needs `CRON_SECRET` and `RESEND_API_KEY` in Vercel.
 
 ## Build queue (agreed order)
 
 3. **Forward it to Daju (Phase 2 & 3).** Twilio WhatsApp sandbox for the video; Meta WhatsApp Business application started for after the hackathon.
-4. **Data that moves.** Scheduled weekly re-snapshot of the four registers with a committed diff; licence-watch emails when an entry changes. Owner: Claude. ~2h.
 5. **Radar page.** Live counts from the database: checks by country, stamps, reports, expired licences found. Owner: Claude. ~1h.
 6. **Screenshot input.** Client-side OCR so a WhatsApp screenshot works like pasted text. Owner: Claude. ~2h.
 7. Small: Lagos area names (Chevron, Ajah, Lekki) out of the organisation extractor; hand-written Igbo reply template if a native speaker writes it.
@@ -31,6 +31,7 @@ Live: https://daju-bice.vercel.app · Repo: https://github.com/AustinChris1/daju
 - [ ] Two or three real scam messages from your groups (Thailand, Gulf, "pay a processing fee", "you have been shortlisted"), victims' names removed. The clean ads are in; the bad ones prove the product.
 - [ ] Add the TXT record for one domain you control (Namecheap: Advanced DNS, TXT, host `_daju`, value from the employer page) and press Verify. Without this there is no employer beat in the demo.
 - [ ] Vercel env: `LLM_PROVIDER=groq`, `GROQ_API_KEY`, `GROQ_MODEL=openai/gpt-oss-120b`, then redeploy.
+- [ ] Vercel env for the licence watch: `CRON_SECRET` (any long random string) and `RESEND_API_KEY` from resend.com (free tier); `RESEND_FROM` once a sending domain is verified there.
 - [ ] Video, 60 to 90 seconds, phone in hand, four forwards, no architecture talk.
 - [ ] Project details form: title Daju, target audience (job seekers and employers in NG, KE, UG, GH), stack (Next.js 16, TypeScript, Tailwind, Supabase, Vercel, Groq or Claude optional).
 - [ ] Decide the demo employer: austinchris.me is the easiest since it's yours.

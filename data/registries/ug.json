@@ -5,8 +5,8 @@
     "url": "https://eemis.mglsd.go.ug/companies",
     "method": "api"
   },
-  "as_of": "2026-09-21",
-  "count": 195,
+  "as_of": "2026-09-24",
+  "count": 190,
   "entries": [
     {
       "id": "ug-0001",
@@ -640,41 +640,6 @@
     },
     {
       "id": "ug-0019",
-      "name": "GESFLY INTERNATIONAL LINKS LIMITED",
-      "name_norm": "gesfly international links limited",
-      "status": "active",
-      "license_no": "E24090025",
-      "emails": [
-        "gesflyinternational@gmail.com"
-      ],
-      "phones": [
-        "+256772401640"
-      ],
-      "website": null,
-      "domains": [
-        "gmail.com"
-      ],
-      "address": "P.O.BOX 107012 Kampala-Uganda, Kampala, Uganda",
-      "valid_from": "2024-09-23",
-      "valid_to": "2026-09-22",
-      "type": "private",
-      "cac_verified": null,
-      "raw": {
-        "eemis_id": "1598",
-        "list_status": "ACTIVE",
-        "list_location": "107012 KLA",
-        "list_dates": "23 Sep, 2024 - 22 Sep, 2026",
-        "detail_url": "https://eemis.mglsd.go.ug/companies/GESFLYINTERNATIONALLINKSLIMITED_15321624",
-        "logo": "comp_1598_1658242847.jpg",
-        "detail": {
-          "start_date": "23 September 2024",
-          "expiry_date": "22 September 2026",
-          "status_badge": "ACTIVE"
-        }
-      }
-    },
-    {
-      "id": "ug-0020",
       "name": "BLACK DIAMOND RECRUITMENT LIMITED",
       "name_norm": "black diamond recruitment limited",
       "status": "active",
@@ -709,7 +674,7 @@
       }
     },
     {
-      "id": "ug-0021",
+      "id": "ug-0020",
       "name": "AIR BLOW INTERNATIONAL LTD",
       "name_norm": "air blow international ltd",
       "status": "active",
@@ -744,7 +709,7 @@
       }
     },
     {
-      "id": "ug-0022",
+      "id": "ug-0021",
       "name": "HAFIITH ENTERPRISES LTD",
       "name_norm": "hafiith enterprises ltd",
       "status": "active",
@@ -779,7 +744,7 @@
       }
     },
     {
-      "id": "ug-0023",
+      "id": "ug-0022",
       "name": "5 KMG INTERNATIONAL LTD",
       "name_norm": "5 kmg international ltd",
       "status": "active",
@@ -814,7 +779,7 @@
       }
     },
     {
-      "id": "ug-0024",
+      "id": "ug-0023",
       "name": "HEIV INTERNATIONAL LTD",
       "name_norm": "heiv international ltd",
       "status": "active",
@@ -849,7 +814,7 @@
       }
     },
     {
-      "id": "ug-0025",
+      "id": "ug-0024",
       "name": "PEAK LABOUR GIANTS LIMITED",
       "name_norm": "peak labour giants limited",
       "status": "active",
@@ -884,7 +849,7 @@
       }
     },
     {
-      "id": "ug-0026",
+      "id": "ug-0025",
       "name": "OPTIVEN UGANDA LIMITED",
       "name_norm": "optiven uganda limited",
       "status": "active",
@@ -919,7 +884,7 @@
       }
     },
     {
-      "id": "ug-0027",
+      "id": "ug-0026",
       "name": "BABCOOK AND BELLWAY INVESTMENT LTD",
       "name_norm": "babcook and bellway investment ltd",
       "status": "active",
@@ -954,7 +919,7 @@
       }
     },
     {
-      "id": "ug-0028",
+      "id": "ug-0027",
       "name": "CRYSTAL JOBMARTS COMPANY LTD",
       "name_norm": "crystal jobmarts company ltd",
       "status": "active",
@@ -989,7 +954,7 @@
       }
     },
     {
-      "id": "ug-0029",
+      "id": "ug-0028",
       "name": "HIREON AGENCY LIMITED",
       "name_norm": "hireon agency limited",
       "status": "active",
@@ -1024,7 +989,7 @@
       }
     },
     {
-      "id": "ug-0030",
+      "id": "ug-0029",
       "name": "AIRSWIFT RECRUITMENT COMPANY LTD",
       "name_norm": "airswift recruitment company ltd",
       "status": "active",
@@ -1059,7 +1024,7 @@
       }
     },
     {
-      "id": "ug-0031",
+      "id": "ug-0030",
       "name": "GOLD SILVER MANAGEMENT - SMC- (U) LIMITED",
       "name_norm": "gold silver management smc u limited",
       "status": "active",
@@ -1094,7 +1059,7 @@
       }
     },
     {
-      "id": "ug-0032",
+      "id": "ug-0031",
       "name": "ALKHAD IMPACT AGENCY LIMITED",
       "name_norm": "alkhad impact agency limited",
       "status": "active",
@@ -1129,7 +1094,7 @@
       }
     },
     {
-      "id": "ug-0033",
+      "id": "ug-0032",
       "name": "AROVA REALITY LIMITED",
       "name_norm": "arova reality limited",
       "status": "active",
@@ -1164,7 +1129,7 @@
       }
     },
     {
-      "id": "ug-0034",
+      "id": "ug-0033",
       "name": "S.A INTEGRATED STAFFING SERVICES LIMITED",
       "name_norm": "s a integrated staffing services limited",
       "status": "active",
@@ -1199,7 +1164,7 @@
       }
     },
     {
-      "id": "ug-0035",
+      "id": "ug-0034",
       "name": "JAKE EMPLOYMENT AGENCY LIMITED",
       "name_norm": "jake employment agency limited",
       "status": "active",
@@ -1234,7 +1199,7 @@
       }
     },
     {
-      "id": "ug-0036",
+      "id": "ug-0035",
       "name": "GAMBY CONSULTS LIMITED",
       "name_norm": "gamby consults limited",
       "status": "active",
@@ -1269,7 +1234,7 @@
       }
     },
     {
-      "id": "ug-0037",
+      "id": "ug-0036",
       "name": "AUNTHETIC RECRUITMENT CENTER LIMITED",
       "name_norm": "aunthetic recruitment center limited",
       "status": "active",
@@ -1304,7 +1269,7 @@
       }
     },
     {
-      "id": "ug-0038",
+      "id": "ug-0037",
       "name": "ELECTRA HR CONSULTANCY - LTD",
       "name_norm": "electra hr consultancy ltd",
       "status": "active",
@@ -1339,7 +1304,7 @@
       }
     },
     {
-      "id": "ug-0039",
+      "id": "ug-0038",
       "name": "LEGIT RECRUITMENT CONSULTANTS LTD",
       "name_norm": "legit recruitment consultants ltd",
       "status": "active",
@@ -1374,7 +1339,7 @@
       }
     },
     {
-      "id": "ug-0040",
+      "id": "ug-0039",
       "name": "OZAZ RECRUITMENT SERVICES UGANDA LIMITED",
       "name_norm": "ozaz recruitment services uganda limited",
       "status": "active",
@@ -1409,7 +1374,7 @@
       }
     },
     {
-      "id": "ug-0041",
+      "id": "ug-0040",
       "name": "PIC DIVERSE OPPORTUNITIES LTD",
       "name_norm": "pic diverse opportunities ltd",
       "status": "active",
@@ -1444,7 +1409,7 @@
       }
     },
     {
-      "id": "ug-0042",
+      "id": "ug-0041",
       "name": "ULTIMATE LINK LTD",
       "name_norm": "ultimate link ltd",
       "status": "active",
@@ -1479,7 +1444,7 @@
       }
     },
     {
-      "id": "ug-0043",
+      "id": "ug-0042",
       "name": "LEGACY RECRUITMENT AGENCY LTD",
       "name_norm": "legacy recruitment agency ltd",
       "status": "active",
@@ -1514,7 +1479,7 @@
       }
     },
     {
-      "id": "ug-0044",
+      "id": "ug-0043",
       "name": "LINFORD CONSULTANTS LTD",
       "name_norm": "linford consultants ltd",
       "status": "active",
@@ -1549,7 +1514,7 @@
       }
     },
     {
-      "id": "ug-0045",
+      "id": "ug-0044",
       "name": "DILIGENT OVERSEAS RECRUITMENT AGENCY LTD",
       "name_norm": "diligent overseas recruitment agency ltd",
       "status": "active",
@@ -1584,7 +1549,7 @@
       }
     },
     {
-      "id": "ug-0046",
+      "id": "ug-0045",
       "name": "ULTIMATE OPTIONS LIMITED",
       "name_norm": "ultimate options limited",
       "status": "active",
@@ -1619,42 +1584,7 @@
       }
     },
     {
-      "id": "ug-0047",
-      "name": "VBC POWER PROGRESS LTD",
-      "name_norm": "vbc power progress ltd",
-      "status": "active",
-      "license_no": "E25020011",
-      "emails": [
-        "vbcpowerprogress@gmail.com"
-      ],
-      "phones": [
-        "+256761609475"
-      ],
-      "website": null,
-      "domains": [
-        "gmail.com"
-      ],
-      "address": "P.0.BOX 2142 KAMPALA , UGANDA, Kampala, Uganda",
-      "valid_from": "2025-02-24",
-      "valid_to": "2027-02-23",
-      "type": "private",
-      "cac_verified": null,
-      "raw": {
-        "eemis_id": "936",
-        "list_status": "ACTIVE",
-        "list_location": "MAKINDYE KIZUNGU",
-        "list_dates": "24 Feb, 2025 - 23 Feb, 2027",
-        "detail_url": "https://eemis.mglsd.go.ug/companies/VBCPOWERPROGRESSLTD_5256576",
-        "logo": "comp_936_1663330160.png",
-        "detail": {
-          "start_date": "24 February 2025",
-          "expiry_date": "23 February 2027",
-          "status_badge": "ACTIVE"
-        }
-      }
-    },
-    {
-      "id": "ug-0048",
+      "id": "ug-0046",
       "name": "CARMEL EMPLOYMENT SERVICES (U) LIMITED",
       "name_norm": "carmel employment services u limited",
       "status": "active",
@@ -1689,7 +1619,7 @@
       }
     },
     {
-      "id": "ug-0049",
+      "id": "ug-0047",
       "name": "ABUU SHAGGAALA COMPANY LIMITED",
       "name_norm": "abuu shaggaala company limited",
       "status": "active",
@@ -1724,7 +1654,7 @@
       }
     },
     {
-      "id": "ug-0050",
+      "id": "ug-0048",
       "name": "ALMALAK LASSY RECRUITMENT CONSULT LTD",
       "name_norm": "almalak lassy recruitment consult ltd",
       "status": "active",
@@ -1759,7 +1689,7 @@
       }
     },
     {
-      "id": "ug-0051",
+      "id": "ug-0049",
       "name": "M.MED RECRUITMENT AGENCY LIMITED",
       "name_norm": "m med recruitment agency limited",
       "status": "active",
@@ -1794,7 +1724,7 @@
       }
     },
     {
-      "id": "ug-0052",
+      "id": "ug-0050",
       "name": "AL-MASHYU COMPANY LIMITED",
       "name_norm": "al mashyu company limited",
       "status": "active",
@@ -1829,7 +1759,7 @@
       }
     },
     {
-      "id": "ug-0053",
+      "id": "ug-0051",
       "name": "SQUAD SECURITY GROUP LIMITED",
       "name_norm": "squad security group limited",
       "status": "active",
@@ -1864,7 +1794,7 @@
       }
     },
     {
-      "id": "ug-0054",
+      "id": "ug-0052",
       "name": "AVANT SECURITY LIMITED",
       "name_norm": "avant security limited",
       "status": "active",
@@ -1899,7 +1829,7 @@
       }
     },
     {
-      "id": "ug-0055",
+      "id": "ug-0053",
       "name": "SMILE JOBS CONSULTANTS LTD",
       "name_norm": "smile jobs consultants ltd",
       "status": "active",
@@ -1934,42 +1864,7 @@
       }
     },
     {
-      "id": "ug-0056",
-      "name": "CAPACITY LABOUR AGENCY LTD",
-      "name_norm": "capacity labour agency ltd",
-      "status": "active",
-      "license_no": "E24090028",
-      "emails": [
-        "capacitylabouragencyltd@gmail.com"
-      ],
-      "phones": [
-        "+256700436695"
-      ],
-      "website": null,
-      "domains": [
-        "gmail.com"
-      ],
-      "address": "P.O.BOX 22952KAMPALA UGANDA, Kampala, Uganda",
-      "valid_from": "2024-09-23",
-      "valid_to": "2026-09-22",
-      "type": "private",
-      "cac_verified": null,
-      "raw": {
-        "eemis_id": "842",
-        "list_status": "ACTIVE",
-        "list_location": "KISASI",
-        "list_dates": "23 Sep, 2024 - 22 Sep, 2026",
-        "detail_url": "https://eemis.mglsd.go.ug/companies/CAPACITYLABOURAGENCYLTD_4253784",
-        "logo": "comp_842_1652946837.jpg",
-        "detail": {
-          "start_date": "23 September 2024",
-          "expiry_date": "22 September 2026",
-          "status_badge": "ACTIVE"
-        }
-      }
-    },
-    {
-      "id": "ug-0057",
+      "id": "ug-0054",
       "name": "PRESTIGE LINK LTD",
       "name_norm": "prestige link ltd",
       "status": "active",
@@ -2004,7 +1899,7 @@
       }
     },
     {
-      "id": "ug-0058",
+      "id": "ug-0055",
       "name": "EFADAH RECRUITMENT (U) LIMITED",
       "name_norm": "efadah recruitment u limited",
       "status": "active",
@@ -2039,7 +1934,7 @@
       }
     },
     {
-      "id": "ug-0059",
+      "id": "ug-0056",
       "name": "RACLE JOB CONSULTANTS LTD",
       "name_norm": "racle job consultants ltd",
       "status": "active",
@@ -2074,7 +1969,7 @@
       }
     },
     {
-      "id": "ug-0060",
+      "id": "ug-0057",
       "name": "MAWARID RECRUITMENT LIMITED",
       "name_norm": "mawarid recruitment limited",
       "status": "active",
@@ -2109,7 +2004,7 @@
       }
     },
     {
-      "id": "ug-0061",
+      "id": "ug-0058",
       "name": "JABRAN INTERNATIONAL RECRUITMENT AGENCY LTD",
       "name_norm": "jabran international recruitment agency ltd",
       "status": "active",
@@ -2144,7 +2039,7 @@
       }
     },
     {
-      "id": "ug-0062",
+      "id": "ug-0059",
       "name": "LEAVEN HOLDINGS LTD",
       "name_norm": "leaven holdings ltd",
       "status": "active",
@@ -2179,7 +2074,7 @@
       }
     },
     {
-      "id": "ug-0063",
+      "id": "ug-0060",
       "name": "FAVOUR RECRUITMENT AGENCY LIMITED",
       "name_norm": "favour recruitment agency limited",
       "status": "active",
@@ -2214,7 +2109,7 @@
       }
     },
     {
-      "id": "ug-0064",
+      "id": "ug-0061",
       "name": "JIMMY LINES INTERNATIONAL SMC LTD",
       "name_norm": "jimmy lines international smc ltd",
       "status": "active",
@@ -2249,7 +2144,7 @@
       }
     },
     {
-      "id": "ug-0065",
+      "id": "ug-0062",
       "name": "REMATRA INTERNATIONAL SERVICES LTD",
       "name_norm": "rematra international services ltd",
       "status": "active",
@@ -2284,7 +2179,7 @@
       }
     },
     {
-      "id": "ug-0066",
+      "id": "ug-0063",
       "name": "MOTUS GURUS CONSULTANTS LIMITED",
       "name_norm": "motus gurus consultants limited",
       "status": "active",
@@ -2319,7 +2214,7 @@
       }
     },
     {
-      "id": "ug-0067",
+      "id": "ug-0064",
       "name": "GATE RECRUIT GLOBAL SOLUTIONS LTD",
       "name_norm": "gate recruit global solutions ltd",
       "status": "active",
@@ -2354,7 +2249,7 @@
       }
     },
     {
-      "id": "ug-0068",
+      "id": "ug-0065",
       "name": "GAYA BAIRNS LTD",
       "name_norm": "gaya bairns ltd",
       "status": "active",
@@ -2389,7 +2284,7 @@
       }
     },
     {
-      "id": "ug-0069",
+      "id": "ug-0066",
       "name": "TERRYSOME INVESTMENTS LIMITED",
       "name_norm": "terrysome investments limited",
       "status": "active",
@@ -2424,7 +2319,7 @@
       }
     },
     {
-      "id": "ug-0070",
+      "id": "ug-0067",
       "name": "SKILLS ALLIANCE RECRUITMENT AGENCY LTD",
       "name_norm": "skills alliance recruitment agency ltd",
       "status": "active",
@@ -2459,7 +2354,7 @@
       }
     },
     {
-      "id": "ug-0071",
+      "id": "ug-0068",
       "name": "AL SHOUSH CONSULTANTS LTD",
       "name_norm": "al shoush consultants ltd",
       "status": "active",
@@ -2494,7 +2389,7 @@
       }
     },
     {
-      "id": "ug-0072",
+      "id": "ug-0069",
       "name": "FOCUS EMPLOYMENT LINKAGES LIMITED",
       "name_norm": "focus employment linkages limited",
       "status": "active",
@@ -2529,7 +2424,7 @@
       }
     },
     {
-      "id": "ug-0073",
+      "id": "ug-0070",
       "name": "MOLDEN INTERNATIONAL LABOUR CONSULTANTS LTD",
       "name_norm": "molden international labour consultants ltd",
       "status": "active",
@@ -2564,7 +2459,7 @@
       }
     },
     {
-      "id": "ug-0074",
+      "id": "ug-0071",
       "name": "WORKFORCE LOGISTICS AND CONSULTANTS LTD",
       "name_norm": "workforce logistics and consultants ltd",
       "status": "active",
@@ -2599,7 +2494,7 @@
       }
     },
     {
-      "id": "ug-0075",
+      "id": "ug-0072",
       "name": "POTENTIAL RECRUITMENT LTD",
       "name_norm": "potential recruitment ltd",
       "status": "active",
@@ -2634,42 +2529,7 @@
       }
     },
     {
-      "id": "ug-0076",
-      "name": "ROYAL CHARIOT AGENCIES U LTD",
-      "name_norm": "royal chariot agencies u ltd",
-      "status": "active",
-      "license_no": "E24090023",
-      "emails": [
-        "royalchariotrecruitment@gmail.com"
-      ],
-      "phones": [
-        "+256752605895"
-      ],
-      "website": null,
-      "domains": [
-        "gmail.com"
-      ],
-      "address": "P.O Box, Kampala, Uganda",
-      "valid_from": "2024-09-23",
-      "valid_to": "2026-09-22",
-      "type": "private",
-      "cac_verified": null,
-      "raw": {
-        "eemis_id": "436",
-        "list_status": "ACTIVE",
-        "list_location": "PLOT 3 MUTUNGO BIINA ROAD BUTABIKA",
-        "list_dates": "23 Sep, 2024 - 22 Sep, 2026",
-        "detail_url": "https://eemis.mglsd.go.ug/companies/ROYALCHARIOTAGENCIESULTD_1140576",
-        "logo": "comp_436_1648459904.jpg",
-        "detail": {
-          "start_date": "23 September 2024",
-          "expiry_date": "22 September 2026",
-          "status_badge": "ACTIVE"
-        }
-      }
-    },
-    {
-      "id": "ug-0077",
+      "id": "ug-0073",
       "name": "FILRA LIMITED",
       "name_norm": "filra limited",
       "status": "active",
@@ -2704,7 +2564,7 @@
       }
     },
     {
-      "id": "ug-0078",
+      "id": "ug-0074",
       "name": "BEST RECRUITMENT AGENCY LIMITED",
       "name_norm": "best recruitment agency limited",
       "status": "active",
@@ -2739,7 +2599,7 @@
       }
     },
     {
-      "id": "ug-0079",
+      "id": "ug-0075",
       "name": "HARAMAIN EMPLOYMENT CONSULTANT LIMITED",
       "name_norm": "haramain employment consultant limited",
       "status": "active",
@@ -2774,7 +2634,7 @@
       }
     },
     {
-      "id": "ug-0080",
+      "id": "ug-0076",
       "name": "BLS CONTEK AGENCY LTD",
       "name_norm": "bls contek agency ltd",
       "status": "active",
@@ -2809,7 +2669,7 @@
       }
     },
     {
-      "id": "ug-0081",
+      "id": "ug-0077",
       "name": "SUPREME MANPOWER LIMITED",
       "name_norm": "supreme manpower limited",
       "status": "active",
@@ -2844,7 +2704,7 @@
       }
     },
     {
-      "id": "ug-0082",
+      "id": "ug-0078",
       "name": "SKYZ LIMITED",
       "name_norm": "skyz limited",
       "status": "active",
@@ -2879,7 +2739,7 @@
       }
     },
     {
-      "id": "ug-0083",
+      "id": "ug-0079",
       "name": "SUCCESS JOBS CONSULTANTS LTD",
       "name_norm": "success jobs consultants ltd",
       "status": "active",
@@ -2914,7 +2774,7 @@
       }
     },
     {
-      "id": "ug-0084",
+      "id": "ug-0080",
       "name": "PROXY RECRUITMENT AGENCY LTD",
       "name_norm": "proxy recruitment agency ltd",
       "status": "active",
@@ -2949,7 +2809,7 @@
       }
     },
     {
-      "id": "ug-0085",
+      "id": "ug-0081",
       "name": "SOWICKS RECRUITMENT AGENCY LTD",
       "name_norm": "sowicks recruitment agency ltd",
       "status": "active",
@@ -2984,7 +2844,7 @@
       }
     },
     {
-      "id": "ug-0086",
+      "id": "ug-0082",
       "name": "KEIRA SOLUTIONS LTD",
       "name_norm": "keira solutions ltd",
       "status": "active",
@@ -3019,7 +2879,7 @@
       }
     },
     {
-      "id": "ug-0087",
+      "id": "ug-0083",
       "name": "INFINITY STUFFING LIMITED",
       "name_norm": "infinity stuffing limited",
       "status": "active",
@@ -3054,42 +2914,7 @@
       }
     },
     {
-      "id": "ug-0088",
-      "name": "HIGHOPES INTERNATIONAL LINKAGES LTD",
-      "name_norm": "highopes international linkages ltd",
-      "status": "active",
-      "license_no": "E24090027",
-      "emails": [
-        "olivessentongode5th@gmail.com"
-      ],
-      "phones": [
-        "+256752046367"
-      ],
-      "website": null,
-      "domains": [
-        "gmail.com"
-      ],
-      "address": "P.O BOX 141296, Wakiso, Uganda",
-      "valid_from": "2024-09-23",
-      "valid_to": "2026-09-22",
-      "type": "private",
-      "cac_verified": null,
-      "raw": {
-        "eemis_id": "373",
-        "list_status": "ACTIVE",
-        "list_location": "NANSANA HOIMA RD OPPOSITE POLICE STATION",
-        "list_dates": "23 Sep, 2024 - 22 Sep, 2026",
-        "detail_url": "https://eemis.mglsd.go.ug/companies/HIGHOPESINTERNATIONALLINKAGESLTD_834774",
-        "logo": "comp_373_1651595896.jpg",
-        "detail": {
-          "start_date": "23 September 2024",
-          "expiry_date": "22 September 2026",
-          "status_badge": "ACTIVE"
-        }
-      }
-    },
-    {
-      "id": "ug-0089",
+      "id": "ug-0084",
       "name": "ALFRANIFA AGENCY FOR RECRUITMENT AND CONSULTANCY LIMITED",
       "name_norm": "alfranifa agency for recruitment and consultancy limited",
       "status": "active",
@@ -3124,7 +2949,7 @@
       }
     },
     {
-      "id": "ug-0090",
+      "id": "ug-0085",
       "name": "UNIQUE RECRUITERS LIMITED",
       "name_norm": "unique recruiters limited",
       "status": "active",
@@ -3159,7 +2984,7 @@
       }
     },
     {
-      "id": "ug-0091",
+      "id": "ug-0086",
       "name": "NEPTUNE JOBS LTD",
       "name_norm": "neptune jobs ltd",
       "status": "active",
@@ -3194,7 +3019,7 @@
       }
     },
     {
-      "id": "ug-0092",
+      "id": "ug-0087",
       "name": "MARHABA RECRUITMENT AGENCY",
       "name_norm": "marhaba recruitment agency",
       "status": "active",
@@ -3229,7 +3054,7 @@
       }
     },
     {
-      "id": "ug-0093",
+      "id": "ug-0088",
       "name": "RUNTOWN AGENCIES LIMITED",
       "name_norm": "runtown agencies limited",
       "status": "active",
@@ -3264,7 +3089,7 @@
       }
     },
     {
-      "id": "ug-0094",
+      "id": "ug-0089",
       "name": "ALUMA RECRUITMENT LTD",
       "name_norm": "aluma recruitment ltd",
       "status": "active",
@@ -3299,7 +3124,7 @@
       }
     },
     {
-      "id": "ug-0095",
+      "id": "ug-0090",
       "name": "AMENVU INTERNATIONAL LIMITED",
       "name_norm": "amenvu international limited",
       "status": "active",
@@ -3334,7 +3159,7 @@
       }
     },
     {
-      "id": "ug-0096",
+      "id": "ug-0091",
       "name": "COJECTIVE INVESTMENT LIMITED",
       "name_norm": "cojective investment limited",
       "status": "active",
@@ -3369,7 +3194,7 @@
       }
     },
     {
-      "id": "ug-0097",
+      "id": "ug-0092",
       "name": "EMMARI RECRUIT INTERNATIONAL",
       "name_norm": "emmari recruit international",
       "status": "active",
@@ -3404,7 +3229,7 @@
       }
     },
     {
-      "id": "ug-0098",
+      "id": "ug-0093",
       "name": "PNEUMA NIKOS GROUP LTD",
       "name_norm": "pneuma nikos group ltd",
       "status": "active",
@@ -3439,7 +3264,7 @@
       }
     },
     {
-      "id": "ug-0099",
+      "id": "ug-0094",
       "name": "PEARL OF MAKKA INTERNATIONAL LIMITED",
       "name_norm": "pearl of makka international limited",
       "status": "active",
@@ -3474,7 +3299,7 @@
       }
     },
     {
-      "id": "ug-0100",
+      "id": "ug-0095",
       "name": "MAXIMUS EXPEDITIONS LTD",
       "name_norm": "maximus expeditions ltd",
       "status": "active",
@@ -3509,7 +3334,7 @@
       }
     },
     {
-      "id": "ug-0101",
+      "id": "ug-0096",
       "name": "EL-BARQ RECRUITMENT AGENCY U LIMITED",
       "name_norm": "el barq recruitment agency u limited",
       "status": "active",
@@ -3544,7 +3369,7 @@
       }
     },
     {
-      "id": "ug-0102",
+      "id": "ug-0097",
       "name": "EXERTION FORCE INTERNATIONAL COMPANY LIMITED",
       "name_norm": "exertion force international company limited",
       "status": "active",
@@ -3579,7 +3404,7 @@
       }
     },
     {
-      "id": "ug-0103",
+      "id": "ug-0098",
       "name": "AL MERIDIAN VENTURES LTD",
       "name_norm": "al meridian ventures ltd",
       "status": "active",
@@ -3614,7 +3439,7 @@
       }
     },
     {
-      "id": "ug-0104",
+      "id": "ug-0099",
       "name": "VAXIN KT GROUP LIMITED",
       "name_norm": "vaxin kt group limited",
       "status": "active",
@@ -3649,7 +3474,7 @@
       }
     },
     {
-      "id": "ug-0105",
+      "id": "ug-0100",
       "name": "EKISIINGA RECRUITMENT CO. LIMITED",
       "name_norm": "ekisiinga recruitment co limited",
       "status": "active",
@@ -3684,7 +3509,7 @@
       }
     },
     {
-      "id": "ug-0106",
+      "id": "ug-0101",
       "name": "ALWALEED INVESTMENT -SMC LIMITED",
       "name_norm": "alwaleed investment smc limited",
       "status": "active",
@@ -3719,7 +3544,7 @@
       }
     },
     {
-      "id": "ug-0107",
+      "id": "ug-0102",
       "name": "CREATIVE GROUP INTERNATIONAL LTD",
       "name_norm": "creative group international ltd",
       "status": "active",
@@ -3754,7 +3579,7 @@
       }
     },
     {
-      "id": "ug-0108",
+      "id": "ug-0103",
       "name": "ALRUWWAD COMPANY LIMITED",
       "name_norm": "alruwwad company limited",
       "status": "active",
@@ -3789,7 +3614,7 @@
       }
     },
     {
-      "id": "ug-0109",
+      "id": "ug-0104",
       "name": "INFINITY RECRUITMENT AGENCY LTD",
       "name_norm": "infinity recruitment agency ltd",
       "status": "active",
@@ -3824,7 +3649,7 @@
       }
     },
     {
-      "id": "ug-0110",
+      "id": "ug-0105",
       "name": "KEFURA INVESTMENTS LIMITED",
       "name_norm": "kefura investments limited",
       "status": "active",
@@ -3859,7 +3684,7 @@
       }
     },
     {
-      "id": "ug-0111",
+      "id": "ug-0106",
       "name": "KLEEJA INTERNATIONAL LIMITED",
       "name_norm": "kleeja international limited",
       "status": "active",
@@ -3894,7 +3719,7 @@
       }
     },
     {
-      "id": "ug-0112",
+      "id": "ug-0107",
       "name": "AXIS WARRIORS LIMITED",
       "name_norm": "axis warriors limited",
       "status": "active",
@@ -3929,7 +3754,7 @@
       }
     },
     {
-      "id": "ug-0113",
+      "id": "ug-0108",
       "name": "LABOUR WORTH INTERNATIONAL JOB AGENCY LIMITED",
       "name_norm": "labour worth international job agency limited",
       "status": "active",
@@ -3964,7 +3789,7 @@
       }
     },
     {
-      "id": "ug-0114",
+      "id": "ug-0109",
       "name": "TSK RECRUITMENT AGENCY LIMITED",
       "name_norm": "tsk recruitment agency limited",
       "status": "active",
@@ -3999,7 +3824,7 @@
       }
     },
     {
-      "id": "ug-0115",
+      "id": "ug-0110",
       "name": "PRIME RECRUITMENT COMPANY LTD",
       "name_norm": "prime recruitment company ltd",
       "status": "active",
@@ -4034,7 +3859,7 @@
       }
     },
     {
-      "id": "ug-0116",
+      "id": "ug-0111",
       "name": "ABSOLUTE LABOUR INTERNATIONAL LTD",
       "name_norm": "absolute labour international ltd",
       "status": "active",
@@ -4069,7 +3894,7 @@
       }
     },
     {
-      "id": "ug-0117",
+      "id": "ug-0112",
       "name": "AL-IMAN INTERNATIONAL SERVICES LIMITED",
       "name_norm": "al iman international services limited",
       "status": "active",
@@ -4104,7 +3929,7 @@
       }
     },
     {
-      "id": "ug-0118",
+      "id": "ug-0113",
       "name": "ALKA SECURITAS UGANDA LIMITED",
       "name_norm": "alka securitas uganda limited",
       "status": "active",
@@ -4139,7 +3964,7 @@
       }
     },
     {
-      "id": "ug-0119",
+      "id": "ug-0114",
       "name": "EBBO TIGERS SECURITY SERVICES LIMITED",
       "name_norm": "ebbo tigers security services limited",
       "status": "active",
@@ -4174,7 +3999,7 @@
       }
     },
     {
-      "id": "ug-0120",
+      "id": "ug-0115",
       "name": "MIGRATION SOLUTIONS LIMITED",
       "name_norm": "migration solutions limited",
       "status": "active",
@@ -4209,7 +4034,7 @@
       }
     },
     {
-      "id": "ug-0121",
+      "id": "ug-0116",
       "name": "WORLD HIGH END GATE INTERNATIONAL LIMITED",
       "name_norm": "world high end gate international limited",
       "status": "active",
@@ -4244,7 +4069,7 @@
       }
     },
     {
-      "id": "ug-0122",
+      "id": "ug-0117",
       "name": "AL SHOALAH LTD",
       "name_norm": "al shoalah ltd",
       "status": "active",
@@ -4279,7 +4104,7 @@
       }
     },
     {
-      "id": "ug-0123",
+      "id": "ug-0118",
       "name": "SKYNET CONSULTANTS INTERNATIONAL LIMITED",
       "name_norm": "skynet consultants international limited",
       "status": "active",
@@ -4314,7 +4139,7 @@
       }
     },
     {
-      "id": "ug-0124",
+      "id": "ug-0119",
       "name": "TRANSCEND AGENCIES INTERNATIONAL LIMITED",
       "name_norm": "transcend agencies international limited",
       "status": "active",
@@ -4349,7 +4174,7 @@
       }
     },
     {
-      "id": "ug-0125",
+      "id": "ug-0120",
       "name": "KING'S LAND AGENCY LIMITED",
       "name_norm": "king s land agency limited",
       "status": "active",
@@ -4384,7 +4209,7 @@
       }
     },
     {
-      "id": "ug-0126",
+      "id": "ug-0121",
       "name": "VBC LABOUR EXPERTS LIMITED",
       "name_norm": "vbc labour experts limited",
       "status": "active",
@@ -4419,7 +4244,7 @@
       }
     },
     {
-      "id": "ug-0127",
+      "id": "ug-0122",
       "name": "PRECISION INTERNATIONAL LABOUR CONNECTIONS LIMITED",
       "name_norm": "precision international labour connections limited",
       "status": "active",
@@ -4454,7 +4279,7 @@
       }
     },
     {
-      "id": "ug-0128",
+      "id": "ug-0123",
       "name": "GOLDEN STAR RECRUITMENT AGENCIES LIMITED",
       "name_norm": "golden star recruitment agencies limited",
       "status": "active",
@@ -4489,7 +4314,7 @@
       }
     },
     {
-      "id": "ug-0129",
+      "id": "ug-0124",
       "name": "HAYS RECRUITMENT EXPERTS LIMITED",
       "name_norm": "hays recruitment experts limited",
       "status": "active",
@@ -4524,7 +4349,7 @@
       }
     },
     {
-      "id": "ug-0130",
+      "id": "ug-0125",
       "name": "ELFAEED COMPANY LIMITED",
       "name_norm": "elfaeed company limited",
       "status": "active",
@@ -4559,7 +4384,7 @@
       }
     },
     {
-      "id": "ug-0131",
+      "id": "ug-0126",
       "name": "IMARA GLOBAL EMPLOYMENT LIMITED",
       "name_norm": "imara global employment limited",
       "status": "active",
@@ -4594,7 +4419,7 @@
       }
     },
     {
-      "id": "ug-0132",
+      "id": "ug-0127",
       "name": "GULF LINK INTERNATIONAL",
       "name_norm": "gulf link international",
       "status": "active",
@@ -4629,7 +4454,7 @@
       }
     },
     {
-      "id": "ug-0133",
+      "id": "ug-0128",
       "name": "ALMARED AGENCY FOR RECRUITMENT AND CONSULTANCY LIMITED",
       "name_norm": "almared agency for recruitment and consultancy limited",
       "status": "active",
@@ -4664,7 +4489,7 @@
       }
     },
     {
-      "id": "ug-0134",
+      "id": "ug-0129",
       "name": "HIGH GROUND INTERNATIONAL LTD",
       "name_norm": "high ground international ltd",
       "status": "active",
@@ -4699,7 +4524,7 @@
       }
     },
     {
-      "id": "ug-0135",
+      "id": "ug-0130",
       "name": "DERM LOGISTICS UG LTD",
       "name_norm": "derm logistics ug ltd",
       "status": "active",
@@ -4734,7 +4559,7 @@
       }
     },
     {
-      "id": "ug-0136",
+      "id": "ug-0131",
       "name": "HARCHAR INTERNATIONAL LABOUR AGENCY LIMITED",
       "name_norm": "harchar international labour agency limited",
       "status": "active",
@@ -4769,7 +4594,7 @@
       }
     },
     {
-      "id": "ug-0137",
+      "id": "ug-0132",
       "name": "SPIN LABOUR CONSULTANTS LIMITED",
       "name_norm": "spin labour consultants limited",
       "status": "active",
@@ -4804,7 +4629,7 @@
       }
     },
     {
-      "id": "ug-0138",
+      "id": "ug-0133",
       "name": "NOA GROUP OF COMPANIES LIMITED",
       "name_norm": "noa group of companies limited",
       "status": "active",
@@ -4839,7 +4664,7 @@
       }
     },
     {
-      "id": "ug-0139",
+      "id": "ug-0134",
       "name": "HBM RECRUITMENT AGENCY UGANDA LIMITED",
       "name_norm": "hbm recruitment agency uganda limited",
       "status": "active",
@@ -4874,20 +4699,20 @@
       }
     },
     {
-      "id": "ug-0140",
+      "id": "ug-0135",
       "name": "STREPA INTERNATIONAL SERVICES LIMITED",
       "name_norm": "strepa international services limited",
       "status": "active",
       "license_no": "E25110004",
       "emails": [
-        "strepainternationalugandaltd@yahoo.com"
+        "strepainternational2019@gmail.com"
       ],
       "phones": [
         "+256772520685"
       ],
       "website": null,
       "domains": [
-        "yahoo.com"
+        "gmail.com"
       ],
       "address": "P.O BOX 10397, KAMPALA UGANDA, Kampala, Uganda",
       "valid_from": "2025-11-06",
@@ -4909,7 +4734,7 @@
       }
     },
     {
-      "id": "ug-0141",
+      "id": "ug-0136",
       "name": "BM FOREX WORKERS LTD",
       "name_norm": "bm forex workers ltd",
       "status": "active",
@@ -4944,7 +4769,7 @@
       }
     },
     {
-      "id": "ug-0142",
+      "id": "ug-0137",
       "name": "SHUKRAN HABIB CONSULTANTS LTD",
       "name_norm": "shukran habib consultants ltd",
       "status": "active",
@@ -4979,7 +4804,7 @@
       }
     },
     {
-      "id": "ug-0143",
+      "id": "ug-0138",
       "name": "PROSPECTS INTERNATIONAL LTD",
       "name_norm": "prospects international ltd",
       "status": "active",
@@ -5014,7 +4839,7 @@
       }
     },
     {
-      "id": "ug-0144",
+      "id": "ug-0139",
       "name": "JERICHO INTERNATIONAL UGANDA SMC LIMITED",
       "name_norm": "jericho international uganda smc limited",
       "status": "active",
@@ -5049,7 +4874,7 @@
       }
     },
     {
-      "id": "ug-0145",
+      "id": "ug-0140",
       "name": "ENJAAZI LIMITED",
       "name_norm": "enjaazi limited",
       "status": "active",
@@ -5084,7 +4909,7 @@
       }
     },
     {
-      "id": "ug-0146",
+      "id": "ug-0141",
       "name": "PROVIO INTERNATIONAL LTD",
       "name_norm": "provio international ltd",
       "status": "active",
@@ -5119,7 +4944,7 @@
       }
     },
     {
-      "id": "ug-0147",
+      "id": "ug-0142",
       "name": "PLATINUM PROJECTS LTD",
       "name_norm": "platinum projects ltd",
       "status": "active",
@@ -5154,7 +4979,7 @@
       }
     },
     {
-      "id": "ug-0148",
+      "id": "ug-0143",
       "name": "ATLAS IMPEX LTD",
       "name_norm": "atlas impex ltd",
       "status": "active",
@@ -5189,7 +5014,7 @@
       }
     },
     {
-      "id": "ug-0149",
+      "id": "ug-0144",
       "name": "RS RECRUITMENT SERVICES LIMITED",
       "name_norm": "rs recruitment services limited",
       "status": "active",
@@ -5224,7 +5049,7 @@
       }
     },
     {
-      "id": "ug-0150",
+      "id": "ug-0145",
       "name": "ALKAREB LIMITED",
       "name_norm": "alkareb limited",
       "status": "active",
@@ -5259,7 +5084,7 @@
       }
     },
     {
-      "id": "ug-0151",
+      "id": "ug-0146",
       "name": "KAZI MASTERS LTD",
       "name_norm": "kazi masters ltd",
       "status": "active",
@@ -5294,7 +5119,7 @@
       }
     },
     {
-      "id": "ug-0152",
+      "id": "ug-0147",
       "name": "TOP NOTCH RECRUITMENT SERVICES UGANDA LIMITED",
       "name_norm": "top notch recruitment services uganda limited",
       "status": "active",
@@ -5329,7 +5154,7 @@
       }
     },
     {
-      "id": "ug-0153",
+      "id": "ug-0148",
       "name": "KAMWE RECRUITMENT AGENCY LTD",
       "name_norm": "kamwe recruitment agency ltd",
       "status": "active",
@@ -5364,7 +5189,7 @@
       }
     },
     {
-      "id": "ug-0154",
+      "id": "ug-0149",
       "name": "MACRO MANPOWER LIMITED",
       "name_norm": "macro manpower limited",
       "status": "active",
@@ -5399,7 +5224,7 @@
       }
     },
     {
-      "id": "ug-0155",
+      "id": "ug-0150",
       "name": "VERDANT PASTURES AGENCY U LTD ....",
       "name_norm": "verdant pastures agency u ltd",
       "status": "active",
@@ -5434,7 +5259,7 @@
       }
     },
     {
-      "id": "ug-0156",
+      "id": "ug-0151",
       "name": "SAVIOURS INTERNATIONAL AGENCY LIMITED",
       "name_norm": "saviours international agency limited",
       "status": "active",
@@ -5469,7 +5294,7 @@
       }
     },
     {
-      "id": "ug-0157",
+      "id": "ug-0152",
       "name": "ALSALAM LOGISTICS & CONSULTANCY LIMITED",
       "name_norm": "alsalam logistics and consultancy limited",
       "status": "active",
@@ -5504,7 +5329,7 @@
       }
     },
     {
-      "id": "ug-0158",
+      "id": "ug-0153",
       "name": "TRIPLE WORLD GROUP LIMITED",
       "name_norm": "triple world group limited",
       "status": "active",
@@ -5539,7 +5364,7 @@
       }
     },
     {
-      "id": "ug-0159",
+      "id": "ug-0154",
       "name": "HEBRA INTERNATIONAL LIMITED",
       "name_norm": "hebra international limited",
       "status": "active",
@@ -5574,7 +5399,7 @@
       }
     },
     {
-      "id": "ug-0160",
+      "id": "ug-0155",
       "name": "JARO HOLDINGS INTERNATIONAL LIMITED",
       "name_norm": "jaro holdings international limited",
       "status": "active",
@@ -5609,7 +5434,7 @@
       }
     },
     {
-      "id": "ug-0161",
+      "id": "ug-0156",
       "name": "LABOUR FRONTIERS INTERNATIONAL LIMITED",
       "name_norm": "labour frontiers international limited",
       "status": "active",
@@ -5644,7 +5469,7 @@
       }
     },
     {
-      "id": "ug-0162",
+      "id": "ug-0157",
       "name": "ROKAS RECRUITMENT SERVICES LTD",
       "name_norm": "rokas recruitment services ltd",
       "status": "active",
@@ -5679,7 +5504,7 @@
       }
     },
     {
-      "id": "ug-0163",
+      "id": "ug-0158",
       "name": "TUSANO COMBINED UGANDA LIMITED",
       "name_norm": "tusano combined uganda limited",
       "status": "active",
@@ -5714,7 +5539,7 @@
       }
     },
     {
-      "id": "ug-0164",
+      "id": "ug-0159",
       "name": "SWIFT INTERNATIONAL RECRUITERS LIMITED",
       "name_norm": "swift international recruiters limited",
       "status": "active",
@@ -5749,7 +5574,7 @@
       }
     },
     {
-      "id": "ug-0165",
+      "id": "ug-0160",
       "name": "JERUSALEM RECRUITMENT AGENCY LTD",
       "name_norm": "jerusalem recruitment agency ltd",
       "status": "active",
@@ -5784,7 +5609,7 @@
       }
     },
     {
-      "id": "ug-0166",
+      "id": "ug-0161",
       "name": "EXPLORER DUBAI LTD",
       "name_norm": "explorer dubai ltd",
       "status": "active",
@@ -5819,7 +5644,7 @@
       }
     },
     {
-      "id": "ug-0167",
+      "id": "ug-0162",
       "name": "FRESH MIND INTERNATIONAL LTD",
       "name_norm": "fresh mind international ltd",
       "status": "active",
@@ -5854,7 +5679,7 @@
       }
     },
     {
-      "id": "ug-0168",
+      "id": "ug-0163",
       "name": "EZVISA KAMPALA",
       "name_norm": "ezvisa kampala",
       "status": "active",
@@ -5889,7 +5714,7 @@
       }
     },
     {
-      "id": "ug-0169",
+      "id": "ug-0164",
       "name": "SECURITY LINK LIMITED",
       "name_norm": "security link limited",
       "status": "active",
@@ -5924,7 +5749,7 @@
       }
     },
     {
-      "id": "ug-0170",
+      "id": "ug-0165",
       "name": "INTERNATIONAL EMPLOYMENT LINKAGES (U) LTD",
       "name_norm": "international employment linkages u ltd",
       "status": "active",
@@ -5959,7 +5784,7 @@
       }
     },
     {
-      "id": "ug-0171",
+      "id": "ug-0166",
       "name": "ELFIRSAN GROUP LIMITED",
       "name_norm": "elfirsan group limited",
       "status": "active",
@@ -5994,7 +5819,7 @@
       }
     },
     {
-      "id": "ug-0172",
+      "id": "ug-0167",
       "name": "AMAZING GRACE LABOUR SERVICES LTD",
       "name_norm": "amazing grace labour services ltd",
       "status": "active",
@@ -6029,7 +5854,7 @@
       }
     },
     {
-      "id": "ug-0173",
+      "id": "ug-0168",
       "name": "ELITE WINNERS AGENCIES LIMITED",
       "name_norm": "elite winners agencies limited",
       "status": "active",
@@ -6064,7 +5889,7 @@
       }
     },
     {
-      "id": "ug-0174",
+      "id": "ug-0169",
       "name": "PREMIER RECRUITMENT LIMITED",
       "name_norm": "premier recruitment limited",
       "status": "active",
@@ -6099,7 +5924,7 @@
       }
     },
     {
-      "id": "ug-0175",
+      "id": "ug-0170",
       "name": "GREENER PASTURES OVERSEAS CONSULTANTS LIMITED",
       "name_norm": "greener pastures overseas consultants limited",
       "status": "active",
@@ -6134,7 +5959,7 @@
       }
     },
     {
-      "id": "ug-0176",
+      "id": "ug-0171",
       "name": "RANGERS SECURITY LTD",
       "name_norm": "rangers security ltd",
       "status": "active",
@@ -6169,7 +5994,7 @@
       }
     },
     {
-      "id": "ug-0177",
+      "id": "ug-0172",
       "name": "KHALEEJ AGENCIES LIMITED",
       "name_norm": "khaleej agencies limited",
       "status": "active",
@@ -6204,7 +6029,7 @@
       }
     },
     {
-      "id": "ug-0178",
+      "id": "ug-0173",
       "name": "ALASKER INTERNATIONAL LIMITED",
       "name_norm": "alasker international limited",
       "status": "active",
@@ -6239,7 +6064,7 @@
       }
     },
     {
-      "id": "ug-0179",
+      "id": "ug-0174",
       "name": "MOBILE LABOUR INTERNATIONAL LIMITED",
       "name_norm": "mobile labour international limited",
       "status": "active",
@@ -6274,7 +6099,7 @@
       }
     },
     {
-      "id": "ug-0180",
+      "id": "ug-0175",
       "name": "THE NORMANDY COMPANY UGANDA LIMITED",
       "name_norm": "the normandy company uganda limited",
       "status": "active",
@@ -6309,7 +6134,7 @@
       }
     },
     {
-      "id": "ug-0181",
+      "id": "ug-0176",
       "name": "MAGHRIB AGENCIES LTD",
       "name_norm": "maghrib agencies ltd",
       "status": "active",
@@ -6344,7 +6169,7 @@
       }
     },
     {
-      "id": "ug-0182",
+      "id": "ug-0177",
       "name": "BRIGHT STAR CREATION INTERNATIONAL LTD",
       "name_norm": "bright star creation international ltd",
       "status": "active",
@@ -6379,7 +6204,7 @@
       }
     },
     {
-      "id": "ug-0183",
+      "id": "ug-0178",
       "name": "TIRAJO EMPLOYMENT AGENCIES LTD",
       "name_norm": "tirajo employment agencies ltd",
       "status": "active",
@@ -6414,7 +6239,7 @@
       }
     },
     {
-      "id": "ug-0184",
+      "id": "ug-0179",
       "name": "SERVEU INTERNATIONAL RECRUITING AGENCY",
       "name_norm": "serveu international recruiting agency",
       "status": "active",
@@ -6449,7 +6274,7 @@
       }
     },
     {
-      "id": "ug-0185",
+      "id": "ug-0180",
       "name": "AMIYAL SEFER LIMITED",
       "name_norm": "amiyal sefer limited",
       "status": "active",
@@ -6484,7 +6309,7 @@
       }
     },
     {
-      "id": "ug-0186",
+      "id": "ug-0181",
       "name": "MALISU APOLLO INVESTMENTS LTD",
       "name_norm": "malisu apollo investments ltd",
       "status": "active",
@@ -6519,7 +6344,7 @@
       }
     },
     {
-      "id": "ug-0187",
+      "id": "ug-0182",
       "name": "JAG SECURITY GROUP LTD",
       "name_norm": "jag security group ltd",
       "status": "active",
@@ -6554,7 +6379,7 @@
       }
     },
     {
-      "id": "ug-0188",
+      "id": "ug-0183",
       "name": "HAM PROPERTY SERVICES AND MANAGEMENT LTD",
       "name_norm": "ham property services and management ltd",
       "status": "active",
@@ -6589,7 +6414,7 @@
       }
     },
     {
-      "id": "ug-0189",
+      "id": "ug-0184",
       "name": "TRUSTIN COMPANY LIMITED",
       "name_norm": "trustin company limited",
       "status": "active",
@@ -6624,7 +6449,7 @@
       }
     },
     {
-      "id": "ug-0190",
+      "id": "ug-0185",
       "name": "GOLDEN ARM LIMITED",
       "name_norm": "golden arm limited",
       "status": "active",
@@ -6659,7 +6484,7 @@
       }
     },
     {
-      "id": "ug-0191",
+      "id": "ug-0186",
       "name": "TEMPCRO INTERNATIONAL LIMITED",
       "name_norm": "tempcro international limited",
       "status": "active",
@@ -6694,7 +6519,7 @@
       }
     },
     {
-      "id": "ug-0192",
+      "id": "ug-0187",
       "name": "ESSENTIAL COMMUNICATIONS LIMITED",
       "name_norm": "essential communications limited",
       "status": "active",
@@ -6729,7 +6554,7 @@
       }
     },
     {
-      "id": "ug-0193",
+      "id": "ug-0188",
       "name": "EMPOWERAGE INTERNATIONAL LIMITED",
       "name_norm": "empowerage international limited",
       "status": "active",
@@ -6764,7 +6589,7 @@
       }
     },
     {
-      "id": "ug-0194",
+      "id": "ug-0189",
       "name": "HOREB SERVICES UGANDA LIMITED",
       "name_norm": "horeb services uganda limited",
       "status": "active",
@@ -6799,7 +6624,7 @@
       }
     },
     {
-      "id": "ug-0195",
+      "id": "ug-0190",
       "name": "KHM INTERNATIONAL CONSULTANTS LIMITED",
       "name_norm": "khm international consultants limited",
       "status": "active",

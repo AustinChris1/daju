@@ -35,7 +35,7 @@ Open the live site, press one of the example chips ("Uganda Gulf housemaid job" 
 | Uganda | EEMIS, Ministry of Gender, Labour and Social Development | 195 | 2026-09-21 |
 | Ghana | GLMIS, Ministry of Employment and Labour Relations | 322 | 2026-09-21 |
 
-Snapshots live in `data/registries/` and are refreshed with `pnpm registries`. Statute citations, hotlines and quoted warnings are in `data/law/`, each with its source URL. A check never calls a government site.
+Snapshots live in `data/registries/`. A GitHub Actions job re-reads all four registers every Monday and commits what moved (`changes.json`); the registers page shows it, and anyone watching an entry is emailed when its status changes. Statute citations, hotlines and quoted warnings are in `data/law/`, each with its source URL. A check never calls a government site.
 
 ## Run locally
 

@@ -98,7 +98,7 @@ export default function Home() {
           </div>
         </div>
         <p className="mt-3 text-sm text-toner-2">
-          {total.toLocaleString()} records on file, refreshed by script, never scraped during a check. <Link href="/method">Method and caveats</Link>.
+          {total.toLocaleString()} records on file, re-read every Monday, never scraped during a check. <Link href="/radar">Live radar</Link> · <Link href="/method">Method and caveats</Link>.
         </p>
       </section>
 

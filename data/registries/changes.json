@@ -1,0 +1,108 @@
+{
+  "runs": [
+    {
+      "date": "2026-09-24",
+      "base": "HEAD",
+      "countries": [
+        {
+          "country": "NG",
+          "as_of_before": "2026-09-21",
+          "as_of_after": "2026-09-24",
+          "count_before": 1186,
+          "count_after": 1186,
+          "added_count": 1,
+          "removed_count": 1,
+          "status_change_count": 0,
+          "contact_change_count": 0,
+          "added": [
+            {
+              "id": "ng-0369",
+              "name": "BONAFIDE ADVANCED SYSTEMS LTD",
+              "status": "active",
+              "license_no": null,
+              "valid_to": null
+            }
+          ],
+          "removed": [
+            {
+              "id": "ng-0369",
+              "name": "DAJU ADVANCED SYSTEMS LTD",
+              "status": "active",
+              "license_no": null,
+              "valid_to": null
+            }
+          ],
+          "status_changes": [],
+          "contact_changes": []
+        },
+        {
+          "country": "UG",
+          "as_of_before": "2026-09-21",
+          "as_of_after": "2026-09-24",
+          "count_before": 195,
+          "count_after": 190,
+          "added_count": 0,
+          "removed_count": 5,
+          "status_change_count": 0,
+          "contact_change_count": 1,
+          "added": [],
+          "removed": [
+            {
+              "id": "ug-0019",
+              "name": "GESFLY INTERNATIONAL LINKS LIMITED",
+              "status": "active",
+              "license_no": "E24090025",
+              "valid_to": "2026-09-22"
+            },
+            {
+              "id": "ug-0047",
+              "name": "VBC POWER PROGRESS LTD",
+              "status": "active",
+              "license_no": "E25020011",
+              "valid_to": "2027-02-23"
+            },
+            {
+              "id": "ug-0056",
+              "name": "CAPACITY LABOUR AGENCY LTD",
+              "status": "active",
+              "license_no": "E24090028",
+              "valid_to": "2026-09-22"
+            },
+            {
+              "id": "ug-0076",
+              "name": "ROYAL CHARIOT AGENCIES U LTD",
+              "status": "active",
+              "license_no": "E24090023",
+              "valid_to": "2026-09-22"
+            },
+            {
+              "id": "ug-0088",
+              "name": "HIGHOPES INTERNATIONAL LINKAGES LTD",
+              "status": "active",
+              "license_no": "E24090027",
+              "valid_to": "2026-09-22"
+            }
+          ],
+          "status_changes": [],
+          "contact_changes": [
+            {
+              "id": "ug-0135",
+              "name": "STREPA INTERNATIONAL SERVICES LIMITED",
+              "status": "active",
+              "license_no": "E25110004",
+              "valid_to": "2027-11-05",
+              "before": [
+                "+256772520685",
+                "strepainternationalugandaltd@yahoo.com"
+              ],
+              "after": [
+                "+256772520685",
+                "strepainternational2019@gmail.com"
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

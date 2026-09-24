@@ -1,0 +1,42 @@
+name: Refresh registers
+
+# Re-snapshots the four government registers every Monday, records what moved, and commits the diff.
+on:
+  schedule:
+    - cron: "0 3 * * 1"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  refresh:
+    runs-on: ubuntu-latest
+    timeout-minutes: 40
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - name: Scrape NELEX, NEA, EEMIS and GLMIS
+        run: node scripts/registries/all.mjs
+      - name: Record what moved
+        id: diff
+        run: |
+          node scripts/registries/diff.mjs | tee diff.txt
+          {
+            echo "summary<<EOF"
+            cat diff.txt
+            echo "EOF"
+          } >> "$GITHUB_OUTPUT"
+      - name: Commit the new snapshot
+        run: |
+          git config user.name "AustinChris1"
+          git config user.email "austinchrisiwu@gmail.com"
+          git add data/registries
+          if git diff --cached --quiet; then
+            echo "Registers unchanged"
+            exit 0
+          fi
+          git commit -m "Register snapshot $(date -u +%Y-%m-%d)" -m "${{ steps.diff.outputs.summary }}"
+          git push

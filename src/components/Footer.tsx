@@ -17,6 +17,7 @@ const COLUMNS: { title: string; links: { href: string; label: string; external?:
   {
     title: "Trust",
     links: [
+      { href: "/radar", label: "Radar: live counts" },
       { href: "/method", label: "How a check is made" },
       { href: "/docs/data-and-limits", label: "Data sources and limits" },
       { href: "/privacy", label: "Privacy" },

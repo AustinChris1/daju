@@ -9,6 +9,12 @@
 | Uganda | EEMIS, Ministry of Gender, Labour and Social Development: licensed external recruitment companies | Name, phone, email, address, licence validity | 2026-09-21 | Lists currently licensed firms only; revoked companies do not appear. |
 | Ghana | GLMIS, Ministry of Employment and Labour Relations: employment agencies directory | Name, type, email, location | 2026-09-21 | No licence status. The Ministry announced a licensed-agency list on 8 September 2026; this snapshot should be replaced by it. |
 
+## Refresh
+
+A GitHub Actions job re-reads all four registers every Monday at 03:00 UTC, writes the new snapshot, and commits the difference (`data/registries/changes.json`: entries added, removed, status changes, contact changes, matched by normalised name). The registers page shows the latest run; each changed entry carries the change on its own page. A failed scrape keeps the previous snapshot and records the failure in `index.json`.
+
+Anyone can watch a register entry by email. A Vercel cron calls `/api/watch/notify` on Monday mornings after the new snapshot deploys; watchers hear only when their entry changed status or left the register. Without `RESEND_API_KEY` the run reports changes and sends nothing.
+
 Because only Uganda publishes phone numbers, a WhatsApp number in a Nigerian, Kenyan or Ghanaian message can only be compared when the register also lists an email or domain the message uses. The card says this explicitly and shows the contact on file.
 
 ## Law

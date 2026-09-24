@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { COUNTRIES, COUNTRY_CODES, isCountry, type Country } from "@/lib/countries";
 import { listEntries, registryStats, searchByName } from "@/lib/registry/load";
+import { describe, latestChanges } from "@/lib/registry/changes";
 import { Input, Select } from "@/components/ui";
 
 export const metadata: Metadata = { title: "Registers" };
@@ -15,6 +16,7 @@ export default async function RegistryPage({ searchParams }: PageProps<"/registr
   const status = typeof sp.status === "string" ? sp.status : "all";
   const page = Math.max(1, parseInt(typeof sp.page === "string" ? sp.page : "1", 10) || 1);
   const stats = registryStats();
+  const moved = latestChanges();
 
   const searchAll = q.length >= 3 && !country;
   const hits = searchAll ? searchByName(q, { limit: 40, min: 0.5 }) : [];
@@ -56,6 +58,34 @@ export default async function RegistryPage({ searchParams }: PageProps<"/registr
           </li>
         ))}
       </ul>
+
+      {moved && !searchAll && !list && (
+        <section className="mt-8 card p-5" aria-labelledby="moved">
+          <p id="moved" className="text-sm font-bold text-stamp">What moved on {moved.date}</p>
+          <p className="mt-1 text-sm text-toner-2">Every register is re-read weekly and the difference is committed. Watch an entry to hear when its line changes.</p>
+          <ul className="mt-3 grid gap-3 sm:grid-cols-2">
+            {moved.countries.map((c) => {
+              const named = [...c.status_changes.map((e) => ({ ...e, note: `${e.from} to ${e.to}` })), ...c.removed.map((e) => ({ ...e, note: "left the register" })), ...c.added.map((e) => ({ ...e, note: "new" }))].slice(0, 4);
+              return (
+                <li key={c.country} className="text-sm">
+                  <p className="font-semibold text-toner">
+                    {COUNTRIES[c.country].flag} {COUNTRIES[c.country].registry.short}: {describe(c)}
+                  </p>
+                  <p className="text-xs text-toner-2">{c.as_of_before} to {c.as_of_after} · {c.count_before.toLocaleString()} to {c.count_after.toLocaleString()} entries</p>
+                  <ul className="mt-1 space-y-0.5">
+                    {named.map((e) => (
+                      <li key={e.id + e.note} className="flex justify-between gap-3">
+                        {e.note === "left the register" ? <span className="text-toner-2 line-through">{e.name}</span> : <Link href={`/registry/${c.country}/${e.id}`}>{e.name}</Link>}
+                        <span className="shrink-0 font-mono text-xs text-toner-2">{e.note}</span>
+                      </li>
+                    ))}
+                  </ul>
+                </li>
+              );
+            })}
+          </ul>
+        </section>
+      )}
 
       {searchAll && (
         <section className="mt-8">

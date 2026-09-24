@@ -5,7 +5,7 @@
     "url": "https://nelex.gov.ng/registered-private-employment-agencies",
     "method": "html-pagination"
   },
-  "as_of": "2026-09-21",
+  "as_of": "2026-09-24",
   "count": 1186,
   "entries": [
     {
@@ -9971,12 +9971,12 @@
     },
     {
       "id": "ng-0369",
-      "name": "DAJU ADVANCED SYSTEMS LTD",
-      "name_norm": "daju advanced systems ltd",
+      "name": "BONAFIDE ADVANCED SYSTEMS LTD",
+      "name_norm": "bonafide advanced systems ltd",
       "status": "active",
       "license_no": null,
       "emails": [
-        "daju036@gmail.com"
+        "bonafide036@gmail.com"
       ],
       "phones": [],
       "website": null,

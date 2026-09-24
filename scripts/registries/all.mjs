@@ -48,6 +48,7 @@ for (const key of keys) {
   try {
     const r = await SCRAPERS[key]();
     const notes = asList(r.notes);
+    const prev = results.get(country);
     results.set(country, {
       country,
       source: sourceName(r.source),
@@ -55,7 +56,8 @@ for (const key of keys) {
       as_of: r.as_of,
       count: r.count,
       method: r.method,
-      notes: notes.join(' '),
+      // The hand-written caveat for each register lives in `notes`; scraper output goes to `run_notes`.
+      notes: prev?.notes || notes.join(' '),
       ok: true,
       run_notes: notes,
       duration_s: Math.round((Date.now() - started) / 1000),
