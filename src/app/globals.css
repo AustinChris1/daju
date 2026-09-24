@@ -186,8 +186,15 @@ button:disabled {
   box-shadow: 0 1px 0 color-mix(in oklab, var(--toner) 6%, transparent), 0 20px 44px -28px rgba(18, 18, 18, 0.35);
 }
 
+/* The violet field is daylight ink in light mode and a deeper, quieter violet at night so it sits with the dark nav. */
+:root { --field: #4f2d8f; --field-deep: #171528; }
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) { --field: #2c1c55; --field-deep: #1e1936; }
+}
+:root[data-theme="dark"] { --field: #2c1c55; --field-deep: #1e1936; }
+
 .field-violet {
-  background: #4f2d8f;
+  background: var(--field);
   color: #f4f1ea;
 }
 .field-violet .muted { color: rgba(244, 241, 234, 0.78); }
@@ -195,7 +202,7 @@ button:disabled {
 .field-violet .sheet .text-toner-2 { color: #55534e; }
 
 .field-dark {
-  background: #171528;
+  background: var(--field-deep);
   color: #f4f1ea;
 }
 

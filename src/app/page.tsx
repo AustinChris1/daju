@@ -55,7 +55,7 @@ export default function Home() {
               <Link href="/check" className="lift inline-flex items-center gap-2 rounded-full bg-mark px-6 py-3.5 text-sm font-bold text-mark-text no-underline hover:brightness-95">
                 Check an offer <ArrowRight className="h-4 w-4" aria-hidden />
               </Link>
-              <Link href="/employers" className="lift inline-flex items-center gap-2 rounded-full bg-paper/15 px-6 py-3.5 text-sm font-bold text-paper no-underline ring-1 ring-inset ring-paper/40 hover:bg-paper/25">
+              <Link href="/employers" className="lift inline-flex items-center gap-2 rounded-full bg-[#f4f1ea]/15 px-6 py-3.5 text-sm font-bold text-[#f4f1ea] no-underline ring-1 ring-inset ring-[#f4f1ea]/40 hover:bg-[#f4f1ea]/25">
                 I&apos;m an employer
               </Link>
             </div>
