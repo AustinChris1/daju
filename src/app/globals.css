@@ -398,11 +398,29 @@ table.ledger th {
   transform: translateY(10px);
   transition: clip-path 600ms var(--ease-in-out), opacity 400ms var(--ease-out), transform 600ms var(--ease-out);
 }
+/* Coming back up the page, the cut runs the other way: the element is uncovered from the bottom edge. */
+.reveal[data-dir="up"] {
+  clip-path: inset(100% 0 0 0);
+  transform: translateY(-10px);
+}
 .reveal[data-visible] {
   clip-path: inset(0 0 0 0);
   opacity: 1;
   transform: translateY(0);
 }
+/* A highlighter stroke that the scroll position draws across a phrase. */
+/* The stroke is the full highlighter everywhere; the scroll effect darkens light text as the stroke covers it. */
+.sweep {
+  background-image: linear-gradient(var(--mark), var(--mark));
+  background-repeat: no-repeat;
+  background-position: 0 62%;
+  background-size: 0% 48%;
+  color: inherit;
+  padding: 0 0.08em;
+  box-decoration-break: clone;
+  -webkit-box-decoration-break: clone;
+}
+.field-dark .sweep, .field-violet .sweep { background-position: 0 58%; }
 .reveal-line {
   transform: scaleX(0);
   transform-origin: left;
@@ -450,7 +468,8 @@ table.ledger th {
 
 @media (prefers-reduced-motion: reduce) {
   .scanbar { animation: none; }
-  .reveal { clip-path: none; transform: none; transition: opacity 200ms ease; }
+  .reveal, .reveal[data-dir="up"] { clip-path: none; transform: none; transition: opacity 200ms ease; }
+  .sweep { background-size: 100% 48%; color: var(--mark-text); }
   .reveal-line { transform: none; transition: none; }
   .parallax-img { animation: none; }
   .menu-sheet, .menu-sheet[data-closed] { transition: opacity 150ms ease; transform: none; }

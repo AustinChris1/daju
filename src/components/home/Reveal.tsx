@@ -2,28 +2,49 @@
 
 import { useEffect, useRef, useState, type ReactNode } from "react";
 
-// Marks its element visible once when it enters the viewport; the CSS in globals.css does the rest.
+// Direction the page is moving, shared by every Reveal so an element entering from above plays the reverse cut.
+let lastY = 0;
+let dir: "down" | "up" = "down";
+let tracking = false;
+function track() {
+  if (tracking || typeof window === "undefined") return;
+  tracking = true;
+  lastY = window.scrollY;
+  window.addEventListener(
+    "scroll",
+    () => {
+      const y = window.scrollY;
+      if (Math.abs(y - lastY) > 2) dir = y > lastY ? "down" : "up";
+      lastY = y;
+    },
+    { passive: true },
+  );
+}
+
+// Plays its cut each time the element enters the viewport, from below on the way down and from above on the way up.
 export function Reveal({ children, className = "", as: Tag = "div", delay = 0 }: { children: ReactNode; className?: string; as?: "div" | "li" | "section"; delay?: number }) {
   const ref = useRef<HTMLElement | null>(null);
-  const [visible, setVisible] = useState(false);
+  const [state, setState] = useState<{ visible: boolean; dir: "down" | "up" }>({ visible: false, dir: "down" });
   useEffect(() => {
+    track();
     const el = ref.current;
     if (!el) return;
     const io = new IntersectionObserver(
       (entries) => {
-        if (entries.some((e) => e.isIntersecting)) {
-          setVisible(true);
-          io.disconnect();
+        for (const e of entries) {
+          if (e.isIntersecting) setState({ visible: true, dir });
+          // Only hide again once the element is well outside the viewport, so nothing flickers at the edge.
+          else if (e.boundingClientRect.top > window.innerHeight + 80 || e.boundingClientRect.bottom < -80) setState((s) => (s.visible ? { visible: false, dir } : s));
         }
       },
-      { rootMargin: "-80px 0px" },
+      { rootMargin: "-60px 0px -60px 0px", threshold: 0 },
     );
     io.observe(el);
     return () => io.disconnect();
   }, []);
   const Comp = Tag as "div";
   return (
-    <Comp ref={ref as React.RefObject<HTMLDivElement>} className={`reveal ${className}`} data-visible={visible ? "" : undefined} style={delay ? { transitionDelay: `${delay}ms` } : undefined}>
+    <Comp ref={ref as React.RefObject<HTMLDivElement>} className={`reveal ${className}`} data-visible={state.visible ? "" : undefined} data-dir={state.dir} style={delay ? { transitionDelay: state.visible ? `${delay}ms` : "0ms" } : undefined}>
       {children}
     </Comp>
   );

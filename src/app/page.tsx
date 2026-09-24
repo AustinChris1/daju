@@ -11,6 +11,8 @@ import { allLureSources } from "@/lib/law";
 import { HeroDemo } from "@/components/home/HeroDemo";
 import { PhotoBand, type Photo } from "@/components/home/PhotoBand";
 import { CaseSlider } from "@/components/home/CaseSlider";
+import { ScrollFx } from "@/components/home/ScrollFx";
+import { Mark } from "@/components/brand/Mark";
 import { CountUp, Reveal } from "@/components/home/Reveal";
 import { Stamp } from "@/components/brand/Stamp";
 
@@ -70,9 +72,11 @@ export default async function Home() {
           </div>
           <div className="relative">
             <div className="relative aspect-4/3 overflow-hidden rounded-3xl bg-toner shadow-[0_30px_60px_-30px_rgba(0,0,0,0.6)]">
-              <Image src="/images/lagos-phones.jpg" alt="Two young people in Lagos reading a message on one phone" fill priority sizes="(min-width: 1024px) 45vw, 100vw" className="object-cover" />
+              <div data-fx="hero-photo" className="absolute -inset-y-[10%] inset-x-0">
+                <Image src="/images/lagos-phones.jpg" alt="Two young people in Lagos reading a message on one phone" fill priority sizes="(min-width: 1024px) 45vw, 100vw" className="object-cover" />
+              </div>
             </div>
-            <div className="relative -mt-16 ml-4 mr-0 sm:-mt-24 sm:ml-10 lg:-mt-28 lg:-mr-6">
+            <div data-fx="hero-card" className="relative -mt-16 ml-4 mr-0 sm:-mt-24 sm:ml-10 lg:-mt-28 lg:-mr-6">
               <HeroDemo />
             </div>
           </div>
@@ -111,7 +115,7 @@ export default async function Home() {
 
       <section className="mx-auto max-w-6xl px-4 py-20 sm:px-6">
         <Reveal>
-          <h2 className="display text-[clamp(1.8rem,4vw,2.8rem)]">What one check does</h2>
+          <h2 className="display text-[clamp(1.8rem,4vw,2.8rem)]">What <span className="sweep" data-fx="sweep">one check</span> does</h2>
         </Reveal>
         <ol className="mt-8 grid gap-4 md:grid-cols-4">
           {STEPS.map((s, i) => (
@@ -132,7 +136,7 @@ export default async function Home() {
         <div className="card overflow-hidden lg:grid lg:grid-cols-[1fr_1fr]">
           <Reveal className="p-8 sm:p-10">
             <p className="text-sm font-bold text-stamp">For employers and recruiters</p>
-            <h2 className="display mt-2 text-[clamp(1.8rem,4vw,2.6rem)]">Issue offers nobody can borrow</h2>
+            <h2 className="display mt-2 text-[clamp(1.8rem,4vw,2.6rem)]">Issue offers <span className="sweep" data-fx="sweep">nobody can borrow</span></h2>
             <p className="mt-4 max-w-[50ch] leading-relaxed text-toner-2">
               Scammers reuse your company name with their own WhatsApp number. Prove you control your domain once, with one DNS record, and every offer link you issue shows the candidate a verified sender the moment they paste it into a check.
             </p>
@@ -167,12 +171,12 @@ export default async function Home() {
       <section className="field-dark">
         <div className="mx-auto max-w-6xl px-4 py-20 sm:px-6">
           <Reveal>
-            <h2 className="display text-[clamp(1.8rem,4vw,2.8rem)]">Why a check, and why now</h2>
+            <h2 className="display text-[clamp(1.8rem,4vw,2.8rem)]">Why a check, and <span className="sweep" data-fx="sweep">why now</span></h2>
           </Reveal>
           <ul className="mt-10 grid gap-8 sm:grid-cols-2 lg:grid-cols-4">
             {PROOF.map((p, i) => (
               <Reveal as="li" key={p.n} delay={i * 80}>
-                <p className="text-5xl font-extrabold tracking-tight text-mark">{/^\d+$/.test(p.n) ? <CountUp value={parseInt(p.n, 10)} /> : p.n}</p>
+                <p data-fx="pop" className="text-5xl font-extrabold tracking-tight text-mark">{/^\d+$/.test(p.n) ? <CountUp value={parseInt(p.n, 10)} /> : p.n}</p>
                 <p className="mt-3 text-sm leading-relaxed text-[#f4f1ea]/85">{p.what}</p>
                 <a href={p.url} target="_blank" rel="noreferrer" className="mt-2 inline-block text-xs text-[#f4f1ea]/60">
                   {p.src}
@@ -191,16 +195,20 @@ export default async function Home() {
       </section>
 
       <section className="mx-auto max-w-6xl px-4 py-20 sm:px-6">
-        <div className="card field-violet flex flex-col items-start gap-6 p-8 sm:flex-row sm:items-center sm:justify-between sm:p-12">
-          <div>
-            <h2 className="display text-[clamp(1.6rem,3.5vw,2.4rem)]">Before you reply, be sure.</h2>
+        <div className="card field-violet relative flex flex-col items-start gap-6 overflow-hidden p-8 sm:flex-row sm:items-center sm:justify-between sm:p-12">
+          <div data-fx="seal" className="pointer-events-none absolute -right-10 -top-10 opacity-0 sm:right-1/3" aria-hidden>
+            <Mark size={220} ink="rgba(244,241,234,0.14)" title="" />
+          </div>
+          <div className="relative">
+            <h2 className="display text-[clamp(1.6rem,3.5vw,2.4rem)]">Before you reply, <span className="sweep" data-fx="sweep">be sure.</span></h2>
             <p className="muted mt-2 max-w-[48ch]">Dájú is Yoruba for certain. The check takes the time it takes to read the message.</p>
           </div>
-          <Link href="/check" className="lift inline-flex items-center gap-2 rounded-full bg-mark px-6 py-3.5 text-sm font-bold text-mark-text no-underline hover:brightness-95">
+          <Link href="/check" className="lift relative inline-flex items-center gap-2 rounded-full bg-mark px-6 py-3.5 text-sm font-bold text-mark-text no-underline hover:brightness-95">
             Check an offer <ArrowRight className="h-4 w-4" aria-hidden />
           </Link>
         </div>
       </section>
+      <ScrollFx />
     </div>
   );
 }

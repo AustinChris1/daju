@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { BRAND } from "@/lib/brand";
 import { Wordmark } from "@/components/brand/Mark";
+import { SocialIcon, type SocialName } from "@/components/brand/SocialIcon";
 
 const COLUMNS: { title: string; links: { href: string; label: string; external?: boolean }[] }[] = [
   {
@@ -37,11 +38,13 @@ const COLUMNS: { title: string; links: { href: string; label: string; external?:
 
 export function Footer({ asOf, telegram }: { asOf: { country: string; date: string }[]; telegram?: string | null }) {
   const year = new Date().getFullYear();
-  const socials = [
-    { href: process.env.NEXT_PUBLIC_SOCIAL_X, label: "X" },
-    { href: process.env.NEXT_PUBLIC_SOCIAL_LINKEDIN, label: "LinkedIn" },
-    { href: process.env.NEXT_PUBLIC_SOCIAL_INSTAGRAM, label: "Instagram" },
-  ].filter((s): s is { href: string; label: string } => !!s.href);
+  const socials: { href: string | undefined; name: SocialName; label: string }[] = [
+    { href: telegram ?? undefined, name: "telegram", label: "Telegram bot" },
+    { href: "https://github.com/AustinChris1/daju", name: "github", label: "GitHub" },
+    { href: process.env.NEXT_PUBLIC_SOCIAL_X, name: "x", label: "X" },
+    { href: process.env.NEXT_PUBLIC_SOCIAL_LINKEDIN, name: "linkedin", label: "LinkedIn" },
+    { href: process.env.NEXT_PUBLIC_SOCIAL_INSTAGRAM, name: "instagram", label: "Instagram" },
+  ];
   return (
     <footer className="mt-20 bg-paper-2">
       <div className="mx-auto max-w-6xl px-4 py-14 sm:px-6">
@@ -50,20 +53,14 @@ export function Footer({ asOf, telegram }: { asOf: { country: string; date: stri
             <Wordmark size={28} />
             <p className="mt-4 max-w-[36ch] text-sm text-toner-2">{BRAND.meaning}. {BRAND.description}</p>
             <p className="mt-4 max-w-[36ch] text-sm text-toner-2">Built in Lagos for job seekers and employers in Nigeria, Kenya, Uganda and Ghana.</p>
-            <div className="mt-5 flex items-center gap-3">
-              {telegram && (
-                <a href={telegram} target="_blank" rel="noreferrer" className="rounded-full bg-stamp px-3 py-1.5 text-xs font-bold text-paper no-underline hover:bg-stamp-hover">
-                  Telegram bot
-                </a>
+            <div className="mt-5 flex items-center gap-2">
+              {socials.map((s) =>
+                s.href ? (
+                  <a key={s.name} href={s.href} target="_blank" rel="noreferrer" aria-label={s.label} title={s.label} className="lift inline-flex h-10 w-10 items-center justify-center rounded-full bg-paper text-toner no-underline hover:bg-stamp hover:text-paper">
+                    <SocialIcon name={s.name} />
+                  </a>
+                ) : null,
               )}
-              <a href="https://github.com/AustinChris1/daju" target="_blank" rel="noreferrer" className="rounded-full bg-paper px-3 py-1.5 text-xs font-bold text-toner no-underline hover:bg-stamp hover:text-paper">
-                GitHub
-              </a>
-              {socials.map((s) => (
-                <a key={s.label} href={s.href} target="_blank" rel="noreferrer" className="rounded-full bg-paper px-3 py-1.5 text-xs font-bold text-toner no-underline hover:bg-stamp hover:text-paper">
-                  {s.label}
-                </a>
-              ))}
             </div>
           </div>
           {COLUMNS.map((c) => (

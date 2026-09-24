@@ -40,6 +40,8 @@ for (const route of [...routes, ...extra]) {
         });
       }
       await new Promise((r) => setTimeout(r, hash ? 1400 : 1200));
+      // Reveals hide again once scrolled away; a full-page capture needs every section shown.
+      await page.addStyleTag({ content: ".reveal{opacity:1!important;clip-path:none!important;transform:none!important}" });
       const file = join(out, `${slug}--${sizeName}--${scheme}.png`);
       await page.screenshot({ path: file, fullPage: true });
       const overflow = await page.evaluate(() => document.documentElement.scrollWidth - document.documentElement.clientWidth);
