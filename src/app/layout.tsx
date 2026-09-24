@@ -5,6 +5,7 @@ import { Nav } from "@/components/Nav";
 import { Footer } from "@/components/Footer";
 import { BRAND } from "@/lib/brand";
 import { registryStats } from "@/lib/registry/load";
+import { botLink } from "@/lib/telegram/bot";
 
 const archivo = Archivo({
   variable: "--font-archivo",
@@ -35,14 +36,15 @@ export const viewport: Viewport = {
   ],
 };
 
-export default function RootLayout({ children }: LayoutProps<"/">) {
+export default async function RootLayout({ children }: LayoutProps<"/">) {
   const asOf = registryStats().map((s) => ({ country: s.country, date: s.as_of }));
+  const telegram = await botLink();
   return (
     <html lang="en" className={`${archivo.variable} ${courier.variable} h-full antialiased`}>
       <body className="flex min-h-full flex-col">
         <Nav />
         <main className="flex-1">{children}</main>
-        <Footer asOf={asOf} />
+        <Footer asOf={asOf} telegram={telegram} />
       </body>
     </html>
   );

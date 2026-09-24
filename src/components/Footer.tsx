@@ -35,7 +35,7 @@ const COLUMNS: { title: string; links: { href: string; label: string; external?:
   },
 ];
 
-export function Footer({ asOf }: { asOf: { country: string; date: string }[] }) {
+export function Footer({ asOf, telegram }: { asOf: { country: string; date: string }[]; telegram?: string | null }) {
   const year = new Date().getFullYear();
   const socials = [
     { href: process.env.NEXT_PUBLIC_SOCIAL_X, label: "X" },
@@ -51,6 +51,11 @@ export function Footer({ asOf }: { asOf: { country: string; date: string }[] }) 
             <p className="mt-4 max-w-[36ch] text-sm text-toner-2">{BRAND.meaning}. {BRAND.description}</p>
             <p className="mt-4 max-w-[36ch] text-sm text-toner-2">Built in Lagos for job seekers and employers in Nigeria, Kenya, Uganda and Ghana.</p>
             <div className="mt-5 flex items-center gap-3">
+              {telegram && (
+                <a href={telegram} target="_blank" rel="noreferrer" className="rounded-full bg-stamp px-3 py-1.5 text-xs font-bold text-paper no-underline hover:bg-stamp-hover">
+                  Telegram bot
+                </a>
+              )}
               <a href="https://github.com/AustinChris1/daju" target="_blank" rel="noreferrer" className="rounded-full bg-paper px-3 py-1.5 text-xs font-bold text-toner no-underline hover:bg-stamp hover:text-paper">
                 GitHub
               </a>

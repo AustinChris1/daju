@@ -76,7 +76,7 @@ Before you reply to that job message, paste it here: daju-bice.vercel.app
 It checks the name and number against the government list of licensed agencies (Nigeria, Kenya, Uganda, Ghana) and gives you the reply to send. Free, no sign-up.
 
 **Telegram channel**
-@<botname> is live. Forward any job message or offer letter and get a stamped card back: Stop, Caution, On file, or Not on file, with the register entry, the warning it matched, the reply to send, and the hotline. Try /start for four real examples.
+@DajuCheckBot is live. Forward any job message or offer letter and get a stamped card back: Stop, Caution, On file, or Not on file, with the register entry, the warning it matched, the reply to send, and the hotline. Try /start for four real examples.
 
 ## Pitch, 90 seconds spoken
 

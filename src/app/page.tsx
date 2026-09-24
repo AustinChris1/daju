@@ -4,6 +4,7 @@ import { existsSync } from "node:fs";
 import { join } from "node:path";
 import { ArrowRight, FileCheck2, Landmark, ScanSearch, Send } from "lucide-react";
 import { BRAND } from "@/lib/brand";
+import { botLink } from "@/lib/telegram/bot";
 import { COUNTRIES, type Country } from "@/lib/countries";
 import { registryStats } from "@/lib/registry/load";
 import { allLureSources } from "@/lib/law";
@@ -33,7 +34,8 @@ const PHOTOS: Photo[] = [
   { src: "/images/is-this-real.jpg", alt: "A woman holding up a phone and pointing at it", caption: "“Is this one real?” Find out in the next minute.", position: "35% center" },
 ];
 
-export default function Home() {
+export default async function Home() {
+  const telegram = await botLink();
   const stats = registryStats();
   const total = stats.reduce((a, s) => a + s.count, 0);
   const sources = allLureSources();
@@ -59,7 +61,12 @@ export default function Home() {
                 I&apos;m an employer
               </Link>
             </div>
-            <p className="muted mt-8 text-sm">Free. No sign-up. It never says safe.</p>
+            {telegram && (
+              <a href={telegram} target="_blank" rel="noreferrer" className="mt-5 inline-flex items-center gap-2 text-sm font-semibold text-[#f4f1ea] no-underline opacity-90 hover:underline hover:opacity-100">
+                <Send className="h-4 w-4" aria-hidden /> On your phone? Forward the message to the Telegram bot
+              </a>
+            )}
+            <p className="muted mt-6 text-sm">Free. No sign-up. It never says safe.</p>
           </div>
           <div className="relative">
             <div className="relative aspect-4/3 overflow-hidden rounded-3xl bg-toner shadow-[0_30px_60px_-30px_rgba(0,0,0,0.6)]">
