@@ -63,6 +63,24 @@ const TITLES: [RegExp, string][] = [
 ];
 
 const ORG_SUFFIX = "(?:Ltd\\.?|Limited|LTD|Plc|PLC|Agency|Agencies|Recruitment|Recruiters|Recruiting|Consult(?:ing|ants|ancy)?|Services|Solutions|International|Global|Group|Nig(?:eria)?|Enterprises?|Company|Co\\.?|Inc\\.?|LLC|HR|Resources|Manpower|Staffing|Travels?|Tours?|Ventures|Holdings|Partners|Associates|Logistics|Technologies|Tech|Systems|Concepts|Foundation|Institute|Academy|Bank|Oil|Gas|Energy|Petroleum|Airlines?|Hospital|Clinic|Hotels?|Realty|Estates?|Investments?|Capital|Finance|Bureau|Centre|Center|Network|Network|Industries|Corporation|Corp\\.?)";
+// Neighbourhoods and cities that ads write as "Location: Chevron, Lekki" and the org regexes mistake for a company.
+const PLACE_WORDS = new Set(
+  `lagos abuja fct ikeja ikoyi lekki ajah chevron sangotedo ibeju epe badagry yaba surulere victoria island vi ikorodu ojota maryland gbagada magodo agege apapa festac oshodi ogba berger mushin ilupeju ojodu ogudu alimosho egbeda ajao isolo ikotun ipaja ojo okota orile ketu mile
+  port harcourt ibadan kano enugu kaduna benin warri uyo calabar owerri asaba onitsha aba jos ilorin abeokuta akure osogbo minna makurdi lokoja awka umuahia abakaliki yenagoa nnewi
+  nairobi mombasa kisumu nakuru eldoret westlands kilimani kileleshwa karen thika ruaka kasarani embakasi upper hill parklands cbd lavington runda ruiru kitengela rongai syokimau utawala
+  kampala entebbe kololo ntinda nakawa bugolobi naalya kira wakiso mukono jinja gulu mbarara najjera kansanga muyenga bukoto makerere kawempe nansana lubowa
+  accra kumasi tema takoradi east legon osu airport spintex madina adenta dansoman labone cantonments achimota kasoa tamale cape coast dzorwulu roman ridge
+  nigeria kenya uganda ghana state phase estate road street avenue close junction area zone extension district town city region`.split(/\s+/),
+);
+const ORG_SUFFIX_RE = new RegExp(`^${ORG_SUFFIX}$`, "i");
+
+// True when a candidate is only place names and filler, for example "Chevron Lekki" or "Lekki Phase 1".
+function isPlaceOnly(cand: string): boolean {
+  const words = cand.split(/[\s,]+/).filter(Boolean);
+  if (words.some((w) => ORG_SUFFIX_RE.test(w))) return false;
+  return words.every((w) => PLACE_WORDS.has(w.toLowerCase()) || /^\d+$/.test(w) || /^(?:of|and|&|de|for)$/i.test(w));
+}
+
 const ORG_RE = new RegExp(`\\b((?:[A-Z][\\w&'.-]*|of|and|&|de|for)(?:\\s+(?:[A-Z][\\w&'.-]*|of|and|&|de|for)){0,5}\\s+${ORG_SUFFIX})\\b`, "g");
 const ORG_CUE_RE = /(?:from|at|with|by|for|represent(?:ing|s)?|on behalf of|hiring for|company(?: name)?[:\s]|agency[:\s]|employer[:\s]|organi[sz]ation[:\s]|firm[:\s])\s+([A-Z][\w&'-]*(?:\.[\w&'-]+)*(?:\s+(?:[A-Z][\w&'-]*(?:\.[\w&'-]+)*|of|and|&)){0,4})/g;
 const PERSON_RE = /(?:my name is|this is|i am|i'm|regards,?)\s+((?:Mr\.?|Mrs\.?|Ms\.?|Dr\.?|Engr\.?|Pastor|Alhaji|Chief)?\s?[A-Z][a-z]+(?:\s+[A-Z][a-z]+){0,2})(?![\w.@-])/g;
@@ -181,8 +199,11 @@ export function extractHeuristic(text: string, opts: { hint?: Country | null; ha
   const people: string[] = [];
   PERSON_RE.lastIndex = 0;
   while ((m = PERSON_RE.exec(clean))) people.push(m[1].trim());
-  const orgCandidates = uniq(orgs.map((o) => o.replace(/\s+/g, " ")))
+  // Cue matches can start with the cue word itself or run back over a sentence boundary; keep only the name.
+  const tidy = (o: string) => o.replace(/\s+/g, " ").replace(/^.*\.\s+/, "").replace(/^(?:for|from|at|with|by)\s+/i, "").replace(/[.,;:]+$/, "").trim();
+  const orgCandidates = uniq(orgs.map(tidy).filter((o) => o.length >= 3 && !o.split(" ").every((w) => ORG_SUFFIX_RE.test(w))))
     .filter((o) => !STOP_ORG.has(o) && !/^(?:Dear|Hello|Hi|Good|Kindly|Please|Note|Urgent|Apply|Send|Contact|Whatsapp|Call|Text|Location|Salary|Requirements?|Position|Job|Vacancy|Interested)\b/i.test(o))
+    .filter((o) => !isPlaceOnly(o))
     .slice(0, 6);
   for (const d of domains) {
     const root = d.split(".")[0];

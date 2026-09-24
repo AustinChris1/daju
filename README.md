@@ -10,7 +10,7 @@ Job scams in these four countries now target educated, tech-savvy graduates with
 
 ## What Daju does
 
-Paste the message. Daju:
+Paste the message, or upload a screenshot (read in the browser, never uploaded). Daju:
 
 1. Reads the names, phone numbers, emails, domains and amounts in it.
 2. Looks the name up in all four government registers at once, and checks whether the phone or email in the message is the one on file. A name that matches with a contact that does not is treated as impersonation.
@@ -20,7 +20,7 @@ Paste the message. Daju:
 
 Every card carries the register snapshot dates. It never says "safe".
 
-Employers prove control of their domain with one DNS record and issue offer links that show candidates a verified sender.
+Employers prove control of their domain with one DNS record, issue offer links that show candidates a verified sender, and post roles on a jobs board where every listing comes from a verified domain. The live Radar page counts stamps, lures, reports and register movement as they happen. The Telegram bot answers a forwarded message with the same card.
 
 ## Try it in one minute
 
@@ -30,10 +30,10 @@ Open the live site, press one of the example chips ("Uganda Gulf housemaid job" 
 
 | Country | Register | Entries | Snapshot |
 |---|---|---|---|
-| Nigeria | NELEX, Federal Ministry of Labour and Employment | 1,186 | 2026-09-21 |
+| Nigeria | NELEX, Federal Ministry of Labour and Employment | 1,186 | 2026-09-24 |
 | Kenya | NEA register via the State Department for Diaspora Affairs | 1,295 (515 active) | 2026-05-18 |
-| Uganda | EEMIS, Ministry of Gender, Labour and Social Development | 195 | 2026-09-21 |
-| Ghana | GLMIS, Ministry of Employment and Labour Relations | 322 | 2026-09-21 |
+| Uganda | EEMIS, Ministry of Gender, Labour and Social Development | 190 | 2026-09-24 |
+| Ghana | GLMIS, Ministry of Employment and Labour Relations | 322 | 2026-09-24 |
 
 Snapshots live in `data/registries/`. A GitHub Actions job re-reads all four registers every Monday and commits what moved (`changes.json`); the registers page shows it, and anyone watching an entry is emailed when its status changes. Statute citations, hotlines and quoted warnings are in `data/law/`, each with its source URL. A check never calls a government site.
 
@@ -92,7 +92,7 @@ Forward a recruiter outreach, job advert, or offer letter directly to the Daju T
 - **Captions:** Text attached as a caption to any forwarded message.
 - **Commands:** `/start` explains the tool, `/help` explains supported formats.
 
-*Note on attachments:* Images, screenshots, PDFs, and voice notes are intentionally unsupported in this release; the bot politely directs users to paste or forward the text. Client-side screenshot OCR is in development.
+*Note on attachments:* Images, screenshots, PDFs, and voice notes are intentionally unsupported in this release; the bot politely directs users to paste or forward the text. On the website, a screenshot can be uploaded, dropped or pasted on the check page and is read in the browser.
 
 ## Licence and credits
 

@@ -5,6 +5,7 @@ import { COUNTRIES, COUNTRY_CODES, type Country } from "@/lib/countries";
 import { SAMPLES } from "@/lib/samples";
 import { Button, Input, Label, Select, Textarea } from "@/components/ui";
 import type { Report } from "@/lib/check/types";
+import { ScreenshotInput } from "./ScreenshotInput";
 
 interface Props {
   initialText?: string;
@@ -58,11 +59,17 @@ export function CheckForm({ initialText = "", initialCountry = "auto", compact =
           id="text"
           value={text}
           onChange={(e) => setText(e.target.value)}
+
           rows={compact ? 6 : 10}
           placeholder="Paste exactly what you received. Names, numbers, emails and amounts are what the check reads."
           maxLength={20000}
         />
         {busy && <div className="scanbar" aria-hidden />}
+      </div>
+      <div className="mt-2">
+        <ScreenshotInput disabled={busy} dropTargetId="text" onText={(t) => setText((cur) => (cur.trim() ? `${cur.trim()}
+
+${t}` : t))} />
       </div>
 
       <div className="mt-3 flex flex-wrap items-center gap-2">

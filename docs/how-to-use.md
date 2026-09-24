@@ -3,7 +3,7 @@
 ## If you received a job message
 
 1. Open the site and go to **Check**.
-2. Paste the whole message, ad or offer letter. Include the phone number and email exactly as they appear; those are what gets compared to the register.
+2. Paste the whole message, ad or offer letter. Include the phone number and email exactly as they appear; those are what gets compared to the register. A screenshot works too: press **Upload a screenshot**, drop the image on the box, or paste it with Ctrl+V. The text is read on your device and never uploaded.
 3. Pick your country, or leave it on detect.
 4. Press **Check this offer**.
 

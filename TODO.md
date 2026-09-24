@@ -7,7 +7,7 @@ Live: https://daju-bice.vercel.app · Repo: https://github.com/AustinChris1/daju
 ## Done
 
 - Rule engine: extraction, four-register lookup with contact matching, 20 cited lure rules, six clause checks with verified citations, replies in English and Pidgin, hotlines.
-- Four register snapshots (NG 1,186 · KE 1,295 · UG 195 · GH 322) with dates and caveats.
+- Four register snapshots (NG 1,186 · KE 1,295 · UG 190 · GH 322) with dates and caveats.
 - Pages: landing, check, shareable card with WhatsApp preview image, registers directory, employer console with DNS verification and offer links, report, hotlines, method, brand.
 - Supabase persistence via the Vercel integration; tables created; cards reload by URL.
 - Brand: Daju, the tone-seal mark, palette, type. Colour landing with live replay, case slider, photo band, mobile menu.
@@ -16,14 +16,15 @@ Live: https://daju-bice.vercel.app · Repo: https://github.com/AustinChris1/daju
 - Forward it to Daju: Telegram bot adapter (`/api/telegram/webhook`), formatter, deduplication, and setup CLI. Needs a bot token in Vercel and the webhook registered.
 - Verified jobs board: domain-verified employers post roles from the console; `/jobs` lists them with the verified badge; the apply address must be on the verified domain.
 - Live website check: a check fetches the company homepage and reports live, parked or HTTP error, and whether the page names the company.
+- Radar page (`/radar`): live counts of checks, stamps, lures, reports, verified employers and roles, register movement; refreshes every 30 seconds.
+- Screenshot input: a WhatsApp or email screenshot is read in the browser (tesseract.js), never uploaded; upload, drop or Ctrl+V.
+- Organisation extractor ignores neighbourhood and city names (Chevron, Lekki, Ajah, Westlands, Kololo, East Legon and so on).
 - Data that moves: weekly GitHub Actions re-snapshot of all four registers with a committed diff (`data/registries/changes.json`), a "what moved" panel on the registers page, and licence-watch emails through a Vercel cron (`/api/watch/notify`, Resend). Needs `CRON_SECRET` and `RESEND_API_KEY` in Vercel.
 
 ## Build queue (agreed order)
 
 3. **Forward it to Daju (Phase 2 & 3).** Twilio WhatsApp sandbox for the video; Meta WhatsApp Business application started for after the hackathon.
-5. **Radar page.** Live counts from the database: checks by country, stamps, reports, expired licences found. Owner: Claude. ~1h.
-6. **Screenshot input.** Client-side OCR so a WhatsApp screenshot works like pasted text. Owner: Claude. ~2h.
-7. Small: Lagos area names (Chevron, Ajah, Lekki) out of the organisation extractor; hand-written Igbo reply template if a native speaker writes it.
+4. Small: hand-written Igbo reply template if a native speaker writes it.
 
 ## Only humans can do these
 
