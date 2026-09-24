@@ -45,7 +45,7 @@ Live: https://daju-bice.vercel.app · Repo: https://github.com/AustinChris1/daju
 2. Uganda Gulf ad naming Moonlight Recruiting → "Name is on file, contact is not". Read the EEMIS number aloud.
 3. Lagos offer letter → three clauses with the Act and case citations.
 4. Your verified employer's offer link → verified sender.
-5. One line: 751 Kenyans rescued from Myanmar since 2022; NAPTIP says the lure is now tech jobs. Sit down.
+5. One line, cold: "The company was real. The person wasn't." Sit down.
 
 ## Working agreements
 

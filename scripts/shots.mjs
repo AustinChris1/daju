@@ -25,6 +25,8 @@ for (const route of [...routes, ...extra]) {
       const [path, hash] = route.split("#");
       await page.goto(base + path, { waitUntil: "networkidle0", timeout: 60000 });
       if (hash === "menu") await page.click("button[aria-controls=mobile-menu]").catch(() => {});
+      // "#open-<id>" presses the button that controls that element, for example #open-doc-nav.
+      if (hash?.startsWith("open-")) await page.click(`button[aria-controls=${hash.slice(5)}]`).catch(() => {});
       if (hash === "bottom") await page.evaluate(() => window.scrollTo(0, document.body.scrollHeight));
       // Scroll through the page so lazy images and scroll reveals fire, then return to the top.
       if (hash !== "menu") {

@@ -1,30 +1,37 @@
 # Daju
 
-**Is this sender on file?** Check a job offer against the licensed-agency registers of Nigeria, Kenya, Uganda and Ghana before you reply.
+**Is this sender on file?** Paste a job message. Daju checks whether the person contacting you is the organisation they claim to be, using the licensed-agency registers of Nigeria, Kenya, Uganda and Ghana.
 
 Live: https://daju-bice.vercel.app · Docs: https://daju-bice.vercel.app/docs
 
-## The problem
+## The thesis
 
-Job scams in these four countries now target educated, tech-savvy graduates with offers in IT, marketing and customer service. 751 Kenyans have been rescued from Myanmar scam compounds since 2022, 156 Nigerians from online fraud centres in the first seven months of 2026, and Uganda revoked 275 recruitment licences in a single month. The most common trick is simple: use a real, licensed agency's name with the scammer's own WhatsApp number.
+A scammer can copy a real company's name. They cannot copy its registered phone number, its email domain, or its licence. So Daju does not ask "does this look like a scam". It asks: **is the name on a government register, and is the contact in this message the contact on file?**
 
-## What Daju does
+The most common trick in these four countries is exactly that: a licensed agency's name with the scammer's own WhatsApp number. 751 Kenyans have been rescued from Myanmar scam compounds since 2022, and Uganda revoked 275 recruitment licences in one month.
 
-Paste the message, or upload a screenshot (read in the browser, never uploaded). Daju:
+## What one check does
 
-1. Reads the names, phone numbers, emails, domains and amounts in it.
-2. Looks the name up in all four government registers at once, and checks whether the phone or email in the message is the one on file. A name that matches with a contact that does not is treated as impersonation.
-3. Applies 20 lure patterns taken from official warnings, each cited to its source.
-4. Checks six offer-letter clauses (training bond, probation, withheld certificates, notice, currency, non-compete) against the labour law of the country, with the section or the leading court decision.
-5. Writes the reply to send, in English or Pidgin (six more languages by machine translation), and shows the official hotline.
+1. Reads the names, phone numbers, emails, domains and amounts in the message.
+2. Looks the name up in all four registers at once and compares the contact in the message with the contact on file. Name matches, contact does not: impersonation.
+3. Checks the sender's domain: age, mail records, lookalikes, whether its website is live and names the company.
+4. Applies 20 lure patterns from official warnings, each cited to its source, and six offer-letter clauses against the country's labour law.
+5. Returns a stamped card: Stop, Caution, On file, or Not on file. Never "safe". Plus the reply to send and the official hotline.
 
-Every card carries the register snapshot dates. It never says "safe".
+**Try it:** open the live site and press "Uganda Gulf housemaid job". Moonlight Recruiting is on Uganda's register; the number in the message is not the number on file. The card shows both.
 
-Employers prove control of their domain with one DNS record, issue offer links that show candidates a verified sender, and post roles on a jobs board where every listing comes from a verified domain. The live Radar page counts stamps, lures, reports and register movement as they happen. The Telegram bot answers a forwarded message with the same card.
+## For employers
 
-## Try it in one minute
+Prove control of your domain with one DNS record. Then issue offer links that show candidates a verified sender, and post roles on a jobs board where every listing comes from a verified domain. The company was real; now the person can be too.
 
-Open the live site, press one of the example chips ("Uganda Gulf housemaid job" shows a licensed name with the wrong number), or paste any job message from your own WhatsApp.
+## Also in the box
+
+- Forward a message to the Telegram or WhatsApp bot and get the same card back as text.
+- Upload, drop or paste a screenshot; it is read in the browser and never uploaded.
+- Replies in English and Pidgin, six more languages by machine translation.
+- All four registers re-read every Monday, the difference committed and shown; watch an entry and get emailed when its licence changes.
+- A live radar of stamps, lures, reports and register movement.
+- Everything above as a JSON API.
 
 ## Data
 
@@ -35,7 +42,7 @@ Open the live site, press one of the example chips ("Uganda Gulf housemaid job" 
 | Uganda | EEMIS, Ministry of Gender, Labour and Social Development | 190 | 2026-09-24 |
 | Ghana | GLMIS, Ministry of Employment and Labour Relations | 322 | 2026-09-24 |
 
-Snapshots live in `data/registries/`. A GitHub Actions job re-reads all four registers every Monday and commits what moved (`changes.json`); the registers page shows it, and anyone watching an entry is emailed when its status changes. Statute citations, hotlines and quoted warnings are in `data/law/`, each with its source URL. A check never calls a government site.
+Snapshots live in `data/registries/`, statute citations, hotlines and quoted warnings in `data/law/`, each with its source URL. A check never calls a government site. Caveats per register are in [docs/data-and-limits.md](docs/data-and-limits.md).
 
 ## Run locally
 
@@ -45,7 +52,7 @@ cp .env.example .env.local
 pnpm dev
 ```
 
-Without any keys the app runs fully on the rule engine with an in-memory store. Optional: a Supabase database for persistent cards, and Claude or Groq for extraction refinement and translations. See `docs/how-to-use.md`.
+Without keys the app runs fully on the rule engine with an in-memory store. Optional: Supabase for persistence, Claude or Groq for extraction refinement and translations, Telegram and Twilio for the bots. Setup for each is in [docs/how-to-use.md](docs/how-to-use.md).
 
 ## Stack
 
@@ -53,50 +60,11 @@ Next.js 16, TypeScript, Tailwind v4, Supabase (Postgres), Vercel. The rule engin
 
 ## Docs
 
-- `docs/how-it-works.md`: what happens to a pasted message, step by step.
-- `docs/architecture.md`: modules, data flow, storage, deployment.
-- `docs/how-to-use.md`: job seekers, employers, API.
-- `docs/data-and-limits.md`: sources, snapshot caveats, what Daju cannot know.
-- `docs/business-model.md`: who pays.
-
-## WhatsApp: forward it to Daju
-
-`POST /api/whatsapp/webhook` answers Twilio's WhatsApp sandbox with the same plain-text card. Point the sandbox webhook at it and set `TWILIO_AUTH_TOKEN`; the route checks Twilio's request signature and replies in TwiML, so no outbound API call or extra dependency is needed.
-
-## Telegram: forward it to Daju
-
-Forward a recruiter outreach, job advert, or offer letter directly to the Daju Telegram bot to check it against the four government registers in seconds.
-
-### Setup
-
-1. Create a bot with [@BotFather](https://t.me/BotFather) on Telegram and copy the API token.
-   - Suggested description: `"Forward a suspicious job or recruiter message. Daju checks sender identity and evidence across recruitment records in Nigeria, Kenya, Uganda and Ghana."`
-2. In `.env.local` or your Vercel project environment, configure:
-   ```env
-   TELEGRAM_BOT_TOKEN=123456789:ABCdefGHIjklMNOpqrSTUvwxYZ
-   TELEGRAM_WEBHOOK_SECRET=your_random_secret_token
-   NEXT_PUBLIC_SITE_URL=https://your-domain.vercel.app
-   ```
-3. Register the webhook with Telegram:
-   ```bash
-   node scripts/telegram/set-webhook.mjs set https://your-domain.vercel.app/api/telegram/webhook
-   ```
-   To inspect webhook health:
-   ```bash
-   node scripts/telegram/set-webhook.mjs info
-   ```
-   To delete the webhook:
-   ```bash
-   node scripts/telegram/set-webhook.mjs delete
-   ```
-
-### Supported inputs
-
-- **Text messages & forwarded text:** Full message text is analyzed by the core engine.
-- **Captions:** Text attached as a caption to any forwarded message.
-- **Commands:** `/start` explains the tool, `/help` explains supported formats.
-
-*Note on attachments:* Images, screenshots, PDFs, and voice notes are intentionally unsupported in this release; the bot politely directs users to paste or forward the text. On the website, a screenshot can be uploaded, dropped or pasted on the check page and is read in the browser.
+- [How a check works](docs/how-it-works.md): what happens to a pasted message, step by step.
+- [How to use Daju](docs/how-to-use.md): job seekers, employers, bots, API, running it yourself.
+- [Architecture](docs/architecture.md): modules, data flow, storage, deployment.
+- [Data sources and limits](docs/data-and-limits.md): registers, law, warnings, what Daju cannot know.
+- [Business model](docs/business-model.md): who pays.
 
 ## Licence and credits
 
