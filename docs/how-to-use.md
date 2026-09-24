@@ -33,6 +33,13 @@ What the stamps mean:
 
 Keep the manage key; it is the only way back into your console.
 
+## On WhatsApp or Telegram
+
+Forward the message to the Daju bot and the same card comes back as text, with the link to the full card.
+
+- **Telegram**: set `TELEGRAM_BOT_TOKEN` and `TELEGRAM_WEBHOOK_SECRET`, then run `node scripts/telegram/set-webhook.mjs`.
+- **WhatsApp**: in the Twilio console open Messaging, Try it out, Send a WhatsApp message, and set the sandbox "when a message comes in" URL to `https://<your site>/api/whatsapp/webhook` (POST). Put the account auth token in `TWILIO_AUTH_TOKEN` so unsigned requests are refused. Anyone who sends the sandbox join phrase to the Twilio number can then forward messages. A production WhatsApp sender needs a Meta Business verification, which takes days and is outside the hackathon window.
+
 ## If you build job boards or messaging tools
 
 The same engine is available as JSON:

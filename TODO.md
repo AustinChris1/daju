@@ -14,6 +14,7 @@ Live: https://daju-bice.vercel.app · Repo: https://github.com/AustinChris1/daju
 - Optional model: Claude or Groq (`openai/gpt-oss-120b`) for extraction refinement and translations.
 - Real-ad test on nine WhatsApp-group posts: eight clean direct employers, one young domain flagged as Caution.
 - Forward it to Daju: Telegram bot adapter (`/api/telegram/webhook`), formatter, deduplication, and setup CLI. Needs a bot token in Vercel and the webhook registered.
+- Forward it to Daju on WhatsApp: `/api/whatsapp/webhook` for the Twilio sandbox (signature check, TwiML reply, 1600-character fit). Needs the sandbox webhook URL set and `TWILIO_AUTH_TOKEN` in Vercel.
 - Verified jobs board: domain-verified employers post roles from the console; `/jobs` lists them with the verified badge; the apply address must be on the verified domain.
 - Live website check: a check fetches the company homepage and reports live, parked or HTTP error, and whether the page names the company.
 - Radar page (`/radar`): live counts of checks, stamps, lures, reports, verified employers and roles, register movement; refreshes every 30 seconds.
@@ -23,7 +24,7 @@ Live: https://daju-bice.vercel.app · Repo: https://github.com/AustinChris1/daju
 
 ## Build queue (agreed order)
 
-3. **Forward it to Daju (Phase 2 & 3).** Twilio WhatsApp sandbox for the video; Meta WhatsApp Business application started for after the hackathon.
+3. Meta WhatsApp Business application for a production sender, after the hackathon.
 4. Small: hand-written Igbo reply template if a native speaker writes it.
 
 ## Only humans can do these
@@ -32,6 +33,7 @@ Live: https://daju-bice.vercel.app · Repo: https://github.com/AustinChris1/daju
 - [ ] Two or three real scam messages from your groups (Thailand, Gulf, "pay a processing fee", "you have been shortlisted"), victims' names removed. The clean ads are in; the bad ones prove the product.
 - [ ] Add the TXT record for one domain you control (Namecheap: Advanced DNS, TXT, host `_daju`, value from the employer page) and press Verify. Without this there is no employer beat in the demo.
 - [ ] Vercel env: `LLM_PROVIDER=groq`, `GROQ_API_KEY`, `GROQ_MODEL=openai/gpt-oss-120b`, then redeploy.
+- [ ] Twilio: create a free account, open the WhatsApp sandbox, set the "when a message comes in" URL to `https://daju-bice.vercel.app/api/whatsapp/webhook`, add `TWILIO_AUTH_TOKEN` in Vercel, send the join phrase from your phone, then forward a job message. This is the WhatsApp beat in the video.
 - [ ] Vercel env for the licence watch: `CRON_SECRET` (any long random string) and `RESEND_API_KEY` from resend.com (free tier); `RESEND_FROM` once a sending domain is verified there.
 - [ ] Video, 60 to 90 seconds, phone in hand, four forwards, no architecture talk.
 - [ ] Project details form: title Daju, target audience (job seekers and employers in NG, KE, UG, GH), stack (Next.js 16, TypeScript, Tailwind, Supabase, Vercel, Groq or Claude optional).

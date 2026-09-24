@@ -59,6 +59,10 @@ Next.js 16, TypeScript, Tailwind v4, Supabase (Postgres), Vercel. The rule engin
 - `docs/data-and-limits.md`: sources, snapshot caveats, what Daju cannot know.
 - `docs/business-model.md`: who pays.
 
+## WhatsApp: forward it to Daju
+
+`POST /api/whatsapp/webhook` answers Twilio's WhatsApp sandbox with the same plain-text card. Point the sandbox webhook at it and set `TWILIO_AUTH_TOKEN`; the route checks Twilio's request signature and replies in TwiML, so no outbound API call or extra dependency is needed.
+
 ## Telegram: forward it to Daju
 
 Forward a recruiter outreach, job advert, or offer letter directly to the Daju Telegram bot to check it against the four government registers in seconds.
