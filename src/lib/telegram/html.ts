@@ -22,7 +22,7 @@ export function shareUrl(r: Report, siteUrl: string): string {
   return `https://t.me/share/url?url=${encodeURIComponent(cardUrl(siteUrl, r.id))}&text=${encodeURIComponent(r.actions.shareText.replace(/ Full card: \S+$/, ""))}`;
 }
 
-export function cardHtml(r: Report, siteUrl: string): string {
+export function cardHtml(r: Report): string {
   const c = COUNTRIES[r.country];
   const out: string[] = [`<b>${STAMP[r.verdict.level]}</b>  ·  ${c.flag} ${esc(c.name)}`, `<b>${esc(r.verdict.headline)}</b>`];
 

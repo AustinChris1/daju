@@ -35,7 +35,7 @@ async function check(chatId: number | string, text: string, replyTo?: number): P
   const placeholder = await sendMessage(chatId, busyHtml(), { replyTo });
   try {
     const report = await runCheck({ text });
-    const html = cardHtml(report, site());
+    const html = cardHtml(report);
     const opts = { keyboard: cardKeyboard(report, site(), llmAvailable()), preview: { url: cardUrl(site(), report.id) } };
     const edited = placeholder ? await editMessage(chatId, placeholder, html, opts) : false;
     if (!edited) await sendMessage(chatId, html, opts);
