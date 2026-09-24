@@ -341,10 +341,15 @@ function supabaseEnv(): { url?: string; key?: string } {
   return { url, key };
 }
 
+// Bump when the Store interface grows, so a dev hot reload rebuilds the cached singleton.
+const STORE_VERSION = 2;
+
 export function getStore(): Store {
-  if (globalThis.__trueCopyStore) return globalThis.__trueCopyStore;
+  const cached = globalThis.__trueCopyStore as (Store & { __v?: number }) | undefined;
+  if (cached && cached.__v === STORE_VERSION) return cached;
   const { url, key } = supabaseEnv();
-  const store: Store = url && key ? new SupabaseStore(createClient(url, key, { auth: { persistSession: false } })) : new MemoryStore();
+  const store: Store & { __v?: number } = url && key ? new SupabaseStore(createClient(url, key, { auth: { persistSession: false } })) : new MemoryStore();
+  store.__v = STORE_VERSION;
   globalThis.__trueCopyStore = store;
   return store;
 }
