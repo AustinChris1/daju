@@ -40,7 +40,7 @@ async function main() {
 
     const payload = {
       url: webhookUrl,
-      allowed_updates: ["message"],
+      allowed_updates: ["message", "callback_query"],
     };
 
     if (secret) {

@@ -37,15 +37,14 @@ Keep the manage key; it is the only way back into your console.
 
 Forward the message to the Daju bot and the same card comes back as text, with the link to the full card.
 
-- **Telegram**: create a bot with @BotFather and copy its token. Set `TELEGRAM_BOT_TOKEN`, a random `TELEGRAM_WEBHOOK_SECRET` and `NEXT_PUBLIC_SITE_URL`, then register the webhook:
+- **Telegram**: create a bot with @BotFather and copy its token. In Vercel set `TELEGRAM_BOT_TOKEN`, a random `TELEGRAM_WEBHOOK_SECRET` and `NEXT_PUBLIC_SITE_URL`, redeploy, then register everything (webhook, command menu, descriptions, menu button) with one call from any machine:
 
   ```bash
-  node scripts/telegram/set-webhook.mjs set https://<your site>/api/telegram/webhook
-  node scripts/telegram/set-webhook.mjs info     # check it
-  node scripts/telegram/set-webhook.mjs delete   # remove it
+  curl -X POST https://<your site>/api/telegram/setup -H "Authorization: Bearer <TELEGRAM_WEBHOOK_SECRET>"
   ```
 
-  The bot reads text and captions; `/start` and `/help` explain it. Photos and documents get a note to paste the text.
+  From then on Telegram delivers every message to the site itself; no computer needs to stay on. The bot answers with a stamped card (image above, evidence below) and buttons: full card, share to a group, reply in English or Pidgin (six more languages when a model key is set), report the contact, hotline, and a register search. `/registry name` searches the four registers, `/hotlines` picks a country, `/help` explains. Screenshots are pointed to the website reader.
+
 - **WhatsApp**: in the Twilio console open Messaging, Try it out, Send a WhatsApp message, and set the sandbox "when a message comes in" URL to `https://<your site>/api/whatsapp/webhook` (POST). Put the account auth token in `TWILIO_AUTH_TOKEN` so unsigned requests are refused. Anyone who sends the sandbox join phrase to the Twilio number can then forward messages. A production WhatsApp sender needs a Meta Business verification, which takes days and is outside the hackathon window.
 
 ## If you build job boards or messaging tools
