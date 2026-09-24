@@ -14,6 +14,19 @@ const TOKENS: { name: string; light: string; dark: string; role: string }[] = [
   { name: "red ink", light: "#b3261e", dark: "#f28b82", role: "The Stop stamp, nothing else" },
 ];
 
+const DOWNLOADS: { file: string; label: string }[] = [
+  { file: "daju-mark.svg", label: "Mark, SVG" },
+  { file: "daju-mark-1024.png", label: "Mark, violet on transparent" },
+  { file: "daju-mark-white-1024.png", label: "Mark, cream on transparent" },
+  { file: "daju-icon-512.png", label: "App icon" },
+  { file: "daju-wordmark-light.png", label: "Wordmark for light surfaces" },
+  { file: "daju-wordmark-dark.png", label: "Wordmark for dark surfaces" },
+  { file: "daju-cover-1500x500.png", label: "Cover, 1500 by 500" },
+  { file: "daju-social-1200x630.png", label: "Social card, 1200 by 630" },
+  { file: "daju-post-1080x1080.png", label: "Square post" },
+  { file: "daju-story-1080x1920.png", label: "Story" },
+];
+
 export default function BrandPage() {
   return (
     <div className="mx-auto max-w-4xl px-4 py-8">
@@ -84,6 +97,26 @@ export default function BrandPage() {
       </section>
 
       <BrandBoard />
+      <section className="mt-10">
+        <h2 className="condensed text-[0.8rem] text-toner-2">Downloads</h2>
+        <p className="mt-2 max-w-[68ch] text-sm text-toner-2">The pack for posts, headers and the submission form. Rendered from the same mark and type as the site.</p>
+        <ul className="mt-3 grid gap-3 sm:grid-cols-2 lg:grid-cols-4">
+          {DOWNLOADS.map((d) => (
+            <li key={d.file}>
+              <a href={`/brand/${d.file}`} download className="card lift block overflow-hidden no-underline">
+                <div className={`flex h-28 items-center justify-center p-3 ${/white|dark/.test(d.file) ? "bg-[#171528]" : "bg-paper-2"}`}>
+                  {/* eslint-disable-next-line @next/next/no-img-element */}
+                  <img src={`/brand/${d.file}`} alt={d.label} className="max-h-full max-w-full object-contain" loading="lazy" />
+                </div>
+                <div className="p-3">
+                  <p className="text-sm font-bold text-toner">{d.label}</p>
+                  <p className="font-mono text-xs text-toner-2">{d.file}</p>
+                </div>
+              </a>
+            </li>
+          ))}
+        </ul>
+      </section>
     </div>
   );
 }

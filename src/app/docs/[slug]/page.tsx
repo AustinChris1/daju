@@ -4,6 +4,7 @@ import { notFound } from "next/navigation";
 import { ArrowLeft, ArrowRight } from "lucide-react";
 import { DOC_PAGES, renderDoc } from "@/lib/docs";
 import { DocNav } from "@/components/docs/DocNav";
+import { Mermaid } from "@/components/docs/Mermaid";
 
 export function generateStaticParams() {
   return DOC_PAGES.map((d) => ({ slug: d.slug }));
@@ -31,6 +32,7 @@ export default async function DocPage({ params }: PageProps<"/docs/[slug]">) {
         <h1 className="display text-[clamp(1.8rem,4vw,2.6rem)]">{doc.title}</h1>
         <div dangerouslySetInnerHTML={{ __html: doc.html }} />
       </article>
+      <Mermaid />
       <nav aria-label="Next and previous" className="mt-12 grid gap-3 border-t border-rule pt-6 sm:grid-cols-2">
         {prev ? (
           <Link href={`/docs/${prev.slug}`} className="card lift flex items-center gap-3 p-4 no-underline">
