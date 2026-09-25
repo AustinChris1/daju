@@ -92,11 +92,12 @@ Ensure accurate budget reconciliation and billing in coordination with Finance
 KEY SKILLS & COMPETENCY REQUIRED
 Deep, hands-on expertise with Meta Ads Manager, Google Ads and TikTok Ads Manager.
 Curate and publish engaging digital content for BrandEye & DigiBreed.
+Implement the fee structure and commercial terms in line with AISOP and agency agreed terms.
 Interested candidates should forward their resume to info@brandeyemedia.com`;
   const x = extractHeuristic(jd, { hint: "NG" });
   console.log("\n=== organisation candidates (job description) ===");
   console.log("  " + JSON.stringify(x.orgCandidates));
-  const banned = x.orgCandidates.filter((o) => /^(creative|finance|media agency|meta ads manager)$/i.test(o) || /KEY SKILLS/.test(o) || /lekki|chevron/i.test(o));
+  const banned = x.orgCandidates.filter((o) => /^(creative|finance|media agency|meta ads manager)$/i.test(o) || /KEY SKILLS/.test(o) || /lekki|chevron/i.test(o) || /\s(and|or|of|for|the|with|&)$/i.test(o));
   if (banned.length) { console.error("Generic or place candidates leaked: " + JSON.stringify(banned)); process.exit(1); }
   if (!x.orgCandidates.some((o) => /brandeye/i.test(o))) { console.error("Expected BrandEye among the candidates"); process.exit(1); }
 }

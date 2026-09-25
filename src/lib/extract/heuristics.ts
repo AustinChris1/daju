@@ -218,6 +218,7 @@ export function extractHeuristic(text: string, opts: { hint?: Country | null; ha
       .replace(/^(?:for|from|at|with|by)\s+/i, "")
       .replace(/(?:\s+(?:[A-Z]{2,}|&)){2,}$/, "")
       .replace(/[.,;:]+$/, "")
+      .replace(/\s+(?:and|or|of|for|the|with|&)$/i, "")
       .trim();
   const orgCandidates = uniq(orgs.map(tidy).filter((o) => o.length >= 3 && !o.split(" ").every((w) => ORG_SUFFIX_RE.test(w))))
     .filter((o) => !STOP_ORG.has(o) && !/^(?:Dear|Hello|Hi|Good|Kindly|Please|Note|Urgent|Apply|Send|Contact|Whatsapp|Call|Text|Location|Salary|Requirements?|Position|Job|Vacancy|Interested)\b/i.test(o))
