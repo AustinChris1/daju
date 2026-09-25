@@ -6,6 +6,7 @@ import { SAMPLES } from "@/lib/samples";
 import { Button, Input, Label, Select, Textarea } from "@/components/ui";
 import type { Report } from "@/lib/check/types";
 import { ScreenshotInput } from "./ScreenshotInput";
+import { Flag } from "@/components/brand/Flag";
 
 interface Props {
   initialText?: string;
@@ -96,7 +97,7 @@ ${t}` : t))} />
             <option value="auto">Detect from the message</option>
             {COUNTRY_CODES.map((c) => (
               <option key={c} value={c}>
-                {COUNTRIES[c].flag} {COUNTRIES[c].name}
+                <Flag code={c} /> {COUNTRIES[c].name}
               </option>
             ))}
           </Select>

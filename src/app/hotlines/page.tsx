@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { COUNTRIES, COUNTRY_CODES } from "@/lib/countries";
 import { allHotlines } from "@/lib/law";
+import { Flag } from "@/components/brand/Flag";
 
 export const metadata: Metadata = { title: "Hotlines" };
 
@@ -32,7 +33,7 @@ export default function HotlinesPage() {
         {COUNTRY_CODES.map((c) => (
           <section key={c}>
             <h2 className="condensed text-[0.8rem] text-toner-2">
-              {COUNTRIES[c].flag} {COUNTRIES[c].name}
+              <Flag code={c} /> {COUNTRIES[c].name}
             </h2>
             <ul className="mt-3 divide-y divide-rule border-y border-rule">
               {h[c].map((x) => (

@@ -5,6 +5,7 @@ import { allClauses, allLureSources, lawAsOf } from "@/lib/law";
 import { LURE_RULES } from "@/lib/rules/lure";
 import { ENGINE_VERSION } from "@/lib/check/engine";
 import { BRAND } from "@/lib/brand";
+import { Flag } from "@/components/brand/Flag";
 
 export const metadata: Metadata = { title: "Method" };
 
@@ -38,7 +39,7 @@ export default function MethodPage() {
               const note = notes.find((n) => n.country === s.country);
               return (
                 <tr key={s.country}>
-                  <td>{c.flag} {c.name}</td>
+                  <td><Flag code={c.code} /> {c.name}</td>
                   <td>
                     <a href={s.source.url} target="_blank" rel="noreferrer">{s.source.name}</a>
                     <div className="font-mono text-xs text-toner-2">{s.source.method}</div>
@@ -96,7 +97,7 @@ export default function MethodPage() {
               <tr>
                 <th>Clause</th>
                 {(["NG", "KE", "UG", "GH"] as Country[]).map((c) => (
-                  <th key={c}>{COUNTRIES[c].flag} {c}</th>
+                  <th key={c}><Flag code={c} /> {c}</th>
                 ))}
               </tr>
             </thead>

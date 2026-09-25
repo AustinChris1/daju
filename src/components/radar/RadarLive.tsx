@@ -8,6 +8,7 @@ import type { VerdictLevel } from "@/lib/check/types";
 import type { RadarData } from "@/lib/radar";
 import type { CountryChanges } from "@/lib/registry/changes";
 import { CountUp } from "@/components/home/Reveal";
+import { Flag } from "@/components/brand/Flag";
 
 const LEVELS: VerdictLevel[] = ["stop", "caution", "on_file", "unknown"];
 const LEVEL_BG: Record<VerdictLevel, string> = { stop: "bg-red", caution: "bg-amber", on_file: "bg-stamp", unknown: "bg-toner-2" };
@@ -124,7 +125,7 @@ export function RadarLive({ initial }: { initial: RadarData }) {
               <li key={c}>
                 <div className="flex items-center justify-between text-sm">
                   <span className="font-semibold">
-                    {COUNTRIES[c].flag} {COUNTRIES[c].name}
+                    <Flag code={c} /> {COUNTRIES[c].name}
                   </span>
                   <span className="font-mono text-toner-2">{stats.byCountry[c] ?? 0}</span>
                 </div>
@@ -174,7 +175,7 @@ export function RadarLive({ initial }: { initial: RadarData }) {
               {data.recent.map((r) => (
                 <li key={r.id} className="flex items-center justify-between gap-3 py-2">
                   <span className="flex items-center gap-2">
-                    <span aria-hidden>{COUNTRIES[r.country as Country]?.flag}</span>
+                    <Flag code={r.country as Country} />
                     <span className="text-toner">{KIND[r.kind] ?? r.kind}</span>
                   </span>
                   <span className="flex items-center gap-3">
@@ -200,7 +201,7 @@ export function RadarLive({ initial }: { initial: RadarData }) {
             return (
               <li key={r.country} className="rounded-2xl bg-paper-2 p-4">
                 <p className="font-bold">
-                  {c.flag} {c.registry.short}
+                  <Flag code={c.code} /> {c.registry.short}
                 </p>
                 <p className="mt-1 text-3xl font-extrabold tracking-tight text-stamp">{r.count.toLocaleString()}</p>
                 <p className="text-xs text-toner-2">snapshot {r.as_of}</p>
@@ -231,7 +232,7 @@ export function RadarLive({ initial }: { initial: RadarData }) {
                 <span className="font-mono">{r.value}</span>
                 <span className="text-xs text-toner-2">
                   {r.kind}
-                  {r.country ? ` · ${COUNTRIES[r.country].flag}` : ""} · {ago(r.at, now)}
+                  {r.country ? <> · <Flag code={r.country} /></> : null} · {ago(r.at, now)}
                 </span>
               </li>
             ))}

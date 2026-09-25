@@ -2,7 +2,8 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { ArrowRight, ShieldCheck } from "lucide-react";
 import { getStore } from "@/lib/store";
-import { COUNTRIES } from "@/lib/countries";
+
+import { Flag } from "@/components/brand/Flag";
 
 export const metadata: Metadata = { title: "Verified jobs" };
 export const dynamic = "force-dynamic";
@@ -39,7 +40,7 @@ export default async function JobsPage() {
                   <div>
                     <p className="text-lg font-bold text-toner">{j.title}</p>
                     <p className="mt-1 text-sm text-toner-2">
-                      {j.employer.company} · {COUNTRIES[j.country].flag} {j.location} · {MODE[j.mode]}
+                      {j.employer.company} · <Flag code={j.country} /> {j.location} · {MODE[j.mode]}
                     </p>
                   </div>
                   <span className="inline-flex shrink-0 items-center gap-1 rounded-full bg-green-soft px-2.5 py-1 text-xs font-bold text-green">

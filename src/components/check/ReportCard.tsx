@@ -3,13 +3,14 @@
 import { useMemo, useState } from "react";
 import Link from "next/link";
 import { useReducedMotion } from "framer-motion";
-import { Copy, ExternalLink, Flag, MessageCircle, ShieldCheck } from "lucide-react";
+import { Copy, ExternalLink, Flag as FlagIcon, MessageCircle, ShieldCheck } from "lucide-react";
 import type { Report, IdentityMatch, Finding, ClauseFinding, Severity } from "@/lib/check/types";
 import { COUNTRIES } from "@/lib/countries";
 import { REPLY_LANGS } from "@/lib/check/replies";
 import { Stamp } from "@/components/brand/Stamp";
 import { Button, OfficialBox, SectionLabel } from "@/components/ui";
 import { BRAND } from "@/lib/brand";
+import { Flag } from "@/components/brand/Flag";
 
 const SEV: Record<Severity, string> = { high: "text-red", medium: "text-amber", low: "text-toner-2", info: "text-toner-2" };
 const SEV_LABEL: Record<Severity, string> = { high: "High", medium: "Medium", low: "Low", info: "Note" };
@@ -159,7 +160,7 @@ export function ReportCard({ report, animate = true, shareUrl }: { report: Repor
       <header className="grid gap-5 sm:grid-cols-[1fr_auto] sm:items-start">
         <div>
           <p className="condensed text-[0.7rem] text-toner-2">
-            {BRAND.name} check · {country.flag} {country.name} · {r.kind.replace("_", " ")}
+            {BRAND.name} check · <Flag code={country.code} /> {country.name} · {r.kind.replace("_", " ")}
           </p>
           <h1 className="display mt-2 text-[clamp(1.5rem,4vw,2.2rem)] leading-tight">{r.verdict.headline}</h1>
           <ul className="mt-3 max-w-[68ch] space-y-1.5 text-[0.95rem] leading-relaxed">
@@ -416,7 +417,7 @@ export function ReportCard({ report, animate = true, shareUrl }: { report: Repor
           <div className="mt-2 flex flex-wrap gap-2">
             {reportables.map((c) => (
               <button key={c.value} type="button" disabled={reported.has(c.value)} onClick={() => reportContact(c.kind, c.value)} className="inline-flex items-center gap-1 rounded-xs border border-rule px-2 py-1 font-mono text-xs text-toner-2 hover:border-toner hover:text-toner disabled:border-dotted">
-                <Flag className="h-3 w-3" aria-hidden /> {reported.has(c.value) ? "Reported" : `Report ${c.value}`}
+                <FlagIcon className="h-3 w-3" aria-hidden /> {reported.has(c.value) ? "Reported" : `Report ${c.value}`}
               </button>
             ))}
           </div>

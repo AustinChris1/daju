@@ -5,6 +5,7 @@ import { ShieldCheck } from "lucide-react";
 import { getStore } from "@/lib/store";
 import { COUNTRIES } from "@/lib/countries";
 import { OfficialBox } from "@/components/ui";
+import { Flag } from "@/components/brand/Flag";
 
 export const dynamic = "force-dynamic";
 const MODE: Record<string, string> = { onsite: "On site", hybrid: "Hybrid", remote: "Remote" };
@@ -30,7 +31,7 @@ export default async function JobPage({ params }: PageProps<"/jobs/[id]">) {
           <div>
             <h1 className="display text-[clamp(1.6rem,4vw,2.4rem)]">{job.title}</h1>
             <p className="mt-2 text-toner-2">
-              {job.employer.company} · {c.flag} {job.location} · {MODE[job.mode]}
+              {job.employer.company} · <Flag code={c.code} /> {job.location} · {MODE[job.mode]}
               {job.salary ? ` · ${job.salary}` : ""}
             </p>
           </div>

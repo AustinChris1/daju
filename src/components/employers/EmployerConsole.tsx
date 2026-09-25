@@ -6,6 +6,7 @@ import { COUNTRIES, COUNTRY_CODES, type Country } from "@/lib/countries";
 import { Button, Input, Label, OfficialBox, Select, Sheet } from "@/components/ui";
 import { setStored, storageKey, useStoredValue } from "@/lib/useStored";
 import { JobPoster } from "./JobPoster";
+import { Flag } from "@/components/brand/Flag";
 
 interface Employer {
   id: string;
@@ -142,7 +143,7 @@ export function EmployerConsole({ siteUrl }: { siteUrl: string }) {
                 <Select id="country" value={form.country} onChange={(e) => setForm({ ...form, country: e.target.value as Country })}>
                   {COUNTRY_CODES.map((c) => (
                     <option key={c} value={c}>
-                      {COUNTRIES[c].flag} {COUNTRIES[c].name}
+                      <Flag code={c} /> {COUNTRIES[c].name}
                     </option>
                   ))}
                 </Select>
@@ -179,7 +180,7 @@ export function EmployerConsole({ siteUrl }: { siteUrl: string }) {
       <Sheet>
         <div className="flex flex-wrap items-start justify-between gap-4">
           <div>
-            <p className="condensed text-[0.7rem] text-toner-2">{COUNTRIES[emp.country].flag} {emp.company}</p>
+            <p className="condensed text-[0.7rem] text-toner-2"><Flag code={emp.country} /> {emp.company}</p>
             <p className="font-mono text-lg">{emp.domain}</p>
           </div>
           {emp.verified_at ? (

@@ -6,6 +6,7 @@ import { getEntry, snapshot } from "@/lib/registry/load";
 import { changesFor, latestChanges } from "@/lib/registry/changes";
 import { OfficialBox } from "@/components/ui";
 import { WatchForm } from "@/components/registry/WatchForm";
+import { Flag } from "@/components/brand/Flag";
 
 export async function generateMetadata({ params }: PageProps<"/registry/[country]/[id]">): Promise<Metadata> {
   const { country, id } = await params;
@@ -27,7 +28,7 @@ export default async function EntryPage({ params }: PageProps<"/registry/[countr
   return (
     <div className="mx-auto max-w-3xl px-4 py-8">
       <p className="condensed text-[0.7rem] text-toner-2">
-        {c.flag} {c.registry.short} · {c.registry.what}
+        <Flag code={c.code} /> {c.registry.short} · {c.registry.what}
       </p>
       <h1 className="display mt-2 text-[clamp(1.5rem,4vw,2.2rem)]">{e.name}</h1>
       <p className={`mt-2 text-lg ${e.status === "active" ? "text-green" : e.status === "unknown" ? "text-toner-2" : "text-red"}`}>

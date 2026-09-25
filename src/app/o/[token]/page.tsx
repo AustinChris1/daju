@@ -6,6 +6,7 @@ import { getStore } from "@/lib/store";
 import { COUNTRIES } from "@/lib/countries";
 import { OfficialBox, Sheet } from "@/components/ui";
 import { BRAND } from "@/lib/brand";
+import { Flag } from "@/components/brand/Flag";
 
 export async function generateMetadata({ params }: PageProps<"/o/[token]">): Promise<Metadata> {
   const { token } = await params;
@@ -29,7 +30,7 @@ export default async function OfferPage({ params }: PageProps<"/o/[token]">) {
           <div>
             <h1 className="display text-2xl">{o.role}</h1>
             <p className="mt-1 text-toner-2">
-              from <strong className="text-toner">{o.employer.company}</strong> · {c.flag} {c.name}
+              from <strong className="text-toner">{o.employer.company}</strong> · <Flag code={c.code} /> {c.name}
               {o.candidate ? ` · for ${o.candidate}` : ""}
             </p>
           </div>

@@ -57,7 +57,7 @@ export function ReportForm() {
             <Label htmlFor="rcountry">Country</Label>
             <Select id="rcountry" value={country} onChange={(e) => setCountry(e.target.value as Country)}>
               {COUNTRY_CODES.map((c) => (
-                <option key={c} value={c}>{COUNTRIES[c].flag} {COUNTRIES[c].name}</option>
+                <option key={c} value={c}>{COUNTRIES[c].name}</option>
               ))}
             </Select>
           </div>

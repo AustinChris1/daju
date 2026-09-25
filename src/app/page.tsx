@@ -13,9 +13,11 @@ import { PhotoBand, type Photo } from "@/components/home/PhotoBand";
 import { CaseSlider } from "@/components/home/CaseSlider";
 import { ScrollFx } from "@/components/home/ScrollFx";
 import { Faq } from "@/components/home/Faq";
+import { AppShots } from "@/components/home/AppShots";
 import { Mark } from "@/components/brand/Mark";
 import { CountUp, Reveal } from "@/components/home/Reveal";
 import { Stamp } from "@/components/brand/Stamp";
+import { Flag } from "@/components/brand/Flag";
 
 const PROOF: { n: string; what: string; src: string; url: string }[] = [
   { n: "751", what: "Kenyans rescued from Myanmar scam compounds since 2022, plus 393 from Cambodia in the first four months of 2026", src: "Kenya MFA to the Senate, May 2026", url: "https://eastleighvoice.co.ke/news/346129/myanmar-at-centre-of-kenyas-labour-trafficking-crisis-over-750-rescued-since-2022" },
@@ -99,7 +101,7 @@ export default async function Home() {
                     <CountUp value={s.count} />
                   </p>
                   <p className="mt-2 font-bold">
-                    {c.flag} {c.registry.short}
+                    <Flag code={c.code} /> {c.registry.short}
                   </p>
                   <p className="mt-1 text-sm text-toner-2">
                     {c.registry.what}. Snapshot {s.as_of}.{s.active !== s.count ? ` ${s.active.toLocaleString()} active.` : ""}
@@ -130,6 +132,8 @@ export default async function Home() {
           ))}
         </ol>
       </section>
+
+      <AppShots />
 
       <PhotoBand photos={photos} />
 

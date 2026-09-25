@@ -4,6 +4,7 @@ import { COUNTRIES, COUNTRY_CODES, isCountry, type Country } from "@/lib/countri
 import { listEntries, registryStats, searchByName } from "@/lib/registry/load";
 import { describe, latestChanges } from "@/lib/registry/changes";
 import { Input, Select } from "@/components/ui";
+import { Flag } from "@/components/brand/Flag";
 
 export const metadata: Metadata = { title: "Registers" };
 
@@ -34,7 +35,7 @@ export default async function RegistryPage({ searchParams }: PageProps<"/registr
           <option value="">All four countries</option>
           {COUNTRY_CODES.map((c) => (
             <option key={c} value={c}>
-              {COUNTRIES[c].flag} {COUNTRIES[c].name}
+              <Flag code={c} /> {COUNTRIES[c].name}
             </option>
           ))}
         </Select>
@@ -53,7 +54,7 @@ export default async function RegistryPage({ searchParams }: PageProps<"/registr
         {stats.map((s) => (
           <li key={s.country}>
             <Link href={`/registry?country=${s.country}`} className={`inline-block border px-3 py-1.5 no-underline ${country === s.country ? "border-stamp text-stamp" : "border-rule text-toner-2 hover:text-toner"}`}>
-              {COUNTRIES[s.country as Country].flag} {COUNTRIES[s.country as Country].registry.short} · {s.count.toLocaleString()} · {s.as_of}
+              <Flag code={s.country as Country} /> {COUNTRIES[s.country as Country].registry.short} · {s.count.toLocaleString()} · {s.as_of}
             </Link>
           </li>
         ))}
@@ -69,7 +70,7 @@ export default async function RegistryPage({ searchParams }: PageProps<"/registr
               return (
                 <li key={c.country} className="text-sm">
                   <p className="font-semibold text-toner">
-                    {COUNTRIES[c.country].flag} {COUNTRIES[c.country].registry.short}: {describe(c)}
+                    <Flag code={c.country} /> {COUNTRIES[c.country].registry.short}: {describe(c)}
                   </p>
                   <p className="text-xs text-toner-2">{c.as_of_before} to {c.as_of_after} · {c.count_before.toLocaleString()} to {c.count_after.toLocaleString()} entries</p>
                   <ul className="mt-1 space-y-0.5">
@@ -146,7 +147,7 @@ function ResultsTable({ rows }: { rows: { country: Country; entry: { id: string;
                 {r.entry.license_no && <div className="font-mono text-xs text-toner-2">{r.entry.license_no}</div>}
               </td>
               <td className="whitespace-nowrap">
-                {COUNTRIES[r.country].flag} {COUNTRIES[r.country].registry.short}
+                <Flag code={r.country} /> {COUNTRIES[r.country].registry.short}
               </td>
               <td className={r.entry.status === "active" ? "text-green" : r.entry.status === "unknown" ? "text-toner-2" : "text-red"}>
                 {r.entry.status}

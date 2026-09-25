@@ -4,6 +4,7 @@ import { useEffect, useState } from "react";
 import Link from "next/link";
 import { COUNTRIES, COUNTRY_CODES, type Country } from "@/lib/countries";
 import { Button, Input, Label, Select, Sheet, Textarea } from "@/components/ui";
+import { Flag } from "@/components/brand/Flag";
 
 interface Job {
   id: string;
@@ -70,7 +71,7 @@ export function JobPoster({ manageKey, defaultCountry, domain }: { manageKey: st
           <Label htmlFor="jcountry">Country</Label>
           <Select id="jcountry" value={form.country} onChange={(e) => setForm({ ...form, country: e.target.value as Country })}>
             {COUNTRY_CODES.map((c) => (
-              <option key={c} value={c}>{COUNTRIES[c].flag} {COUNTRIES[c].name}</option>
+              <option key={c} value={c}>{COUNTRIES[c].name}</option>
             ))}
           </Select>
         </div>
@@ -119,7 +120,7 @@ export function JobPoster({ manageKey, defaultCountry, domain }: { manageKey: st
                 <td>
                   <Link href={`/jobs/${j.id}`}>{j.title}</Link>
                 </td>
-                <td>{COUNTRIES[j.country].flag} {j.location} · {j.mode}</td>
+                <td><Flag code={j.country} /> {j.location} · {j.mode}</td>
                 <td className="font-mono">{j.views}</td>
                 <td>
                   <button type="button" onClick={() => toggle(j)} className="text-sm underline">{j.public ? "Unlist" : "Relist"}</button>
