@@ -223,6 +223,8 @@ export function extractHeuristic(text: string, opts: { hint?: Country | null; ha
   const orgCandidates = uniq(orgs.map(tidy).filter((o) => o.length >= 3 && !o.split(" ").every((w) => ORG_SUFFIX_RE.test(w))))
     .filter((o) => !STOP_ORG.has(o) && !/^(?:Dear|Hello|Hi|Good|Kindly|Please|Note|Urgent|Apply|Send|Contact|Whatsapp|Call|Text|Location|Salary|Requirements?|Position|Job|Vacancy|Interested)\b/i.test(o))
     .filter((o) => !isPlaceOnly(o) && !isGenericOrg(o) && !PRODUCTS.has(o.toLowerCase()))
+    // A lone short token left after trimming ("AISOP") is a term, not a company.
+    .filter((o) => o.split(" ").length >= 2 || o.length >= 6)
     .slice(0, 6);
   for (const d of domains) {
     const root = d.split(".")[0];
