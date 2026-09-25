@@ -87,6 +87,16 @@ const PERSON_RE = /(?:my name is|this is|i am|i'm|regards,?)\s+((?:Mr\.?|Mrs\.?|
 
 const STOP_ORG = new Set(["The Company", "Our Company", "Your Company", "Human Resources", "Customer Service", "Job Alert", "Job Vacancy", "Whatsapp Group", "Dear Applicant", "Terms And Conditions"]);
 
+// Department names and job words that a job description capitalises; on their own they name no company.
+const GENERIC_ORG_WORDS = new Set(
+  "creative strategy account management media agency digital marketing finance sales operations admin administration hr legal compliance product design engineering technology it data analytics research development business team teams department unit division group services service solutions consulting company limited ltd plc international global nigeria kenya uganda ghana lagos nairobi kampala accra manager lead head officer executive director assistant intern brand brands clients client industry industries".split(" "),
+);
+const PRODUCTS = new Set(["meta ads manager", "google ads", "google analytics", "google marketing platform", "tiktok ads manager", "looker studio", "power bi", "microsoft excel", "google sheets", "meta blueprint", "linkedin", "facebook", "instagram", "tiktok", "whatsapp", "telegram", "microsoft office", "google workspace", "zoom", "slack", "hubspot", "salesforce"]);
+function isGenericOrg(cand: string): boolean {
+  const words = cand.toLowerCase().split(/[\s,&]+/).filter(Boolean);
+  return words.every((w) => GENERIC_ORG_WORDS.has(w) || /^(?:of|and|the|for)$/.test(w));
+}
+
 export function classifyKind(text: string, hasUrlOnly: boolean): InputKind {
   if (hasUrlOnly) return "link";
   const t = text.toLowerCase();
@@ -200,10 +210,18 @@ export function extractHeuristic(text: string, opts: { hint?: Country | null; ha
   PERSON_RE.lastIndex = 0;
   while ((m = PERSON_RE.exec(clean))) people.push(m[1].trim());
   // Cue matches can start with the cue word itself or run back over a sentence boundary; keep only the name.
-  const tidy = (o: string) => o.replace(/\s+/g, " ").replace(/^.*\.\s+/, "").replace(/^(?:for|from|at|with|by)\s+/i, "").replace(/[.,;:]+$/, "").trim();
+  // Cue matches can run into a SHOUTED heading ("Finance KEY SKILLS"); cut the capitals run off the end.
+  const tidy = (o: string) =>
+    o
+      .replace(/\s+/g, " ")
+      .replace(/^.*\.\s+/, "")
+      .replace(/^(?:for|from|at|with|by)\s+/i, "")
+      .replace(/(?:\s+(?:[A-Z]{2,}|&)){2,}$/, "")
+      .replace(/[.,;:]+$/, "")
+      .trim();
   const orgCandidates = uniq(orgs.map(tidy).filter((o) => o.length >= 3 && !o.split(" ").every((w) => ORG_SUFFIX_RE.test(w))))
     .filter((o) => !STOP_ORG.has(o) && !/^(?:Dear|Hello|Hi|Good|Kindly|Please|Note|Urgent|Apply|Send|Contact|Whatsapp|Call|Text|Location|Salary|Requirements?|Position|Job|Vacancy|Interested)\b/i.test(o))
-    .filter((o) => !isPlaceOnly(o))
+    .filter((o) => !isPlaceOnly(o) && !isGenericOrg(o) && !PRODUCTS.has(o.toLowerCase()))
     .slice(0, 6);
   for (const d of domains) {
     const root = d.split(".")[0];

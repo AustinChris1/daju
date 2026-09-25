@@ -4,7 +4,7 @@ import type { Country } from "@/lib/countries";
 import { COUNTRY_CODES, isCountry } from "@/lib/countries";
 import { extractHeuristic } from "@/lib/extract/heuristics";
 import { refineWithClaude } from "@/lib/extract/llm";
-import { findByDomain, findByEmail, findByPhone, searchByName, snapshot } from "@/lib/registry/load";
+import { findByDomain, findByEmail, findByPhone, namedInText, searchByName, snapshot } from "@/lib/registry/load";
 import { domainOf, isFreeMail, normPhone, phoneTail } from "@/lib/registry/match";
 import { domainIntel } from "@/lib/intel/domain";
 import { runLureRules } from "@/lib/rules/lure";
@@ -109,7 +109,9 @@ function resolveIdentity(x: Extraction, preferred: Country) {
     for (const h of hits) add(toMatch(h.country, h.entry, h.score, "name", x));
   }
   matches.sort((a, b) => b.score - a.score || (a.country === preferred ? -1 : 1));
-  const impersonation = matches.length > 0 && matches[0].score >= 0.8 && matches[0].contact === "mismatch";
+  // Impersonation needs the register name itself in the message, not a fuzzy hit on a shared word.
+  const top = matches[0];
+  const impersonation = !!top && top.score >= 0.8 && top.contact === "mismatch" && (top.matchedVia !== "name" || namedInText(top.name, x.text));
   return { queries, matches: matches.slice(0, 6), impersonation };
 }
 

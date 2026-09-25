@@ -49,13 +49,17 @@ function lookalike(domain: string): DomainIntel["lookalikeOf"] {
 // Fetches the homepage once and answers: is there a real site, and does it name the organisation?
 async function siteIntel(domain: string, names: string[]): Promise<SiteIntel> {
   const out: SiteIntel = { reachable: false, status: null, title: null, mentionsName: null, parked: false };
-  const ctrl = new AbortController();
-  const t = setTimeout(() => ctrl.abort(), 6000);
+  // Shared hosts in Lagos and Nairobi often take five seconds to answer; each attempt gets its own budget.
+  const attempts: [string, number][] = [
+    [`https://${domain}/`, 9000],
+    [`https://www.${domain}/`, 5000],
+    [`http://${domain}/`, 5000],
+  ];
   try {
     let res: Response | null = null;
-    for (const url of [`https://${domain}/`, `https://www.${domain}/`, `http://${domain}/`]) {
+    for (const [url, budget] of attempts) {
       try {
-        res = await fetch(url, { signal: ctrl.signal, redirect: "follow", headers: { "user-agent": "Mozilla/5.0 (compatible; DajuCheck/1.0)", accept: "text/html" } });
+        res = await fetch(url, { signal: AbortSignal.timeout(budget), redirect: "follow", headers: { "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/128.0.0.0 Safari/537.36 DajuCheck/1.0", accept: "text/html,application/xhtml+xml" } });
         if (res.ok) break;
       } catch {
         res = null;
@@ -77,8 +81,6 @@ async function siteIntel(domain: string, names: string[]): Promise<SiteIntel> {
     return out;
   } catch {
     return out;
-  } finally {
-    clearTimeout(t);
   }
 }
 

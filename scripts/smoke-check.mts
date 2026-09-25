@@ -84,3 +84,19 @@ Kindly confirm acceptance by replying to hr.zenithconsult@gmail.com.`;
   for (const c of clauses) console.log(`  ${c.severity.padEnd(6)} ${c.key.padEnd(14)} ${c.citation ? `${c.citation.act}, ${c.citation.section} [${c.citation.confidence}]` : "no citation"}`);
   if (clauses.length < 3) { console.error("Expected at least 3 clause findings"); process.exit(1); }
 }
+
+{
+  // A job description names departments and platforms, not an agency. None of these may become a register query.
+  const jd = `Digital Media Lead. Location: Chevron, Lekki, Lagos, Nigeria. Collaborate closely with Creative, Strategy, and Account Management teams.
+Ensure accurate budget reconciliation and billing in coordination with Finance
+KEY SKILLS & COMPETENCY REQUIRED
+Deep, hands-on expertise with Meta Ads Manager, Google Ads and TikTok Ads Manager.
+Curate and publish engaging digital content for BrandEye & DigiBreed.
+Interested candidates should forward their resume to info@brandeyemedia.com`;
+  const x = extractHeuristic(jd, { hint: "NG" });
+  console.log("\n=== organisation candidates (job description) ===");
+  console.log("  " + JSON.stringify(x.orgCandidates));
+  const banned = x.orgCandidates.filter((o) => /^(creative|finance|media agency|meta ads manager)$/i.test(o) || /KEY SKILLS/.test(o) || /lekki|chevron/i.test(o));
+  if (banned.length) { console.error("Generic or place candidates leaked: " + JSON.stringify(banned)); process.exit(1); }
+  if (!x.orgCandidates.some((o) => /brandeye/i.test(o))) { console.error("Expected BrandEye among the candidates"); process.exit(1); }
+}

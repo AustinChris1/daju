@@ -2,7 +2,7 @@ import "server-only";
 import type { Country } from "@/lib/countries";
 import { COUNTRY_CODES } from "@/lib/countries";
 import type { RegistryEntry, RegistrySnapshot, RegistryIndexNote } from "./types";
-import { coreName, isFreeMail, nameScore, phoneTail, normPhone } from "./match";
+import { coreName, dice, isFreeMail, nameScore, normName, phoneTail, normPhone } from "./match";
 import ng from "../../../data/registries/ng.json";
 import ke from "../../../data/registries/ke.json";
 import ug from "../../../data/registries/ug.json";
@@ -73,6 +73,48 @@ export interface NameHit {
   score: number;
 }
 
+// How many register names contain each core token. A word shared by many agencies ("creative", "media",
+// "resource") is weak evidence; a word that names one or two agencies ("moonlight") is strong evidence.
+const DF = new Map<string, number>();
+let N = 0;
+for (const c of COUNTRY_CODES) {
+  for (const { core } of INDEX[c].cores) {
+    N += 1;
+    for (const t of new Set(core.split(" ").filter((t) => t.length > 2))) DF.set(t, (DF.get(t) ?? 0) + 1);
+  }
+}
+const GENERIC = new Set("and the for of media creative digital marketing finance sales management team department office human capital business training school academy trading general merchant investment investments technology technologies tech systems concept concepts links link partners associates ventures holdings foundation institute centre center network industries".split(" "));
+const tokenWeight = (t: string) => Math.log((N + 1) / ((DF.get(t) ?? 0) + 1));
+const isGeneric = (t: string) => t.length < 3 || GENERIC.has(t) || (DF.get(t) ?? 0) > N * 0.02;
+const EVIDENCE = 6.5;
+
+export function distinctTokens(name: string): string[] {
+  return [...new Set(coreName(name).split(" "))].filter((t) => !isGeneric(t));
+}
+
+// Caps a similarity score unless the query shares enough distinctive words with the register name.
+// One common word never identifies an agency; one rare word, or two moderately rare ones, can.
+export function gateScore(query: string, candidate: string, raw: number): number {
+  const q = distinctTokens(query);
+  if (!q.length) return Math.min(raw, 0.5);
+  const cand = coreName(candidate).split(" ");
+  const matched = q.filter((t) => cand.includes(t) || cand.some((c) => c.length > 3 && dice(t, c) >= 0.85));
+  if (!matched.length) return Math.min(raw, 0.5);
+  const evidence = matched.reduce((s, t) => s + tokenWeight(t), 0);
+  const coverage = evidence / q.reduce((s, t) => s + tokenWeight(t), 0);
+  if (evidence < EVIDENCE) return Math.min(raw, 0.6);
+  if (coverage < 0.5) return Math.min(raw, 0.65);
+  return raw;
+}
+
+// True when the register entry's distinctive words all appear in the message, so a fuzzy hit cannot claim a name the text never used.
+export function namedInText(entryName: string, text: string): boolean {
+  const d = distinctTokens(entryName);
+  if (!d.length) return false;
+  const t = normName(text);
+  return d.every((tok) => t.includes(tok));
+}
+
 export function searchByName(query: string, opts: { countries?: Country[]; limit?: number; min?: number } = {}): NameHit[] {
   const countries = opts.countries ?? COUNTRY_CODES;
   const min = opts.min ?? 0.55;
@@ -81,7 +123,7 @@ export function searchByName(query: string, opts: { countries?: Country[]; limit
   if (q.length < 3) return hits;
   for (const c of countries) {
     for (const { entry } of INDEX[c].cores) {
-      const s = nameScore(q, entry.name);
+      const s = gateScore(q, entry.name, nameScore(q, entry.name));
       if (s >= min) hits.push({ country: c, entry, score: s });
     }
   }

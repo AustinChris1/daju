@@ -4,7 +4,7 @@ import { searchByName } from "@/lib/registry/load";
 import { getStore, type ReportRow } from "@/lib/store";
 import { SAMPLES } from "@/lib/samples";
 import { isCountry } from "@/lib/countries";
-import { answerCallback, deleteMessage, editMessage, sendMessage, typing } from "@/lib/telegram/api";
+import { answerCallback, deleteMessage, editMessage, sendMessage, typing, type Keyboard } from "@/lib/telegram/api";
 import { busyHtml, cardHtml, cardKeyboard, cardUrl, countryKeyboard, esc, examplesKeyboard, helpHtml, hotlinesHtml, langsKeyboard, mainMenu, MENU, PROMPTS, registryHtml, replyHtml, startHtml, withDismiss } from "@/lib/telegram/html";
 import type { Report } from "@/lib/check/types";
 
@@ -24,6 +24,19 @@ function isDuplicate(updateId: number): boolean {
 }
 
 const ok = (extra: Record<string, unknown> = {}) => Response.json({ ok: true, ...extra });
+
+// Telegram cuts long pastes at 4,096 characters and delivers the pieces as separate messages. A piece that
+// arrives at that limit is held for three minutes so the next piece can be checked together with it.
+const PART_LIMIT = 3900;
+const PENDING_TTL_MS = 3 * 60 * 1000;
+const pending = new Map<number | string, { text: string; at: number }>();
+const pendingFor = (chatId: number | string) => {
+  const p = pending.get(chatId);
+  if (p && Date.now() - p.at < PENDING_TTL_MS) return p;
+  pending.delete(chatId);
+  return null;
+};
+const CHECK_NOW: Keyboard = [[{ text: "✓ That was all, check it", callback_data: "chk:go" }]];
 
 function site(): string {
   return (process.env.NEXT_PUBLIC_SITE_URL || "https://daju-bice.vercel.app").replace(/\/+$/, "");
@@ -67,6 +80,15 @@ async function onCallback(cb: { id: string; data?: string; message?: { chat: { i
   if (!chatId) return answerCallback(cb.id);
   const [kind, a, b] = data.split(":");
 
+  if (kind === "chk") {
+    const held = pendingFor(chatId);
+    pending.delete(chatId);
+    if (!held) return answerCallback(cb.id, "Nothing is waiting. Paste the message again.", true);
+    await answerCallback(cb.id, "Checking");
+    if (cb.message) await deleteMessage(chatId, cb.message.message_id);
+    await check(chatId, held.text);
+    return;
+  }
   if (kind === "del") {
     const removed = cb.message ? await deleteMessage(chatId, cb.message.message_id) : false;
     if (!removed && cb.message) await editMessage(chatId, cb.message.message_id, "<i>Dismissed.</i>");
@@ -235,6 +257,24 @@ export async function POST(req: Request) {
   }
   if (toCheck.length < 12) {
     await notice(chatId, "That is too short to check. Forward the whole message, with the number and email exactly as they appear.");
+    return ok();
+  }
+
+  const held = pendingFor(chatId);
+  if (held) {
+    pending.delete(chatId);
+    const joined = `${held.text}\n${toCheck}`;
+    if (toCheck.length >= PART_LIMIT) {
+      pending.set(chatId, { text: joined, at: Date.now() });
+      await notice(chatId, "Got that part too. Send the rest, or check what I have.", withDismiss(CHECK_NOW));
+      return ok();
+    }
+    await check(chatId, joined, messageId);
+    return ok();
+  }
+  if (toCheck.length >= PART_LIMIT) {
+    pending.set(chatId, { text: toCheck, at: Date.now() });
+    await notice(chatId, "Telegram cuts messages at 4,096 characters, so that arrived in parts. Send the rest and I will check it all as one message.", withDismiss(CHECK_NOW));
     return ok();
   }
 
