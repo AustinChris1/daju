@@ -119,6 +119,9 @@ export interface CompanyRecord {
   address: string | null;
   score: number;
   via: string;
+  // Live means the register itself was asked; an index (OpenCorporates) is a dated copy and says so on the card.
+  live: boolean;
+  asOf: string | null;
   checkedAt: string;
 }
 

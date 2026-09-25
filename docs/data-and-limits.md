@@ -31,7 +31,7 @@ Every number on the site links to the official page it was taken from. Numbers t
 
 ## What Daju does not know
 
-- Whether a company that is not an agency exists, outside Nigeria. Nigeria's CAC is reached through Mono's licensed lookup when `MONO_SECRET_KEY` is set, and the card then shows the registered name, RC number, status and registration date as a live lookup. Kenya's BRS, Uganda's URSB and Ghana's ORC publish no lookup a program can call, so they are not connected. The CAC's own public search sits behind a browser-only portal; Daju does not scrape it.
+- Whether a company that is not an agency exists, by default. No government in the four countries publishes a company lookup a program can call, and the CAC's own public search is a browser-only portal that Daju does not scrape. What the card does instead: it offers the official search (CAC, URSB, ORC, or BRS through eCitizen) with the name copied for pasting, at no cost. Two optional sources can be switched on with a key: OpenCorporates, a dated index of the registers whose rows the card labels "index, not the live register" with the retrieval date, and Mono, a licensed live CAC lookup billed per call. Kenya's BRS search needs an eCitizen login.
 - Whether a person on LinkedIn is who they say they are.
 - Anything about an offer that happened by voice call with no text.
 - Whether a licensed agency with a matching number is honest. Licensed is not the same as safe, which is why the card never says safe.

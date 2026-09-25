@@ -179,7 +179,8 @@ function verdictFor(r: Pick<Report, "lure" | "clauses" | "identity" | "country" 
     if (co && co.status !== "inactive") {
       const since = co.registeredOn ? ` since ${co.registeredOn.slice(0, 4)}` : "";
       const siteNote = live ? (live.site?.mentionsName ? ", and its website names the company" : ", and its website is live") : "";
-      headline = `No warning signs; "${co.name}" is on the ${co.register} company register${since}${siteNote}`;
+      const where = co.live ? `is on the ${co.register} company register` : `is in the ${co.via} index of the ${co.register} register`;
+      headline = `No warning signs; "${co.name}" ${where}${since}${siteNote}`;
     } else if (established) {
       const years = Math.floor(established.ageDays! / 365);
       const siteNote = live && live.domain === established.domain ? (live.site?.mentionsName ? ", and its website names the company" : ", and its website is live") : "";
@@ -193,7 +194,8 @@ function verdictFor(r: Pick<Report, "lure" | "clauses" | "identity" | "country" 
 
   if (r.company) {
     const co = r.company;
-    lines.push(`${co.register} record: ${co.name}${co.number ? `, ${co.number}` : ""}${co.statusText ? `, ${co.statusText.toLowerCase()}` : ""}${co.registeredOn ? `, registered ${co.registeredOn}` : ""} (looked up live via ${co.via}). A registered company can still send a bad offer; read the clauses and never pay to be hired.`);
+    const source = co.live ? `looked up live via ${co.via}` : `from the ${co.via} index of the ${co.register}${co.asOf ? `, retrieved ${co.asOf}` : ""}, not the live register`;
+    lines.push(`${co.register} record: ${co.name}${co.number ? `, ${co.number}` : ""}${co.statusText ? `, ${co.statusText.toLowerCase()}` : ""}${co.registeredOn ? `, registered ${co.registeredOn}` : ""} (${source}). A registered company can still send a bad offer; read the clauses and never pay to be hired.`);
     if (co.status === "inactive") {
       level = level === "unknown" ? "caution" : level;
       if (level === "caution" && !high.length) headline = `"${co.name}" is on the ${co.register} register but not active`;

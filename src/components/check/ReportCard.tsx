@@ -11,6 +11,7 @@ import { Stamp } from "@/components/brand/Stamp";
 import { Button, OfficialBox, SectionLabel } from "@/components/ui";
 import { BRAND } from "@/lib/brand";
 import { Flag } from "@/components/brand/Flag";
+import { officialCompanySearch } from "@/lib/registry/official";
 
 const SEV: Record<Severity, string> = { high: "text-red", medium: "text-amber", low: "text-toner-2", info: "text-toner-2" };
 const SEV_LABEL: Record<Severity, string> = { high: "High", medium: "Medium", low: "Low", info: "Note" };
@@ -145,6 +146,9 @@ export function ReportCard({ report, animate = true, shareUrl }: { report: Repor
   ].filter(Boolean);
 
   const country = COUNTRIES[r.country];
+  // The official company search, offered whenever no agency register names the sender.
+  const officialName = r.identity.matches.some((m) => m.score >= 0.82) ? null : (r.identity.queries.find((q) => !q.includes(".") && q.trim().length >= 4) ?? null);
+  const official = officialName ? { name: officialName.trim(), search: officialCompanySearch(r.country, officialName.trim()) } : null;
   const waText = encodeURIComponent(r.actions.shareText);
   const reportables = [...r.extraction.phones.map((v) => ({ kind: "phone", value: v })), ...r.extraction.emails.map((v) => ({ kind: "email", value: v })), ...r.extraction.domains.filter((d) => !["gmail.com", "yahoo.com", "hotmail.com", "outlook.com"].includes(d)).map((v) => ({ kind: "domain", value: v }))];
 
@@ -185,9 +189,26 @@ export function ReportCard({ report, animate = true, shareUrl }: { report: Repor
 
       <section className="mt-8">
         <SectionLabel n={++n}>Who is on file</SectionLabel>
+        {official && (
+          <div className="mt-3 flex flex-wrap items-center gap-3 text-sm">
+            <Button
+              type="button"
+              variant="secondary"
+              onClick={async () => {
+                await copy(official.name);
+                window.open(official.search.url, "_blank", "noopener");
+              }}
+            >
+              <ExternalLink className="h-4 w-4" aria-hidden /> Check &ldquo;{official.name.length > 32 ? official.name.slice(0, 30) + "…" : official.name}&rdquo; on the {official.search.register}
+            </Button>
+            <span className="text-xs text-toner-2">{official.search.acceptsQuery ? official.search.note : `Name copied for pasting. ${official.search.note}`}</span>
+          </div>
+        )}
         {r.company && (
           <div className="mt-3 border border-stamp bg-stamp-soft px-4 py-3 text-sm">
-            <p className="condensed text-[0.65rem] text-toner-2">{r.company.register} company register · {r.company.country} · live lookup via {r.company.via}</p>
+            <p className="condensed text-[0.65rem] text-toner-2">
+              {r.company.register} company register · {r.company.country} · {r.company.live ? `live lookup via ${r.company.via}` : `${r.company.via} index${r.company.asOf ? `, retrieved ${r.company.asOf}` : ""}, not the live register`}
+            </p>
             <p className="mt-1 font-semibold text-toner">{r.company.name}</p>
             <p className="mt-1 font-mono text-xs text-toner-2">
               {[r.company.number, r.company.type, r.company.statusText, r.company.registeredOn ? `registered ${r.company.registeredOn}` : null].filter(Boolean).join(" · ")}

@@ -14,7 +14,7 @@ The most common trick in these four countries is exactly that: a licensed agency
 
 1. Reads the names, phone numbers, emails, domains and amounts in the message.
 2. Looks the name up in all four registers at once and compares the contact in the message with the contact on file. Name matches, contact does not: impersonation.
-3. Checks the sender's domain: age, mail records, lookalikes, whether its website is live and names the company. For a Nigerian company that is not an agency, it looks the name up on the CAC register live (through Mono) and shows the RC number and status.
+3. Checks the sender's domain: age, mail records, lookalikes, whether its website is live and names the company. For a company that is not an agency, it hands you the official company search with the name copied (CAC, URSB, ORC), and can show the register row itself when an OpenCorporates or Mono key is set.
 4. Applies 20 lure patterns from official warnings, each cited to its source, and six offer-letter clauses against the country's labour law.
 5. Returns a stamped card: Stop, Caution, On file, or Not on file. Never "safe". Plus the reply to send and the official hotline.
 

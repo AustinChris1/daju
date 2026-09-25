@@ -3,6 +3,7 @@ import type { NameHit } from "@/lib/registry/load";
 import { COUNTRIES, COUNTRY_CODES, type Country } from "@/lib/countries";
 import { REPLY_LANGS } from "@/lib/check/replies";
 import { getHotlines } from "@/lib/law";
+import { officialCompanySearch } from "@/lib/registry/official";
 import { SAMPLES } from "@/lib/samples";
 import { BRAND } from "@/lib/brand";
 import type { Keyboard } from "./api";
@@ -47,7 +48,11 @@ export function cardHtml(r: Report): string {
 
   if (r.company) {
     const co = r.company;
-    out.push("", `<b>On the ${esc(co.register)} company register</b>`, `${esc(co.name)}${co.number ? ` · <code>${esc(co.number)}</code>` : ""}${co.statusText ? ` · ${esc(co.statusText.toLowerCase())}` : ""}${co.registeredOn ? ` · registered ${co.registeredOn}` : ""}`);
+    const head = co.live ? `On the ${esc(co.register)} company register` : `In the ${esc(co.via)} index of the ${esc(co.register)}${co.asOf ? ` (retrieved ${co.asOf})` : ""}`;
+    out.push("", `<b>${head}</b>`, `${esc(co.name)}${co.number ? ` · <code>${esc(co.number)}</code>` : ""}${co.statusText ? ` · ${esc(co.statusText.toLowerCase())}` : ""}${co.registeredOn ? ` · registered ${co.registeredOn}` : ""}`);
+  } else if (!r.identity.matches.some((m) => m.score >= 0.82)) {
+    const q = r.identity.queries.find((x) => !x.includes(".") && x.trim().length >= 4);
+    if (q) out.push("", `<b>Not an agency?</b> Check the company yourself: search for <code>${esc(q.trim())}</code> on the ${esc(officialCompanySearch(r.country, q).register)} (button below).`);
   }
 
   const dom = r.domains[0];
@@ -96,6 +101,13 @@ export function cardKeyboard(r: Report, siteUrl: string, llm: boolean): Keyboard
   rows.push(row);
   const q = r.identity.queries[0]?.trim();
   if (q) rows.push([{ text: `🔎 "${q.slice(0, 28).trim()}" in the registers`, url: `${siteUrl}/registry?q=${encodeURIComponent(q)}` }]);
+  if (!r.company && !r.identity.matches.some((m) => m.score >= 0.82)) {
+    const name = r.identity.queries.find((x) => !x.includes(".") && x.trim().length >= 4);
+    if (name) {
+      const s = officialCompanySearch(r.country, name.trim());
+      rows.push([{ text: `🏛 Check the name on the ${s.register}`, url: s.url }]);
+    }
+  }
   return rows;
 }
 type InlineRow = Keyboard[number];
