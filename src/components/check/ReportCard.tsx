@@ -184,6 +184,17 @@ export function ReportCard({ report, animate = true, shareUrl }: { report: Repor
 
       <section className="mt-8">
         <SectionLabel n={++n}>Who is on file</SectionLabel>
+        {r.company && (
+          <div className="mt-3 border border-stamp bg-stamp-soft px-4 py-3 text-sm">
+            <p className="condensed text-[0.65rem] text-toner-2">{r.company.register} company register · {r.company.country} · live lookup via {r.company.via}</p>
+            <p className="mt-1 font-semibold text-toner">{r.company.name}</p>
+            <p className="mt-1 font-mono text-xs text-toner-2">
+              {[r.company.number, r.company.type, r.company.statusText, r.company.registeredOn ? `registered ${r.company.registeredOn}` : null].filter(Boolean).join(" · ")}
+            </p>
+            {r.company.address && <p className="mt-1 text-xs text-toner-2">{r.company.address}</p>}
+            <p className="mt-2 text-xs text-toner-2">Registration proves the company exists, not that this message came from it. Check the sender&apos;s email is on the company&apos;s own domain.</p>
+          </div>
+        )}
         {r.identity.matches.length === 0 ? (
           <p className="mt-2 max-w-[68ch] text-[0.95rem] text-toner-2">
             {r.identity.queries.length ? `No entry close to "${r.identity.queries[0]}" in the four registers (snapshots ${Object.entries(r.registryAsOf).map(([c, d]) => `${c} ${d}`).join(", ")}).` : "No organisation name could be read from the text. Add the company or agency name and run the check again."}

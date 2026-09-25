@@ -45,6 +45,11 @@ export function cardHtml(r: Report): string {
     out.push(`${CONTACT[top.contact] ?? top.contact}${r.identity.impersonation ? " · <b>looks like impersonation</b>" : ""}`);
   }
 
+  if (r.company) {
+    const co = r.company;
+    out.push("", `<b>On the ${esc(co.register)} company register</b>`, `${esc(co.name)}${co.number ? ` · <code>${esc(co.number)}</code>` : ""}${co.statusText ? ` · ${esc(co.statusText.toLowerCase())}` : ""}${co.registeredOn ? ` · registered ${co.registeredOn}` : ""}`);
+  }
+
   const dom = r.domains[0];
   if (dom && !dom.freeMail && (dom.ageDays !== null || dom.site)) {
     const bits: string[] = [];

@@ -20,6 +20,8 @@ Live: https://daju-bice.vercel.app · Repo: https://github.com/AustinChris1/daju
 - Radar page (`/radar`): live counts of checks, stamps, lures, reports, verified employers and roles, register movement; refreshes every 30 seconds.
 - Screenshot input: a WhatsApp or email screenshot is read in the browser (tesseract.js), never uploaded; upload, drop or Ctrl+V.
 - Organisation extractor ignores neighbourhood and city names (Chevron, Lekki, Ajah, Westlands, Kololo, East Legon and so on).
+- Company register: Nigerian direct employers are looked up live on the CAC through Mono when `MONO_SECRET_KEY` is set; the card and the bot show the record and the verdict reads "on the CAC company register since 2014".
+- Landing FAQ (five answers, including why not ask a model) and a shorter hero paragraph on phones.
 - Data that moves: weekly GitHub Actions re-snapshot of all four registers with a committed diff (`data/registries/changes.json`), a "what moved" panel on the registers page, and licence-watch emails through a Vercel cron (`/api/watch/notify`, Resend). Needs `CRON_SECRET` and `RESEND_API_KEY` in Vercel.
 
 ## Build queue (agreed order)
@@ -35,6 +37,7 @@ Live: https://daju-bice.vercel.app · Repo: https://github.com/AustinChris1/daju
 - [ ] Vercel env: `LLM_PROVIDER=groq`, `GROQ_API_KEY`, `GROQ_MODEL=openai/gpt-oss-120b`, then redeploy.
 - [ ] Telegram: with `TELEGRAM_BOT_TOKEN` and `TELEGRAM_WEBHOOK_SECRET` in Vercel and the site redeployed, run `curl -X POST https://daju-bice.vercel.app/api/telegram/setup -H "Authorization: Bearer <TELEGRAM_WEBHOOK_SECRET>"` once. Then open the bot and press /start.
 - [ ] Twilio: create a free account, open the WhatsApp sandbox, set the "when a message comes in" URL to `https://daju-bice.vercel.app/api/whatsapp/webhook`, add `TWILIO_AUTH_TOKEN` in Vercel, send the join phrase from your phone, then forward a job message. This is the WhatsApp beat in the video.
+- [ ] CAC lookup: create a Mono account (mono.co), enable Lookup, copy the live secret key into Vercel as `MONO_SECRET_KEY`, redeploy, then paste a real Nigerian company offer and confirm the card shows the RC number. Lookups are billed per call by Mono; the sandbox key returns sample data and must not be used for the demo.
 - [ ] Vercel env for the licence watch: `CRON_SECRET` (any long random string) and `RESEND_API_KEY` from resend.com (free tier); `RESEND_FROM` once a sending domain is verified there.
 - [ ] Video, 60 to 90 seconds, phone in hand, four forwards, no architecture talk.
 - [ ] Project details form: title Daju, target audience (job seekers and employers in NG, KE, UG, GH), stack (Next.js 16, TypeScript, Tailwind, Supabase, Vercel, Groq or Claude optional).

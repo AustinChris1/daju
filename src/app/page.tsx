@@ -12,6 +12,7 @@ import { HeroDemo } from "@/components/home/HeroDemo";
 import { PhotoBand, type Photo } from "@/components/home/PhotoBand";
 import { CaseSlider } from "@/components/home/CaseSlider";
 import { ScrollFx } from "@/components/home/ScrollFx";
+import { Faq } from "@/components/home/Faq";
 import { Mark } from "@/components/brand/Mark";
 import { CountUp, Reveal } from "@/components/home/Reveal";
 import { Stamp } from "@/components/brand/Stamp";
@@ -52,8 +53,8 @@ export default async function Home() {
             <h1 className="display mt-3 text-[clamp(2.5rem,7.5vw,5rem)] leading-[0.95]">
               Is this sender <span className="mark rounded-md px-2">on file?</span>
             </h1>
-            <p className="muted mt-6 max-w-[46ch] text-lg leading-relaxed">
-              Paste the job ad, the recruiter&apos;s WhatsApp or the offer letter. {BRAND.name} checks the name, number and email against the licensed-agency registers of Nigeria, Kenya, Uganda and Ghana, and hands you the reply to send.
+            <p className="muted mt-6 max-w-[40ch] text-base leading-relaxed sm:text-lg">
+              Paste the job message. {BRAND.name} checks the name, number and email against four government registers<span className="hidden sm:inline"> in Nigeria, Kenya, Uganda and Ghana</span>, and hands you the reply to send.
             </p>
             <div className="mt-8 flex flex-wrap items-center gap-3">
               <Link href="/check" className="lift inline-flex items-center gap-2 rounded-full bg-mark px-6 py-3.5 text-sm font-bold text-mark-text no-underline hover:brightness-95">
@@ -193,6 +194,8 @@ export default async function Home() {
           </p>
         </div>
       </section>
+
+      <Faq />
 
       <section className="mx-auto max-w-6xl px-4 py-20 sm:px-6">
         <div className="card field-violet relative flex flex-col items-start gap-6 overflow-hidden p-8 sm:flex-row sm:items-center sm:justify-between sm:p-12">

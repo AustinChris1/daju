@@ -5,6 +5,7 @@ import { COUNTRY_CODES, isCountry } from "@/lib/countries";
 import { extractHeuristic } from "@/lib/extract/heuristics";
 import { refineWithClaude } from "@/lib/extract/llm";
 import { findByDomain, findByEmail, findByPhone, namedInText, searchByName, snapshot } from "@/lib/registry/load";
+import { companyLookup } from "@/lib/intel/company";
 import { domainOf, isFreeMail, normPhone, phoneTail } from "@/lib/registry/match";
 import { domainIntel } from "@/lib/intel/domain";
 import { runLureRules } from "@/lib/rules/lure";
@@ -115,7 +116,7 @@ function resolveIdentity(x: Extraction, preferred: Country) {
   return { queries, matches: matches.slice(0, 6), impersonation };
 }
 
-function verdictFor(r: Pick<Report, "lure" | "clauses" | "identity" | "country" | "extraction" | "registryAsOf" | "verifiedSender" | "domains">): Report["verdict"] {
+function verdictFor(r: Pick<Report, "lure" | "clauses" | "identity" | "country" | "extraction" | "registryAsOf" | "verifiedSender" | "domains" | "company">): Report["verdict"] {
   const high = r.lure.filter((f) => f.severity === "high");
   const medium = r.lure.filter((f) => f.severity === "medium");
   const strong = r.identity.matches.find((m) => m.score >= 0.82);
@@ -174,7 +175,12 @@ function verdictFor(r: Pick<Report, "lure" | "clauses" | "identity" | "country" 
     level = "unknown";
     const established = r.domains.find((d) => !d.freeMail && d.ageDays !== null && d.ageDays >= 365);
     const live = r.domains.find((d) => !d.freeMail && d.site?.reachable && !d.site.parked);
-    if (established) {
+    const co = r.company;
+    if (co && co.status !== "inactive") {
+      const since = co.registeredOn ? ` since ${co.registeredOn.slice(0, 4)}` : "";
+      const siteNote = live ? (live.site?.mentionsName ? ", and its website names the company" : ", and its website is live") : "";
+      headline = `No warning signs; "${co.name}" is on the ${co.register} company register${since}${siteNote}`;
+    } else if (established) {
       const years = Math.floor(established.ageDays! / 365);
       const siteNote = live && live.domain === established.domain ? (live.site?.mentionsName ? ", and its website names the company" : ", and its website is live") : "";
       headline = `No warning signs; ${established.domain} has been registered for ${years} year${years === 1 ? "" : "s"}${siteNote}`;
@@ -185,7 +191,16 @@ function verdictFor(r: Pick<Report, "lure" | "clauses" | "identity" | "country" 
     }
   }
 
-  if (level === "unknown") lines.push("Direct employers are not agencies and do not appear in agency registers, so not being on file is not a warning by itself. Verify the company another way before paying anything or sharing documents.");
+  if (r.company) {
+    const co = r.company;
+    lines.push(`${co.register} record: ${co.name}${co.number ? `, ${co.number}` : ""}${co.statusText ? `, ${co.statusText.toLowerCase()}` : ""}${co.registeredOn ? `, registered ${co.registeredOn}` : ""} (looked up live via ${co.via}). A registered company can still send a bad offer; read the clauses and never pay to be hired.`);
+    if (co.status === "inactive") {
+      level = level === "unknown" ? "caution" : level;
+      if (level === "caution" && !high.length) headline = `"${co.name}" is on the ${co.register} register but not active`;
+    }
+  } else if (level === "unknown") {
+    lines.push("Direct employers are not agencies and do not appear in agency registers, so not being on file is not a warning by itself. Verify the company another way before paying anything or sharing documents.");
+  }
   if (level === "on_file") lines.push("Still call the number on the register, not the number in the message, before you pay anything or travel.");
   return { level, headline, lines };
 }
@@ -253,6 +268,10 @@ export async function runCheck(input: CheckInput): Promise<Report> {
     }
   }
 
+  // A direct employer is not an agency; when no register names it, ask the company register instead.
+  const strongAgency = identity.matches.some((m) => m.score >= 0.82);
+  const company = !strongAgency && x.orgCandidates.length ? await companyLookup(x.orgCandidates, country) : null;
+
   const community = await store.countReports([...x.phones, ...x.emails, ...x.domains]);
   const lure = runLureRules({ x, identity: identity.matches, domains, community });
   const clauses = runClauseRules(x, country);
@@ -267,6 +286,7 @@ export async function runCheck(input: CheckInput): Promise<Report> {
     kind: x.kind,
     extraction: { ...x, text: x.text.slice(0, 6000) },
     identity,
+    company,
     domains,
     lure,
     clauses,

@@ -106,6 +106,22 @@ export interface Hotline {
   verified: boolean;
 }
 
+// A company-register record (CAC and later BRS, URSB, ORC): proof a direct employer exists, not that it is honest.
+export interface CompanyRecord {
+  register: "CAC" | "BRS" | "URSB" | "ORC";
+  country: Country;
+  name: string;
+  number: string | null;
+  type: string | null;
+  status: "active" | "inactive" | "unknown";
+  statusText: string | null;
+  registeredOn: string | null;
+  address: string | null;
+  score: number;
+  via: string;
+  checkedAt: string;
+}
+
 export interface Report {
   id: string;
   version: string;
@@ -114,6 +130,7 @@ export interface Report {
   kind: InputKind;
   extraction: Extraction;
   identity: { queries: string[]; matches: IdentityMatch[]; impersonation: boolean };
+  company?: CompanyRecord | null;
   domains: DomainIntel[];
   lure: Finding[];
   clauses: ClauseFinding[];
