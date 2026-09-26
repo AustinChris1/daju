@@ -46,3 +46,6 @@ next-env.d.ts
 /.impeccable/
 /shots/
 scratchpad/
+
+# Personal demo script, kept out of the repo
+demo.md
