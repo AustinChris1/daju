@@ -33,7 +33,7 @@ Live: https://usedaju.vercel.app Â· Repo: https://github.com/AustinChris1/daju Â
 
 - [ ] Five conversations: last time an offer went wrong, what did you do in the five minutes after. No pitching. Owner: both of you, tonight.
 - [ ] Two or three real scam messages from your groups (Thailand, Gulf, "pay a processing fee", "you have been shortlisted"), victims' names removed. The clean ads are in; the bad ones prove the product.
-- [ ] Add the TXT record for one domain you control (Namecheap: Advanced DNS, TXT, host `_daju`, value from the employer page) and press Verify. Without this there is no employer beat in the demo.
+- [x] Add the TXT record for one domain you control (Namecheap: Advanced DNS, TXT, host `_daju`, value from the employer page) and press Verify. Without this there is no employer beat in the demo.
 - [x] Vercel env: `LLM_PROVIDER=groq`, `GROQ_API_KEY`, `GROQ_MODEL=openai/gpt-oss-120b`, then redeploy.
 - [x] Telegram: with `TELEGRAM_BOT_TOKEN` and `TELEGRAM_WEBHOOK_SECRET` in Vercel and the site redeployed, run `curl -X POST https://usedaju.vercel.app/api/telegram/setup -H "Authorization: Bearer <TELEGRAM_WEBHOOK_SECRET>"` once. Then open the bot and press /start.
 - [ ] Twilio: create a free account, open the WhatsApp sandbox, set the "when a message comes in" URL to `https://usedaju.vercel.app/api/whatsapp/webhook`, add `TWILIO_AUTH_TOKEN` in Vercel, send the join phrase from your phone, then forward a job message. This is the WhatsApp beat in the video.
@@ -41,7 +41,7 @@ Live: https://usedaju.vercel.app Â· Repo: https://github.com/AustinChris1/daju Â
 - [ ] Vercel env for the licence watch: `CRON_SECRET` (any long random string) and `RESEND_API_KEY` from resend.com (free tier); `RESEND_FROM` once a sending domain is verified there.
 - [ ] Video, 60 to 90 seconds, phone in hand, four forwards, no architecture talk.
 - [ ] Project details form: title Daju, target audience (job seekers and employers in NG, KE, UG, GH), stack (Next.js 16, TypeScript, Tailwind, Supabase, Vercel, Groq or Claude optional).
-- [ ] Decide the demo employer: austinchris.me is the easiest since it's yours.
+- [x] Decide the demo employer: austinchris.me is the easiest since it's yours.
 
 ## Demo, in this order, no explaining
 
