@@ -4,7 +4,7 @@ import type { Country } from "@/lib/countries";
 import { COUNTRY_CODES, isCountry } from "@/lib/countries";
 import { extractHeuristic } from "@/lib/extract/heuristics";
 import { refineWithClaude } from "@/lib/extract/llm";
-import { findByDomain, findByEmail, findByPhone, namedInText, searchByName, snapshot } from "@/lib/registry/load";
+import { distinctTokens, findByDomain, findByEmail, findByPhone, namedInText, searchByName, snapshot } from "@/lib/registry/load";
 import { companyLookup } from "@/lib/intel/company";
 import { domainOf, isFreeMail, normPhone, phoneTail } from "@/lib/registry/match";
 import { domainIntel } from "@/lib/intel/domain";
@@ -207,6 +207,32 @@ function verdictFor(r: Pick<Report, "lure" | "clauses" | "identity" | "country" 
   return { level, headline, lines };
 }
 
+async function verifiedEmployerNamed(x: Extraction): Promise<Report["lure"][number] | null> {
+  const others = [
+    ...x.emails.filter((e) => !!domainOf(e)),
+    ...x.phones,
+  ];
+  if (!others.length) return null;
+  const text = x.text.toLowerCase();
+  for (const emp of await getStore().listVerifiedEmployers()) {
+    const byName = distinctTokens(emp.company).length > 0 && namedInText(emp.company, x.text);
+    const byDomain = text.includes(emp.domain.toLowerCase());
+    if (!byName && !byDomain) continue;
+    const foreign = others.filter((c) => (c.includes("@") ? domainOf(c) !== emp.domain && !domainOf(c)!.endsWith("." + emp.domain) : true));
+    const onDomain = x.emails.some((e) => domainOf(e) === emp.domain);
+    if (!foreign.length || onDomain) continue;
+    return {
+      id: "verified_employer_elsewhere",
+      severity: "high",
+      title: "A verified employer's name, sent from another address",
+      detail: `${emp.company} proved control of ${emp.domain} on ${emp.verified_at?.slice(0, 10)} and sends offers from that domain. This message uses its name with ${foreign.slice(0, 2).join(" and ")}. Treat it as impersonation until the company confirms it from an @${emp.domain} address.`,
+      evidence: `${emp.company} · ${foreign.slice(0, 2).join(", ")}`,
+      sourceId: null,
+    };
+  }
+  return null;
+}
+
 export async function runCheck(input: CheckInput): Promise<Report> {
   const store = getStore();
   const hint = isCountry(input.country) ? input.country : null;
@@ -276,6 +302,12 @@ export async function runCheck(input: CheckInput): Promise<Report> {
 
   const community = await store.countReports([...x.phones, ...x.emails, ...x.domains]);
   const lure = runLureRules({ x, identity: identity.matches, domains, community });
+
+  // A verified employer sends offers from its own domain. The same name from any other address is impersonation.
+  if (!verifiedSender) {
+    const claimed = await verifiedEmployerNamed(x).catch(() => null);
+    if (claimed) lure.unshift(claimed);
+  }
   const clauses = runClauseRules(x, country);
   const registryAsOf = Object.fromEntries(COUNTRY_CODES.map((c) => [c, snapshot(c).as_of])) as Record<Country, string>;
 

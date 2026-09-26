@@ -97,6 +97,7 @@ export interface Store {
   createEmployer(row: EmployerRow): Promise<void>;
   getEmployerByKey(manageKey: string): Promise<EmployerRow | null>;
   getEmployerByDomain(domain: string): Promise<EmployerRow | null>;
+  listVerifiedEmployers(): Promise<EmployerRow[]>;
   updateEmployer(id: string, patch: Partial<EmployerRow>): Promise<void>;
   createOffer(row: OfferRow): Promise<void>;
   getOffer(token: string): Promise<(OfferRow & { employer: EmployerRow }) | null>;
@@ -165,6 +166,9 @@ class MemoryStore implements Store {
   }
   async getEmployerByDomain(d: string) {
     return [...this.employers.values()].find((e) => e.domain === d && e.verified_at) ?? null;
+  }
+  async listVerifiedEmployers() {
+    return [...this.employers.values()].filter((e) => e.verified_at);
   }
   async updateEmployer(id: string, patch: Partial<EmployerRow>) {
     const e = this.employers.get(id);
@@ -285,6 +289,10 @@ class SupabaseStore implements Store {
     const { data } = await this.sb.from("tc_employers").select("*").eq("domain", d).not("verified_at", "is", null).maybeSingle();
     return (data as EmployerRow) ?? null;
   }
+  async listVerifiedEmployers() {
+    const { data } = await this.sb.from("tc_employers").select("*").not("verified_at", "is", null).limit(500);
+    return (data as EmployerRow[]) ?? [];
+  }
   async updateEmployer(id: string, patch: Partial<EmployerRow>) {
     const { error } = await this.sb.from("tc_employers").update(patch).eq("id", id);
     if (error) throw error;
@@ -361,7 +369,7 @@ function supabaseEnv(): { url?: string; key?: string } {
 }
 
 // Bump when the Store interface grows, so a dev hot reload rebuilds the cached singleton.
-const STORE_VERSION = 4;
+const STORE_VERSION = 5;
 
 export function getStore(): Store {
   const cached = globalThis.__trueCopyStore as (Store & { __v?: number }) | undefined;
