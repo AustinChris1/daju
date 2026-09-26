@@ -100,7 +100,7 @@ const assets = [
       <div class="display" style="font-size:96px;max-width:1000px">The company was real.<br/>The person <span class="hl">wasn't.</span></div>
       <div style="display:flex;align-items:flex-end;justify-content:space-between">
         <div style="font-size:26px;color:#55534e;max-width:720px;line-height:1.35">Paste the job message. Daju checks the name, number and email against four government registers and hands you the reply to send.</div>
-        <div class="mono" style="font-size:22px;color:${STAMP}">daju-bice.vercel.app</div>
+        <div class="mono" style="font-size:22px;color:${STAMP}">usedaju.vercel.app</div>
       </div>
     </body>`,
   },
@@ -118,7 +118,7 @@ const assets = [
       </div>
       <div style="display:flex;align-items:center;justify-content:space-between">
         <span class="stamp" style="font-size:44px;border-color:#f28b82;color:#f28b82">STOP</span>
-        <span class="mono" style="font-size:24px;opacity:.9">daju-bice.vercel.app</span>
+        <span class="mono" style="font-size:24px;opacity:.9">usedaju.vercel.app</span>
       </div>
     </body>`,
   },
@@ -138,7 +138,7 @@ const assets = [
       </div>
       <div>
         <div class="condensed" style="font-size:26px;color:${STAMP}">Free · no sign-up · never says "safe"</div>
-        <div class="mono" style="font-size:40px;margin-top:18px">daju-bice.vercel.app</div>
+        <div class="mono" style="font-size:40px;margin-top:18px">usedaju.vercel.app</div>
       </div>
     </body>`,
   },

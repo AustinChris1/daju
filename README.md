@@ -2,7 +2,7 @@
 
 **Is this sender on file?** Paste a job message. Daju checks whether the person contacting you is the organisation they claim to be, using the licensed-agency registers of Nigeria, Kenya, Uganda and Ghana.
 
-Live: https://daju-bice.vercel.app · Docs: https://daju-bice.vercel.app/docs
+Live: https://usedaju.vercel.app · Docs: https://usedaju.vercel.app/docs
 
 ## The thesis
 

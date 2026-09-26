@@ -73,7 +73,7 @@ export async function POST(req: Request) {
     return twiml(media ? "I read text only on WhatsApp for now. Paste the message here, or open the website and upload the screenshot there: it is read on your phone." : formatEmptyMessage());
   }
 
-  const siteUrl = (process.env.NEXT_PUBLIC_SITE_URL || "https://daju-bice.vercel.app").replace(/\/+$/, "");
+  const siteUrl = (process.env.NEXT_PUBLIC_SITE_URL || "https://usedaju.vercel.app").replace(/\/+$/, "");
   try {
     const report = await runCheck({ text: body });
     const reply = formatCheckResult(report, siteUrl);

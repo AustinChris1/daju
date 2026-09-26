@@ -16,7 +16,7 @@ interface Change {
 }
 
 function siteUrl(): string {
-  return (process.env.NEXT_PUBLIC_SITE_URL ?? "https://daju-bice.vercel.app").replace(/\/$/, "");
+  return (process.env.NEXT_PUBLIC_SITE_URL ?? "https://usedaju.vercel.app").replace(/\/$/, "");
 }
 
 function emailFor(email: string, changes: Change[]): { subject: string; text: string } {

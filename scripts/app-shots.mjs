@@ -3,7 +3,7 @@
 import puppeteer from "puppeteer-core";
 import { readFileSync, mkdirSync } from "node:fs";
 
-const base = (process.argv[2] || "https://daju-bice.vercel.app").replace(/\/$/, "");
+const base = (process.argv[2] || "https://usedaju.vercel.app").replace(/\/$/, "");
 const chrome = process.env.CHROME_PATH || "C:/Program Files/Google/Chrome/Application/chrome.exe";
 mkdirSync("public/images", { recursive: true });
 

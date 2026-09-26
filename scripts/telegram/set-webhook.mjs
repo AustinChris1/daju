@@ -34,7 +34,7 @@ async function main() {
     const webhookUrl = process.argv[3]?.trim();
     if (!webhookUrl || !webhookUrl.startsWith("https://")) {
       console.error("Error: Please provide a valid HTTPS URL.");
-      console.error("Example: node scripts/telegram/set-webhook.mjs set https://daju-bice.vercel.app/api/telegram/webhook");
+      console.error("Example: node scripts/telegram/set-webhook.mjs set https://usedaju.vercel.app/api/telegram/webhook");
       process.exit(1);
     }
 

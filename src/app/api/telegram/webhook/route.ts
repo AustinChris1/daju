@@ -39,7 +39,7 @@ const pendingFor = (chatId: number | string) => {
 const CHECK_NOW: Keyboard = [[{ text: "✓ That was all, check it", callback_data: "chk:go" }]];
 
 function site(): string {
-  return (process.env.NEXT_PUBLIC_SITE_URL || "https://daju-bice.vercel.app").replace(/\/+$/, "");
+  return (process.env.NEXT_PUBLIC_SITE_URL || "https://usedaju.vercel.app").replace(/\/+$/, "");
 }
 
 // Short notices carry a Dismiss button so the chat stays clean.

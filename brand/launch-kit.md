@@ -35,7 +35,7 @@ Regenerate after any brand change: `MSYS_NO_PATHCONV=1 node scripts/brand-assets
 
 **Stack:** Next.js 16, TypeScript, Tailwind v4, Supabase, Vercel, GitHub Actions. Optional Groq or Claude for extraction refinement and translation. Telegram Bot API and Twilio for the bots. tesseract.js for on-device screenshot reading.
 
-**Links:** https://daju-bice.vercel.app · https://github.com/AustinChris1/daju · docs at /docs
+**Links:** https://usedaju.vercel.app · https://github.com/AustinChris1/daju · docs at /docs
 
 ## Video script (75 seconds, phone in hand)
 
@@ -53,7 +53,7 @@ Regenerate after any brand change: `MSYS_NO_PATHCONV=1 node scripts/brand-assets
 Someone sends you a job. The agency is licensed. The number is not theirs.
 Daju checks the sender against the government registers of 🇳🇬🇰🇪🇺🇬🇬🇭 and hands you the reply.
 Free. No sign-up. It never says "safe".
-daju-bice.vercel.app
+usedaju.vercel.app
 
 **X, the case**
 Moonlight Recruiting Agency Uganda Ltd is on the EEMIS register. Licence E26050027, valid to 2028.
@@ -69,10 +69,10 @@ The registers are re-read every Monday and the difference is committed. Last wee
 
 It never says an offer is safe. It says what the register says, with the date.
 
-Try it: daju-bice.vercel.app. Telegram bot and WhatsApp in the docs.
+Try it: usedaju.vercel.app. Telegram bot and WhatsApp in the docs.
 
 **WhatsApp group or status**
-Before you reply to that job message, paste it here: daju-bice.vercel.app
+Before you reply to that job message, paste it here: usedaju.vercel.app
 It checks the name and number against the government list of licensed agencies (Nigeria, Kenya, Uganda, Ghana) and gives you the reply to send. Free, no sign-up.
 
 **Telegram channel**
