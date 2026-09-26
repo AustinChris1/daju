@@ -303,6 +303,11 @@ export async function runCheck(input: CheckInput): Promise<Report> {
   const community = await store.countReports([...x.phones, ...x.emails, ...x.domains]);
   const lure = runLureRules({ x, identity: identity.matches, domains, community });
 
+  // DNS verification already proves the domain is the company's; website heuristics add nothing there.
+  if (verifiedSender) {
+    const vd = verifiedSender.domain;
+    for (let i = lure.length - 1; i >= 0; i--) if ((lure[i].id === "no_website" || lure[i].id === "young_domain") && (lure[i].evidence ?? "").startsWith(vd)) lure.splice(i, 1);
+  }
   // A verified employer sends offers from its own domain. The same name from any other address is impersonation.
   if (!verifiedSender) {
     const claimed = await verifiedEmployerNamed(x).catch(() => null);

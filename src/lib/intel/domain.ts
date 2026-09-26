@@ -71,8 +71,11 @@ async function siteIntel(domain: string, names: string[]): Promise<SiteIntel> {
     const html = (await res.text()).slice(0, 300_000);
     const title = html.match(/<title[^>]*>([\s\S]*?)<\/title>/i)?.[1]?.replace(/\s+/g, " ").trim() ?? null;
     out.title = title ? title.slice(0, 120) : null;
-    const text = html.replace(/<script[\s\S]*?<\/script>/gi, " ").replace(/<style[\s\S]*?<\/style>/gi, " ").replace(/<[^>]+>/g, " ").replace(/\s+/g, " ").toLowerCase();
-    out.parked = PARKED.test(text) || text.length < 200;
+    const body = html.replace(/<script[\s\S]*?<\/script>/gi, " ").replace(/<style[\s\S]*?<\/style>/gi, " ").replace(/<[^>]+>/g, " ").replace(/\s+/g, " ").toLowerCase();
+    // Single-page apps ship almost no text until JavaScript runs; a script bundle or a real title means a built site, not a parked one.
+    const builtApp = /<script[^>]+src=/i.test(html) || /<div[^>]+id=["'](?:root|app|__next)["']/i.test(html);
+    out.parked = PARKED.test(body) || (body.length < 200 && !builtApp && !title);
+    const text = `${(title ?? "").toLowerCase()} ${body}`.replace(/[^a-z0-9]+/g, " ");
     const compact = text.replace(/\s+/g, "");
     const cores = names.map((n) => coreName(n)).filter((c) => c.length >= 4);
     const root = domain.split(".")[0];
