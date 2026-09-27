@@ -29,7 +29,7 @@ const PROOF: { n: string; what: string; src: string; url: string }[] = [
 const STEPS = [
   { icon: ScanSearch, t: "Reads the message", d: "Names, phone numbers, emails, domains, amounts, destinations and job titles, straight from what you pasted.", tone: "bg-mark text-mark-text" },
   { icon: Landmark, t: "Looks up the register", d: "All four countries at once. Name on file is not enough: the number and email in the message are compared to the record.", tone: "bg-stamp text-paper" },
-  { icon: FileCheck2, t: "Applies the warnings", d: "Fee before work, Thailand customer-service, Alabuga, one-way tickets. Offer letters get six clauses checked against the labour Act.", tone: "bg-red text-paper" },
+  { icon: FileCheck2, t: "Applies the warnings", d: "Fee before work, Thailand customer-service, Alabuga, one-way tickets. Offer letters get six clauses checked against labour law: the Act, or the court ruling where the Act is silent.", tone: "bg-red text-paper" },
   { icon: Send, t: "Hands you the reply", d: "English, Pidgin, Igbo, Yoruba, Hausa, Swahili, Luganda or Twi, plus the official hotline. Send it from the card.", tone: "bg-green text-paper" },
 ];
 
