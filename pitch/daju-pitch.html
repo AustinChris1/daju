@@ -1,0 +1,301 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Daju pitch deck</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@400..900&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Courier+Prime:wght@400;700&display=swap">
+<style>
+  @page { size: 1920px 1080px; margin: 0; }
+  * { box-sizing: border-box; margin: 0; }
+  html, body { background: #2a2733; }
+  body { padding: 40px 0; display: flex; flex-direction: column; align-items: center; gap: 40px; }
+  section { position: relative; width: 1920px; height: 1080px; overflow: hidden; display: flex; flex-direction: column; flex-shrink: 0; }
+  section > aside { display: none; }
+  h1, h2, h3, p { font-weight: inherit; }
+  ul, ol { padding-left: 1.1em; }
+  li + li { margin-top: 0.3em; }
+  b { font-weight: 800; }
+  table { width: 100%; border-collapse: collapse; }
+  th { text-align: left; font-size: 0.85em; font-weight: 800; text-transform: uppercase; letter-spacing: 0.04em; color: #55534e; padding: 18px 20px; border-bottom: 2px solid #121212; }
+  td { padding: 20px; border-bottom: 1px solid #d8d4cb; vertical-align: top; }
+  svg { flex-shrink: 0; }
+  @media print {
+    html, body { background: none; padding: 0; gap: 0; display: block; }
+    section { page-break-after: always; break-after: page; }
+  }
+</style>
+</head>
+<body>
+<section id="cover" data-transition="fade" style="background:#4f2d8f; color:#f4f1ea; font-family:'Archivo', Arial, sans-serif; padding:128px; display:grid; grid-template-columns:1fr 640px; gap:96px; align-items:center">
+<div style="display:flex; flex-direction:column; gap:40px">
+<div style="display:flex; flex-direction:row; align-items:center; gap:24px">
+<img src="../public/brand/daju-mark-white-1024.png" alt="The Daju tone seal" style="width:96px; height:96px; object-fit:contain">
+<p style="font-size:72px; font-weight:800; line-height:1">dájú</p>
+</div>
+<h1 style="font-size:120px; font-weight:800; line-height:1; letter-spacing:-2px">Is this sender <span style="color:#fff06a">on file?</span></h1>
+<p style="font-size:44px; line-height:1.3; color:#e6ddf5">Paste a job message. Daju checks the name, number and email against the government registers of Nigeria, Kenya, Uganda and Ghana.</p>
+<p style="font-size:32px; font-weight:700; color:#fff06a">usedaju.vercel.app · @DajuCheckBot on Telegram</p>
+</div>
+<img src="../public/images/lagos-phones.jpg" alt="Two young people in Lagos reading a message on one phone" style="width:640px; height:824px; object-fit:cover; border-radius:32px">
+<p style="position:absolute; left:128px; bottom:56px; width:1100px; font-size:24px; color:#cbbfe6">StacStart Borderless Bytes 2026 · Future of Work · Yoruba: dájú, to be sure</p>
+<aside>Daju. Yoruba for "to be sure". One question: is the person contacting you really the organisation they claim to be? We answer it with government records, not guesses.</aside>
+</section>
+
+<section id="problem" data-transition="fade" style="background:#f7f6f2; color:#121212; font-family:'Archivo', Arial, sans-serif; padding:128px 128px 160px; display:flex; flex-direction:column; gap:56px">
+<p style="font-size:24px; font-weight:800; letter-spacing:3px; text-transform:uppercase; color:#5e35a1">The problem</p>
+<h2 style="font-size:96px; font-weight:800; line-height:1.05; letter-spacing:-1px">The company was real.<br>The person wasn't.</h2>
+<div style="display:grid; grid-template-columns:1fr 1fr; gap:64px; align-items:start">
+<p style="font-size:36px; line-height:1.4; color:#3d3b37">The common job scam in these four countries no longer invents a company. It borrows the name of a <b>real, licensed recruitment agency</b> and swaps in the scammer's own WhatsApp number. The message looks right. Only the contact is wrong.</p>
+<div style="display:flex; flex-direction:column; gap:16px; background:#ffffff; border:2px solid #121212; border-radius:20px; padding:40px; font-family:'Courier Prime', 'Courier New', monospace">
+<p style="font-size:24px; color:#55534e">EEMIS · UGANDA · LICENCE E26050027</p>
+<p style="font-size:32px; font-weight:700">Moonlight Recruiting Agency Uganda Ltd</p>
+<p style="font-size:32px">On file: <span style="color:#1f6b45">+256 702 022 113</span></p>
+<p style="font-size:32px">In the message: <span style="color:#b3261e">+256 756 000 111</span></p>
+<p style="font-size:28px; font-weight:700; color:#b3261e">STOP · Name is on file, contact is not</p>
+</div>
+</div>
+<p style="position:absolute; left:128px; bottom:64px; width:1664px; font-size:24px; color:#6b6862">The register entry is real (EEMIS, snapshot 24 Sept 2026). The message is a composite built from the pattern in official warnings.</p>
+<aside>This is the whole scam in one example. Moonlight is licensed in Uganda. The register publishes its phone number. The message uses a different one. A person cannot see that difference; Daju can.</aside>
+</section>
+
+<section id="stakes" data-transition="fade" style="background:#171528; color:#f4f1ea; font-family:'Archivo', Arial, sans-serif; padding:128px 128px 160px; display:flex; flex-direction:column; gap:72px">
+<p style="font-size:24px; font-weight:800; letter-spacing:3px; text-transform:uppercase; color:#fff06a">Why now</p>
+<div style="display:grid; grid-template-columns:repeat(4, 1fr); gap:48px">
+<div style="display:flex; flex-direction:column; gap:20px">
+<p style="font-size:120px; font-weight:800; line-height:1; color:#fff06a">751</p>
+<p style="font-size:28px; line-height:1.4; color:#d8d3e8">Kenyans rescued from Myanmar scam compounds since 2022</p>
+<p style="font-size:24px; color:#9d97b3">Kenya MFA to the Senate, May 2026</p>
+</div>
+<div style="display:flex; flex-direction:column; gap:20px">
+<p style="font-size:120px; font-weight:800; line-height:1; color:#fff06a">156</p>
+<p style="font-size:28px; line-height:1.4; color:#d8d3e8">Nigerians rescued from scam centres, Jan to Jul 2026, lured by fake IT and customer-service jobs</p>
+<p style="font-size:24px; color:#9d97b3">NAPTIP, July 2026</p>
+</div>
+<div style="display:flex; flex-direction:column; gap:20px">
+<p style="font-size:120px; font-weight:800; line-height:1; color:#fff06a">275</p>
+<p style="font-size:28px; line-height:1.4; color:#d8d3e8">recruitment licences revoked by Uganda's labour ministry in one month</p>
+<p style="font-size:24px; color:#9d97b3">PML Daily, April 2026</p>
+</div>
+<div style="display:flex; flex-direction:column; gap:20px">
+<p style="font-size:120px; font-weight:800; line-height:1; color:#fff06a">8 Sept</p>
+<p style="font-size:28px; line-height:1.4; color:#d8d3e8">Ghana announces it will publish its list of licensed agencies</p>
+<p style="font-size:24px; color:#9d97b3">GBC, September 2026</p>
+</div>
+</div>
+<p style="position:absolute; left:128px; bottom:64px; width:1664px; font-size:24px; color:#9d97b3">The official advice is to check the register. Nobody made the register checkable from a WhatsApp message.</p>
+<aside>Four governments, one message: check that the agency is licensed. But the registers are four different websites, and none of them compares a phone number from a WhatsApp message. That gap is Daju.</aside>
+</section>
+
+<section id="gap" data-transition="fade" style="background:#f7f6f2; color:#121212; font-family:'Archivo', Arial, sans-serif; padding:128px 128px 160px; display:flex; flex-direction:column; gap:48px">
+<p style="font-size:24px; font-weight:800; letter-spacing:3px; text-transform:uppercase; color:#5e35a1">Why not just ask a chatbot?</p>
+<h2 style="font-size:72px; font-weight:800; line-height:1.1">A chatbot gives an opinion. Daju gives a lookup.</h2>
+<table style="font-family:'Archivo', Arial, sans-serif; font-size:30px; color:#121212">
+<tr><th style="width:36%">The question</th><th style="width:30%">General AI chatbot</th><th style="width:34%">Daju</th></tr>
+<tr><td>Is this agency licensed today?</td><td>Guesses; no dated register</td><td>Four registers, each with its date</td></tr>
+<tr style="background:#efede7"><td>Is this their real phone or email?</td><td>Cannot know</td><td>Compared with the contact on file</td></tr>
+<tr><td>Did this employer really send it?</td><td>Cannot know</td><td>Proved by the company's DNS record</td></tr>
+<tr style="background:#efede7"><td>Is this contract clause legal?</td><td>May invent a section</td><td>Labour Act section or court judgment</td></tr>
+<tr><td>Same message, same answer?</td><td>Not guaranteed</td><td>Same rules, same stamp</td></tr>
+</table>
+<p style="position:absolute; left:128px; bottom:64px; width:1664px; font-size:24px; color:#6b6862">Daju can use a language model to tidy what it reads and to translate replies. No model ever decides a stamp.</p>
+<aside>The honest answer to "why not ChatGPT": use it to read the letter if you like. It cannot tell you whose number that is, because it does not hold the registers pinned to a date. Daju does, and shows the row.</aside>
+</section>
+
+<section id="check" data-transition="fade" style="background:#f7f6f2; color:#121212; font-family:'Archivo', Arial, sans-serif; padding:128px 128px 160px; display:flex; flex-direction:column; gap:56px">
+<p style="font-size:24px; font-weight:800; letter-spacing:3px; text-transform:uppercase; color:#5e35a1">The product</p>
+<h2 style="font-size:72px; font-weight:800; line-height:1.1">What one check does</h2>
+<div style="display:grid; grid-template-columns:repeat(5, 1fr); gap:24px">
+<div style="display:flex; flex-direction:column; gap:16px; background:#ffffff; border-radius:20px; padding:32px; box-shadow:0 12px 32px rgba(23,21,40,0.08)">
+<svg xmlns="http://www.w3.org/2000/svg" width="56" height="56" viewBox="0 0 24 24" fill="none" stroke="#5e35a1" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-search" aria-hidden="true"><path d="m21 21-4.34-4.34"></path><circle cx="11" cy="11" r="8"></circle></svg>
+<h3 style="font-size:32px; font-weight:800">Reads</h3>
+<p style="font-size:26px; line-height:1.4; color:#55534e">Names, numbers, emails, domains and amounts in the message</p>
+</div>
+<div style="display:flex; flex-direction:column; gap:16px; background:#ffffff; border-radius:20px; padding:32px; box-shadow:0 12px 32px rgba(23,21,40,0.08)">
+<svg xmlns="http://www.w3.org/2000/svg" width="56" height="56" viewBox="0 0 24 24" fill="none" stroke="#5e35a1" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-database" aria-hidden="true"><ellipse cx="12" cy="5" rx="9" ry="3"></ellipse><path d="M3 5V19A9 3 0 0 0 21 19V5"></path><path d="M3 12A9 3 0 0 0 21 12"></path></svg>
+<h3 style="font-size:32px; font-weight:800">Looks up</h3>
+<p style="font-size:26px; line-height:1.4; color:#55534e">All four agency registers at once</p>
+</div>
+<div style="display:flex; flex-direction:column; gap:16px; background:#ffffff; border-radius:20px; padding:32px; box-shadow:0 12px 32px rgba(23,21,40,0.08)">
+<svg xmlns="http://www.w3.org/2000/svg" width="56" height="56" viewBox="0 0 24 24" fill="none" stroke="#5e35a1" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-key" aria-hidden="true"><path d="m2 21 9.6-9.6"></path><path d="m7.5 15.5 2.3 2.3a1 1 0 0 1 0 1.4l-2.1 2.1a1 1 0 0 1-1.4 0L4 19"></path><circle cx="15.5" cy="7.5" r="5.5"></circle></svg>
+<h3 style="font-size:32px; font-weight:800">Compares</h3>
+<p style="font-size:26px; line-height:1.4; color:#55534e">The contact in the message with the contact on file</p>
+</div>
+<div style="display:flex; flex-direction:column; gap:16px; background:#ffffff; border-radius:20px; padding:32px; box-shadow:0 12px 32px rgba(23,21,40,0.08)">
+<svg xmlns="http://www.w3.org/2000/svg" width="56" height="56" viewBox="0 0 24 24" fill="none" stroke="#b3261e" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-triangle-alert lucide-alert-triangle" aria-hidden="true"><path d="m21.73 18-8-14a2 2 0 0 0-3.48 0l-8 14A2 2 0 0 0 4 21h16a2 2 0 0 0 1.73-3"></path><path d="M12 9v4"></path><path d="M12 17h.01"></path></svg>
+<h3 style="font-size:32px; font-weight:800">Warns</h3>
+<p style="font-size:26px; line-height:1.4; color:#55534e">21 patterns from official warnings, 6 contract clauses against labour law</p>
+</div>
+<div style="display:flex; flex-direction:column; gap:16px; background:#ffffff; border-radius:20px; padding:32px; box-shadow:0 12px 32px rgba(23,21,40,0.08)">
+<svg xmlns="http://www.w3.org/2000/svg" width="56" height="56" viewBox="0 0 24 24" fill="none" stroke="#1f6b45" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-send" aria-hidden="true"><path d="M14.536 21.686a.5.5 0 0 0 .937-.024l6.5-19a.496.496 0 0 0-.635-.635l-19 6.5a.5.5 0 0 0-.024.937l7.93 3.18a2 2 0 0 1 1.112 1.11z"></path><path d="m21.854 2.147-10.94 10.939"></path></svg>
+<h3 style="font-size:32px; font-weight:800">Replies</h3>
+<p style="font-size:26px; line-height:1.4; color:#55534e">The reply to send, and the official hotline for your country</p>
+</div>
+</div>
+<p style="position:absolute; left:128px; bottom:64px; width:1664px; font-size:24px; color:#6b6862">Also checks the sender's domain: age, mail records, lookalikes, and whether its website is live and names the company.</p>
+<aside>Five steps, a few seconds. The important one is the third: comparing the contact in the message with the contact the government published. That is the step no one else does.</aside>
+</section>
+
+<section id="card" data-transition="fade" style="background:#efede7; color:#121212; font-family:'Archivo', Arial, sans-serif; padding:128px; display:grid; grid-template-columns:420px 1fr; gap:112px; align-items:center">
+<img src="../public/images/app-card.png" alt="A Daju card on a phone, stamped STOP: name is on file, contact is not" style="width:420px; height:824px; object-fit:contain; border-radius:32px; background:#171528">
+<div style="display:flex; flex-direction:column; gap:40px">
+<p style="font-size:24px; font-weight:800; letter-spacing:3px; text-transform:uppercase; color:#5e35a1">The card</p>
+<h2 style="font-size:72px; font-weight:800; line-height:1.1">One stamp. Every claim sourced.</h2>
+<div style="display:flex; flex-direction:column; gap:20px">
+<p style="font-size:32px"><b style="color:#b3261e">Stop</b> · money before work, wrong contact, expired licence, a known lure</p>
+<p style="font-size:32px"><b style="color:#8a5a00">Caution</b> · signals worth checking before you reply</p>
+<p style="font-size:32px"><b style="color:#5e35a1">On file</b> · the register and the contact both match</p>
+<p style="font-size:32px"><b style="color:#55534e">Not on file</b> · normal for a direct employer; here is how to check it</p>
+</div>
+<p style="font-size:32px; line-height:1.4; color:#3d3b37">Each card has a link and a WhatsApp preview image, so it can be shared straight into the group the scam came from.</p>
+</div>
+<aside>Four stamps, never "safe". A licensed agency with the right number can still send a bad contract, so the card never promises more than the records say.</aside>
+</section>
+
+<section id="employer" data-transition="fade" style="background:#4f2d8f; color:#f4f1ea; font-family:'Archivo', Arial, sans-serif; padding:128px 128px 160px; display:flex; flex-direction:column; gap:56px">
+<p style="font-size:24px; font-weight:800; letter-spacing:3px; text-transform:uppercase; color:#fff06a">For employers</p>
+<h2 style="font-size:88px; font-weight:800; line-height:1.05">Scammers copy names.<br>They can't copy a DNS record.</h2>
+<div style="display:grid; grid-template-columns:repeat(3, 1fr); gap:32px">
+<div style="display:flex; flex-direction:column; gap:16px; background:#3e2272; border-radius:20px; padding:40px">
+<h3 style="font-size:36px; font-weight:800; color:#fff06a">1. Prove the domain</h3>
+<p style="font-size:28px; line-height:1.4; color:#e6ddf5">One TXT record. No paperwork, no account password.</p>
+</div>
+<div style="display:flex; flex-direction:column; gap:16px; background:#3e2272; border-radius:20px; padding:40px">
+<h3 style="font-size:36px; font-weight:800; color:#fff06a">2. Send verified offers</h3>
+<p style="font-size:28px; line-height:1.4; color:#e6ddf5">Offer links and job posts show candidates a verified sender.</p>
+</div>
+<div style="display:flex; flex-direction:column; gap:16px; background:#3e2272; border-radius:20px; padding:40px">
+<h3 style="font-size:36px; font-weight:800; color:#fff06a">3. Catch impostors</h3>
+<p style="font-size:28px; line-height:1.4; color:#e6ddf5">Your name from any other address is stamped Stop.</p>
+</div>
+</div>
+<p style="position:absolute; left:128px; bottom:64px; width:1664px; font-size:24px; color:#cbbfe6">Tested live on 26 Sept with austinchris.me: the company name from a Gmail address or a WhatsApp number gets Stop; from careers@austinchris.me it gets On file.</p>
+<aside>This is the other half of the market. Employers are the victims too: their name is what the scammer borrows. Verifying once protects every candidate who checks a message in their name.</aside>
+</section>
+
+<section id="data" data-transition="fade" style="background:#f7f6f2; color:#121212; font-family:'Archivo', Arial, sans-serif; padding:128px 128px 160px; display:flex; flex-direction:column; gap:48px">
+<p style="font-size:24px; font-weight:800; letter-spacing:3px; text-transform:uppercase; color:#5e35a1">Real data</p>
+<h2 style="font-size:72px; font-weight:800; line-height:1.1">2,993 records from four governments</h2>
+<table style="font-family:'Archivo', Arial, sans-serif; font-size:28px; color:#121212">
+<tr><th style="width:16%">Country</th><th style="width:30%">Register</th><th style="width:18%">Entries</th><th style="width:16%">Snapshot</th><th style="width:20%">Holds</th></tr>
+<tr><td>Nigeria</td><td>NELEX, Ministry of Labour</td><td>1,186</td><td>24 Sept</td><td>Email, CAC flag</td></tr>
+<tr style="background:#efede7"><td>Kenya</td><td>NEA, via diaspora.go.ke</td><td>1,295 (515 valid)</td><td>18 May</td><td>Licence, validity</td></tr>
+<tr><td>Uganda</td><td>EEMIS, Ministry of Labour</td><td>190</td><td>24 Sept</td><td>Phone, licence dates</td></tr>
+<tr style="background:#efede7"><td>Ghana</td><td>GLMIS, Ministry of Labour</td><td>322</td><td>24 Sept</td><td>Email, location</td></tr>
+</table>
+<div style="display:flex; flex-direction:row; gap:24px; align-items:center; background:#fff06a; border-radius:20px; padding:32px 40px">
+<svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="#121212" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-clock" aria-hidden="true"><circle cx="12" cy="12" r="10"></circle><path d="M12 6v6l4 2"></path></svg>
+<p style="font-size:30px; line-height:1.35">Re-read every Monday; the difference is committed. First run, 24 Sept: <b>5 Ugandan agencies left EEMIS</b>, one changed its email, one Nigerian entry was renamed.</p>
+</div>
+<p style="position:absolute; left:128px; bottom:64px; width:1664px; font-size:24px; color:#6b6862">Kenya's NEA portal blocks connections from outside Kenya; its register is read from the State Department for Diaspora Affairs mirror.</p>
+<aside>No mock data anywhere. Every card prints the snapshot date of the register it used, so a judge can check any row against the government site.</aside>
+</section>
+
+<section id="channels" data-transition="fade" style="background:#efede7; color:#121212; font-family:'Archivo', Arial, sans-serif; padding:128px; display:grid; grid-template-columns:1fr 420px; gap:112px; align-items:center">
+<div style="display:flex; flex-direction:column; gap:40px">
+<p style="font-size:24px; font-weight:800; letter-spacing:3px; text-transform:uppercase; color:#5e35a1">Where it lives</p>
+<h2 style="font-size:72px; font-weight:800; line-height:1.1">Where the message arrives</h2>
+<div style="display:flex; flex-direction:column; gap:28px">
+<div style="display:flex; flex-direction:row; gap:24px; align-items:center"><svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="#5e35a1" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-globe" aria-hidden="true"><circle cx="12" cy="12" r="10"></circle><path d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20"></path><path d="M2 12h20"></path></svg><p style="font-size:32px"><b>Web app</b> · paste text, or drop a screenshot read on the device</p></div>
+<div style="display:flex; flex-direction:row; gap:24px; align-items:center"><svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="#5e35a1" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-message-circle" aria-hidden="true"><path d="M2.992 16.342a2 2 0 0 1 .094 1.167l-1.065 3.29a1 1 0 0 0 1.236 1.168l3.413-.998a2 2 0 0 1 1.099.092 10 10 0 1 0-4.777-4.719"></path></svg><p style="font-size:32px"><b>Telegram</b> · forward it to @DajuCheckBot, get the card back</p></div>
+<div style="display:flex; flex-direction:row; gap:24px; align-items:center"><svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="#5e35a1" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-send" aria-hidden="true"><path d="M14.536 21.686a.5.5 0 0 0 .937-.024l6.5-19a.496.496 0 0 0-.635-.635l-19 6.5a.5.5 0 0 0-.024.937l7.93 3.18a2 2 0 0 1 1.112 1.11z"></path><path d="m21.854 2.147-10.94 10.939"></path></svg><p style="font-size:32px"><b>Replies</b> · English and Pidgin, six more languages by translation</p></div>
+<div style="display:flex; flex-direction:row; gap:24px; align-items:center"><svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="#5e35a1" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-code" aria-hidden="true"><path d="m16 18 6-6-6-6"></path><path d="m8 6-6 6 6 6"></path></svg><p style="font-size:32px"><b>JSON API</b> · the same engine for job boards and HR tools</p></div>
+<div style="display:flex; flex-direction:row; gap:24px; align-items:center"><svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="#5e35a1" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-activity" aria-hidden="true"><path d="M22 12h-2.48a2 2 0 0 0-1.93 1.46l-2.35 8.36a.25.25 0 0 1-.48 0L9.24 2.18a.25.25 0 0 0-.48 0l-2.35 8.36A2 2 0 0 1 4.49 12H2"></path></svg><p style="font-size:32px"><b>Radar</b> · live counts of stamps, lures and reports</p></div>
+</div>
+</div>
+<img src="../public/images/app-radar.png" alt="The Daju radar page with live counts of checks and stamps" style="width:420px; height:824px; object-fit:contain; border-radius:32px; background:#171528">
+<aside>Scam messages arrive on phones, in groups. So the check lives there too: the website, the Telegram bot, and an API for platforms. The WhatsApp adapter is built; a production WhatsApp number needs Meta business verification, which is next.</aside>
+</section>
+
+<section id="principles" data-transition="fade" style="background:#f7f6f2; color:#121212; font-family:'Archivo', Arial, sans-serif; padding:128px 128px 160px; display:flex; flex-direction:column; gap:56px">
+<p style="font-size:24px; font-weight:800; letter-spacing:3px; text-transform:uppercase; color:#5e35a1">Trust</p>
+<h2 style="font-size:72px; font-weight:800; line-height:1.1">Four rules the product keeps</h2>
+<div style="display:grid; grid-template-columns:1fr 1fr; gap:32px">
+<div style="display:flex; flex-direction:column; gap:12px; border-left:6px solid #5e35a1; padding:8px 0 8px 32px">
+<h3 style="font-size:36px; font-weight:800">It never says "safe"</h3>
+<p style="font-size:28px; line-height:1.4; color:#55534e">It says what the records say, and no more.</p>
+</div>
+<div style="display:flex; flex-direction:column; gap:12px; border-left:6px solid #5e35a1; padding:8px 0 8px 32px">
+<h3 style="font-size:36px; font-weight:800">Every claim has a source and a date</h3>
+<p style="font-size:28px; line-height:1.4; color:#55534e">Register snapshots, Act sections, court judgments, official warnings.</p>
+</div>
+<div style="display:flex; flex-direction:column; gap:12px; border-left:6px solid #5e35a1; padding:8px 0 8px 32px">
+<h3 style="font-size:36px; font-weight:800">No model decides a stamp</h3>
+<p style="font-size:28px; line-height:1.4; color:#55534e">Rules decide. A model only tidies extraction and translates replies.</p>
+</div>
+<div style="display:flex; flex-direction:column; gap:12px; border-left:6px solid #5e35a1; padding:8px 0 8px 32px">
+<h3 style="font-size:36px; font-weight:800">It says what it can't know</h3>
+<p style="font-size:28px; line-height:1.4; color:#55534e">A company outside the agency registers? It opens the official CAC, URSB or ORC search for you.</p>
+</div>
+</div>
+<p style="position:absolute; left:128px; bottom:64px; width:1664px; font-size:24px; color:#6b6862">Tested on real job ads from Nigerian WhatsApp groups; false alarms found in testing were fixed and kept as regression tests.</p>
+<aside>A trust product has to be more honest than its competitors. These four rules are enforced in the code, not just the marketing.</aside>
+</section>
+
+<section id="model" data-transition="fade" style="background:#efede7; color:#121212; font-family:'Archivo', Arial, sans-serif; padding:128px 128px 160px; display:flex; flex-direction:column; gap:48px">
+<p style="font-size:24px; font-weight:800; letter-spacing:3px; text-transform:uppercase; color:#5e35a1">Business model</p>
+<h2 style="font-size:72px; font-weight:800; line-height:1.1">Job seekers never pay</h2>
+<div style="display:grid; grid-template-columns:1fr 1fr; gap:24px">
+<div style="display:flex; flex-direction:column; gap:12px; background:#ffffff; border-radius:20px; padding:36px">
+<h3 style="font-size:34px; font-weight:800">Verified employers</h3>
+<p style="font-size:28px; line-height:1.4; color:#55534e">Free first roles, then a monthly plan with a log of impersonation attempts against the company's name.</p>
+</div>
+<div style="display:flex; flex-direction:column; gap:12px; background:#ffffff; border-radius:20px; padding:36px">
+<h3 style="font-size:34px; font-weight:800">API for platforms</h3>
+<p style="font-size:28px; line-height:1.4; color:#55534e">Job boards and HR tools pay per thousand checks to stamp every listing.</p>
+</div>
+<div style="display:flex; flex-direction:column; gap:12px; background:#ffffff; border-radius:20px; padding:36px">
+<h3 style="font-size:34px; font-weight:800">Licensed-agency programme</h3>
+<p style="font-size:28px; line-height:1.4; color:#55534e">A modest annual fee to keep the record and real WhatsApp line accurate.</p>
+</div>
+<div style="display:flex; flex-direction:column; gap:12px; background:#ffffff; border-radius:20px; padding:36px">
+<h3 style="font-size:34px; font-weight:800">Data partnerships</h3>
+<p style="font-size:28px; line-height:1.4; color:#55534e">Anonymised trend reports for ministries, anti-trafficking agencies and IOM.</p>
+</div>
+</div>
+<p style="position:absolute; left:128px; bottom:64px; width:1664px; font-size:24px; color:#6b6862">Not for sale: pasted messages, reporter identities, or a badge. Verified means a domain was proved, never that a fee was paid.</p>
+<aside>The people who pay are the ones whose names get borrowed, and the platforms where the messages travel. The job seeker, who is the one at risk, never pays.</aside>
+</section>
+
+<section id="status" data-transition="fade" style="background:#f7f6f2; color:#121212; font-family:'Archivo', Arial, sans-serif; padding:128px 128px 160px; display:grid; grid-template-columns:1fr 1fr; gap:96px">
+<div style="display:flex; flex-direction:column; gap:32px">
+<p style="font-size:24px; font-weight:800; letter-spacing:3px; text-transform:uppercase; color:#5e35a1">Built this week</p>
+<h2 style="font-size:64px; font-weight:800; line-height:1.1">Live, open source, running on free tiers</h2>
+<ul style="font-size:30px; line-height:1.5; color:#3d3b37">
+<li>Built 22 to 27 Sept 2026, 40+ commits</li>
+<li>Live at usedaju.vercel.app</li>
+<li>Telegram bot @DajuCheckBot</li>
+<li>MIT-licensed code on GitHub</li>
+<li>Next.js, Supabase, Vercel, GitHub Actions</li>
+</ul>
+</div>
+<div style="display:flex; flex-direction:column; gap:32px">
+<p style="font-size:24px; font-weight:800; letter-spacing:3px; text-transform:uppercase; color:#5e35a1">Next</p>
+<h2 style="font-size:64px; font-weight:800; line-height:1.1">From tool to trust layer</h2>
+<ul style="font-size:30px; line-height:1.5; color:#3d3b37">
+<li>WhatsApp number, after Meta business verification</li>
+<li>Company-register rows for direct employers</li>
+<li>A pilot with one job board or HR platform</li>
+<li>Replies written by native speakers in Igbo, Yoruba, Hausa, Swahili</li>
+<li>Ghana's licensed list, once published</li>
+</ul>
+</div>
+<aside>Everything in this deck is running now. The next steps are about reach: meet people on WhatsApp, and put the stamp inside the job boards they already use.</aside>
+</section>
+
+<section id="close" data-transition="fade" style="background:#4f2d8f; color:#f4f1ea; font-family:'Archivo', Arial, sans-serif; padding:128px; display:flex; flex-direction:column; justify-content:center; gap:48px">
+<img src="../public/brand/daju-mark-white-1024.png" alt="The Daju tone seal" style="width:120px; height:120px; object-fit:contain">
+<h1 style="font-size:120px; font-weight:800; line-height:1; letter-spacing:-2px">Before you reply, <span style="color:#fff06a">be sure.</span></h1>
+<p style="font-size:44px; line-height:1.3; color:#e6ddf5">Dájú is Yoruba for certain.</p>
+<div style="display:flex; flex-direction:row; gap:64px">
+<p style="font-size:32px; font-weight:700; color:#fff06a">usedaju.vercel.app</p>
+<p style="font-size:32px; font-weight:700; color:#fff06a">@DajuCheckBot</p>
+<p style="font-size:32px; font-weight:700; color:#fff06a">github.com/AustinChris1/daju</p>
+</div>
+<p style="font-size:28px; color:#cbbfe6">Iwu Austin-Chris · Charles-Chukwudi Chukwudi · StacStart Borderless Bytes 2026</p>
+<aside>Close on the thesis, not the stats. The company was real. The person wasn't. That is what Daju tells you, before you reply.</aside>
+</section>
+
+</body>
+</html>

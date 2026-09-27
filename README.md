@@ -66,6 +66,10 @@ Next.js 16, TypeScript, Tailwind v4, Supabase (Postgres), Vercel. The rule engin
 - [Data sources and limits](docs/data-and-limits.md): registers, law, warnings, what Daju cannot know.
 - [Business model](docs/business-model.md): who pays.
 
+## Pitch deck
+
+[pitch/daju-pitch.pdf](pitch/daju-pitch.pdf), 13 slides. Also at https://usedaju.vercel.app/daju-pitch.pdf.
+
 ## Licence and credits
 
 Code: MIT. Register data belongs to the publishing ministries and is redistributed as dated snapshots for verification only. Photographs on the landing page are used under the Unsplash licence; credits in `public/images/CREDITS.md`.

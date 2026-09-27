@@ -1,0 +1,17 @@
+{
+  "v": 4,
+  "createdOnFiles": { "v": 1, "at": "2026-09-27T10:00:00Z" },
+  "title": "Daju pitch deck",
+  "order": ["cover", "problem", "stakes", "gap", "check", "card", "employer", "data", "channels", "principles", "model", "status", "close"],
+  "sections": {
+    "s1": { "description": "What Daju is and the scam it catches", "start": "cover" },
+    "s2": { "description": "Why a lookup beats an opinion", "start": "gap" },
+    "s3": { "description": "The product: check, card, employers, data, channels", "start": "check" },
+    "s4": { "description": "Trust, money and where it stands", "start": "principles" }
+  },
+  "faces": {
+    "archivo": { "family": "Archivo", "href": "https://fonts.googleapis.com/css2?family=Archivo:wght@400..900&display=swap" },
+    "courier-prime": { "family": "Courier Prime", "href": "https://fonts.googleapis.com/css2?family=Courier+Prime:wght@400;700&display=swap" }
+  },
+  "designSystems": []
+}
