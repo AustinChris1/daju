@@ -54,7 +54,7 @@ flowchart TD
   cm --> imp{Name matches,<br/>contact does not?}
   imp -- yes --> stop1[Impersonation: high]
   imp -- no --> lure
-  stop1 --> lure[20 lure rules,<br/>each cited to an official warning]
+  stop1 --> lure[21 lure rules,<br/>each cited to an official warning]
   lure --> cl[6 offer clauses against<br/>the country's labour law]
   cl --> dom[Domain: age, MX, lookalike,<br/>website live and names the company]
   dom --> v[Verdict: Stop, Caution,<br/>On file, or Not on file]

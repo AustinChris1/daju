@@ -6,7 +6,7 @@ Live: https://usedaju.vercel.app · Repo: https://github.com/AustinChris1/daju �
 
 ## Done
 
-- Rule engine: extraction, four-register lookup with contact matching, 20 cited lure rules, six clause checks with verified citations, replies in English and Pidgin, hotlines.
+- Rule engine: extraction, four-register lookup with contact matching, 21 cited lure rules, six clause checks with verified citations, replies in English and Pidgin, hotlines.
 - Four register snapshots (NG 1,186 · KE 1,295 · UG 190 · GH 322) with dates and caveats.
 - Pages: landing, check, shareable card with WhatsApp preview image, registers directory, employer console with DNS verification and offer links, report, hotlines, method, brand.
 - Supabase persistence via the Vercel integration; tables created; cards reload by URL.

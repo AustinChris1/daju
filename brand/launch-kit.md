@@ -27,7 +27,7 @@ Regenerate after any brand change: `MSYS_NO_PATHCONV=1 node scripts/brand-assets
 
 **Problem (short):** The most common job scam in these four countries is not a fake company. It is a real, licensed agency's name with the scammer's own WhatsApp number. A job seeker cannot tell the difference from the message alone, and no tool checks the sender against the government register.
 
-**Solution (short):** Paste the message, or forward it to the Telegram or WhatsApp bot. Daju reads the names, numbers, emails and domains, looks the name up in all four registers at once, and compares the contact in the message with the contact on file. Name matches, contact does not: impersonation. It adds 20 lure patterns from official warnings, six offer-letter clauses against the country's labour law, the reply to send in English or Pidgin, and the official hotline. Employers prove their domain with one DNS record and post roles on a board where every listing is verified.
+**Solution (short):** Paste the message, or forward it to the Telegram or WhatsApp bot. Daju reads the names, numbers, emails and domains, looks the name up in all four registers at once, and compares the contact in the message with the contact on file. Name matches, contact does not: impersonation. It adds 21 lure patterns from official warnings, six offer-letter clauses against the country's labour law, the reply to send in English or Pidgin, and the official hotline. Employers prove their domain with one DNS record and post roles on a board where every listing is verified.
 
 **What is real:** four register snapshots (NELEX 1,186; NEA 1,295; EEMIS 190; GLMIS 322), re-read every Monday with the difference committed; every citation and hotline verified against its official page; no model decides a verdict; the card never says "safe".
 
@@ -82,7 +82,7 @@ It checks the name and number against the government list of licensed agencies (
 
 Judges, the company in this message is real. Moonlight Recruiting is licensed in Uganda. The person is not. The phone number in the message is not the number on the register, and that one fact is the whole scam.
 
-Daju is the check. Paste the message, or forward it to our Telegram or WhatsApp bot. It reads the names, numbers and emails, looks them up in the four government registers of Nigeria, Kenya, Uganda and Ghana, and compares what is in the message with what is on file. Then it applies twenty lure patterns from official warnings, checks the contract clauses against the labour law, writes the reply, and shows the hotline.
+Daju is the check. Paste the message, or forward it to our Telegram or WhatsApp bot. It reads the names, numbers and emails, looks them up in the four government registers of Nigeria, Kenya, Uganda and Ghana, and compares what is in the message with what is on file. Then it applies twenty-one lure patterns from official warnings, checks the contract clauses against the labour law, writes the reply, and shows the hotline.
 
 For employers, the other half: prove your domain with one DNS record, issue offer links, post verified roles. Scammers copy names. They cannot copy a DNS record.
 
