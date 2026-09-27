@@ -24,7 +24,7 @@ const courier = Courier_Prime({
 export const metadata: Metadata = {
   title: { default: `${BRAND.name}: ${BRAND.tagline}`, template: `%s · ${BRAND.name}` },
   description: BRAND.description,
-  icons: { icon: "/icon.svg" },
+  applicationName: BRAND.name,
   metadataBase: new URL(process.env.NEXT_PUBLIC_SITE_URL || "http://localhost:3000"),
   openGraph: { title: `${BRAND.name}: ${BRAND.tagline}`, description: BRAND.description, type: "website" },
 };

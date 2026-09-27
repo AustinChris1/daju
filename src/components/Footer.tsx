@@ -88,6 +88,12 @@ export function Footer({ asOf, telegram }: { asOf: { country: string; date: stri
           <p>© {year} {BRAND.name}. Register snapshots: {asOf.map((a) => `${a.country} ${a.date}`).join(" · ")}.</p>
           <p className="max-w-[60ch]">{BRAND.name} shows what public registers and published warnings say, as of the dates above. It never says an offer is safe and it is not legal advice.</p>
         </div>
+        <nav aria-label="Legal" className="mt-4 flex flex-wrap gap-x-5 gap-y-2 text-xs font-semibold">
+          <Link href="/privacy" className="text-toner-2 no-underline hover:text-stamp">Privacy policy</Link>
+          <Link href="/terms" className="text-toner-2 no-underline hover:text-stamp">Terms of use</Link>
+          <Link href="/docs/data-and-limits" className="text-toner-2 no-underline hover:text-stamp">Data sources</Link>
+          <a href="https://github.com/AustinChris1/daju/blob/main/LICENSE" target="_blank" rel="noreferrer" className="text-toner-2 no-underline hover:text-stamp">MIT licence</a>
+        </nav>
       </div>
     </footer>
   );
