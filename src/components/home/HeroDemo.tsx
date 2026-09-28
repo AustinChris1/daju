@@ -142,7 +142,7 @@ export function HeroDemo({ counts = {} }: { counts?: Record<string, string> }) {
       </div>
 
       <ol className="mt-3 space-y-1.5 font-mono text-[0.72rem]">
-        {scene.lookup.map((row, idx) => ({ ...row, count: counts[row.register] ?? row.count })).map((l, idx) =>
+        {scene.lookup.map((row) => ({ ...row, count: counts[row.register] ?? row.count })).map((l, idx) =>
           idx < visibleLookups ? (
             <li key={l.register + idx} className="hero-row grid grid-cols-[4.6rem_1fr] gap-2">
               <span className="text-toner-2">
