@@ -80,7 +80,7 @@ export default async function Home() {
               </div>
             </div>
             <div data-fx="hero-card" className="relative -mt-16 ml-4 mr-0 sm:-mt-24 sm:ml-10 lg:-mt-28 lg:-mr-6">
-              <HeroDemo />
+              <HeroDemo counts={Object.fromEntries(stats.map((s) => [COUNTRIES[s.country as Country].registry.short, s.count.toLocaleString("en-US")]))} />
             </div>
           </div>
         </div>

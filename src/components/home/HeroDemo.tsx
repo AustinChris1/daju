@@ -86,7 +86,8 @@ function Marked({ text, marks, on }: { text: string; marks: string[]; on: boolea
   );
 }
 
-export function HeroDemo() {
+// counts: live register sizes keyed by short name (NELEX, NEA, EEMIS, GLMIS), so the replay never shows a stale number.
+export function HeroDemo({ counts = {} }: { counts?: Record<string, string> }) {
   const reduce = useReducedMotion();
   const [i, setI] = useState(0);
   const [phase, setPhase] = useState<Phase>(reduce ? "stamp" : "paste");
@@ -141,7 +142,7 @@ export function HeroDemo() {
       </div>
 
       <ol className="mt-3 space-y-1.5 font-mono text-[0.72rem]">
-        {scene.lookup.map((l, idx) =>
+        {scene.lookup.map((row, idx) => ({ ...row, count: counts[row.register] ?? row.count })).map((l, idx) =>
           idx < visibleLookups ? (
             <li key={l.register + idx} className="hero-row grid grid-cols-[4.6rem_1fr] gap-2">
               <span className="text-toner-2">
