@@ -1,6 +1,65 @@
 {
   "runs": [
     {
+      "date": "2026-09-28",
+      "base": "HEAD",
+      "countries": [
+        {
+          "country": "UG",
+          "as_of_before": "2026-09-24",
+          "as_of_after": "2026-09-28",
+          "count_before": 190,
+          "count_after": 187,
+          "added_count": 0,
+          "removed_count": 3,
+          "status_change_count": 0,
+          "contact_change_count": 1,
+          "added": [],
+          "removed": [
+            {
+              "id": "ug-0037",
+              "name": "ELECTRA HR CONSULTANCY - LTD",
+              "status": "active",
+              "license_no": "E24080034",
+              "valid_to": "2026-09-25"
+            },
+            {
+              "id": "ug-0089",
+              "name": "ALUMA RECRUITMENT LTD",
+              "status": "active",
+              "license_no": "E24090019",
+              "valid_to": "2026-09-25"
+            },
+            {
+              "id": "ug-0156",
+              "name": "LABOUR FRONTIERS INTERNATIONAL LIMITED",
+              "status": "active",
+              "license_no": "E24080039",
+              "valid_to": "2026-09-25"
+            }
+          ],
+          "status_changes": [],
+          "contact_changes": [
+            {
+              "id": "ug-0125",
+              "name": "GULF LINK INTERNATIONAL",
+              "status": "active",
+              "license_no": "E24090020",
+              "valid_to": "2026-10-16",
+              "before": [
+                "+256759372297",
+                "info@gulflinkint.com"
+              ],
+              "after": [
+                "+256760188301",
+                "info@gulflinkint.com"
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
       "date": "2026-09-24",
       "base": "HEAD",
       "countries": [

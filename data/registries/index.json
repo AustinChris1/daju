@@ -1,13 +1,13 @@
 {
-  "generated": "2026-09-24",
-  "generated_at": "2026-09-24T13:52:17.877Z",
+  "generated": "2026-09-28",
+  "generated_at": "2026-09-28T09:10:13.321Z",
   "schema": "registry snapshot index v1",
   "countries": [
     {
       "country": "NG",
       "source": "NELEX, Federal Ministry of Labour and Employment",
       "source_url": "https://nelex.gov.ng/registered-private-employment-agencies",
-      "as_of": "2026-09-24",
+      "as_of": "2026-09-28",
       "count": 1186,
       "method": "html-pagination",
       "notes": "Public list of registered private employment agencies (80 pages). Publishes name, email and a CAC-verified flag; no licence numbers, expiry dates or phone numbers. All listed entries are shown as active by the site.",
@@ -16,7 +16,7 @@
         "status counts: {\"active\":1186}; CAC: {\"verified\":1186,\"not_verified\":0,\"unknown\":0}",
         "NELEX lists no licence number, phone, address or licence dates; emails are Cloudflare-obfuscated in the HTML and were decoded."
       ],
-      "duration_s": 69,
+      "duration_s": 40,
       "file": "data/registries/ng.json"
     },
     {
@@ -43,23 +43,23 @@
       "country": "UG",
       "source": "EEMIS, Ministry of Gender, Labour and Social Development",
       "source_url": "https://eemis.mglsd.go.ug/companies",
-      "as_of": "2026-09-24",
-      "count": 190,
+      "as_of": "2026-09-28",
+      "count": 187,
       "method": "api",
       "notes": "Licensed external recruitment companies only; the register lists currently licensed firms, so companies whose licences were revoked in April 2026 do not appear. Holds phone, email, address and licence validity dates.",
       "ok": true,
       "run_notes": [
-        "status counts: {\"active\":190}; 0 entries have a licence expiry date already in the past despite ACTIVE badge",
+        "status counts: {\"active\":187}; 0 entries have a licence expiry date already in the past despite ACTIVE badge",
         "EEMIS public listing only exposes ACTIVE companies; there is no public list of suspended or expired licences. Licence no, dates, address, phone and email come from each company detail page."
       ],
-      "duration_s": 137,
+      "duration_s": 116,
       "file": "data/registries/ug.json"
     },
     {
       "country": "GH",
       "source": "GLMIS, Ministry of Employment and Labour Relations",
       "source_url": "https://www.glmis.gov.gh/employmentagencies",
-      "as_of": "2026-09-24",
+      "as_of": "2026-09-28",
       "count": 322,
       "method": "html-pagination",
       "notes": "Directory of employment agencies (government and private) with email and location. Carries no licence status; the Ministry announced a licensed-agency list on 8 September 2026 and this snapshot should be replaced by it when published.",
@@ -68,7 +68,7 @@
         "status counts (derived from licence end date, GLMIS shows no explicit status): {\"unknown\":59,\"active\":263}; types: {\"government\":59,\"private\":263}",
         "GLMIS has no licence number field; \"Location\" is usually a Ghana digital address (e.g. GD-211-0600). Government entries are public labour offices, not recruiters."
       ],
-      "duration_s": 26,
+      "duration_s": 19,
       "file": "data/registries/gh.json"
     }
   ]
