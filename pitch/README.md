@@ -12,4 +12,4 @@ Rebuild after editing a slide:
 MSYS_NO_PATHCONV=1 node scripts/pitch-build.mjs
 ```
 
-Every figure comes from the repository or the live service as of 27 September 2026: register counts and snapshot dates from `data/registries/`, the weekly diff from `data/registries/changes.json`, statistics with their sources from the landing page.
+Every figure comes from the repository or the live service as of 28 September 2026: register counts and snapshot dates from `data/registries/`, the weekly diff from `data/registries/changes.json`, statistics with their sources from the landing page.

@@ -2,7 +2,7 @@
 
 **Is this sender on file?** Paste a job message. Daju checks whether the person contacting you is the organisation they claim to be, using the licensed-agency registers of Nigeria, Kenya, Uganda and Ghana.
 
-Live: https://usedaju.vercel.app · Docs: https://usedaju.vercel.app/docs
+Live: https://usedaju.vercel.app · Docs: https://usedaju.vercel.app/docs · Telegram: [@DajuCheckBot](https://t.me/DajuCheckBot)
 
 ## The thesis
 
@@ -69,6 +69,10 @@ Next.js 16, TypeScript, Tailwind v4, Supabase (Postgres), Vercel. The rule engin
 ## Pitch deck
 
 [pitch/daju-pitch.pdf](pitch/daju-pitch.pdf), 13 slides. Also at https://usedaju.vercel.app/daju-pitch.pdf.
+
+## Team
+
+Built for StacStart Borderless Bytes 2026 by Iwu Austin-Chris ([@AustinChris1](https://github.com/AustinChris1)) and Charles-Chukwudi Chukwudi ([@ChuksTech007](https://github.com/ChuksTech007)).
 
 ## Licence and credits
 

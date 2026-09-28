@@ -49,3 +49,12 @@ scratchpad/
 
 # Personal demo script, kept out of the repo
 demo.md
+/video/
+
+# Working notes and tool context, kept local
+AGENTS.md
+CLAUDE.md
+DESIGN.md
+PRODUCT.md
+TODO.md
+/brand/
