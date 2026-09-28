@@ -29,7 +29,7 @@ Regenerate after any brand change: `MSYS_NO_PATHCONV=1 node scripts/brand-assets
 
 **Solution (short):** Paste the message, or forward it to the Telegram or WhatsApp bot. Daju reads the names, numbers, emails and domains, looks the name up in all four registers at once, and compares the contact in the message with the contact on file. Name matches, contact does not: impersonation. It adds 21 lure patterns from official warnings, six offer-letter clauses against the country's labour law, the reply to send in English or Pidgin, and the official hotline. Employers prove their domain with one DNS record and post roles on a board where every listing is verified.
 
-**What is real:** four register snapshots (NELEX 1,186; NEA 1,295; EEMIS 190; GLMIS 322), re-read every Monday with the difference committed; every citation and hotline verified against its official page; no model decides a verdict; the card never says "safe".
+**What is real:** four register snapshots (NELEX 1,186; NEA 1,295; EEMIS 187; GLMIS 322), re-read every Monday with the difference committed (the 28 September run found three more Ugandan agencies gone); every citation and hotline verified against its official page; no model decides a verdict; the card never says "safe".
 
 **Target users:** job seekers in NG, KE, UG, GH who receive offers on WhatsApp, Telegram and email; recruiters and employers who are impersonated.
 
@@ -65,7 +65,7 @@ We built Daju for the Borderless Bytes hackathon because the job scams hitting g
 
 Daju reads a pasted job message, looks the name up in all four government registers, and compares the contact in the message with the contact on file. Name matches, contact does not: impersonation. It adds the official warning patterns, checks offer-letter clauses against the country's labour law, writes the reply, and shows the hotline. Employers prove their domain with one DNS record and post verified roles.
 
-The registers are re-read every Monday and the difference is committed. Last week four Ugandan licences expired and left the register; Daju noticed.
+The registers are re-read every Monday and the difference is committed. In its first week, eight Ugandan agencies left the register across two weekly runs; Daju recorded both.
 
 It never says an offer is safe. It says what the register says, with the date.
 

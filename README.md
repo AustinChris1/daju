@@ -37,10 +37,10 @@ Prove control of your domain with one DNS record. Then issue offer links that sh
 
 | Country | Register | Entries | Snapshot |
 |---|---|---|---|
-| Nigeria | NELEX, Federal Ministry of Labour and Employment | 1,186 | 2026-09-24 |
+| Nigeria | NELEX, Federal Ministry of Labour and Employment | 1,186 | 2026-09-28 |
 | Kenya | NEA register via the State Department for Diaspora Affairs | 1,295 (515 active) | 2026-05-18 |
-| Uganda | EEMIS, Ministry of Gender, Labour and Social Development | 190 | 2026-09-24 |
-| Ghana | GLMIS, Ministry of Employment and Labour Relations | 322 | 2026-09-24 |
+| Uganda | EEMIS, Ministry of Gender, Labour and Social Development | 187 | 2026-09-28 |
+| Ghana | GLMIS, Ministry of Employment and Labour Relations | 322 | 2026-09-28 |
 
 Snapshots live in `data/registries/`, statute citations, hotlines and quoted warnings in `data/law/`, each with its source URL. A check never calls a government site. Caveats per register are in [docs/data-and-limits.md](docs/data-and-limits.md).
 
