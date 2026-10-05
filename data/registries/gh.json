@@ -5,8 +5,8 @@
     "url": "https://www.glmis.gov.gh/employmentagencies",
     "method": "html-pagination"
   },
-  "as_of": "2026-09-28",
-  "count": 322,
+  "as_of": "2026-10-05",
+  "count": 316,
   "entries": [
     {
       "id": "gh-0001",
@@ -1045,8 +1045,8 @@
     },
     {
       "id": "gh-0038",
-      "name": "Somanya District Labour Office",
-      "name_norm": "somanya district labour office",
+      "name": "Somanya Municipal Labour Office",
+      "name_norm": "somanya municipal labour office",
       "status": "unknown",
       "license_no": null,
       "emails": [],
@@ -2664,37 +2664,6 @@
     },
     {
       "id": "gh-0093",
-      "name": "Mazak Investment Limited",
-      "name_norm": "mazak investment limited",
-      "status": "active",
-      "license_no": null,
-      "emails": [
-        "zakarimuntari12@gmail.com"
-      ],
-      "phones": [],
-      "website": null,
-      "domains": [
-        "gmail.com"
-      ],
-      "address": null,
-      "valid_from": "2024-09-30",
-      "valid_to": "2026-09-30",
-      "type": "private",
-      "cac_verified": null,
-      "raw": {
-        "glmis_id": "313",
-        "type_badge": "Private",
-        "location": null,
-        "website_raw": null,
-        "date_registered": "2022-12-30",
-        "license_start": "2024-09-30",
-        "license_end": "2026-09-30",
-        "contact": "",
-        "page": 10
-      }
-    },
-    {
-      "id": "gh-0094",
       "name": "Leob Gold Dream Company Limited",
       "name_norm": "leob gold dream company limited",
       "status": "active",
@@ -2725,7 +2694,7 @@
       }
     },
     {
-      "id": "gh-0095",
+      "id": "gh-0094",
       "name": "Gate-Afric Travel and Agency Limited",
       "name_norm": "gate afric travel and agency limited",
       "status": "active",
@@ -2752,7 +2721,7 @@
       }
     },
     {
-      "id": "gh-0096",
+      "id": "gh-0095",
       "name": "Gro Oil Field Alliance Ghana Limited",
       "name_norm": "gro oil field alliance ghana limited",
       "status": "active",
@@ -2783,7 +2752,7 @@
       }
     },
     {
-      "id": "gh-0097",
+      "id": "gh-0096",
       "name": "RECTRAIN SERVICES LIMITED",
       "name_norm": "rectrain services limited",
       "status": "active",
@@ -2814,7 +2783,7 @@
       }
     },
     {
-      "id": "gh-0098",
+      "id": "gh-0097",
       "name": "Embett consult limited",
       "name_norm": "embett consult limited",
       "status": "active",
@@ -2846,7 +2815,7 @@
       }
     },
     {
-      "id": "gh-0099",
+      "id": "gh-0098",
       "name": "Executive 1 security company limited",
       "name_norm": "executive 1 security company limited",
       "status": "active",
@@ -2878,7 +2847,7 @@
       }
     },
     {
-      "id": "gh-0100",
+      "id": "gh-0099",
       "name": "Aristotle Consult Limited",
       "name_norm": "aristotle consult limited",
       "status": "active",
@@ -2909,7 +2878,7 @@
       }
     },
     {
-      "id": "gh-0101",
+      "id": "gh-0100",
       "name": "Empower workforce",
       "name_norm": "empower workforce",
       "status": "active",
@@ -2936,11 +2905,11 @@
         "license_start": "2024-12-08",
         "license_end": "2026-12-08",
         "contact": "",
-        "page": 11
+        "page": 10
       }
     },
     {
-      "id": "gh-0102",
+      "id": "gh-0101",
       "name": "APL GHANA LTD",
       "name_norm": "apl ghana ltd",
       "status": "active",
@@ -2971,7 +2940,7 @@
       }
     },
     {
-      "id": "gh-0103",
+      "id": "gh-0102",
       "name": "Amaja Oilfield Limited",
       "name_norm": "amaja oilfield limited",
       "status": "active",
@@ -3002,7 +2971,7 @@
       }
     },
     {
-      "id": "gh-0104",
+      "id": "gh-0103",
       "name": "EBEMGLOBAL GHANA LIMITED",
       "name_norm": "ebemglobal ghana limited",
       "status": "active",
@@ -3034,7 +3003,7 @@
       }
     },
     {
-      "id": "gh-0105",
+      "id": "gh-0104",
       "name": "ADVANCE CONSULTING LIMITED",
       "name_norm": "advance consulting limited",
       "status": "active",
@@ -3065,7 +3034,7 @@
       }
     },
     {
-      "id": "gh-0106",
+      "id": "gh-0105",
       "name": "BOTICREW SERVICE LIMITED",
       "name_norm": "boticrew service limited",
       "status": "active",
@@ -3096,7 +3065,7 @@
       }
     },
     {
-      "id": "gh-0107",
+      "id": "gh-0106",
       "name": "AD-Precision Limited",
       "name_norm": "ad precision limited",
       "status": "active",
@@ -3127,7 +3096,7 @@
       }
     },
     {
-      "id": "gh-0108",
+      "id": "gh-0107",
       "name": "BLESSEDOF COMPANY LIMITED",
       "name_norm": "blessedof company limited",
       "status": "active",
@@ -3158,7 +3127,7 @@
       }
     },
     {
-      "id": "gh-0109",
+      "id": "gh-0108",
       "name": "BEST PLAN LTD",
       "name_norm": "best plan ltd",
       "status": "active",
@@ -3189,7 +3158,7 @@
       }
     },
     {
-      "id": "gh-0110",
+      "id": "gh-0109",
       "name": "BEST LABOUR COMPANY LIMITED",
       "name_norm": "best labour company limited",
       "status": "active",
@@ -3220,7 +3189,7 @@
       }
     },
     {
-      "id": "gh-0111",
+      "id": "gh-0110",
       "name": "Adventure Offshore Limited",
       "name_norm": "adventure offshore limited",
       "status": "active",
@@ -3248,11 +3217,11 @@
         "license_start": "2026-06-15",
         "license_end": "2028-06-14",
         "contact": "",
-        "page": 12
+        "page": 11
       }
     },
     {
-      "id": "gh-0112",
+      "id": "gh-0111",
       "name": "AFR APPLY TECHNOLOGIES LTD",
       "name_norm": "afr apply technologies ltd",
       "status": "active",
@@ -3283,7 +3252,7 @@
       }
     },
     {
-      "id": "gh-0113",
+      "id": "gh-0112",
       "name": "FREBERTH LIMITED COMPANY",
       "name_norm": "freberth limited company",
       "status": "active",
@@ -3310,7 +3279,7 @@
       }
     },
     {
-      "id": "gh-0114",
+      "id": "gh-0113",
       "name": "KOFAMA BH LIMITED",
       "name_norm": "kofama bh limited",
       "status": "active",
@@ -3341,7 +3310,7 @@
       }
     },
     {
-      "id": "gh-0115",
+      "id": "gh-0114",
       "name": "KWARTZ CONSULT LIMITED",
       "name_norm": "kwartz consult limited",
       "status": "active",
@@ -3368,7 +3337,7 @@
       }
     },
     {
-      "id": "gh-0116",
+      "id": "gh-0115",
       "name": "FOUR STAR MARINE AND CREWING SERVICES LIMITED",
       "name_norm": "four star marine and crewing services limited",
       "status": "active",
@@ -3395,7 +3364,7 @@
       }
     },
     {
-      "id": "gh-0117",
+      "id": "gh-0116",
       "name": "FIRST PRUDENCE CONSULT LIMITED",
       "name_norm": "first prudence consult limited",
       "status": "active",
@@ -3422,38 +3391,7 @@
       }
     },
     {
-      "id": "gh-0118",
-      "name": "LEASAFRIC LOGISTICS GHANA LIMITED",
-      "name_norm": "leasafric logistics ghana limited",
-      "status": "active",
-      "license_no": null,
-      "emails": [
-        "info@leasafric.com.gh"
-      ],
-      "phones": [],
-      "website": null,
-      "domains": [
-        "leasafric.com.gh"
-      ],
-      "address": null,
-      "valid_from": "2024-09-30",
-      "valid_to": "2026-09-30",
-      "type": "private",
-      "cac_verified": null,
-      "raw": {
-        "glmis_id": "433",
-        "type_badge": "Private",
-        "location": null,
-        "website_raw": "https://www.leasafric.com,gh",
-        "date_registered": "2016-02-22",
-        "license_start": "2024-09-30",
-        "license_end": "2026-09-30",
-        "contact": "",
-        "page": 12
-      }
-    },
-    {
-      "id": "gh-0119",
+      "id": "gh-0117",
       "name": "L'AINE SERVICES LIMITED",
       "name_norm": "l aine services limited",
       "status": "active",
@@ -3484,7 +3422,7 @@
       }
     },
     {
-      "id": "gh-0120",
+      "id": "gh-0118",
       "name": "Alcrew Marine Services Ltd",
       "name_norm": "alcrew marine services ltd",
       "status": "active",
@@ -3515,7 +3453,7 @@
       }
     },
     {
-      "id": "gh-0121",
+      "id": "gh-0119",
       "name": "AJ & A Services Limited",
       "name_norm": "aj and a services limited",
       "status": "active",
@@ -3542,11 +3480,11 @@
         "license_start": "2026-07-31",
         "license_end": "2028-07-30",
         "contact": "",
-        "page": 13
+        "page": 12
       }
     },
     {
-      "id": "gh-0122",
+      "id": "gh-0120",
       "name": "AVENSIS CHAUFFEUR SOLUTION",
       "name_norm": "avensis chauffeur solution",
       "status": "active",
@@ -3573,11 +3511,11 @@
         "license_start": "2024-10-18",
         "license_end": "2026-10-18",
         "contact": "",
-        "page": 13
+        "page": 12
       }
     },
     {
-      "id": "gh-0123",
+      "id": "gh-0121",
       "name": "Aldelia Ghana Ltd",
       "name_norm": "aldelia ghana ltd",
       "status": "active",
@@ -3604,7 +3542,7 @@
       }
     },
     {
-      "id": "gh-0124",
+      "id": "gh-0122",
       "name": "Advance Health Care Limited",
       "name_norm": "advance health care limited",
       "status": "active",
@@ -3635,7 +3573,7 @@
       }
     },
     {
-      "id": "gh-0125",
+      "id": "gh-0123",
       "name": "KABS AND CONSTRUCTION COMPANY LIMITED",
       "name_norm": "kabs and construction company limited",
       "status": "active",
@@ -3666,7 +3604,7 @@
       }
     },
     {
-      "id": "gh-0126",
+      "id": "gh-0124",
       "name": "African Bagg Recruitment",
       "name_norm": "african bagg recruitment",
       "status": "active",
@@ -3697,7 +3635,7 @@
       }
     },
     {
-      "id": "gh-0127",
+      "id": "gh-0125",
       "name": "HENGSTER PARTNERS LIMITED",
       "name_norm": "hengster partners limited",
       "status": "active",
@@ -3728,7 +3666,7 @@
       }
     },
     {
-      "id": "gh-0128",
+      "id": "gh-0126",
       "name": "HAKOK LIMITED",
       "name_norm": "hakok limited",
       "status": "active",
@@ -3755,7 +3693,7 @@
       }
     },
     {
-      "id": "gh-0129",
+      "id": "gh-0127",
       "name": "KHS ENERGY SERVICE LIMITED",
       "name_norm": "khs energy service limited",
       "status": "active",
@@ -3784,7 +3722,7 @@
       }
     },
     {
-      "id": "gh-0130",
+      "id": "gh-0128",
       "name": "RT Maritime Services Limited",
       "name_norm": "rt maritime services limited",
       "status": "active",
@@ -3815,7 +3753,7 @@
       }
     },
     {
-      "id": "gh-0131",
+      "id": "gh-0129",
       "name": "Rakes Company Limited",
       "name_norm": "rakes company limited",
       "status": "active",
@@ -3842,11 +3780,11 @@
         "license_start": "2025-03-05",
         "license_end": "2027-03-05",
         "contact": "",
-        "page": 14
+        "page": 13
       }
     },
     {
-      "id": "gh-0132",
+      "id": "gh-0130",
       "name": "QUICKJOBS COMPANY LIMITED",
       "name_norm": "quickjobs company limited",
       "status": "active",
@@ -3873,11 +3811,11 @@
         "license_start": "2024-11-21",
         "license_end": "2026-11-21",
         "contact": "",
-        "page": 14
+        "page": 13
       }
     },
     {
-      "id": "gh-0133",
+      "id": "gh-0131",
       "name": "WEST AFRICA OFFSHORE SERVICE LIMITED",
       "name_norm": "west africa offshore service limited",
       "status": "active",
@@ -3908,7 +3846,7 @@
       }
     },
     {
-      "id": "gh-0134",
+      "id": "gh-0132",
       "name": "WORLDRECRUIT SERVICE LIMITED",
       "name_norm": "worldrecruit service limited",
       "status": "active",
@@ -3939,7 +3877,7 @@
       }
     },
     {
-      "id": "gh-0135",
+      "id": "gh-0133",
       "name": "RESOURCE INTERMEDIARIES LIMITED",
       "name_norm": "resource intermediaries limited",
       "status": "active",
@@ -3970,7 +3908,7 @@
       }
     },
     {
-      "id": "gh-0136",
+      "id": "gh-0134",
       "name": "HR CONSULT LIMITED",
       "name_norm": "hr consult limited",
       "status": "active",
@@ -4001,13 +3939,13 @@
       }
     },
     {
-      "id": "gh-0137",
+      "id": "gh-0135",
       "name": "RESOURCES AND MANPOWER GHANA LIMITED",
       "name_norm": "resources and manpower ghana limited",
       "status": "active",
       "license_no": null,
       "emails": [
-        "infor@rmghana.com"
+        "info@rmghana.com"
       ],
       "phones": [],
       "website": "https://www.mghana.com",
@@ -4015,7 +3953,7 @@
         "rmghana.com",
         "mghana.com"
       ],
-      "address": null,
+      "address": "N/A",
       "valid_from": "2026-02-26",
       "valid_to": "2028-02-25",
       "type": "private",
@@ -4023,7 +3961,7 @@
       "raw": {
         "glmis_id": "492",
         "type_badge": "Private",
-        "location": null,
+        "location": "N/A",
         "website_raw": "https://www.mghana.com",
         "date_registered": "2012-09-27",
         "license_start": "2026-02-26",
@@ -4033,7 +3971,7 @@
       }
     },
     {
-      "id": "gh-0138",
+      "id": "gh-0136",
       "name": "RONWKO CREWING & MARINE SERVICES LIMITED",
       "name_norm": "ronwko crewing and marine services limited",
       "status": "active",
@@ -4064,7 +4002,7 @@
       }
     },
     {
-      "id": "gh-0139",
+      "id": "gh-0137",
       "name": "HR Solutions Ghana Limited",
       "name_norm": "hr solutions ghana limited",
       "status": "active",
@@ -4095,7 +4033,7 @@
       }
     },
     {
-      "id": "gh-0140",
+      "id": "gh-0138",
       "name": "Geokodams Company Limited",
       "name_norm": "geokodams company limited",
       "status": "active",
@@ -4126,7 +4064,7 @@
       }
     },
     {
-      "id": "gh-0141",
+      "id": "gh-0139",
       "name": "Gaspark Company Limited",
       "name_norm": "gaspark company limited",
       "status": "active",
@@ -4153,11 +4091,11 @@
         "license_start": "2026-06-15",
         "license_end": "2028-06-14",
         "contact": "",
-        "page": 15
+        "page": 14
       }
     },
     {
-      "id": "gh-0142",
+      "id": "gh-0140",
       "name": "ROYAL WORK-FORCE SERVICES LIMITED",
       "name_norm": "royal work force services limited",
       "status": "active",
@@ -4180,11 +4118,11 @@
         "license_start": "2025-10-30",
         "license_end": "2027-10-30",
         "contact": "",
-        "page": 15
+        "page": 14
       }
     },
     {
-      "id": "gh-0143",
+      "id": "gh-0141",
       "name": "ROFIO ENTERPRISE LIMITED",
       "name_norm": "rofio enterprise limited",
       "status": "active",
@@ -4215,7 +4153,7 @@
       }
     },
     {
-      "id": "gh-0144",
+      "id": "gh-0142",
       "name": "SIRIUS MARITIME CREWING SERVICES LIMITED",
       "name_norm": "sirius maritime crewing services limited",
       "status": "active",
@@ -4246,7 +4184,7 @@
       }
     },
     {
-      "id": "gh-0145",
+      "id": "gh-0143",
       "name": "SHINEPACK GLOBAL LIMITED",
       "name_norm": "shinepack global limited",
       "status": "active",
@@ -4277,38 +4215,7 @@
       }
     },
     {
-      "id": "gh-0146",
-      "name": "RABOTEC GHANA LIMITED",
-      "name_norm": "rabotec ghana limited",
-      "status": "active",
-      "license_no": null,
-      "emails": [
-        "infor@rabotecghana.com"
-      ],
-      "phones": [],
-      "website": null,
-      "domains": [
-        "rabotecghana.com"
-      ],
-      "address": "HNO BAE 15/1 OFF",
-      "valid_from": "2024-09-30",
-      "valid_to": "2026-09-30",
-      "type": "private",
-      "cac_verified": null,
-      "raw": {
-        "glmis_id": "519",
-        "type_badge": "Private",
-        "location": "HNO BAE 15/1 OFF",
-        "website_raw": null,
-        "date_registered": "2016-07-08",
-        "license_start": "2024-09-30",
-        "license_end": "2026-09-30",
-        "contact": "",
-        "page": 15
-      }
-    },
-    {
-      "id": "gh-0147",
+      "id": "gh-0144",
       "name": "Prince Multi Purpose Investments Limited",
       "name_norm": "prince multi purpose investments limited",
       "status": "active",
@@ -4339,7 +4246,7 @@
       }
     },
     {
-      "id": "gh-0148",
+      "id": "gh-0145",
       "name": "Gari Sika Company Limited",
       "name_norm": "gari sika company limited",
       "status": "active",
@@ -4370,7 +4277,7 @@
       }
     },
     {
-      "id": "gh-0149",
+      "id": "gh-0146",
       "name": "Global CS (Ghana) Limited",
       "name_norm": "global cs ghana limited",
       "status": "active",
@@ -4401,7 +4308,7 @@
       }
     },
     {
-      "id": "gh-0150",
+      "id": "gh-0147",
       "name": "DELIN HR CONSULT",
       "name_norm": "delin hr consult",
       "status": "active",
@@ -4432,7 +4339,7 @@
       }
     },
     {
-      "id": "gh-0151",
+      "id": "gh-0148",
       "name": "DEAL WELL MARINE AND ALL FIELD SERVICES LTD COMPANY",
       "name_norm": "deal well marine and all field services ltd company",
       "status": "active",
@@ -4459,11 +4366,11 @@
         "license_start": "2026-02-26",
         "license_end": "2028-02-25",
         "contact": "",
-        "page": 16
+        "page": 15
       }
     },
     {
-      "id": "gh-0152",
+      "id": "gh-0149",
       "name": "DONHILLAR GHANA LIMITED",
       "name_norm": "donhillar ghana limited",
       "status": "active",
@@ -4490,11 +4397,11 @@
         "license_start": "2025-03-04",
         "license_end": "2027-03-04",
         "contact": "",
-        "page": 16
+        "page": 15
       }
     },
     {
-      "id": "gh-0153",
+      "id": "gh-0150",
       "name": "GROCONSULT MANAGEMENT CONSULT LIMITED",
       "name_norm": "groconsult management consult limited",
       "status": "active",
@@ -4522,11 +4429,11 @@
         "license_start": "2026-06-15",
         "license_end": "2028-06-14",
         "contact": "",
-        "page": 16
+        "page": 15
       }
     },
     {
-      "id": "gh-0154",
+      "id": "gh-0151",
       "name": "GH Offshore Limited",
       "name_norm": "gh offshore limited",
       "status": "active",
@@ -4557,7 +4464,7 @@
       }
     },
     {
-      "id": "gh-0155",
+      "id": "gh-0152",
       "name": "SGS SOLUSERV LIMITED",
       "name_norm": "sgs soluserv limited",
       "status": "active",
@@ -4588,7 +4495,7 @@
       }
     },
     {
-      "id": "gh-0156",
+      "id": "gh-0153",
       "name": "SGS INSPECTION AND TESTING SERVICES LTD",
       "name_norm": "sgs inspection and testing services ltd",
       "status": "active",
@@ -4619,7 +4526,7 @@
       }
     },
     {
-      "id": "gh-0157",
+      "id": "gh-0154",
       "name": "SAFETY MARINE INTERNATIONAL CREWING LIMITED",
       "name_norm": "safety marine international crewing limited",
       "status": "active",
@@ -4651,7 +4558,7 @@
       }
     },
     {
-      "id": "gh-0158",
+      "id": "gh-0155",
       "name": "ABEYSLINK GLOBAL CONSULT LTD",
       "name_norm": "abeyslink global consult ltd",
       "status": "active",
@@ -4682,7 +4589,7 @@
       }
     },
     {
-      "id": "gh-0159",
+      "id": "gh-0156",
       "name": "AL-RAASH GLOBAL SERVICES AND RECRUITMENT COMPANY LIMITED",
       "name_norm": "al raash global services and recruitment company limited",
       "status": "active",
@@ -4713,7 +4620,7 @@
       }
     },
     {
-      "id": "gh-0160",
+      "id": "gh-0157",
       "name": "AFRICA MANPOWER LIMITED",
       "name_norm": "africa manpower limited",
       "status": "active",
@@ -4745,7 +4652,7 @@
       }
     },
     {
-      "id": "gh-0161",
+      "id": "gh-0158",
       "name": "NOSWALL MANAGEMENT SERVICES LIMITED",
       "name_norm": "noswall management services limited",
       "status": "active",
@@ -4772,11 +4679,11 @@
         "license_start": "2026-02-26",
         "license_end": "2028-02-25",
         "contact": "",
-        "page": 17
+        "page": 16
       }
     },
     {
-      "id": "gh-0162",
+      "id": "gh-0159",
       "name": "NANNY EXPRESS AGENCY COMPANY LIMITED",
       "name_norm": "nanny express agency company limited",
       "status": "active",
@@ -4804,11 +4711,11 @@
         "license_start": "2026-07-31",
         "license_end": "2028-07-31",
         "contact": "",
-        "page": 17
+        "page": 16
       }
     },
     {
-      "id": "gh-0163",
+      "id": "gh-0160",
       "name": "TORS EMPLOYMENT AGENCY COMPANY LIMITED",
       "name_norm": "tors employment agency company limited",
       "status": "active",
@@ -4835,11 +4742,11 @@
         "license_start": "2025-11-30",
         "license_end": "2027-11-30",
         "contact": "",
-        "page": 17
+        "page": 16
       }
     },
     {
-      "id": "gh-0164",
+      "id": "gh-0161",
       "name": "TWINGO TRADING COMPANY LIMITED",
       "name_norm": "twingo trading company limited",
       "status": "active",
@@ -4870,7 +4777,7 @@
       }
     },
     {
-      "id": "gh-0165",
+      "id": "gh-0162",
       "name": "KALIBER PARTNERS LIMITED",
       "name_norm": "kaliber partners limited",
       "status": "active",
@@ -4901,7 +4808,7 @@
       }
     },
     {
-      "id": "gh-0166",
+      "id": "gh-0163",
       "name": "TOP GOAL LIMITED",
       "name_norm": "top goal limited",
       "status": "active",
@@ -4932,7 +4839,7 @@
       }
     },
     {
-      "id": "gh-0167",
+      "id": "gh-0164",
       "name": "TOTAL MARINE PROJECTS LTD",
       "name_norm": "total marine projects ltd",
       "status": "active",
@@ -4963,7 +4870,7 @@
       }
     },
     {
-      "id": "gh-0168",
+      "id": "gh-0165",
       "name": "BASNIRE-LINA COMPANY LIMITED",
       "name_norm": "basnire lina company limited",
       "status": "active",
@@ -4994,7 +4901,7 @@
       }
     },
     {
-      "id": "gh-0169",
+      "id": "gh-0166",
       "name": "B BOUNDARIES COMPANY LIMITED",
       "name_norm": "b boundaries company limited",
       "status": "active",
@@ -5025,7 +4932,7 @@
       }
     },
     {
-      "id": "gh-0170",
+      "id": "gh-0167",
       "name": "HUMANITY 77 LIMITED",
       "name_norm": "humanity 77 limited",
       "status": "active",
@@ -5056,7 +4963,7 @@
       }
     },
     {
-      "id": "gh-0171",
+      "id": "gh-0168",
       "name": "Namaa Travel & Tour and Recruitment Agency",
       "name_norm": "namaa travel and tour and recruitment agency",
       "status": "active",
@@ -5083,11 +4990,11 @@
         "license_start": "2026-02-27",
         "license_end": "2028-02-27",
         "contact": "",
-        "page": 18
+        "page": 17
       }
     },
     {
-      "id": "gh-0172",
+      "id": "gh-0169",
       "name": "SAFEPEN GHANA LIMITED",
       "name_norm": "safepen ghana limited",
       "status": "active",
@@ -5114,11 +5021,11 @@
         "license_start": "2026-06-15",
         "license_end": "2028-06-14",
         "contact": "",
-        "page": 18
+        "page": 17
       }
     },
     {
-      "id": "gh-0173",
+      "id": "gh-0170",
       "name": "Tema Metro Labour Office",
       "name_norm": "tema metro labour office",
       "status": "unknown",
@@ -5141,11 +5048,11 @@
         "license_start": null,
         "license_end": null,
         "contact": "",
-        "page": 18
+        "page": 17
       }
     },
     {
-      "id": "gh-0174",
+      "id": "gh-0171",
       "name": "SBP AFRICA LMITED",
       "name_norm": "sbp africa lmited",
       "status": "active",
@@ -5177,7 +5084,7 @@
       }
     },
     {
-      "id": "gh-0175",
+      "id": "gh-0172",
       "name": "SEAWELD ENGINEERING LIMITED",
       "name_norm": "seaweld engineering limited",
       "status": "active",
@@ -5208,7 +5115,7 @@
       }
     },
     {
-      "id": "gh-0176",
+      "id": "gh-0173",
       "name": "CAPSTONE E-GLOBAL CONSULT LIMITED",
       "name_norm": "capstone e global consult limited",
       "status": "active",
@@ -5239,7 +5146,7 @@
       }
     },
     {
-      "id": "gh-0177",
+      "id": "gh-0174",
       "name": "CRUISE STAR SERVICES INTERNATIONAL LIMITED",
       "name_norm": "cruise star services international limited",
       "status": "active",
@@ -5270,7 +5177,7 @@
       }
     },
     {
-      "id": "gh-0178",
+      "id": "gh-0175",
       "name": "SOUTH EAST COMPANY AND SUPPORT SERVICE LTD",
       "name_norm": "south east company and support service ltd",
       "status": "active",
@@ -5301,7 +5208,7 @@
       }
     },
     {
-      "id": "gh-0179",
+      "id": "gh-0176",
       "name": "Soronko Reliance Services Limited",
       "name_norm": "soronko reliance services limited",
       "status": "active",
@@ -5332,7 +5239,7 @@
       }
     },
     {
-      "id": "gh-0180",
+      "id": "gh-0177",
       "name": "MENS-K EXPRESS GLOBAL LTD",
       "name_norm": "mens k express global ltd",
       "status": "active",
@@ -5364,7 +5271,7 @@
       }
     },
     {
-      "id": "gh-0181",
+      "id": "gh-0178",
       "name": "SHANDONG FISHING COMPANY LIMITED",
       "name_norm": "shandong fishing company limited",
       "status": "active",
@@ -5391,11 +5298,11 @@
         "license_start": "2024-10-18",
         "license_end": "2026-10-18",
         "contact": "",
-        "page": 19
+        "page": 18
       }
     },
     {
-      "id": "gh-0182",
+      "id": "gh-0179",
       "name": "SHANASS CREATIVE SOLUTION",
       "name_norm": "shanass creative solution",
       "status": "active",
@@ -5422,11 +5329,11 @@
         "license_start": "2025-08-25",
         "license_end": "2027-08-25",
         "contact": "",
-        "page": 19
+        "page": 18
       }
     },
     {
-      "id": "gh-0183",
+      "id": "gh-0180",
       "name": "Medusa Royale Security Services Ltd",
       "name_norm": "medusa royale security services ltd",
       "status": "active",
@@ -5453,11 +5360,11 @@
         "license_start": "2025-09-30",
         "license_end": "2027-09-30",
         "contact": "",
-        "page": 19
+        "page": 18
       }
     },
     {
-      "id": "gh-0184",
+      "id": "gh-0181",
       "name": "JOBBERMAN GHANA LIMITED",
       "name_norm": "jobberman ghana limited",
       "status": "active",
@@ -5489,7 +5396,7 @@
       }
     },
     {
-      "id": "gh-0185",
+      "id": "gh-0182",
       "name": "ESOJOBS LIMITED",
       "name_norm": "esojobs limited",
       "status": "active",
@@ -5520,7 +5427,7 @@
       }
     },
     {
-      "id": "gh-0186",
+      "id": "gh-0183",
       "name": "Marine Support Services Ghana Limited",
       "name_norm": "marine support services ghana limited",
       "status": "active",
@@ -5551,7 +5458,7 @@
       }
     },
     {
-      "id": "gh-0187",
+      "id": "gh-0184",
       "name": "K.SUKS CONSULT LTD",
       "name_norm": "k suks consult ltd",
       "status": "active",
@@ -5582,7 +5489,7 @@
       }
     },
     {
-      "id": "gh-0188",
+      "id": "gh-0185",
       "name": "DANGASKIYA VENTURES LIMITED",
       "name_norm": "dangaskiya ventures limited",
       "status": "active",
@@ -5614,7 +5521,7 @@
       }
     },
     {
-      "id": "gh-0189",
+      "id": "gh-0186",
       "name": "THE LORD IS MY SHEPHERD RECRUITMENT AGENCY (TLMS) LTD",
       "name_norm": "the lord is my shepherd recruitment agency tlms ltd",
       "status": "active",
@@ -5645,7 +5552,7 @@
       }
     },
     {
-      "id": "gh-0190",
+      "id": "gh-0187",
       "name": "DOSONEC LIMITED",
       "name_norm": "dosonec limited",
       "status": "active",
@@ -5676,7 +5583,7 @@
       }
     },
     {
-      "id": "gh-0191",
+      "id": "gh-0188",
       "name": "Jobhouse Services Linited",
       "name_norm": "jobhouse services linited",
       "status": "active",
@@ -5703,11 +5610,11 @@
         "license_start": "2026-07-31",
         "license_end": "2028-07-31",
         "contact": "",
-        "page": 20
+        "page": 19
       }
     },
     {
-      "id": "gh-0192",
+      "id": "gh-0189",
       "name": "FADIWAA COMPANY LIMITED",
       "name_norm": "fadiwaa company limited",
       "status": "active",
@@ -5734,11 +5641,11 @@
         "license_start": "2026-06-30",
         "license_end": "2028-06-29",
         "contact": "",
-        "page": 20
+        "page": 19
       }
     },
     {
-      "id": "gh-0193",
+      "id": "gh-0190",
       "name": "J.E JOB SOLUTION LIMITED",
       "name_norm": "j e job solution limited",
       "status": "active",
@@ -5765,11 +5672,11 @@
         "license_start": "2025-08-12",
         "license_end": "2027-08-11",
         "contact": "",
-        "page": 20
+        "page": 19
       }
     },
     {
-      "id": "gh-0194",
+      "id": "gh-0191",
       "name": "FIRST CLASS RECRUITMENT SERVICES LIMITED",
       "name_norm": "first class recruitment services limited",
       "status": "active",
@@ -5800,7 +5707,7 @@
       }
     },
     {
-      "id": "gh-0195",
+      "id": "gh-0192",
       "name": "PHILIPS OUTSOURCING LIMITED",
       "name_norm": "philips outsourcing limited",
       "status": "active",
@@ -5831,7 +5738,7 @@
       }
     },
     {
-      "id": "gh-0196",
+      "id": "gh-0193",
       "name": "Parmo Human Resource Ltd",
       "name_norm": "parmo human resource ltd",
       "status": "active",
@@ -5862,7 +5769,7 @@
       }
     },
     {
-      "id": "gh-0197",
+      "id": "gh-0194",
       "name": "Project Assist Global Limited",
       "name_norm": "project assist global limited",
       "status": "active",
@@ -5893,7 +5800,7 @@
       }
     },
     {
-      "id": "gh-0198",
+      "id": "gh-0195",
       "name": "MCGYAN & SONS LIMITED",
       "name_norm": "mcgyan and sons limited",
       "status": "active",
@@ -5924,7 +5831,7 @@
       }
     },
     {
-      "id": "gh-0199",
+      "id": "gh-0196",
       "name": "WAVE LINE MARITIME LIMITED",
       "name_norm": "wave line maritime limited",
       "status": "active",
@@ -5956,7 +5863,7 @@
       }
     },
     {
-      "id": "gh-0200",
+      "id": "gh-0197",
       "name": "GLOBAL LYNQ CONSULT LIMITED",
       "name_norm": "global lynq consult limited",
       "status": "active",
@@ -5987,7 +5894,7 @@
       }
     },
     {
-      "id": "gh-0201",
+      "id": "gh-0198",
       "name": "Marlin Marine & Crewing Services Ltd",
       "name_norm": "marlin marine and crewing services ltd",
       "status": "active",
@@ -6014,11 +5921,11 @@
         "license_start": "2026-07-31",
         "license_end": "2028-07-31",
         "contact": "",
-        "page": 21
+        "page": 20
       }
     },
     {
-      "id": "gh-0202",
+      "id": "gh-0199",
       "name": "SarpSolutions2 Limited",
       "name_norm": "sarpsolutions2 limited",
       "status": "active",
@@ -6045,11 +5952,11 @@
         "license_start": "2025-06-30",
         "license_end": "2027-06-30",
         "contact": "",
-        "page": 21
+        "page": 20
       }
     },
     {
-      "id": "gh-0203",
+      "id": "gh-0200",
       "name": "Job Linq Africa",
       "name_norm": "job linq africa",
       "status": "active",
@@ -6076,11 +5983,11 @@
         "license_start": "2026-03-16",
         "license_end": "2028-03-15",
         "contact": "",
-        "page": 21
+        "page": 20
       }
     },
     {
-      "id": "gh-0204",
+      "id": "gh-0201",
       "name": "Jab's Travel and Business Limited",
       "name_norm": "jab s travel and business limited",
       "status": "active",
@@ -6111,7 +6018,7 @@
       }
     },
     {
-      "id": "gh-0205",
+      "id": "gh-0202",
       "name": "PLATINUM IMPACT LIMITED",
       "name_norm": "platinum impact limited",
       "status": "active",
@@ -6142,7 +6049,7 @@
       }
     },
     {
-      "id": "gh-0206",
+      "id": "gh-0203",
       "name": "GLOBAL CALL INITIATIVES LIMITED",
       "name_norm": "global call initiatives limited",
       "status": "active",
@@ -6173,7 +6080,7 @@
       }
     },
     {
-      "id": "gh-0207",
+      "id": "gh-0204",
       "name": "VELOCITY GLOBAL LIMITED",
       "name_norm": "velocity global limited",
       "status": "active",
@@ -6204,7 +6111,7 @@
       }
     },
     {
-      "id": "gh-0208",
+      "id": "gh-0205",
       "name": "Amasaman Public Employment Centre",
       "name_norm": "amasaman public employment centre",
       "status": "unknown",
@@ -6231,7 +6138,7 @@
       }
     },
     {
-      "id": "gh-0209",
+      "id": "gh-0206",
       "name": "Idream Consortium Ltd",
       "name_norm": "idream consortium ltd",
       "status": "active",
@@ -6262,7 +6169,7 @@
       }
     },
     {
-      "id": "gh-0210",
+      "id": "gh-0207",
       "name": "Intercontinental Link Company Limited",
       "name_norm": "intercontinental link company limited",
       "status": "active",
@@ -6293,7 +6200,7 @@
       }
     },
     {
-      "id": "gh-0211",
+      "id": "gh-0208",
       "name": "Cdc Consult Limited",
       "name_norm": "cdc consult limited",
       "status": "active",
@@ -6320,11 +6227,11 @@
         "license_start": "2026-02-27",
         "license_end": "2028-02-27",
         "contact": "",
-        "page": 22
+        "page": 21
       }
     },
     {
-      "id": "gh-0212",
+      "id": "gh-0209",
       "name": "clarion General Limited",
       "name_norm": "clarion general limited",
       "status": "active",
@@ -6352,11 +6259,11 @@
         "license_start": "2026-06-30",
         "license_end": "2028-06-29",
         "contact": "",
-        "page": 22
+        "page": 21
       }
     },
     {
-      "id": "gh-0213",
+      "id": "gh-0210",
       "name": "C7 Ghana Limited",
       "name_norm": "c7 ghana limited",
       "status": "active",
@@ -6383,11 +6290,11 @@
         "license_start": "2024-10-31",
         "license_end": "2026-10-30",
         "contact": "",
-        "page": 22
+        "page": 21
       }
     },
     {
-      "id": "gh-0214",
+      "id": "gh-0211",
       "name": "City Marine And Recruiting Company Limited",
       "name_norm": "city marine and recruiting company limited",
       "status": "active",
@@ -6418,7 +6325,7 @@
       }
     },
     {
-      "id": "gh-0215",
+      "id": "gh-0212",
       "name": "Cema Marine Services Limited",
       "name_norm": "cema marine services limited",
       "status": "active",
@@ -6451,7 +6358,7 @@
       }
     },
     {
-      "id": "gh-0216",
+      "id": "gh-0213",
       "name": "Ikegin-Eduaf Limited",
       "name_norm": "ikegin eduaf limited",
       "status": "active",
@@ -6482,7 +6389,7 @@
       }
     },
     {
-      "id": "gh-0217",
+      "id": "gh-0214",
       "name": "Chapel Hill Managers & Consulting Ltd",
       "name_norm": "chapel hill managers and consulting ltd",
       "status": "active",
@@ -6513,7 +6420,7 @@
       }
     },
     {
-      "id": "gh-0218",
+      "id": "gh-0215",
       "name": "Oakpalm Limited",
       "name_norm": "oakpalm limited",
       "status": "active",
@@ -6544,7 +6451,7 @@
       }
     },
     {
-      "id": "gh-0219",
+      "id": "gh-0216",
       "name": "Operam Mop West Africa Ltd",
       "name_norm": "operam mop west africa ltd",
       "status": "active",
@@ -6575,7 +6482,7 @@
       }
     },
     {
-      "id": "gh-0220",
+      "id": "gh-0217",
       "name": "Oil city Crew Jobs Centre Limited",
       "name_norm": "oil city crew jobs centre limited",
       "status": "active",
@@ -6606,7 +6513,7 @@
       }
     },
     {
-      "id": "gh-0221",
+      "id": "gh-0218",
       "name": "Unik Resources Private Limited",
       "name_norm": "unik resources private limited",
       "status": "active",
@@ -6633,11 +6540,11 @@
         "license_start": "2024-11-30",
         "license_end": "2026-11-30",
         "contact": "",
-        "page": 23
+        "page": 22
       }
     },
     {
-      "id": "gh-0222",
+      "id": "gh-0219",
       "name": "UIS Limited",
       "name_norm": "uis limited",
       "status": "active",
@@ -6664,11 +6571,11 @@
         "license_start": "2026-07-31",
         "license_end": "2028-07-30",
         "contact": "",
-        "page": 23
+        "page": 22
       }
     },
     {
-      "id": "gh-0223",
+      "id": "gh-0220",
       "name": "Stedol Enterprise Limited",
       "name_norm": "stedol enterprise limited",
       "status": "active",
@@ -6695,11 +6602,11 @@
         "license_start": "2025-03-11",
         "license_end": "2027-03-11",
         "contact": "",
-        "page": 23
+        "page": 22
       }
     },
     {
-      "id": "gh-0224",
+      "id": "gh-0221",
       "name": "Trade Masters and Recruitment Services Limited",
       "name_norm": "trade masters and recruitment services limited",
       "status": "active",
@@ -6730,7 +6637,7 @@
       }
     },
     {
-      "id": "gh-0225",
+      "id": "gh-0222",
       "name": "HR-I Solutions Limited",
       "name_norm": "hr i solutions limited",
       "status": "active",
@@ -6761,7 +6668,7 @@
       }
     },
     {
-      "id": "gh-0226",
+      "id": "gh-0223",
       "name": "Capetano Oil Limited",
       "name_norm": "capetano oil limited",
       "status": "active",
@@ -6792,7 +6699,7 @@
       }
     },
     {
-      "id": "gh-0227",
+      "id": "gh-0224",
       "name": "Global Job Centre Limited",
       "name_norm": "global job centre limited",
       "status": "active",
@@ -6824,7 +6731,7 @@
       }
     },
     {
-      "id": "gh-0228",
+      "id": "gh-0225",
       "name": "Elyon Global Logistics Limited",
       "name_norm": "elyon global logistics limited",
       "status": "active",
@@ -6856,7 +6763,7 @@
       }
     },
     {
-      "id": "gh-0229",
+      "id": "gh-0226",
       "name": "Tamale Public Employment Centre",
       "name_norm": "tamale public employment centre",
       "status": "unknown",
@@ -6883,7 +6790,7 @@
       }
     },
     {
-      "id": "gh-0230",
+      "id": "gh-0227",
       "name": "CRYSTAL-LIFE RECRUITMENT AGENCY LTD",
       "name_norm": "crystal life recruitment agency ltd",
       "status": "active",
@@ -6914,7 +6821,7 @@
       }
     },
     {
-      "id": "gh-0231",
+      "id": "gh-0228",
       "name": "Sasulos Consult Ltd",
       "name_norm": "sasulos consult ltd",
       "status": "active",
@@ -6941,11 +6848,11 @@
         "license_start": "2026-06-15",
         "license_end": "2028-06-14",
         "contact": "",
-        "page": 24
+        "page": 23
       }
     },
     {
-      "id": "gh-0232",
+      "id": "gh-0229",
       "name": "George D Recruitment Agency Ltd",
       "name_norm": "george d recruitment agency ltd",
       "status": "active",
@@ -6972,11 +6879,11 @@
         "license_start": "2026-07-31",
         "license_end": "2028-07-31",
         "contact": "",
-        "page": 24
+        "page": 23
       }
     },
     {
-      "id": "gh-0233",
+      "id": "gh-0230",
       "name": "Steldo Enterprise Ltd",
       "name_norm": "steldo enterprise ltd",
       "status": "active",
@@ -7003,11 +6910,11 @@
         "license_start": "2025-03-11",
         "license_end": "2027-03-11",
         "contact": "",
-        "page": 24
+        "page": 23
       }
     },
     {
-      "id": "gh-0234",
+      "id": "gh-0231",
       "name": "ROYAL WORKFORCE SERVICES LTD",
       "name_norm": "royal workforce services ltd",
       "status": "active",
@@ -7038,7 +6945,7 @@
       }
     },
     {
-      "id": "gh-0235",
+      "id": "gh-0232",
       "name": "ESSWORLDPOINT LIMITED",
       "name_norm": "essworldpoint limited",
       "status": "active",
@@ -7069,7 +6976,7 @@
       }
     },
     {
-      "id": "gh-0236",
+      "id": "gh-0233",
       "name": "A. A. Omanbapa Ltd",
       "name_norm": "a a omanbapa ltd",
       "status": "active",
@@ -7100,7 +7007,7 @@
       }
     },
     {
-      "id": "gh-0237",
+      "id": "gh-0234",
       "name": "Hare Hire LTD",
       "name_norm": "hare hire ltd",
       "status": "active",
@@ -7131,7 +7038,7 @@
       }
     },
     {
-      "id": "gh-0238",
+      "id": "gh-0235",
       "name": "Corporate Icon Limited",
       "name_norm": "corporate icon limited",
       "status": "active",
@@ -7163,7 +7070,7 @@
       }
     },
     {
-      "id": "gh-0239",
+      "id": "gh-0236",
       "name": "Kltake Consulting Ltd",
       "name_norm": "kltake consulting ltd",
       "status": "active",
@@ -7194,7 +7101,7 @@
       }
     },
     {
-      "id": "gh-0240",
+      "id": "gh-0237",
       "name": "Partners Recruitment Consult Ltd",
       "name_norm": "partners recruitment consult ltd",
       "status": "active",
@@ -7226,7 +7133,7 @@
       }
     },
     {
-      "id": "gh-0241",
+      "id": "gh-0238",
       "name": "Gulf marketing and investment Ghana limited",
       "name_norm": "gulf marketing and investment ghana limited",
       "status": "active",
@@ -7253,11 +7160,11 @@
         "license_start": "2025-07-12",
         "license_end": "2027-07-12",
         "contact": "",
-        "page": 25
+        "page": 24
       }
     },
     {
-      "id": "gh-0242",
+      "id": "gh-0239",
       "name": "Pagex 2 Limited",
       "name_norm": "pagex 2 limited",
       "status": "active",
@@ -7284,11 +7191,11 @@
         "license_start": "2025-08-25",
         "license_end": "2027-08-25",
         "contact": "",
-        "page": 25
+        "page": 24
       }
     },
     {
-      "id": "gh-0243",
+      "id": "gh-0240",
       "name": "Multisoft HR Services Limited Company",
       "name_norm": "multisoft hr services limited company",
       "status": "active",
@@ -7315,11 +7222,11 @@
         "license_start": "2026-07-31",
         "license_end": "2028-07-30",
         "contact": "",
-        "page": 25
+        "page": 24
       }
     },
     {
-      "id": "gh-0244",
+      "id": "gh-0241",
       "name": "Dambai Public Employment Centre",
       "name_norm": "dambai public employment centre",
       "status": "unknown",
@@ -7346,7 +7253,7 @@
       }
     },
     {
-      "id": "gh-0245",
+      "id": "gh-0242",
       "name": "Wa Public Employment Centre",
       "name_norm": "wa public employment centre",
       "status": "unknown",
@@ -7373,7 +7280,7 @@
       }
     },
     {
-      "id": "gh-0246",
+      "id": "gh-0243",
       "name": "Goaso Public Employment Centre",
       "name_norm": "goaso public employment centre",
       "status": "unknown",
@@ -7400,7 +7307,7 @@
       }
     },
     {
-      "id": "gh-0247",
+      "id": "gh-0244",
       "name": "Odumase Public Employment Centre",
       "name_norm": "odumase public employment centre",
       "status": "unknown",
@@ -7427,7 +7334,7 @@
       }
     },
     {
-      "id": "gh-0248",
+      "id": "gh-0245",
       "name": "Alive Consult Limited",
       "name_norm": "alive consult limited",
       "status": "active",
@@ -7458,7 +7365,7 @@
       }
     },
     {
-      "id": "gh-0249",
+      "id": "gh-0246",
       "name": "Duayaw Nkwanta Public Employment Centre",
       "name_norm": "duayaw nkwanta public employment centre",
       "status": "unknown",
@@ -7485,7 +7392,7 @@
       }
     },
     {
-      "id": "gh-0250",
+      "id": "gh-0247",
       "name": "Tamale Metro Labour Office",
       "name_norm": "tamale metro labour office",
       "status": "unknown",
@@ -7512,7 +7419,7 @@
       }
     },
     {
-      "id": "gh-0251",
+      "id": "gh-0248",
       "name": "Unique Job Solution Limited",
       "name_norm": "unique job solution limited",
       "status": "active",
@@ -7539,11 +7446,11 @@
         "license_start": "2025-09-30",
         "license_end": "2027-09-30",
         "contact": "",
-        "page": 26
+        "page": 25
       }
     },
     {
-      "id": "gh-0252",
+      "id": "gh-0249",
       "name": "SHRP Ghana LTd",
       "name_norm": "shrp ghana ltd",
       "status": "active",
@@ -7570,11 +7477,11 @@
         "license_start": "2025-09-30",
         "license_end": "2027-09-30",
         "contact": "",
-        "page": 26
+        "page": 25
       }
     },
     {
-      "id": "gh-0253",
+      "id": "gh-0250",
       "name": "Kran-Saaka Ghana Limited",
       "name_norm": "kran saaka ghana limited",
       "status": "active",
@@ -7601,11 +7508,11 @@
         "license_start": "2025-08-30",
         "license_end": "2027-08-30",
         "contact": "",
-        "page": 26
+        "page": 25
       }
     },
     {
-      "id": "gh-0254",
+      "id": "gh-0251",
       "name": "Shadong Fishing Ltd",
       "name_norm": "shadong fishing ltd",
       "status": "active",
@@ -7636,7 +7543,7 @@
       }
     },
     {
-      "id": "gh-0255",
+      "id": "gh-0252",
       "name": "Walewale Public Employment Centre",
       "name_norm": "walewale public employment centre",
       "status": "unknown",
@@ -7663,100 +7570,7 @@
       }
     },
     {
-      "id": "gh-0256",
-      "name": "Jak & So Services Ltd",
-      "name_norm": "jak and so services ltd",
-      "status": "active",
-      "license_no": null,
-      "emails": [
-        "info@akandso.com"
-      ],
-      "phones": [],
-      "website": null,
-      "domains": [
-        "akandso.com"
-      ],
-      "address": "GW-0257-9600",
-      "valid_from": "2025-09-30",
-      "valid_to": "2026-09-30",
-      "type": "private",
-      "cac_verified": null,
-      "raw": {
-        "glmis_id": "1006",
-        "type_badge": "Private",
-        "location": "GW-0257-9600",
-        "website_raw": null,
-        "date_registered": "2025-09-30",
-        "license_start": "2025-09-30",
-        "license_end": "2026-09-30",
-        "contact": "",
-        "page": 26
-      }
-    },
-    {
-      "id": "gh-0257",
-      "name": "Afcos Marine Crewing Limited",
-      "name_norm": "afcos marine crewing limited",
-      "status": "active",
-      "license_no": null,
-      "emails": [
-        "info@marine.afcosgroup.com"
-      ],
-      "phones": [],
-      "website": null,
-      "domains": [
-        "marine.afcosgroup.com"
-      ],
-      "address": "cx- 070-6468",
-      "valid_from": "2025-09-30",
-      "valid_to": "2026-09-30",
-      "type": "private",
-      "cac_verified": null,
-      "raw": {
-        "glmis_id": "1007",
-        "type_badge": "Private",
-        "location": "cx- 070-6468",
-        "website_raw": null,
-        "date_registered": "2025-09-30",
-        "license_start": "2025-09-30",
-        "license_end": "2026-09-30",
-        "contact": "",
-        "page": 26
-      }
-    },
-    {
-      "id": "gh-0258",
-      "name": "Watersmet Marine Limited",
-      "name_norm": "watersmet marine limited",
-      "status": "active",
-      "license_no": null,
-      "emails": [
-        "info@watersmet.com"
-      ],
-      "phones": [],
-      "website": null,
-      "domains": [
-        "watersmet.com"
-      ],
-      "address": "GQ-288-4557",
-      "valid_from": "2025-09-30",
-      "valid_to": "2026-09-30",
-      "type": "private",
-      "cac_verified": null,
-      "raw": {
-        "glmis_id": "1008",
-        "type_badge": "Private",
-        "location": "GQ-288-4557",
-        "website_raw": null,
-        "date_registered": "2025-09-30",
-        "license_start": "2025-09-30",
-        "license_end": "2026-09-30",
-        "contact": "",
-        "page": 26
-      }
-    },
-    {
-      "id": "gh-0259",
+      "id": "gh-0253",
       "name": "PK Marine and Crewing Services Ltd",
       "name_norm": "pk marine and crewing services ltd",
       "status": "active",
@@ -7787,7 +7601,7 @@
       }
     },
     {
-      "id": "gh-0260",
+      "id": "gh-0254",
       "name": "Bibiani Public Employment Centre",
       "name_norm": "bibiani public employment centre",
       "status": "unknown",
@@ -7814,7 +7628,7 @@
       }
     },
     {
-      "id": "gh-0261",
+      "id": "gh-0255",
       "name": "Bakhitas Ltd",
       "name_norm": "bakhitas ltd",
       "status": "active",
@@ -7841,11 +7655,11 @@
         "license_start": "2025-11-28",
         "license_end": "2026-11-28",
         "contact": "",
-        "page": 27
+        "page": 26
       }
     },
     {
-      "id": "gh-0262",
+      "id": "gh-0256",
       "name": "OKP LTD",
       "name_norm": "okp ltd",
       "status": "active",
@@ -7873,11 +7687,11 @@
         "license_start": "2026-06-15",
         "license_end": "2028-06-14",
         "contact": "",
-        "page": 27
+        "page": 26
       }
     },
     {
-      "id": "gh-0263",
+      "id": "gh-0257",
       "name": "Nicks Labour Supply Limited",
       "name_norm": "nicks labour supply limited",
       "status": "active",
@@ -7904,11 +7718,11 @@
         "license_start": "2025-10-30",
         "license_end": "2026-10-30",
         "contact": "",
-        "page": 27
+        "page": 26
       }
     },
     {
-      "id": "gh-0264",
+      "id": "gh-0258",
       "name": "Maat. Global Consult Ltd",
       "name_norm": "maat global consult ltd",
       "status": "active",
@@ -7935,11 +7749,11 @@
         "license_start": "2025-11-28",
         "license_end": "2027-11-28",
         "contact": "",
-        "page": 27
+        "page": 26
       }
     },
     {
-      "id": "gh-0265",
+      "id": "gh-0259",
       "name": "Memoralss Ghana Ltd",
       "name_norm": "memoralss ghana ltd",
       "status": "active",
@@ -7966,11 +7780,11 @@
         "license_start": "2025-10-30",
         "license_end": "2026-10-30",
         "contact": "",
-        "page": 27
+        "page": 26
       }
     },
     {
-      "id": "gh-0266",
+      "id": "gh-0260",
       "name": "Great Opus Manpower Services Ltd",
       "name_norm": "great opus manpower services ltd",
       "status": "active",
@@ -7997,11 +7811,11 @@
         "license_start": "2025-10-30",
         "license_end": "2026-10-30",
         "contact": "",
-        "page": 27
+        "page": 26
       }
     },
     {
-      "id": "gh-0267",
+      "id": "gh-0261",
       "name": "Cadette Exclusive Ltd",
       "name_norm": "cadette exclusive ltd",
       "status": "active",
@@ -8032,7 +7846,7 @@
       }
     },
     {
-      "id": "gh-0268",
+      "id": "gh-0262",
       "name": "Werecruit Ghana Limited",
       "name_norm": "werecruit ghana limited",
       "status": "active",
@@ -8059,7 +7873,7 @@
       }
     },
     {
-      "id": "gh-0269",
+      "id": "gh-0263",
       "name": "Platinum Management Solutions Ltd",
       "name_norm": "platinum management solutions ltd",
       "status": "active",
@@ -8090,7 +7904,7 @@
       }
     },
     {
-      "id": "gh-0270",
+      "id": "gh-0264",
       "name": "Peace Manpower Recruitment Agency Ltd",
       "name_norm": "peace manpower recruitment agency ltd",
       "status": "active",
@@ -8121,7 +7935,7 @@
       }
     },
     {
-      "id": "gh-0271",
+      "id": "gh-0265",
       "name": "Stemarya Limited Company",
       "name_norm": "stemarya limited company",
       "status": "active",
@@ -8148,11 +7962,11 @@
         "license_start": "2025-11-28",
         "license_end": "2026-11-28",
         "contact": "",
-        "page": 28
+        "page": 27
       }
     },
     {
-      "id": "gh-0272",
+      "id": "gh-0266",
       "name": "HD Offshore Limited Company",
       "name_norm": "hd offshore limited company",
       "status": "active",
@@ -8179,11 +7993,11 @@
         "license_start": "2025-10-30",
         "license_end": "2026-10-30",
         "contact": "",
-        "page": 28
+        "page": 27
       }
     },
     {
-      "id": "gh-0273",
+      "id": "gh-0267",
       "name": "Diiet Global company Limited",
       "name_norm": "diiet global company limited",
       "status": "active",
@@ -8210,11 +8024,11 @@
         "license_start": "2025-11-28",
         "license_end": "2026-11-28",
         "contact": "",
-        "page": 28
+        "page": 27
       }
     },
     {
-      "id": "gh-0274",
+      "id": "gh-0268",
       "name": "Labour Power and Consult Services Limited",
       "name_norm": "labour power and consult services limited",
       "status": "active",
@@ -8241,11 +8055,11 @@
         "license_start": "2025-11-30",
         "license_end": "2027-11-30",
         "contact": "",
-        "page": 28
+        "page": 27
       }
     },
     {
-      "id": "gh-0275",
+      "id": "gh-0269",
       "name": "Corporate Leadership Consult Ltd",
       "name_norm": "corporate leadership consult ltd",
       "status": "active",
@@ -8272,11 +8086,11 @@
         "license_start": "2025-10-30",
         "license_end": "2027-10-30",
         "contact": "",
-        "page": 28
+        "page": 27
       }
     },
     {
-      "id": "gh-0276",
+      "id": "gh-0270",
       "name": "John Herbert Limited",
       "name_norm": "john herbert limited",
       "status": "active",
@@ -8303,11 +8117,11 @@
         "license_start": "2025-11-30",
         "license_end": "2026-11-30",
         "contact": "",
-        "page": 28
+        "page": 27
       }
     },
     {
-      "id": "gh-0277",
+      "id": "gh-0271",
       "name": "Sonar Public Employment Centre",
       "name_norm": "sonar public employment centre",
       "status": "unknown",
@@ -8334,7 +8148,7 @@
       }
     },
     {
-      "id": "gh-0278",
+      "id": "gh-0272",
       "name": "PRIME SHIPPING AGENCY LTD",
       "name_norm": "prime shipping agency ltd",
       "status": "active",
@@ -8365,7 +8179,7 @@
       }
     },
     {
-      "id": "gh-0279",
+      "id": "gh-0273",
       "name": "Prestige Friends Workforce Ltd",
       "name_norm": "prestige friends workforce ltd",
       "status": "active",
@@ -8396,7 +8210,7 @@
       }
     },
     {
-      "id": "gh-0280",
+      "id": "gh-0274",
       "name": "Sokowuli Royal Ghana Limited",
       "name_norm": "sokowuli royal ghana limited",
       "status": "active",
@@ -8427,7 +8241,7 @@
       }
     },
     {
-      "id": "gh-0281",
+      "id": "gh-0275",
       "name": "Labour Hunters Consult Gh Ltd",
       "name_norm": "labour hunters consult gh ltd",
       "status": "active",
@@ -8454,11 +8268,11 @@
         "license_start": "2026-02-27",
         "license_end": "2028-02-27",
         "contact": "",
-        "page": 29
+        "page": 28
       }
     },
     {
-      "id": "gh-0282",
+      "id": "gh-0276",
       "name": "PINKHART VENTURES LTD",
       "name_norm": "pinkhart ventures ltd",
       "status": "active",
@@ -8485,11 +8299,11 @@
         "license_start": "2025-03-30",
         "license_end": "2027-03-29",
         "contact": "",
-        "page": 29
+        "page": 28
       }
     },
     {
-      "id": "gh-0283",
+      "id": "gh-0277",
       "name": "Menz Gold",
       "name_norm": "menz gold",
       "status": "active",
@@ -8516,11 +8330,11 @@
         "license_start": "2026-02-26",
         "license_end": "2027-02-25",
         "contact": "",
-        "page": 29
+        "page": 28
       }
     },
     {
-      "id": "gh-0284",
+      "id": "gh-0278",
       "name": "BEACON HIREWISE LTD",
       "name_norm": "beacon hirewise ltd",
       "status": "active",
@@ -8547,11 +8361,11 @@
         "license_start": "2026-02-26",
         "license_end": "2027-02-25",
         "contact": "",
-        "page": 29
+        "page": 28
       }
     },
     {
-      "id": "gh-0285",
+      "id": "gh-0279",
       "name": "GLOBIS RECRUITMENT AGENCY LIMITED",
       "name_norm": "globis recruitment agency limited",
       "status": "active",
@@ -8578,11 +8392,11 @@
         "license_start": "2026-02-26",
         "license_end": "2027-02-25",
         "contact": "",
-        "page": 29
+        "page": 28
       }
     },
     {
-      "id": "gh-0286",
+      "id": "gh-0280",
       "name": "ALLIANCE DRILLING LTD",
       "name_norm": "alliance drilling ltd",
       "status": "active",
@@ -8609,11 +8423,11 @@
         "license_start": "2026-02-26",
         "license_end": "2027-02-25",
         "contact": "",
-        "page": 29
+        "page": 28
       }
     },
     {
-      "id": "gh-0287",
+      "id": "gh-0281",
       "name": "JOBTEL AFRICA LIMITED",
       "name_norm": "jobtel africa limited",
       "status": "active",
@@ -8644,7 +8458,7 @@
       }
     },
     {
-      "id": "gh-0288",
+      "id": "gh-0282",
       "name": "SUPERIOR RECRUITMENT SERVICES LTD",
       "name_norm": "superior recruitment services ltd",
       "status": "active",
@@ -8675,7 +8489,7 @@
       }
     },
     {
-      "id": "gh-0289",
+      "id": "gh-0283",
       "name": "GLO-TRIBE TRAVELS AND RECRUITMENT LTD",
       "name_norm": "glo tribe travels and recruitment ltd",
       "status": "active",
@@ -8706,7 +8520,7 @@
       }
     },
     {
-      "id": "gh-0290",
+      "id": "gh-0284",
       "name": "MICMAT (GH) LIMITED",
       "name_norm": "micmat gh limited",
       "status": "active",
@@ -8737,7 +8551,7 @@
       }
     },
     {
-      "id": "gh-0291",
+      "id": "gh-0285",
       "name": "TECHNOFEX LTD",
       "name_norm": "technofex ltd",
       "status": "active",
@@ -8764,11 +8578,11 @@
         "license_start": "2026-03-16",
         "license_end": "2028-03-15",
         "contact": "",
-        "page": 30
+        "page": 29
       }
     },
     {
-      "id": "gh-0292",
+      "id": "gh-0286",
       "name": "STAR SET RESOURCES LIMITED",
       "name_norm": "star set resources limited",
       "status": "active",
@@ -8795,11 +8609,11 @@
         "license_start": "2026-03-16",
         "license_end": "2028-03-15",
         "contact": "",
-        "page": 30
+        "page": 29
       }
     },
     {
-      "id": "gh-0293",
+      "id": "gh-0287",
       "name": "PAMICOR LIMITED",
       "name_norm": "pamicor limited",
       "status": "active",
@@ -8826,11 +8640,11 @@
         "license_start": "2026-03-16",
         "license_end": "2028-03-15",
         "contact": "",
-        "page": 30
+        "page": 29
       }
     },
     {
-      "id": "gh-0294",
+      "id": "gh-0288",
       "name": "WEST CREW MARINE SERVICES LIMITED",
       "name_norm": "west crew marine services limited",
       "status": "active",
@@ -8857,11 +8671,11 @@
         "license_start": "2026-03-16",
         "license_end": "2027-03-15",
         "contact": "",
-        "page": 30
+        "page": 29
       }
     },
     {
-      "id": "gh-0295",
+      "id": "gh-0289",
       "name": "KHARIS GLOBAL GROUP LIMITED",
       "name_norm": "kharis global group limited",
       "status": "active",
@@ -8888,11 +8702,11 @@
         "license_start": "2026-06-15",
         "license_end": "2028-06-14",
         "contact": "",
-        "page": 30
+        "page": 29
       }
     },
     {
-      "id": "gh-0296",
+      "id": "gh-0290",
       "name": "INNOVATE SOLUTIONS LTD",
       "name_norm": "innovate solutions ltd",
       "status": "active",
@@ -8919,11 +8733,11 @@
         "license_start": "2025-03-30",
         "license_end": "2027-03-29",
         "contact": "",
-        "page": 30
+        "page": 29
       }
     },
     {
-      "id": "gh-0297",
+      "id": "gh-0291",
       "name": "Tafo Municipal Labour Office",
       "name_norm": "tafo municipal labour office",
       "status": "unknown",
@@ -8950,7 +8764,7 @@
       }
     },
     {
-      "id": "gh-0298",
+      "id": "gh-0292",
       "name": "HENTINA LIMITED",
       "name_norm": "hentina limited",
       "status": "active",
@@ -8982,7 +8796,7 @@
       }
     },
     {
-      "id": "gh-0299",
+      "id": "gh-0293",
       "name": "EAD CONSULT LTD",
       "name_norm": "ead consult ltd",
       "status": "active",
@@ -9013,7 +8827,7 @@
       }
     },
     {
-      "id": "gh-0300",
+      "id": "gh-0294",
       "name": "Damongo PEC",
       "name_norm": "damongo pec",
       "status": "unknown",
@@ -9040,7 +8854,7 @@
       }
     },
     {
-      "id": "gh-0301",
+      "id": "gh-0295",
       "name": "KIMBERLY RYAN GHANA LIMITED",
       "name_norm": "kimberly ryan ghana limited",
       "status": "active",
@@ -9067,11 +8881,11 @@
         "license_start": "2026-06-30",
         "license_end": "2027-06-30",
         "contact": "",
-        "page": 31
+        "page": 30
       }
     },
     {
-      "id": "gh-0302",
+      "id": "gh-0296",
       "name": "OSINADO RECRUITMENT AND CONSULTANCY LTD",
       "name_norm": "osinado recruitment and consultancy ltd",
       "status": "active",
@@ -9098,11 +8912,11 @@
         "license_start": "2026-05-31",
         "license_end": "2027-01-31",
         "contact": "",
-        "page": 31
+        "page": 30
       }
     },
     {
-      "id": "gh-0303",
+      "id": "gh-0297",
       "name": "Tongo Public Employment Center",
       "name_norm": "tongo public employment center",
       "status": "unknown",
@@ -9125,11 +8939,11 @@
         "license_start": null,
         "license_end": null,
         "contact": "",
-        "page": 31
+        "page": 30
       }
     },
     {
-      "id": "gh-0304",
+      "id": "gh-0298",
       "name": "MANOON COMPANY LTD",
       "name_norm": "manoon company ltd",
       "status": "active",
@@ -9156,11 +8970,11 @@
         "license_start": "2026-06-15",
         "license_end": "2028-06-14",
         "contact": "",
-        "page": 31
+        "page": 30
       }
     },
     {
-      "id": "gh-0305",
+      "id": "gh-0299",
       "name": "NASEDA CONSULTING AND SERVICES LIMITED",
       "name_norm": "naseda consulting and services limited",
       "status": "active",
@@ -9187,11 +9001,11 @@
         "license_start": "2026-05-31",
         "license_end": "2027-07-09",
         "contact": "",
-        "page": 31
+        "page": 30
       }
     },
     {
-      "id": "gh-0306",
+      "id": "gh-0300",
       "name": "ZIPLINE RECRUITMENT SREVICES LIMITED",
       "name_norm": "zipline recruitment srevices limited",
       "status": "active",
@@ -9218,11 +9032,11 @@
         "license_start": "2026-04-30",
         "license_end": "2027-04-30",
         "contact": "",
-        "page": 31
+        "page": 30
       }
     },
     {
-      "id": "gh-0307",
+      "id": "gh-0301",
       "name": "AFRICA OCEAN BRIDGE MARITIME OPERATION GROUP LTD",
       "name_norm": "africa ocean bridge maritime operation group ltd",
       "status": "active",
@@ -9254,7 +9068,7 @@
       }
     },
     {
-      "id": "gh-0308",
+      "id": "gh-0302",
       "name": "MICHAEL STEVENS CONSULTING GHANA LTD",
       "name_norm": "michael stevens consulting ghana ltd",
       "status": "active",
@@ -9285,7 +9099,7 @@
       }
     },
     {
-      "id": "gh-0309",
+      "id": "gh-0303",
       "name": "APEX NNWUMA CONSULT LTD",
       "name_norm": "apex nnwuma consult ltd",
       "status": "active",
@@ -9316,7 +9130,7 @@
       }
     },
     {
-      "id": "gh-0310",
+      "id": "gh-0304",
       "name": "Haywood- Sarbah Solutions Ltd",
       "name_norm": "haywood sarbah solutions ltd",
       "status": "active",
@@ -9347,7 +9161,7 @@
       }
     },
     {
-      "id": "gh-0311",
+      "id": "gh-0305",
       "name": "Enpat Global Solutions Ltd",
       "name_norm": "enpat global solutions ltd",
       "status": "active",
@@ -9374,11 +9188,11 @@
         "license_start": "2026-06-30",
         "license_end": "2027-06-30",
         "contact": "",
-        "page": 32
+        "page": 31
       }
     },
     {
-      "id": "gh-0312",
+      "id": "gh-0306",
       "name": "Global Workers Resource Ltd",
       "name_norm": "global workers resource ltd",
       "status": "active",
@@ -9405,11 +9219,11 @@
         "license_start": "2026-06-30",
         "license_end": "2027-06-29",
         "contact": "",
-        "page": 32
+        "page": 31
       }
     },
     {
-      "id": "gh-0313",
+      "id": "gh-0307",
       "name": "Asante Fisheries Company Limited",
       "name_norm": "asante fisheries company limited",
       "status": "active",
@@ -9436,11 +9250,11 @@
         "license_start": "2026-06-30",
         "license_end": "2027-06-29",
         "contact": "",
-        "page": 32
+        "page": 31
       }
     },
     {
-      "id": "gh-0314",
+      "id": "gh-0308",
       "name": "Djay Integrated Services Group Ltd",
       "name_norm": "djay integrated services group ltd",
       "status": "active",
@@ -9467,11 +9281,11 @@
         "license_start": "2026-06-30",
         "license_end": "2027-06-29",
         "contact": "",
-        "page": 32
+        "page": 31
       }
     },
     {
-      "id": "gh-0315",
+      "id": "gh-0309",
       "name": "Trison Company Limited",
       "name_norm": "trison company limited",
       "status": "active",
@@ -9498,11 +9312,11 @@
         "license_start": "2026-06-30",
         "license_end": "2027-06-29",
         "contact": "",
-        "page": 32
+        "page": 31
       }
     },
     {
-      "id": "gh-0316",
+      "id": "gh-0310",
       "name": "Kings Labor Solutions Ltd",
       "name_norm": "kings labor solutions ltd",
       "status": "active",
@@ -9529,11 +9343,11 @@
         "license_start": "2026-06-30",
         "license_end": "2027-06-29",
         "contact": "",
-        "page": 32
+        "page": 31
       }
     },
     {
-      "id": "gh-0317",
+      "id": "gh-0311",
       "name": "Kwacha Links Recruitment Agency",
       "name_norm": "kwacha links recruitment agency",
       "status": "active",
@@ -9564,7 +9378,7 @@
       }
     },
     {
-      "id": "gh-0318",
+      "id": "gh-0312",
       "name": "IHC SERVICES LIMITED",
       "name_norm": "ihc services limited",
       "status": "active",
@@ -9595,7 +9409,7 @@
       }
     },
     {
-      "id": "gh-0319",
+      "id": "gh-0313",
       "name": "JABBOK SUBSEA SOLUTIONS LIMITED",
       "name_norm": "jabbok subsea solutions limited",
       "status": "active",
@@ -9626,7 +9440,7 @@
       }
     },
     {
-      "id": "gh-0320",
+      "id": "gh-0314",
       "name": "BOZA MARINE SOLUTIONS ANDCREWING SERVICES LTD",
       "name_norm": "boza marine solutions andcrewing services ltd",
       "status": "active",
@@ -9657,7 +9471,7 @@
       }
     },
     {
-      "id": "gh-0321",
+      "id": "gh-0315",
       "name": "JO-COMXOR CONSULTANCY LTD",
       "name_norm": "jo comxor consultancy ltd",
       "status": "active",
@@ -9684,11 +9498,11 @@
         "license_start": "2026-07-31",
         "license_end": "2027-07-31",
         "contact": "",
-        "page": 33
+        "page": 32
       }
     },
     {
-      "id": "gh-0322",
+      "id": "gh-0316",
       "name": "Maximum Link Recruitment Consult Ltd",
       "name_norm": "maximum link recruitment consult ltd",
       "status": "active",
@@ -9715,7 +9529,7 @@
         "license_start": "2025-10-31",
         "license_end": "2026-10-30",
         "contact": "",
-        "page": 33
+        "page": 32
       }
     }
   ]

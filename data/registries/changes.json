@@ -1,6 +1,333 @@
 {
   "runs": [
     {
+      "date": "2026-10-05",
+      "base": "HEAD",
+      "countries": [
+        {
+          "country": "UG",
+          "as_of_before": "2026-09-28",
+          "as_of_after": "2026-10-05",
+          "count_before": 187,
+          "count_after": 180,
+          "added_count": 12,
+          "removed_count": 19,
+          "status_change_count": 0,
+          "contact_change_count": 0,
+          "added": [
+            {
+              "id": "ug-0018",
+              "name": "GESFLY INTERNATIONAL LINKS LIMITED",
+              "status": "active",
+              "license_no": "E24090025",
+              "valid_to": "2026-12-01"
+            },
+            {
+              "id": "ug-0019",
+              "name": "GOSFORD INTERNATIONAL LTD",
+              "status": "active",
+              "license_no": "E24080018",
+              "valid_to": "2026-12-01"
+            },
+            {
+              "id": "ug-0038",
+              "name": "ABSHIR COMPANY LTD",
+              "status": "active",
+              "license_no": "E24090002",
+              "valid_to": "2026-12-31"
+            },
+            {
+              "id": "ug-0050",
+              "name": "CAPACITY LABOUR AGENCY LTD",
+              "status": "active",
+              "license_no": "E24090028",
+              "valid_to": "2026-12-31"
+            },
+            {
+              "id": "ug-0067",
+              "name": "KASTOP INTERNATIONAL LIMITED",
+              "status": "active",
+              "license_no": "E24070002",
+              "valid_to": "2026-12-01"
+            },
+            {
+              "id": "ug-0074",
+              "name": "EBENEZER RECRUITMENT AGENCY LTD",
+              "status": "active",
+              "license_no": "E24080020",
+              "valid_to": "2026-12-01"
+            },
+            {
+              "id": "ug-0075",
+              "name": "STAR FAVOUR UGANDA LTD",
+              "status": "active",
+              "license_no": "E22090074",
+              "valid_to": "2026-12-01"
+            },
+            {
+              "id": "ug-0077",
+              "name": "ABSOLUTE CONNECTION INTERNATIONAL LTD",
+              "status": "active",
+              "license_no": "E24080023",
+              "valid_to": "2026-12-01"
+            },
+            {
+              "id": "ug-0080",
+              "name": "HIGHOPES INTERNATIONAL LINKAGES LTD",
+              "status": "active",
+              "license_no": "E24090027",
+              "valid_to": "2026-12-31"
+            },
+            {
+              "id": "ug-0093",
+              "name": "JEVEUX D EMPLOI ENTERPRISE LTD",
+              "status": "active",
+              "license_no": "E24080009",
+              "valid_to": "2026-12-01"
+            },
+            {
+              "id": "ug-0170",
+              "name": "CELLA INVESTMENTS LIMITED",
+              "status": "active",
+              "license_no": "E24080040",
+              "valid_to": "2026-12-31"
+            },
+            {
+              "id": "ug-0171",
+              "name": "ISAB INTERNATIONAL LIMITED",
+              "status": "active",
+              "license_no": "E24080022",
+              "valid_to": "2026-12-01"
+            }
+          ],
+          "removed": [
+            {
+              "id": "ug-0014",
+              "name": "HATARI SECURITY SERVICES LIMITED",
+              "status": "active",
+              "license_no": "E25040003",
+              "valid_to": "2027-04-08"
+            },
+            {
+              "id": "ug-0020",
+              "name": "AIR BLOW INTERNATIONAL LTD",
+              "status": "active",
+              "license_no": "E24110002",
+              "valid_to": "2026-11-03"
+            },
+            {
+              "id": "ug-0026",
+              "name": "BABCOOK AND BELLWAY INVESTMENT LTD",
+              "status": "active",
+              "license_no": "E24110012",
+              "valid_to": "2026-11-17"
+            },
+            {
+              "id": "ug-0032",
+              "name": "AROVA REALITY LIMITED",
+              "status": "active",
+              "license_no": "E24110013",
+              "valid_to": "2026-11-17"
+            },
+            {
+              "id": "ug-0039",
+              "name": "PIC DIVERSE OPPORTUNITIES LTD",
+              "status": "active",
+              "license_no": "E25030004",
+              "valid_to": "2027-03-05"
+            },
+            {
+              "id": "ug-0051",
+              "name": "AVANT SECURITY LIMITED",
+              "status": "active",
+              "license_no": "E24110016",
+              "valid_to": "2026-11-17"
+            },
+            {
+              "id": "ug-0054",
+              "name": "EFADAH RECRUITMENT (U) LIMITED",
+              "status": "active",
+              "license_no": "E25030002",
+              "valid_to": "2027-03-05"
+            },
+            {
+              "id": "ug-0056",
+              "name": "MAWARID RECRUITMENT LIMITED",
+              "status": "active",
+              "license_no": "E25050005",
+              "valid_to": "2027-05-11"
+            },
+            {
+              "id": "ug-0067",
+              "name": "AL SHOUSH CONSULTANTS LTD",
+              "status": "active",
+              "license_no": "E25030011",
+              "valid_to": "2027-03-24"
+            },
+            {
+              "id": "ug-0078",
+              "name": "SUCCESS JOBS CONSULTANTS LTD",
+              "status": "active",
+              "license_no": "E24110019",
+              "valid_to": "2026-11-17"
+            },
+            {
+              "id": "ug-0079",
+              "name": "PROXY RECRUITMENT AGENCY LTD",
+              "status": "active",
+              "license_no": "E24120016",
+              "valid_to": "2026-12-17"
+            },
+            {
+              "id": "ug-0109",
+              "name": "ABSOLUTE LABOUR INTERNATIONAL LTD",
+              "status": "active",
+              "license_no": "E25110009",
+              "valid_to": "2027-11-05"
+            },
+            {
+              "id": "ug-0147",
+              "name": "MACRO MANPOWER LIMITED",
+              "status": "active",
+              "license_no": "E24120003",
+              "valid_to": "2026-12-05"
+            },
+            {
+              "id": "ug-0168",
+              "name": "RANGERS SECURITY LTD",
+              "status": "active",
+              "license_no": "E24110022",
+              "valid_to": "2026-11-17"
+            },
+            {
+              "id": "ug-0170",
+              "name": "ALASKER INTERNATIONAL LIMITED",
+              "status": "active",
+              "license_no": "E24110005",
+              "valid_to": "2026-11-03"
+            },
+            {
+              "id": "ug-0174",
+              "name": "BRIGHT STAR CREATION INTERNATIONAL LTD",
+              "status": "active",
+              "license_no": "E24110020",
+              "valid_to": "2026-11-17"
+            },
+            {
+              "id": "ug-0176",
+              "name": "SERVEU INTERNATIONAL RECRUITING AGENCY",
+              "status": "active",
+              "license_no": "E24120019",
+              "valid_to": "2026-12-17"
+            },
+            {
+              "id": "ug-0181",
+              "name": "TRUSTIN COMPANY LIMITED",
+              "status": "active",
+              "license_no": "E25030003",
+              "valid_to": "2027-03-05"
+            },
+            {
+              "id": "ug-0182",
+              "name": "GOLDEN ARM LIMITED",
+              "status": "active",
+              "license_no": "E24110025",
+              "valid_to": "2026-11-17"
+            }
+          ],
+          "status_changes": [],
+          "contact_changes": []
+        },
+        {
+          "country": "GH",
+          "as_of_before": "2026-09-28",
+          "as_of_after": "2026-10-05",
+          "count_before": 322,
+          "count_after": 316,
+          "added_count": 1,
+          "removed_count": 7,
+          "status_change_count": 0,
+          "contact_change_count": 1,
+          "added": [
+            {
+              "id": "gh-0038",
+              "name": "Somanya Municipal Labour Office",
+              "status": "unknown",
+              "license_no": null,
+              "valid_to": null
+            }
+          ],
+          "removed": [
+            {
+              "id": "gh-0038",
+              "name": "Somanya District Labour Office",
+              "status": "unknown",
+              "license_no": null,
+              "valid_to": null
+            },
+            {
+              "id": "gh-0093",
+              "name": "Mazak Investment Limited",
+              "status": "active",
+              "license_no": null,
+              "valid_to": "2026-09-30"
+            },
+            {
+              "id": "gh-0118",
+              "name": "LEASAFRIC LOGISTICS GHANA LIMITED",
+              "status": "active",
+              "license_no": null,
+              "valid_to": "2026-09-30"
+            },
+            {
+              "id": "gh-0146",
+              "name": "RABOTEC GHANA LIMITED",
+              "status": "active",
+              "license_no": null,
+              "valid_to": "2026-09-30"
+            },
+            {
+              "id": "gh-0256",
+              "name": "Jak & So Services Ltd",
+              "status": "active",
+              "license_no": null,
+              "valid_to": "2026-09-30"
+            },
+            {
+              "id": "gh-0257",
+              "name": "Afcos Marine Crewing Limited",
+              "status": "active",
+              "license_no": null,
+              "valid_to": "2026-09-30"
+            },
+            {
+              "id": "gh-0258",
+              "name": "Watersmet Marine Limited",
+              "status": "active",
+              "license_no": null,
+              "valid_to": "2026-09-30"
+            }
+          ],
+          "status_changes": [],
+          "contact_changes": [
+            {
+              "id": "gh-0135",
+              "name": "RESOURCES AND MANPOWER GHANA LIMITED",
+              "status": "active",
+              "license_no": null,
+              "valid_to": "2028-02-25",
+              "before": [
+                "infor@rmghana.com"
+              ],
+              "after": [
+                "info@rmghana.com"
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
       "date": "2026-09-28",
       "base": "HEAD",
       "countries": [
