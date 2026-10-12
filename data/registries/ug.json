@@ -5,8 +5,8 @@
     "url": "https://eemis.mglsd.go.ug/companies",
     "method": "api"
   },
-  "as_of": "2026-10-05",
-  "count": 180,
+  "as_of": "2026-10-12",
+  "count": 181,
   "entries": [
     {
       "id": "ug-0001",
@@ -6135,6 +6135,41 @@
     },
     {
       "id": "ug-0176",
+      "name": "TRUSTIN COMPANY LIMITED",
+      "name_norm": "trustin company limited",
+      "status": "active",
+      "license_no": "E25030003",
+      "emails": [
+        "oititjorem@gmail.com"
+      ],
+      "phones": [
+        "+256776027292"
+      ],
+      "website": null,
+      "domains": [
+        "gmail.com"
+      ],
+      "address": "P.O BOX 28922, KAMPALA, Kampala, Uganda",
+      "valid_from": "2025-03-06",
+      "valid_to": "2027-03-05",
+      "type": "private",
+      "cac_verified": null,
+      "raw": {
+        "eemis_id": "12",
+        "list_status": "ACTIVE",
+        "list_location": "28922, MIRRAGE PLAZA, OLD PORTBELL ROAD",
+        "list_dates": "06 Mar, 2025 - 05 Mar, 2027",
+        "detail_url": "https://eemis.mglsd.go.ug/companies/TRUSTINCOMPANYLIMITED_864",
+        "logo": "logo_12158462593659.png",
+        "detail": {
+          "start_date": "06 March 2025",
+          "expiry_date": "05 March 2027",
+          "status_badge": "ACTIVE"
+        }
+      }
+    },
+    {
+      "id": "ug-0177",
       "name": "TEMPCRO INTERNATIONAL LIMITED",
       "name_norm": "tempcro international limited",
       "status": "active",
@@ -6169,7 +6204,7 @@
       }
     },
     {
-      "id": "ug-0177",
+      "id": "ug-0178",
       "name": "ESSENTIAL COMMUNICATIONS LIMITED",
       "name_norm": "essential communications limited",
       "status": "active",
@@ -6204,7 +6239,7 @@
       }
     },
     {
-      "id": "ug-0178",
+      "id": "ug-0179",
       "name": "EMPOWERAGE INTERNATIONAL LIMITED",
       "name_norm": "empowerage international limited",
       "status": "active",
@@ -6239,7 +6274,7 @@
       }
     },
     {
-      "id": "ug-0179",
+      "id": "ug-0180",
       "name": "HOREB SERVICES UGANDA LIMITED",
       "name_norm": "horeb services uganda limited",
       "status": "active",
@@ -6274,7 +6309,7 @@
       }
     },
     {
-      "id": "ug-0180",
+      "id": "ug-0181",
       "name": "KHM INTERNATIONAL CONSULTANTS LIMITED",
       "name_norm": "khm international consultants limited",
       "status": "active",
